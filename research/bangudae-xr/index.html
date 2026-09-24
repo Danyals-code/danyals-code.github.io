@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>(function(d){d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
+  <title>Bangudae XR: Bringing prehistoric petroglyphs within reach · Danyal Sarfraz</title>
+  <meta name="description" content="A Meta Quest 3 mixed-reality app for the heritage of Ulsan’s Daegokcheon Stream, built with photogrammetry, Gaussian splatting and Unreal Engine 5. First place, 3rd Korea Heritage Digital Contents Contest (2024).">
+  <link rel="canonical" href="https://danyals-code.github.io/research/bangudae-xr/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Bringing prehistoric petroglyphs within reach · Danyal Sarfraz">
+  <meta property="og:description" content="A first-place mixed-reality app for Korea’s Bangudae and Cheonjeon-ri petroglyphs.">
+  <meta property="og:image" content="https://danyals-code.github.io/assets/img/bangudae/petroglyphs.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="/assets/css/site.css?v=6">
+  <script src="/assets/js/site.js?v=6" defer></script>
+</head>
+<body class="has-lnav">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="laurel" viewBox="0 0 24 42"><path d="M15.57 34.44 L14.78 34.10 L14.01 33.71 L13.27 33.27 L12.56 32.79 L11.87 32.27 L11.22 31.71 L10.60 31.11 L10.02 30.47 L9.48 29.81 L8.98 29.11 L8.52 28.38 L8.10 27.63 L7.73 26.85 L7.41 26.05 L7.13 25.24 L6.91 24.41 L6.73 23.57 L6.60 22.72 L6.53 21.86 L6.50 21.00 L6.53 20.14 L6.60 19.28 L6.73 18.43 L6.91 17.59 L7.13 16.76 L7.41 15.95 L7.73 15.15 L8.10 14.37 L8.52 13.62 L8.98 12.89 L9.48 12.19 L10.02 11.53 L10.60 10.89 L11.22 10.29 L11.87 9.73 L12.56 9.21 L13.27 8.73 L14.01 8.29 L14.78 7.90 L15.57 7.56" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="11.94" cy="35.50" rx="1.55" ry="3.5" transform="rotate(251.3 11.94 35.50)"/><ellipse cx="14.48" cy="31.43" rx="1.2" ry="2.7" transform="rotate(-29.7 14.48 31.43)"/><ellipse cx="7.90" cy="31.99" rx="1.55" ry="3.5" transform="rotate(269.3 7.90 31.99)"/><ellipse cx="11.58" cy="28.91" rx="1.2" ry="2.7" transform="rotate(-11.7 11.58 28.91)"/><ellipse cx="5.15" cy="27.41" rx="1.55" ry="3.5" transform="rotate(-72.7 5.15 27.41)"/><ellipse cx="9.60" cy="25.61" rx="1.2" ry="2.7" transform="rotate(6.3 9.60 25.61)"/><ellipse cx="3.94" cy="22.19" rx="1.55" ry="3.5" transform="rotate(-54.7 3.94 22.19)"/><ellipse cx="8.73" cy="21.86" rx="1.2" ry="2.7" transform="rotate(24.3 8.73 21.86)"/><ellipse cx="4.41" cy="16.86" rx="1.55" ry="3.5" transform="rotate(-36.7 4.41 16.86)"/><ellipse cx="9.07" cy="18.02" rx="1.2" ry="2.7" transform="rotate(42.3 9.07 18.02)"/><ellipse cx="6.50" cy="11.94" rx="1.55" ry="3.5" transform="rotate(-18.7 6.50 11.94)"/><ellipse cx="10.57" cy="14.48" rx="1.2" ry="2.7" transform="rotate(60.3 10.57 14.48)"/><ellipse cx="10.01" cy="7.90" rx="1.55" ry="3.5" transform="rotate(-0.7 10.01 7.90)"/><ellipse cx="13.09" cy="11.58" rx="1.2" ry="2.7" transform="rotate(78.3 13.09 11.58)"/><ellipse cx="16.17" cy="5.16" rx="1.5" ry="3.3" transform="rotate(28 16.17 5.16)"/></symbol>
+  </svg>
+
+  <header class="gnav">
+    <nav class="gnav__inner" aria-label="Global">
+      <a class="gnav__logo" href="/">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
+        Danyal Sarfraz
+      </a>
+      <ul class="gnav__list" id="gnav-list">
+        <li><a href="/research/" aria-current="page">Research</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/publications/">Publications</a></li>
+        <li><a href="/design/">Design</a></li>
+        <li><a href="/about/">About</a></li>
+        <li class="gnav__only-menu"><a href="/about/#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn--sm gnav__cta" href="/about/#contact">Contact</a>
+      <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 18 18" aria-hidden="true"><path class="l1" d="M2 6h14"/><path class="l2" d="M2 12h14"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <nav class="lnav" aria-label="Case study">
+    <div class="lnav__inner">
+      <a class="lnav__title" href="#top">Bangudae XR</a>
+      <ul class="lnav__links">
+        <li><a href="#site">The site</a></li>
+        <li><a href="#capture">Capture</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#outcome">Outcome</a></li>
+      </ul>
+      <a class="btn btn--sm" href="/about/#contact">Get in touch</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="t-eyebrow hero__eyebrow">Case study · Mixed reality · First place</p>
+        <h1 class="t-display hero__title hero__title--wide">Bringing prehistoric petroglyphs within reach.</h1>
+        <p class="t-lead hero__lead">The Bangudae and Cheonjeon-ri petroglyphs line a cliff along Ulsan’s Daegokcheon Stream. I built a Meta Quest 3 mixed-reality app that brings the stream’s heritage, from carvings to dinosaur footprints, into any room.</p>
+        <a class="award" href="#outcome">
+          <svg class="award__laurel" aria-hidden="true"><use href="#laurel"/></svg>
+          <span class="award__text"><span class="award__title">First place</span><span class="award__sub">3rd Korea Heritage Digital Contents Contest, 2024</span></span>
+          <svg class="award__laurel award__laurel--r" aria-hidden="true"><use href="#laurel"/></svg>
+        </a>
+      </div>
+      <figure class="fig" style="margin-top: clamp(28px,5vw,56px)">
+        <div class="container-wide">
+          <div class="fig__media fig__media--film loop" data-once>
+            <video src="/assets/video/bangudae/cliff-film.mp4" poster="/assets/img/bangudae/cliff-film-poster.jpg" muted playsinline preload="auto" aria-label="A slow camera move toward the carved panel of the Bangudae petroglyphs, reconstructed in 3D from photographs"></video>
+            <button class="loop__toggle" type="button" aria-label="Pause, play or replay the film">
+              <svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="3" y="2" width="3" height="10" rx="1"/><rect x="8" y="2" width="3" height="10" rx="1"/></svg>
+              <svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6L11.5 7z"/></svg>
+              <svg class="i-replay" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2.4a4.6 4.6 0 1 1-4.4 3.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.2 1.8v3.6h3.6z"/></svg>
+            </button>
+          </div>
+        </div>
+        <figcaption class="fig__cap container">From the exhibition film: the carved panel, reconstructed in 3D from photographs.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section" aria-labelledby="facts-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="facts-title">Project facts</h2>
+        <div class="facts" data-reveal>
+          <div><span class="fact__label">Role</span><p class="fact__value">Designer and developer, with Prof. KwanMyung Kim, UNIST Department of Design</p></div>
+          <div><span class="fact__label">Platform</span><p class="fact__value">Meta Quest 3 with passthrough mixed reality, built in Unreal Engine 5</p></div>
+          <div><span class="fact__label">Capture</span><p class="fact__value">Field photography, photogrammetry, 360° panoramas, AI-based Gaussian splatting with Luma AI</p></div>
+          <div><span class="fact__label">Recognition</span><p class="fact__value">First place, 3rd Korea Heritage Digital Contents Contest (2024)</p></div>
+          <div><span class="fact__label">Organizers</span><p class="fact__value">Korea Heritage Service and Korea National University of Heritage</p></div>
+          <div><span class="fact__label">Category</span><p class="fact__value">Development of digital heritage content through XR</p></div>
+        </div>
+        <p class="t-two-tone" style="margin-top: clamp(64px,8vw,112px)" data-reveal>At the site, visitors look at the carvings from across the stream, often through a viewing scope. <strong>The heritage is right there, and still out of reach.</strong> My question was simple: <strong>what if you could hold it?</strong></p>
+      </div>
+    </section>
+
+    <!-- Site -->
+    <section class="section section--alt" id="site" aria-labelledby="site-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+            <h2 class="t-h2 shead__title" id="site-title">Fieldwork at the stream.</h2>
+            <p class="shead__text t-lead">I documented the landscape, the rock surfaces and the way visitors see the site today.</p>
+          </div>
+        </div>
+        <div class="fig-row fig-row--3" data-reveal>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/bangudae/stream.jpg" width="1600" height="935" alt="The Daegokcheon Stream winding between green hills and rock ledges" loading="lazy" class="ratio-4-3"></div>
+            <figcaption class="fig__cap">The Daegokcheon Stream valley.</figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/bangudae/scope.jpg" width="1200" height="1600" alt="A viewing scope on a fence, its screen showing a magnified rock surface, with the cliff in the distance" loading="lazy" class="ratio-4-3"></div>
+            <figcaption class="fig__cap">A viewing scope aimed at the cliff across the water.</figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/bangudae/carvings-map.jpg" width="2000" height="1143" alt="A black-and-cream reproduction mapping every carved figure on the rock panel" loading="lazy" class="ratio-4-3"></div>
+            <figcaption class="fig__cap">A reproduction that maps every carved figure on the panel.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capture -->
+    <section class="section" id="capture" aria-labelledby="capture-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+            <h2 class="t-h2 shead__title" id="capture-title">From photographs to 3D.</h2>
+            <p class="shead__text t-lead">Photogrammetry turned rock surfaces into textured meshes. For buildings and larger structures, I used AI-based Gaussian splatting.</p>
+          </div>
+        </div>
+        <figure class="fig" data-reveal>
+          <div class="fig__media"><img src="/assets/img/bangudae/scan-01.jpg" width="2000" height="1125" alt="A photogrammetry reconstruction of a rock face shown three ways: a source photo, the textured model and the untextured mesh" loading="lazy"></div>
+          <figcaption class="fig__cap">A rock surface reconstructed with photogrammetry: source photo, textured model and mesh.</figcaption>
+        </figure>
+        <div class="fig-row fig-row--2" style="margin-top:20px" data-reveal>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/bangudae/scan-02.jpg" width="2000" height="1125" alt="A second reconstruction of a carved panel with highlighted figures, shown textured and as a mesh" loading="lazy"></div>
+            <figcaption class="fig__cap">A carved panel, with figures highlighted, as texture and mesh.</figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/bangudae/mr-splat.jpg" width="1600" height="790" alt="A Gaussian-splat reconstruction of a curved stone wall" loading="lazy"></div>
+            <figcaption class="fig__cap">A stone structure reconstructed with Gaussian splatting in Luma AI.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section section--alt" id="experience" aria-labelledby="exp-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+            <h2 class="t-h2 shead__title" id="exp-title">The stream’s history, in your room.</h2>
+            <p class="shead__text t-lead">Passthrough keeps visitors grounded in their own space while the artifacts float in front of them.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container-wide">
+        <figure class="window window--flow" data-reveal="scale">
+          <div class="window__media window__media--wide loop">
+            <video src="/assets/video/bangudae/mr-artifacts.mp4" poster="/assets/img/bangudae/mr-artifacts-poster.jpg" muted loop playsinline preload="none" aria-label="Passthrough view on Meta Quest 3: scanned artifacts on floating pedestals, browsed with Previous, Home and Next buttons"></video>
+            <button class="loop__toggle" type="button" aria-label="Play or pause the video">
+              <svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="3" y="2" width="3" height="10" rx="1"/><rect x="8" y="2" width="3" height="10" rx="1"/></svg>
+              <svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6L11.5 7z"/></svg>
+            </button>
+          </div>
+          <span class="window__bar" aria-hidden="true"></span>
+          <figcaption class="fig__cap container">Captured in passthrough on Meta Quest 3: browsing the scanned artifacts with Previous, Home and Next.</figcaption>
+        </figure>
+      </div>
+      <div class="container" style="margin-top: clamp(48px,6vw,80px)">
+        <div class="principles" data-reveal>
+          <div>
+            <h3>Stay grounded.</h3>
+            <p>Passthrough keeps visitors aware of their own room while the artifacts float in front of them.</p>
+          </div>
+          <div>
+            <h3>Walk through time.</h3>
+            <p>Five scanned artifacts run in order, from Mesozoic dinosaur footprints to the Joseon Dynasty, each with its title, era and story.</p>
+          </div>
+          <div>
+            <h3>Keep it simple.</h3>
+            <p>Just Previous, Home and Next, so the experience stays stable, easy to learn and easy to test.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container" style="margin-top: clamp(56px,7vw,96px)">
+        <div class="feature" data-reveal>
+          <figure class="fig feature__media">
+            <div class="fig__media"><img src="/assets/img/bangudae/mr-menu.jpg" width="1600" height="790" alt="A floating main menu with 3D Artifacts, 3D Environments, Panoramas, Gallery and Quit App buttons, over the passthrough view of an office" loading="lazy"></div>
+          </figure>
+          <div class="feature__text">
+            <p class="t-eyebrow">Main menu</p>
+            <h3 class="t-h3">One menu, four ways in.</h3>
+            <p>3D artifacts, 3D environments, panoramas and a photo gallery, floating over the room. It is a working layout, built so new sections and new scans can be added as they become available.</p>
+          </div>
+        </div>
+        <div class="feature feature--flip" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+          <figure class="fig feature__media">
+            <div class="fig__media"><img src="/assets/img/bangudae/mr-splat-house.jpg" width="1600" height="790" alt="A Gaussian-splat reconstruction of a traditional Korean gate and wall" loading="lazy"></div>
+          </figure>
+          <div class="feature__text">
+            <p class="t-eyebrow">Design decisions</p>
+            <h3 class="t-h3">Simple on purpose.</h3>
+            <p>The interface stays deliberately minimal, just Previous, Home and Next, so the experience stays stable and easy to test. Panoramas and a photo gallery let prospective visitors get a feel for the site before they go.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outcome -->
+    <section class="section" id="outcome" aria-labelledby="outcome-title">
+      <div class="container">
+        <div class="feature" data-reveal>
+          <div class="feature__text">
+            <p class="t-eyebrow">Outcome</p>
+            <h2 class="t-h2" id="outcome-title">First place.</h2>
+            <p>The project won first place at the <strong>3rd Korea Heritage Digital Contents Contest</strong> in 2024, organized by the Korea Heritage Service and the Korea National University of Heritage. Entries went through a written preliminary round and an on-site final presentation.</p>
+          </div>
+          <figure class="fig feature__media">
+            <div class="fig__media"><img src="/assets/img/bangudae/stage.jpg" width="2000" height="1126" alt="Danyal presenting at a lectern on stage in front of a large screen" loading="lazy"></div>
+            <figcaption class="fig__cap">Presenting at the final round.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next -->
+    <section class="section section--alt" aria-labelledby="next-title">
+      <div class="container">
+        <a class="tile tile--white" href="/research/life-size-ar/" data-reveal>
+          <div class="tile__body">
+            <p class="t-eyebrow">Next case study</p>
+            <h2 class="t-h2" id="next-title">Can AR stand in for a prototype?</h2>
+            <p class="tile__text">Life-size AR on iPhone and Apple Vision Pro, tested in people’s own homes.</p>
+            <span class="link-more">Continue</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gfooter">
+    <div class="gfooter__inner">
+      <nav class="gfooter__dir" aria-label="Site directory">
+        <div class="gfooter__col"><h3>Research</h3><ul>
+          <li><a href="/research/bangudae-xr/">Bangudae XR</a></li>
+          <li><a href="/research/life-size-ar/">Life-size AR</a></li>
+          <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
+          <li><a href="/research/product-form/">Product form analysis</a></li>
+          <li><a href="/research/lemmy/">Robot motion</a></li>
+          <li><a href="/research/lemmy-framework/">MSc thesis framework</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Tools</h3><ul>
+          <li><a href="/tools/#lemmy-ar">Lemmy AR Experience</a></li>
+          <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
+          <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
+          <li><a href="/tools/#more">More tools</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Publications</h3><ul>
+          <li><a href="/publications/">Papers</a></li>
+          <li><a href="/publications/#thesis">MSc thesis</a></li>
+          <li><a href="/research/#experiments">Experiments</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Design</h3><ul>
+          <li><a href="/design/#lg">LG sensor module</a></li>
+          <li><a href="/design/#waveform">Waveform</a></li>
+          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>About</h3><ul>
+          <li><a href="/about/">Bio</a></li>
+          <li><a href="/about/#experience">Experience</a></li>
+          <li><a href="/about/#education">Education</a></li>
+          <li><a href="/about/#contact">Contact</a></li>
+        </ul></div>
+      </nav>
+      <div class="gfooter__legal">
+        <p>Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
+        <nav aria-label="Elsewhere">
+          <a href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
+          <a href="https://github.com/Danyals-code">GitHub</a>
+          <a href="https://www.behance.net/designedbydanyal">Behance</a>
+          <a href="mailto:danialsarfraz2000@gmail.com">Email</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

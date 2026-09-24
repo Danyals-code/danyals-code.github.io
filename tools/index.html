@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>(function(d){d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
+  <title>Tools · Danyal Sarfraz</title>
+  <meta name="description" content="Tools by Danyal Sarfraz: the Lemmy AR Experience app for iPhone and Apple Vision Pro, a visionOS UI designer, True RoboAnimator for Blender, Swift Web Studio and more.">
+  <link rel="canonical" href="https://danyals-code.github.io/tools/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tools · Danyal Sarfraz">
+  <meta property="og:description" content="Native AR and visionOS apps, spatial UI tools, Blender add-ons and web prototypes.">
+  <meta property="og:image" content="https://danyals-code.github.io/assets/img/roboanimator/promo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="/assets/css/site.css?v=6">
+  <script src="/assets/js/site.js?v=6" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="gnav">
+    <nav class="gnav__inner" aria-label="Global">
+      <a class="gnav__logo" href="/">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
+        Danyal Sarfraz
+      </a>
+      <ul class="gnav__list" id="gnav-list">
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/tools/" aria-current="page">Tools</a></li>
+        <li><a href="/publications/">Publications</a></li>
+        <li><a href="/design/">Design</a></li>
+        <li><a href="/about/">About</a></li>
+        <li class="gnav__only-menu"><a href="/about/#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn--sm gnav__cta" href="/about/#contact">Contact</a>
+      <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 18 18" aria-hidden="true"><path class="l1" d="M2 6h14"/><path class="l2" d="M2 12h14"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="t-eyebrow">Tools</p>
+        <h1 class="t-h1 page-hero__title">Built to answer questions faster.</h1>
+        <p class="t-lead page-hero__lead">Spatial apps, design tools and research instruments. Most of them started because a study needed something that didn’t exist yet, and the code is on GitHub.</p>
+      </div>
+    </section>
+
+    <!-- Lemmy AR -->
+    <section class="section section--tight" id="lemmy-ar" aria-labelledby="ar-title" style="padding-top:0">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div style="display:flex; gap:20px; align-items:center">
+            <picture>
+              <source srcset="/assets/img/app/icon-dark.png" media="(prefers-color-scheme: dark)">
+              <img class="tool__icon" src="/assets/img/app/icon-light.png" width="512" height="512" alt="The Lemmy AR Experience app icon: a robot face with two blue eyes" style="width:80px; height:80px; border-radius:18px">
+            </picture>
+            <div>
+              <p class="t-eyebrow">iOS · visionOS · Swift</p>
+              <h2 class="t-h2" id="ar-title">Lemmy AR Experience</h2>
+            </div>
+          </div>
+        </div>
+        <div class="feature" data-reveal>
+          <div class="feature__text">
+            <p>A native app that anchors a life-size, animated robot to your floor so you can judge its motion in your own space. I built it for the AR stage of my thesis and distributed it to study participants through TestFlight.</p>
+            <p>It’s written in <strong>Swift with SwiftUI, ARKit and RealityKit</strong>. It has 20 animations grouped as base, functional and expressive, plane detection and placement, pinch to pause, and screenshots without the interface. Settings include high contrast, text size, haptics and sound.</p>
+            <div class="links-inline">
+              <a class="link-more" href="/research/life-size-ar/">Read the case study</a>
+              <a class="link-ext" href="https://github.com/Danyals-code/AR-Probe-for-Product-Action-Testing">Source on GitHub</a>
+            </div>
+          </div>
+          <figure class="fig feature__media">
+            <div class="fig__media"><img src="/assets/img/app/in-room.jpg" width="2400" height="729" alt="An iPhone on a tripod showing Lemmy in AR in a real room" loading="lazy" class="ratio-4-3"></div>
+          </figure>
+        </div>
+        <figure class="fig" style="margin-top: clamp(40px,5vw,64px)" data-reveal>
+          <div class="fig__media fig__media--white fig__media--pad"><img class="blend-white" src="/assets/img/app/testflight.jpg" width="2400" height="1440" alt="Screens of the Lemmy AR Experience app and its TestFlight page" loading="lazy"></div>
+        </figure>
+        <div class="fig-row fig-row--2" style="margin-top:20px" data-reveal>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/app/visionos-menu.jpg" width="2000" height="1125" alt="The Lemmy AR Experience menu window, with base movements and action variants, floating in a virtual gallery on visionOS" loading="lazy"></div>
+            <figcaption class="fig__cap">The visionOS version: a menu window floating in an immersive space.</figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/app/visionos-room.jpg" width="2000" height="1125" alt="A living-room environment in the visionOS simulator with floating controls" loading="lazy"></div>
+            <figcaption class="fig__cap">Running in the Apple Vision Pro simulator.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- UI Designer -->
+    <section class="section section--alt" id="ui-designer" aria-labelledby="uid-title">
+      <div class="container">
+        <div class="feature feature--wide-media" data-reveal>
+          <figure class="fig feature__media">
+            <div class="fig__media"><img src="/assets/img/tools/ui-designer.jpg" width="1600" height="1000" alt="The visionOS Designer start screen, offering a window or volume scene and templates like Welcome, Browse, Player, Profile, Article and Settings" loading="lazy"></div>
+          </figure>
+          <div class="feature__text">
+            <p class="t-eyebrow">Web app · React Three Fiber</p>
+            <h2 class="t-h2" id="uid-title">AR/VR UI Designer</h2>
+            <p>A drag-and-drop designer for visionOS-style interfaces. Lay out windows, panels and controls on a 3D canvas, then preview them at eye level with HDRI lighting and real glass blur. It also supports volumes with 3D content, and you don’t need Xcode, a Mac or a headset.</p>
+            <div class="links-inline">
+              <a class="link-ext" href="https://ui-design-for-avp.vercel.app">Live demo</a>
+              <a class="link-ext" href="https://github.com/Danyals-code/UI-Design-for-AVP">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RoboAnimator -->
+    <section class="section" id="roboanimator" aria-labelledby="ra-title">
+      <div class="container-wide">
+        <div class="tile theme-dark" data-reveal>
+          <div class="feature feature--wide-media" style="padding: clamp(26px,3.4vw,48px)">
+            <div class="feature__media fig__media" style="background:#000"><img src="/assets/img/roboanimator/promo.jpg" width="2000" height="1333" alt="Stylized render of the True RoboAnimator panels floating in dark space" loading="lazy"></div>
+            <div class="feature__text">
+              <span class="tile__eyebrow">Blender add-on · Python · GPL-3.0</span>
+              <h2 class="t-h2" id="ra-title">True RoboAnimator</h2>
+              <p>Turns keyframed chassis animation into physically plausible motion for two-wheeled robots. It flags sideways slip, repairs impossible paths, computes wheel angles and RPM within speed limits, and exports CSV or JSON for engineers and AR apps.</p>
+              <ul class="chips">
+                <li>7,000+ downloads</li>
+                <li>Blender 4.2+</li>
+                <li>Official Blender Extensions</li>
+              </ul>
+              <div class="cta-row cta-row--start" style="margin-top:24px">
+                <a class="btn" href="https://extensions.blender.org/add-ons/true-roboanimator/">Get it on Blender Extensions</a>
+                <a class="link-ext" href="https://github.com/Danyals-code/RoboAnimator---Blender-Addon">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bento" style="margin-top:20px">
+          <a class="tile span-3" href="https://danyals-code.github.io/Roboanimator-CSV-to-Browser-Based-Plots/" data-reveal>
+            <div class="tile__body">
+              <span class="tile__eyebrow">Companion · Web</span>
+              <h3 class="tile__title tile__title--sm">RoboAnimator CSV Plotter</h3>
+              <p class="tile__text">Drop in the add-on’s CSV to see the robot’s XY path colored by speed, a 3D path against speed, and an animated time slider. Everything runs locally in the browser.</p>
+              <span class="link-ext">Open the plotter</span>
+            </div>
+          </a>
+          <a class="tile span-3" href="/research/lemmy-framework/#stage-2" data-reveal>
+            <div class="tile__body">
+              <span class="tile__eyebrow">Evaluation</span>
+              <h3 class="tile__title tile__title--sm">Tested with Blender users</h3>
+              <p class="tile__text">In think-aloud sessions it scored 8.6 out of 10 for stability and 8.4 for fitting existing workflows. It then passed Blender’s official review.</p>
+              <span class="link-more">See the study</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- More -->
+    <section class="section section--alt" id="more" aria-labelledby="more-title">
+      <div class="container-wide">
+        <div class="shead" data-reveal>
+          <h2 class="t-h2 shead__title" id="more-title">More experiments.</h2>
+        </div>
+        <div class="bento">
+          <div class="tile tile--white span-2" id="swift-studio" data-reveal>
+            <div class="tile__body">
+              <svg class="area-icon" viewBox="0 0 32 32" aria-hidden="true"><rect x="3.5" y="6.5" width="25" height="19" rx="3"/><path d="M3.5 11h25"/><path d="m11 15-3 3 3 3M17 15l3 3-3 3"/><rect x="22" y="13.5" width="4" height="8" rx="1"/></svg>
+              <span class="tile__eyebrow">Web app · TypeScript</span>
+              <h3 class="tile__title tile__title--sm">Swift Web Studio</h3>
+              <p class="tile__text">Design SwiftUI interfaces in the browser without losing the Swift source. It combines visual editing, a code editor with diagnostics and a live device preview, and exports to Xcode, Swift Playgrounds or a Swift package.</p>
+              <div class="links-inline">
+                <a class="link-ext" href="https://swift-cloud-simmulator-web.vercel.app">Live demo</a>
+                <a class="link-ext" href="https://github.com/Danyals-code/Swift-Cloud-Simmulator">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="tile tile--white span-2" data-reveal>
+            <div class="tile__media" style="margin:0"><img src="/assets/img/tools/head-tracked.jpg" width="1600" height="1000" alt="The start card of 3D Shelf, a head-tracked window into your monitor" loading="lazy" class="ratio-16-10"></div>
+            <div class="tile__body">
+              <span class="tile__eyebrow">Web experiment · JavaScript</span>
+              <h3 class="tile__title tile__title--sm">Head-tracked perspective</h3>
+              <p class="tile__text">Fish-tank VR in the browser. Webcam face tracking drives off-axis perspective, so your monitor becomes a window onto a small 3D room. It builds on classic work by Ware, Arthur and Booth, and by Deering. No video leaves the device.</p>
+              <div class="links-inline">
+                <a class="link-ext" href="https://danyals-code.github.io/head-tracked-perspective/">Live demo</a>
+                <a class="link-ext" href="https://github.com/Danyals-code/head-tracked-perspective">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="tile tile--white span-2" id="multiview" data-reveal>
+            <div class="tile__body">
+              <svg class="area-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 9.5 22 13v7l-6 3.5-6-3.5v-7z"/><path d="M10 13l6 3.5 6-3.5M16 16.5v7"/><rect x="3" y="3" width="5" height="4" rx="1"/><rect x="24" y="3" width="5" height="4" rx="1"/><rect x="3" y="25" width="5" height="4" rx="1"/><rect x="24" y="25" width="5" height="4" rx="1"/></svg>
+              <span class="tile__eyebrow">Blender add-on · Python</span>
+              <h3 class="tile__title tile__title--sm">MultiView Product Renderer</h3>
+              <p class="tile__text">Turns CAD products (STEP or STL) into consistent image sets. It centers each model, rigs orthographic and perspective cameras with three-point lighting, and batch-renders every view with predictable file names. Useful for AI training data and <a href="/research/product-form/">product form analysis</a>.</p>
+              <div class="links-inline">
+                <a class="link-ext" href="https://github.com/Danyals-code/Addon-for-MultiView-Rendering-AMVR">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gfooter">
+    <div class="gfooter__inner">
+      <nav class="gfooter__dir" aria-label="Site directory">
+        <div class="gfooter__col"><h3>Research</h3><ul>
+          <li><a href="/research/bangudae-xr/">Bangudae XR</a></li>
+          <li><a href="/research/life-size-ar/">Life-size AR</a></li>
+          <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
+          <li><a href="/research/product-form/">Product form analysis</a></li>
+          <li><a href="/research/lemmy/">Robot motion</a></li>
+          <li><a href="/research/lemmy-framework/">MSc thesis framework</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Tools</h3><ul>
+          <li><a href="/tools/#lemmy-ar">Lemmy AR Experience</a></li>
+          <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
+          <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
+          <li><a href="/tools/#more">More tools</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Publications</h3><ul>
+          <li><a href="/publications/">Papers</a></li>
+          <li><a href="/publications/#thesis">MSc thesis</a></li>
+          <li><a href="/research/#experiments">Experiments</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Design</h3><ul>
+          <li><a href="/design/#lg">LG sensor module</a></li>
+          <li><a href="/design/#waveform">Waveform</a></li>
+          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>About</h3><ul>
+          <li><a href="/about/">Bio</a></li>
+          <li><a href="/about/#experience">Experience</a></li>
+          <li><a href="/about/#education">Education</a></li>
+          <li><a href="/about/#contact">Contact</a></li>
+        </ul></div>
+      </nav>
+      <div class="gfooter__legal">
+        <p>Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
+        <nav aria-label="Elsewhere">
+          <a href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
+          <a href="https://github.com/Danyals-code">GitHub</a>
+          <a href="https://www.behance.net/designedbydanyal">Behance</a>
+          <a href="mailto:danialsarfraz2000@gmail.com">Email</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

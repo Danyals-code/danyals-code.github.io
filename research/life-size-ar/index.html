@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>(function(d){d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
+  <title>Life-size AR: Can AR stand in for a prototype? · Danyal Sarfraz</title>
+  <meta name="description" content="A native iPhone and Apple Vision Pro app that places a life-size robot concept in people’s homes, and a study of whether that is enough to judge it. Swift, ARKit, RealityKit, visionOS.">
+  <link rel="canonical" href="https://danyals-code.github.io/research/life-size-ar/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Can AR stand in for a prototype? · Danyal Sarfraz">
+  <meta property="og:description" content="Life-size AR on iPhone and Apple Vision Pro, tested in people’s own homes.">
+  <meta property="og:image" content="https://danyals-code.github.io/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="/assets/css/site.css?v=6">
+  <script src="/assets/js/site.js?v=6" defer></script>
+</head>
+<body class="has-lnav">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="gnav">
+    <nav class="gnav__inner" aria-label="Global">
+      <a class="gnav__logo" href="/">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
+        Danyal Sarfraz
+      </a>
+      <ul class="gnav__list" id="gnav-list">
+        <li><a href="/research/" aria-current="page">Research</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/publications/">Publications</a></li>
+        <li><a href="/design/">Design</a></li>
+        <li><a href="/about/">About</a></li>
+        <li class="gnav__only-menu"><a href="/about/#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn--sm gnav__cta" href="/about/#contact">Contact</a>
+      <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 18 18" aria-hidden="true"><path class="l1" d="M2 6h14"/><path class="l2" d="M2 12h14"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <nav class="lnav" aria-label="Case study">
+    <div class="lnav__inner">
+      <a class="lnav__title" href="#top">Life-size AR</a>
+      <ul class="lnav__links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#study">Study</a></li>
+        <li><a href="#findings">Findings</a></li>
+      </ul>
+      <a class="btn btn--sm" href="/tools/#lemmy-ar">See the app</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="t-eyebrow hero__eyebrow">Case study · Spatial computing</p>
+        <h1 class="t-display hero__title">Can AR stand in for a prototype?</h1>
+        <p class="t-lead hero__lead">Physical prototypes are slow to make, and screens shrink objects and flatten their motion. I built a native iPhone and Apple Vision Pro app that places a life-size robot concept in people’s own homes, then tested whether that was enough to judge it.</p>
+      </div>
+      <figure class="fig" style="margin-top: clamp(28px,5vw,56px)">
+        <div class="container-wide">
+          <div class="fig__media" style="border-radius: var(--r-xl)">
+            <img src="/assets/img/app/in-room.jpg" width="2400" height="729" alt="An iPhone on a tripod showing a life-size robot placed on the floor of a real room through augmented reality" fetchpriority="high">
+          </div>
+        </div>
+        <figcaption class="fig__cap container">A robot concept that doesn’t exist yet, anchored at true scale to a real floor.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Overview -->
+    <section class="section" id="overview" aria-labelledby="overview-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="overview-title">Overview</h2>
+        <div class="facts" data-reveal>
+          <div><span class="fact__label">Role</span><p class="fact__value">Designer and developer. The third stage of my <a href="/research/lemmy-framework/">MSc thesis</a> at UNIST</p></div>
+          <div><span class="fact__label">Platforms</span><p class="fact__value">iPhone with LiDAR, and Apple Vision Pro</p></div>
+          <div><span class="fact__label">Stack</span><p class="fact__value">Swift, SwiftUI, ARKit, RealityKit, Reality Composer Pro and USDZ</p></div>
+          <div><span class="fact__label">Distribution</span><p class="fact__value">TestFlight, after passing Apple’s review on iOS and visionOS</p></div>
+          <div><span class="fact__label">User study</span><p class="fact__value">Testers aged 17 to 29, on their own iPhones, in their own homes</p></div>
+          <div><span class="fact__label">Expert review</span><p class="fact__value">Seven designers and engineers, including XR practitioners</p></div>
+        </div>
+
+        <p class="t-two-tone" style="margin-top: clamp(64px,8vw,112px)" data-reveal>Most products are designed long before a working prototype exists. <strong>A render on a screen can’t tell you how big something feels in your hallway,</strong> or how its motion reads from the sofa. AR can put a digital twin in the place it will live. <strong>The question is whether people can judge it well enough to make design decisions.</strong></p>
+      </div>
+    </section>
+
+    <!-- Two devices -->
+    <section class="section section--alt" id="design" aria-labelledby="devices-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+            <h2 class="t-h2 shead__title" id="devices-title">Two devices, two jobs.</h2>
+            <p class="shead__text t-lead">One app, built for reach and for fidelity. The iPhone gets the study into people’s homes. Vision Pro shows what the same test feels like without a screen in the way.</p>
+          </div>
+        </div>
+        <div class="bento">
+          <div class="tile tile--white span-3" data-reveal>
+            <div class="tile__body">
+              <span class="tile__eyebrow">iPhone · the scalable baseline</span>
+              <h3 class="tile__title tile__title--sm">A window on the world.</h3>
+              <p class="tile__text">LiDAR on recent iPhones finds the floor quickly and estimates scale well, and a phone reaches a much wider pool of testers than a headset. The trade-off: people view the robot through a small screen held at arm’s length, which weakens the sense of presence and tires the arm.</p>
+            </div>
+            <div class="tile__media">
+              <img src="/assets/img/app/testflight.jpg" width="2400" height="1440" alt="Screens of the iPhone app: a home screen, an actions screen with a 3D render, the AR view and settings, beside its TestFlight page" loading="lazy">
+            </div>
+          </div>
+          <div class="tile tile--white span-3" data-reveal>
+            <div class="tile__body">
+              <span class="tile__eyebrow">Apple Vision Pro · the high-fidelity benchmark</span>
+              <h3 class="tile__title tile__title--sm">The robot in the room with you.</h3>
+              <p class="tile__text">Stereo passthrough and a dense display make small posture changes and wheel spin legible, and eyes and hands replace controllers. The visionOS version pairs a menu window with an immersive space.</p>
+            </div>
+            <div class="tile__media">
+              <img src="/assets/img/app/visionos-room.jpg" width="2000" height="1125" alt="The visionOS home view in a furnished living room, with the Lemmy AR app among the system apps, in the Apple Vision Pro simulator" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interface -->
+    <section class="section" aria-labelledby="ui-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+            <h2 class="t-h2 shead__title" id="ui-title">Designed to disappear into the room.</h2>
+            <p class="shead__text t-lead">The interface follows Apple’s Human Interface Guidelines, so it feels familiar before anyone reads a word. Translucent, Liquid Glass-style panels let the room show through, which matters when the room is the point.</p>
+          </div>
+        </div>
+        <ol class="steps steps--3">
+          <li class="step" data-reveal>
+            <span class="step__num">1</span>
+            <h3 class="step__title">Version one: the camera and the rules.</h3>
+            <p class="step__text">Navigation, camera permission, and experiments with how buttons and overlays should sit on top of the real world.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__num">2</span>
+            <h3 class="step__title">Version two: the robot and its actions.</h3>
+            <p class="step__text">The full 3D model, an actions page and settings. Tapping a variant, like “Approach user, variant 1,” opens that exact animation in AR.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__num">3</span>
+            <h3 class="step__title">Version three: ready for testers.</h3>
+            <p class="step__text">An interactive 3D preview, and a sheet that sorts actions into base, functional and expressive, so the AR view stays clean.</p>
+          </li>
+        </ol>
+      </div>
+      <figure class="fig" style="margin-top: clamp(48px,6vw,80px)" data-reveal>
+        <div class="container-wide">
+          <div class="fig__media parallax"><img src="/assets/img/app/visionos-menu.jpg" width="2000" height="1125" alt="The Lemmy AR Experience menu window, with base movements and action variants, floating in a virtual gallery on visionOS" loading="lazy"></div>
+          <figcaption class="fig__cap container">The visionOS menu window, floating in an immersive gallery in the Apple Vision Pro simulator.</figcaption>
+        </div>
+      </figure>
+    </section>
+
+    <!-- Grounding -->
+    <section class="section section--alt" aria-labelledby="ground-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+            <h2 class="t-h2 shead__title" id="ground-title">Small details that sell scale.</h2>
+            <p class="shead__text t-lead">People judge size from contact and light. The robot has to look like it’s standing on the floor, not floating in front of the camera.</p>
+          </div>
+        </div>
+        <div class="principles" data-reveal>
+          <div>
+            <h3>Anchored to the floor.</h3>
+            <p>ARKit finds horizontal planes classified as floor, and the robot’s coordinate system is bound to the ground, not to the camera.</p>
+          </div>
+          <div>
+            <h3>Lit by the room.</h3>
+            <p>Environment lighting estimation and a grounding shadow tie the virtual robot to the real light and surface under it.</p>
+          </div>
+          <div>
+            <h3>Frozen on a pinch.</h3>
+            <p>A pinch pauses any animation, so a researcher can freeze the robot at a key point in its motion and inspect it closely.</p>
+          </div>
+        </div>
+        <div class="feature" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+          <div class="feature__text">
+            <p class="t-eyebrow">Pipeline</p>
+            <h3 class="t-h3">What people see is what engineers get.</h3>
+            <p>Every animation starts as the robot’s engineering CAD, is optimized and animated in Blender, checked by my <a href="/tools/#roboanimator">True RoboAnimator</a> add-on, and exported as USDZ. Reality Composer Pro tunes materials before the assets ship in the app.</p>
+            <p>On Vision Pro, the model stood about half a meter tall in a living-room scene, knee height next to the furniture, matching the intended hardware.</p>
+          </div>
+          <figure class="fig feature__media">
+            <div class="fig__media fig__media--white fig__media--pad"><img class="blend-white" src="/assets/img/app/pipeline.jpg" width="2200" height="781" alt="Pipeline from SolidWorks to an STL file, into Blender for optimization, animation and correction, then USDZ and Swift" loading="lazy"></div>
+            <figcaption class="fig__cap">SolidWorks → STL → Blender → USDZ → Swift.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Study -->
+    <section class="section" id="study" aria-labelledby="study-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+            <h2 class="t-h2 shead__title" id="study-title">A study that happens at home.</h2>
+            <p class="shead__text t-lead">Testers installed the app through TestFlight and watched the robot in their own rooms. I recruited younger adults on purpose: people fluent in mobile interfaces give sharper feedback on the medium itself.</p>
+          </div>
+        </div>
+        <div class="bento bento--thirds">
+          <div class="tile span-2" data-reveal>
+            <div class="tile__body">
+              <span class="tile__eyebrow">Measure 1</span>
+              <h3 class="tile__title tile__title--sm">Which motion do people prefer?</h3>
+              <p class="tile__text">The same actions, assembled from different motion components, rated on 10-point scales.</p>
+            </div>
+          </div>
+          <div class="tile span-2" data-reveal>
+            <div class="tile__body">
+              <span class="tile__eyebrow">Measure 2</span>
+              <h3 class="tile__title tile__title--sm">Can motion carry emotion?</h3>
+              <p class="tile__text">Seven expressive actions shown by number only. Testers wrote down the emotion they saw.</p>
+            </div>
+          </div>
+          <div class="tile span-2" data-reveal>
+            <div class="tile__body">
+              <span class="tile__eyebrow">Measure 3</span>
+              <h3 class="tile__title tile__title--sm">Does the app get out of the way?</h3>
+              <p class="tile__text">Ease of use, clarity of the controls, stability, and how much AR helped them read the robot.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Findings -->
+    <section class="section section--alt" id="findings" aria-labelledby="findings-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <h2 class="t-h2 shead__title" id="findings-title">What we found.</h2>
+        </div>
+        <div class="chart" data-reveal>
+          <h3 class="chart__title">How testers rated the AR experience</h3>
+          <p class="chart__sub">Mean rating out of 10, on their own iPhones at home.</p>
+          <ul class="bars">
+            <li class="bar"><span class="bar__label">Clarity of controls</span><span class="bar__track"><span class="bar__fill bar__fill--blue" style="--v:83%"></span></span><span class="bar__value">8.3</span></li>
+            <li class="bar"><span class="bar__label">Stability</span><span class="bar__track"><span class="bar__fill bar__fill--blue" style="--v:81%"></span></span><span class="bar__value">8.1</span></li>
+            <li class="bar"><span class="bar__label">Ease of use</span><span class="bar__track"><span class="bar__fill bar__fill--blue" style="--v:80%"></span></span><span class="bar__value">8.0</span></li>
+            <li class="bar"><span class="bar__label">Helped judge scale, orientation and path</span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:78%"></span></span><span class="bar__value">7.8</span></li>
+          </ul>
+        </div>
+
+        <div class="findings" style="margin-top: 20px">
+          <div class="finding" data-reveal>
+            <span class="finding__num">Scale</span>
+            <p class="finding__text"><strong>Size and paths read clearly.</strong> Testers could tell how big the robot was, which way it faced and where it was heading, relative to their own furniture.</p>
+          </div>
+          <div class="finding" data-reveal>
+            <span class="finding__num">Emotion</span>
+            <p class="finding__text"><strong>Motion alone didn’t carry feeling.</strong> “Happy” was read as excited or energetic by six testers, but “fear” was often read as efficient or guarding, and fast actions read as alertness. Many reached for pet metaphors, like “excited dog.”</p>
+          </div>
+          <div class="finding" data-reveal>
+            <span class="finding__num">Preference</span>
+            <p class="finding__text"><strong>Younger testers wanted predictability.</strong> The top-rated version used a static posture, a straight path and normal speed (8.0 of 10). Older adults in the earlier study had favored a more expressive, dynamic posture.</p>
+          </div>
+        </div>
+
+        <div class="feature" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+          <div class="feature__text">
+            <p class="t-eyebrow">Expert check</p>
+            <h3 class="t-h3">Experts trusted the medium, with caveats.</h3>
+            <p>Seven designers and engineers walked through the full framework. They rated “AR testing gives valid insights” <strong>8.6 out of 10</strong>, the highest of any statement. They also named what AR can’t do: convey motor noise or the robot’s weight.</p>
+          </div>
+          <div class="stat" style="align-self:center">
+            <span class="stat__kicker">AR testing gives valid insights</span>
+            <span class="stat__num t-grad"><span data-count="8.6">8.6</span><small class="t-muted"> / 10</small></span>
+            <p class="stat__cap">Mean agreement from seven experts in design, robotics and XR.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Takeaways -->
+    <section class="section" aria-labelledby="take-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <h2 class="t-h2 shead__title" id="take-title">What I’d tell other XR designers.</h2>
+        </div>
+        <div class="bento bento--thirds">
+          <div class="tile tile--white span-2" data-reveal style="background:var(--bg-2)">
+            <div class="tile__body">
+              <h3 class="tile__title tile__title--sm">Test where it will live.</h3>
+              <p class="tile__text">A living room answers questions about scale and paths that no render can. AR lets you run that test before the hardware exists.</p>
+            </div>
+          </div>
+          <div class="tile tile--white span-2" data-reveal style="background:var(--bg-2)">
+            <div class="tile__body">
+              <h3 class="tile__title tile__title--sm">Don’t ask motion to do everything.</h3>
+              <p class="tile__text">Spatial presence came through; subtle emotion didn’t. Expression needs sound, a face and timing, not movement alone.</p>
+            </div>
+          </div>
+          <div class="tile tile--white span-2" data-reveal style="background:var(--bg-2)">
+            <div class="tile__body">
+              <h3 class="tile__title tile__title--sm">Match the device to the question.</h3>
+              <p class="tile__text">Phones for reach and numbers, headsets for fine motion and presence. Build once, natively, and run both.</p>
+            </div>
+          </div>
+        </div>
+        <p class="callout-note" style="margin-top: clamp(40px,5vw,64px)" data-reveal><strong>Limitations.</strong> The study was small and exploratory, and every tester was young. It ran on iPhone; Vision Pro was used to develop and validate the experience rather than for the study. Next, I want to move the earlier preference studies into AR and compare AR with screen-based testing directly.</p>
+      </div>
+    </section>
+
+    <!-- Next -->
+    <section class="section section--alt" aria-labelledby="next-title">
+      <div class="container">
+        <a class="tile tile--white" href="/research/synthetic-realities/" data-reveal>
+          <div class="tile__body">
+            <p class="t-eyebrow">Next case study</p>
+            <h2 class="t-h2" id="next-title">Can people still tell what’s real?</h2>
+            <p class="tile__text">A perception study of AI-generated video, with 87 participants and 3,132 judgments.</p>
+            <span class="link-more">Continue</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gfooter">
+    <div class="gfooter__inner">
+      <section class="footnotes" aria-label="References">
+        <ol>
+          <li>Sarfraz, D. (2026). <i>A Framework for Designing Contextually Appropriate Physical Actions in Non-Humanoid Robots</i> [Master’s thesis, Ulsan National Institute of Science and Technology]. Chapter 5, AR-based user testing.</li>
+          <li>Lemmy is a multi-team UNIST project with Shinsung Delta Tech. Partner teams designed the robot’s body and hardware; the AR app and its study are my work.</li>
+        </ol>
+      </section>
+      <nav class="gfooter__dir" aria-label="Site directory">
+        <div class="gfooter__col"><h3>Research</h3><ul>
+          <li><a href="/research/bangudae-xr/">Bangudae XR</a></li>
+          <li><a href="/research/life-size-ar/">Life-size AR</a></li>
+          <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
+          <li><a href="/research/product-form/">Product form analysis</a></li>
+          <li><a href="/research/lemmy/">Robot motion</a></li>
+          <li><a href="/research/lemmy-framework/">MSc thesis framework</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Tools</h3><ul>
+          <li><a href="/tools/#lemmy-ar">Lemmy AR Experience</a></li>
+          <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
+          <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
+          <li><a href="/tools/#more">More tools</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Publications</h3><ul>
+          <li><a href="/publications/">Papers</a></li>
+          <li><a href="/publications/#thesis">MSc thesis</a></li>
+          <li><a href="/research/#experiments">Experiments</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Design</h3><ul>
+          <li><a href="/design/#lg">LG sensor module</a></li>
+          <li><a href="/design/#waveform">Waveform</a></li>
+          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>About</h3><ul>
+          <li><a href="/about/">Bio</a></li>
+          <li><a href="/about/#experience">Experience</a></li>
+          <li><a href="/about/#education">Education</a></li>
+          <li><a href="/about/#contact">Contact</a></li>
+        </ul></div>
+      </nav>
+      <div class="gfooter__legal">
+        <p>Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
+        <nav aria-label="Elsewhere">
+          <a href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
+          <a href="https://github.com/Danyals-code">GitHub</a>
+          <a href="https://www.behance.net/designedbydanyal">Behance</a>
+          <a href="mailto:danialsarfraz2000@gmail.com">Email</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

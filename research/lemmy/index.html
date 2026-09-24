@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>(function(d){d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
+  <title>Lemmy: How should a care robot move? · Danyal Sarfraz</title>
+  <meta name="description" content="A component-based method for designing the motion of Lemmy, a non-humanoid companion robot for older adults: a designer workshop, expert interviews, a preference study with 25 older adults and a validation study with 15.">
+  <link rel="canonical" href="https://danyals-code.github.io/research/lemmy/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How should a care robot move? · Danyal Sarfraz">
+  <meta property="og:description" content="Designing Lemmy’s motion with older adults, one component at a time.">
+  <meta property="og:image" content="https://danyals-code.github.io/assets/img/lemmy/persp-3.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="/assets/css/site.css?v=6">
+  <script src="/assets/js/site.js?v=6" defer></script>
+</head>
+<body class="has-lnav">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="gnav">
+    <nav class="gnav__inner" aria-label="Global">
+      <a class="gnav__logo" href="/">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
+        Danyal Sarfraz
+      </a>
+      <ul class="gnav__list" id="gnav-list">
+        <li><a href="/research/" aria-current="page">Research</a></li>
+        <li><a href="/tools/">Tools</a></li>
+        <li><a href="/publications/">Publications</a></li>
+        <li><a href="/design/">Design</a></li>
+        <li><a href="/about/">About</a></li>
+        <li class="gnav__only-menu"><a href="/about/#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn--sm gnav__cta" href="/about/#contact">Contact</a>
+      <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 18 18" aria-hidden="true"><path class="l1" d="M2 6h14"/><path class="l2" d="M2 12h14"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <nav class="lnav" aria-label="Case study">
+    <div class="lnav__inner">
+      <a class="lnav__title" href="#top">Lemmy</a>
+      <ul class="lnav__links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#findings">Findings</a></li>
+        <li><a href="#takeaways">Takeaways</a></li>
+      </ul>
+      <a class="btn btn--sm" href="https://doi.org/10.21606/iasdr.2025.1139">Read the paper</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="t-eyebrow hero__eyebrow">Case study · Human–robot interaction</p>
+        <h1 class="t-display hero__title">How should a care robot move?</h1>
+        <p class="t-lead hero__lead">Lemmy is a two-wheeled companion robot for older adults. It can’t gesture like we do, so how it moves carries much of what it communicates. My research asked how that motion should be designed, and who should decide.</p>
+      </div>
+      <figure class="fig fig--center" style="margin-top: clamp(28px,5vw,56px)">
+        <div class="container-wide">
+          <div class="fig__media fig__media--white" style="border-radius: var(--r-xl)">
+            <img src="/assets/img/lemmy/persp-3.jpg" width="1600" height="1600" alt="Lemmy in three-quarter view: a white, rounded body on two large wheels with a dark screen face" style="max-height: 640px; width: auto; margin-inline: auto" fetchpriority="high">
+          </div>
+        </div>
+        <figcaption class="fig__cap container">Lemmy is a multi-team UNIST project with Shinsung Delta Tech. Partner teams designed its body and hardware. My work was its motion.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Overview -->
+    <section class="section" id="overview" aria-labelledby="overview-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="overview-title">Overview</h2>
+        <div class="facts" data-reveal>
+          <div><span class="fact__label">Role</span><p class="fact__value">Designer and researcher, first author</p></div>
+          <div><span class="fact__label">Team</span><p class="fact__value">IID Lab, UNIST, with U. V. U. Ismatullaev and Prof. KwanMyung Kim</p></div>
+          <div><span class="fact__label">Timeline</span><p class="fact__value">2024 – 2025</p></div>
+          <div><span class="fact__label">Methods</span><p class="fact__value">Designer workshop, expert interviews, paired-comparison study, validation study, thematic analysis</p></div>
+          <div><span class="fact__label">Participants</span><p class="fact__value">6 designers in the workshop, 25 adults aged 65+ for preferences, 15 more for validation</p></div>
+          <div><span class="fact__label">Outputs</span><p class="fact__value"><a href="/publications/#ksds-2025">KSDS 2025</a>, <a href="https://doi.org/10.21606/iasdr.2025.1139">IASDR 2025</a>, and a CES 2025 Innovation Award with the Lemmy team</p></div>
+        </div>
+
+        <p class="t-two-tone" style="margin-top: clamp(64px,8vw,112px)" data-reveal>Co-designing with older adults matters, but long sessions are tiring and hard to repeat. Robot motion usually gets settled late, by intuition, once hardware exists. <strong>So I asked a different question: what if we learned people’s preferences once, for a few simple motion “ingredients,” and built every new action from them?</strong></p>
+      </div>
+    </section>
+
+    <!-- The gap -->
+    <section class="section section--alt" aria-labelledby="gap-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <h2 class="t-h2 shead__title" id="gap-title">Three gaps in how robot motion gets designed.</h2>
+        </div>
+        <ol class="steps steps--3">
+          <li class="step" data-reveal>
+            <span class="step__num">1</span>
+            <h3 class="step__title">Theory rarely becomes method.</h3>
+            <p class="step__text">There are good frameworks for describing expressive motion, but few step-by-step processes a designer can actually follow.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__num">2</span>
+            <h3 class="step__title">Co-design wears people out.</h3>
+            <p class="step__text">Cognitive load, fatigue and unfamiliar technology make intensive co-creation sessions with older adults hard to sustain.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__num">3</span>
+            <h3 class="step__title">No reusable building blocks.</h3>
+            <p class="step__text">There was no validated way to break an action into parts that can be tuned once and recombined into new actions.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Method -->
+    <section class="section" id="method" aria-labelledby="method-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+            <h2 class="t-h2 shead__title" id="method-title">Four steps, from ideas to evidence.</h2>
+            <p class="shead__text t-lead">Everything was tested on a high-fidelity digital twin: Lemmy’s CAD model, brought into Blender and animated only within the robot’s real limits. That let us iterate quickly, control every variable and run studies while the hardware was still being built.</p>
+          </div>
+        </div>
+
+        <div class="feature" data-reveal>
+          <figure class="fig feature__media">
+            <div class="fig__media fig__media--white"><img class="blend-white" src="/assets/img/lemmy/workshop-clusters.jpg" width="1800" height="865" alt="Three circles of colored sticky notes, one per team, each clustered a different way" loading="lazy"></div>
+            <figcaption class="fig__cap">Each team clustered its ideas differently: by interaction with the user, by context, and by type of task.</figcaption>
+          </figure>
+          <div class="feature__text">
+            <p class="t-eyebrow">Step 1 · Action catalogue</p>
+            <h3 class="t-h3">What should a companion robot do all day?</h3>
+            <p>I ran a participatory workshop with <strong>six designers in three teams</strong>. Working from everyday stories, such as an older adult preparing breakfast or looking for a misplaced item, they listed every moment where Lemmy could help, then clustered the ideas.</p>
+            <p>The teams produced <strong>more than 40 action ideas</strong>, which I consolidated into a catalogue of 22 actions: 14 functional and 8 expressive. Five came up in every team: approach the user, follow, return to dock, reposition and nod.</p>
+          </div>
+        </div>
+
+        <div class="feature feature--flip" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+          <figure class="fig feature__media">
+            <div class="fig__media fig__media--white"><img class="blend-white" src="/assets/img/lemmy/dof.jpg" width="1800" height="1350" alt="Diagram of Lemmy’s movements: pitching forward and back, yawing in place and driving forward or backward" loading="lazy"></div>
+            <figcaption class="fig__cap">Lemmy balances on two wheels. It can drive, turn in place and lean its body forward or back.</figcaption>
+          </figure>
+          <div class="feature__text">
+            <p class="t-eyebrow">Step 2 · Components</p>
+            <h3 class="t-h3">Find the knobs designers actually turn.</h3>
+            <p>Interviews with professional designers surfaced how they think about motion: the variables they adjust and how they break an action down. Four components were both easy to design with and easy for older adults to notice.</p>
+            <ul class="chips">
+              <li>Speed</li>
+              <li>Path</li>
+              <li>Posture</li>
+              <li>Turn type</li>
+            </ul>
+            <p>Thematic analysis also surfaced rhythm, repetition and acceleration, which I set aside to keep the tests simple.</p>
+          </div>
+        </div>
+
+        <div class="feature" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+          <figure class="fig feature__media">
+            <div class="fig__media fig__media--white"><img class="blend-white" src="/assets/img/lemmy/components-sketch.jpg" width="1200" height="1600" alt="Sketches of an older adult seated beside Lemmy as it follows straight and curved paths, holds different postures and turns sharply or smoothly" loading="lazy" style="max-height: 620px; width: auto; margin-inline: auto"></div>
+            <figcaption class="fig__cap">Each component had two variants, so every trial was a simple either-or choice.</figcaption>
+          </figure>
+          <div class="feature__text">
+            <p class="t-eyebrow">Step 3 · Preferences</p>
+            <h3 class="t-h3">Ask older adults, one component at a time.</h3>
+            <p><strong>Twenty-five adults aged 65 and over</strong>, all in Pakistan, watched pairs of 3D animations that differed in a single component and picked the one they preferred. Trial order was randomized.</p>
+            <ul class="prose" style="padding-left:1.2em">
+              <li><strong>Speed:</strong> normal (about 0.5–0.7 m/s, a small pet’s walking pace) or fast (over 0.7 m/s)</li>
+              <li><strong>Path:</strong> straight or gently curved</li>
+              <li><strong>Posture:</strong> upright and static, or leaning with the action</li>
+              <li><strong>Turn type:</strong> a sharp pivot or a smooth arc</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature feature--flip" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+          <figure class="fig feature__media">
+            <div class="fig__media"><img src="/assets/img/lemmy/survey-sheets.jpg" width="1200" height="1600" alt="Printed rating sheets for the study, spread out on a desk" loading="lazy" class="ratio-4-3"></div>
+            <figcaption class="fig__cap">Printed response sheets from the thesis studies.</figcaption>
+          </figure>
+          <div class="feature__text">
+            <p class="t-eyebrow">Step 4 · Validation</p>
+            <h3 class="t-h3">Do the preferences add up to better actions?</h3>
+            <p>I built three actions, approach the user, return to dock and a dance, in four variants each:</p>
+            <ul class="prose" style="padding-left:1.2em">
+              <li><strong>V1</strong> from the preferred components</li>
+              <li><strong>V2</strong> from the non-preferred ones</li>
+              <li><strong>V3 and V4</strong> from random mixes</li>
+            </ul>
+            <p>A <strong>new group of 15 older adults</strong>, who had never seen the component tests, rated each of the 12 videos out of 10 and explained their ratings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Findings -->
+    <section class="section section--alt" id="findings" aria-labelledby="findings-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <h2 class="t-h2 shead__title" id="findings-title">What we found.</h2>
+        </div>
+
+        <div class="chart" data-reveal>
+          <h3 class="chart__title">Component preferences of older adults</h3>
+          <p class="chart__sub">Share of 25 participants choosing each variant</p>
+          <ul class="bars">
+            <li class="bar"><span class="bar__label">Normal speed<small>vs fast</small></span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:80%"></span></span><span class="bar__value">80%</span></li>
+            <li class="bar"><span class="bar__label">Straight path<small>vs curved</small></span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:68%"></span></span><span class="bar__value">68%</span></li>
+            <li class="bar"><span class="bar__label">Dynamic posture<small>vs static</small></span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:64%"></span></span><span class="bar__value">64%</span></li>
+            <li class="bar"><span class="bar__label">Smooth arc turn<small>vs sharp pivot</small></span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:64%"></span></span><span class="bar__value">64%</span></li>
+          </ul>
+          <p class="t-small t-muted" style="margin-top:22px">Posture, path and turn-type preferences did not reach statistical significance in this sample, so treat them as directional. The result was a default profile for Lemmy: moderate pace, straight paths, smooth turns and a body that leans into what it’s doing.</p>
+        </div>
+
+        <div class="chart" style="margin-top:20px" data-reveal>
+          <h3 class="chart__title">Ratings of complete actions</h3>
+          <p class="chart__sub">Mean score out of 10 from 15 new participants</p>
+          <div class="legend" aria-hidden="true">
+            <span><i style="background:var(--accent)"></i>V1 preferred</span>
+            <span><i style="background:var(--fg-3)"></i>V2 non-preferred</span>
+            <span><i style="background:var(--accent-2)"></i>V3 random</span>
+            <span><i style="background:var(--line)"></i>V4 random</span>
+          </div>
+          <div class="gchart bars">
+            <div class="gchart__row">
+              <span class="gchart__name">Approach user</span>
+              <div class="gchart__bars" aria-label="Approach user: V1 7.53, V2 5.67, V3 6.60, V4 5.67">
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:75.3%"></span></span><b>7.5</b></div>
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill bar__fill--muted" style="--v:56.7%"></span></span><b>5.7</b></div>
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill bar__fill--blue" style="--v:66%"></span></span><b>6.6</b></div>
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill" style="--v:56.7%; background:var(--line)"></span></span><b>5.7</b></div>
+              </div>
+            </div>
+            <div class="gchart__row">
+              <span class="gchart__name">Return to dock</span>
+              <div class="gchart__bars" aria-label="Return to dock: V1 8.47, V2 5.40, V3 5.67, V4 6.67">
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:84.7%"></span></span><b>8.5</b></div>
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill bar__fill--muted" style="--v:54%"></span></span><b>5.4</b></div>
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill bar__fill--blue" style="--v:56.7%"></span></span><b>5.7</b></div>
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill" style="--v:66.7%; background:var(--line)"></span></span><b>6.7</b></div>
+              </div>
+            </div>
+            <div class="gchart__row">
+              <span class="gchart__name">Dancing</span>
+              <div class="gchart__bars" aria-label="Dancing: V1 7.00, V2 4.93, V3 6.73, V4 6.27">
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:70%"></span></span><b>7.0</b></div>
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill bar__fill--muted" style="--v:49.3%"></span></span><b>4.9</b></div>
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill bar__fill--blue" style="--v:67.3%"></span></span><b>6.7</b></div>
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill" style="--v:62.7%; background:var(--line)"></span></span><b>6.3</b></div>
+              </div>
+            </div>
+            <div class="gchart__row">
+              <span class="gchart__name">All actions</span>
+              <div class="gchart__bars" aria-label="All actions: V1 7.67, V2 5.33, V3 6.33, V4 6.20">
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:76.7%"></span></span><b>7.7</b></div>
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill bar__fill--muted" style="--v:53.3%"></span></span><b>5.3</b></div>
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill bar__fill--blue" style="--v:63.3%"></span></span><b>6.3</b></div>
+                <div class="gchart__bar"><span class="bar__track"><span class="bar__fill" style="--v:62%; background:var(--line)"></span></span><b>6.2</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="findings" style="margin-top:20px">
+          <div class="finding" data-reveal>
+            <span class="finding__num t-grad">7.7 vs 5.3</span>
+            <p class="finding__text"><strong>Preferred components won overall.</strong> Across all actions, V1 scored highest with the tightest agreement (95% CI 7.24–8.10). Non-preferred assemblies scored lowest every time.</p>
+          </div>
+          <div class="finding" data-reveal>
+            <span class="finding__num">8.5</span>
+            <p class="finding__text"><strong>Legibility matters most when the goal is obvious.</strong> “Return to dock” built from preferred components scored highest (SD 0.88). Its confidence interval overlapped no other variant.</p>
+          </div>
+          <div class="finding" data-reveal>
+            <span class="finding__num">7.0 vs 6.7</span>
+            <p class="finding__text"><strong>Expressive actions tolerate more.</strong> For the dance, a random mix came close to the preferred version, and opinions were more divided.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Takeaways -->
+    <section class="section" id="takeaways" aria-labelledby="takeaways-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <h2 class="t-h2 shead__title" id="takeaways-title">What designers can take from this.</h2>
+        </div>
+        <div class="bento bento--thirds">
+          <div class="tile span-2" data-reveal>
+            <div class="tile__body">
+              <h3 class="tile__title tile__title--sm">Learn preferences once. Reuse them everywhere.</h3>
+              <p class="tile__text">A small library of preferred component values acts as a design prior. New actions can be composed from it, and only deliberate departures need another test. That saves participants’ time, which is precious in eldercare.</p>
+            </div>
+          </div>
+          <div class="tile span-2" data-reveal>
+            <div class="tile__body">
+              <h3 class="tile__title tile__title--sm">Predictable for tasks, freer for expression.</h3>
+              <p class="tile__text">Straight paths and smooth turns matter most for task actions, where people need to read the robot’s intent. Expressive actions like dancing can relax those rules without hurting acceptance.</p>
+            </div>
+          </div>
+          <div class="tile span-2" data-reveal>
+            <div class="tile__body">
+              <h3 class="tile__title tile__title--sm">Test before the hardware exists.</h3>
+              <p class="tile__text">Animation bounded by the real robot’s limits made it possible to study motion while the physical prototype was still in development, without tying design decisions to what the hardware could do that week.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout-note" style="margin-top: clamp(40px,5vw,64px)" data-reveal>
+          <p><strong>Limitations.</strong> Each component had only two variants, to keep the tests easy, so fine distinctions weren’t captured. Animation can’t reproduce live timing, personal space or real reactions. The samples were small and from a single country, and the next step is embodied testing. Two of these limits shaped what I built next: a tool that keeps animations physically possible, and AR tests that put the robot at life size in real rooms.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next -->
+    <section class="section section--alt" aria-labelledby="next-title">
+      <div class="container">
+        <a class="tile tile--white" href="/research/lemmy-framework/" data-reveal>
+          <div class="feature" style="padding: clamp(26px,3.4vw,44px)">
+            <div class="feature__text">
+              <p class="t-eyebrow">Next case study</p>
+              <h2 class="t-h2" id="next-title">From animation, to engineering, to your living room.</h2>
+              <p>How my MSc thesis turned this method into a framework, with a Blender add-on for engineers and an AR app for life-size testing.</p>
+              <span class="link-more">Continue</span>
+            </div>
+            <div class="feature__media fig__media"><img src="/assets/img/app/in-room.jpg" width="2400" height="729" alt="An iPhone on a tripod showing Lemmy in AR in a real room" loading="lazy" class="ratio-16-10"></div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gfooter">
+    <div class="gfooter__inner">
+      <section class="footnotes" aria-label="References">
+        <ol>
+          <li>Sarfraz, D., Ismatullaev, U. V. U., &amp; Kim, K. (2025). A Component-Based Approach for Developing Actions in Non-Humanoid Elderly Care Robots. <i>IASDR 2025</i>, Taipei. <a href="https://doi.org/10.21606/iasdr.2025.1139">doi:10.21606/iasdr.2025.1139</a></li>
+          <li>Sarfraz, D., Ismatullaev, U., &amp; Kim, K. (2025). Developing a Hierarchically Structured Action Catalogue for an Elderly Care Robot through Participatory Design. <i>Proceedings of the KSDS 2025 International Conference</i>, 166–167.</li>
+          <li>Sarfraz, D. (2026). <i>A Framework for Designing Contextually Appropriate Physical Actions in Non-Humanoid Robots</i> [Master’s thesis, UNIST].</li>
+          <li>Supported by the Ministry of Trade, Industry and Energy (MOTIE) and the Korea Evaluation Institute of Industrial Technology (KEIT), grant 20015056.</li>
+        </ol>
+      </section>
+      <nav class="gfooter__dir" aria-label="Site directory">
+        <div class="gfooter__col"><h3>Research</h3><ul>
+          <li><a href="/research/bangudae-xr/">Bangudae XR</a></li>
+          <li><a href="/research/life-size-ar/">Life-size AR</a></li>
+          <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
+          <li><a href="/research/product-form/">Product form analysis</a></li>
+          <li><a href="/research/lemmy/">Robot motion</a></li>
+          <li><a href="/research/lemmy-framework/">MSc thesis framework</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Tools</h3><ul>
+          <li><a href="/tools/#lemmy-ar">Lemmy AR Experience</a></li>
+          <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
+          <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
+          <li><a href="/tools/#more">More tools</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Publications</h3><ul>
+          <li><a href="/publications/">Papers</a></li>
+          <li><a href="/publications/#thesis">MSc thesis</a></li>
+          <li><a href="/research/#experiments">Experiments</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Design</h3><ul>
+          <li><a href="/design/#lg">LG sensor module</a></li>
+          <li><a href="/design/#waveform">Waveform</a></li>
+          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>About</h3><ul>
+          <li><a href="/about/">Bio</a></li>
+          <li><a href="/about/#experience">Experience</a></li>
+          <li><a href="/about/#education">Education</a></li>
+          <li><a href="/about/#contact">Contact</a></li>
+        </ul></div>
+      </nav>
+      <div class="gfooter__legal">
+        <p>Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
+        <nav aria-label="Elsewhere">
+          <a href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
+          <a href="https://github.com/Danyals-code">GitHub</a>
+          <a href="https://www.behance.net/designedbydanyal">Behance</a>
+          <a href="mailto:danialsarfraz2000@gmail.com">Email</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

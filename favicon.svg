@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .bg { fill: #1d1d1f; }
+    .mark { fill: none; stroke: #f5f5f7; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  </style>
+  <rect class="bg" width="32" height="32" rx="8"/>
+  <g class="mark">
+    <path d="M16 6.5 24.2 11.25v9.5L16 25.5l-8.2-4.75v-9.5z"/>
+    <path d="M7.8 11.25 16 16l8.2-4.75M16 16v9.5"/>
+  </g>
+</svg>
