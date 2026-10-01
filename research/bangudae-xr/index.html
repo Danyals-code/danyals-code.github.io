@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>(function(d){d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
-  <title>Bangudae XR: Bringing prehistoric petroglyphs within reach · Danyal Sarfraz</title>
-  <meta name="description" content="A Meta Quest 3 mixed-reality app for the heritage of Ulsan’s Daegokcheon Stream, built with photogrammetry, Gaussian splatting and Unreal Engine 5. First place, 3rd Korea Heritage Digital Contents Contest (2024).">
+  <script>(function(d){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
+  <title>Bangudae XR: Bringing the Bangudae petroglyphs indoors through mixed reality · Danyal Sarfraz</title>
+  <meta name="description" content="A Meta Quest 3 mixed-reality application presenting the heritage of Ulsan’s Daegokcheon Stream, built with photogrammetry, Gaussian splatting and Unreal Engine 5. First place, 3rd Korea Heritage Digital Contents Contest (2024).">
   <link rel="canonical" href="https://danyals-code.github.io/research/bangudae-xr/">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Bringing prehistoric petroglyphs within reach · Danyal Sarfraz">
-  <meta property="og:description" content="A first-place mixed-reality app for Korea’s Bangudae and Cheonjeon-ri petroglyphs.">
+  <meta property="og:title" content="Bringing the Bangudae petroglyphs indoors through mixed reality · Danyal Sarfraz">
+  <meta property="og:description" content="A Meta Quest 3 mixed-reality application for Korea’s Bangudae and Cheonjeon-ri petroglyphs. First place, 3rd Korea Heritage Digital Contents Contest (2024).">
   <meta property="og:image" content="https://danyals-code.github.io/assets/img/bangudae/petroglyphs.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=6">
-  <script src="/assets/js/site.js?v=6" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=11">
+  <script src="/assets/js/site.js?v=12" defer></script>
 </head>
 <body class="has-lnav">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -37,14 +37,22 @@
         Danyal Sarfraz
       </a>
       <ul class="gnav__list" id="gnav-list">
-        <li><a href="/research/" aria-current="page">Research</a></li>
-        <li><a href="/tools/">Tools</a></li>
-        <li><a href="/publications/">Publications</a></li>
         <li><a href="/design/">Design</a></li>
+        <li><a href="/research/" aria-current="page">Research</a></li>
+        <li><a href="/tools/">Artifacts</a></li>
         <li><a href="/about/">About</a></li>
-        <li class="gnav__only-menu"><a href="/about/#contact">Contact</a></li>
+        <li><a href="/about/#contact">Contact</a></li>
       </ul>
-      <a class="btn btn--sm gnav__cta" href="/about/#contact">Contact</a>
+      <div class="gnav__tools">
+        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search (⌘K)">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-theme-toggle aria-label="Theme: automatic (system)" title="Theme: automatic (system)">
+          <svg class="theme-icon theme-icon--auto" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.6"/><path d="M8 2.4v11.2a5.6 5.6 0 0 0 0-11.2z" fill="currentColor" stroke="none"/></svg>
+          <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
+          <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
+        </button>
+      </div>
       <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
         <svg viewBox="0 0 18 18" aria-hidden="true"><path class="l1" d="M2 6h14"/><path class="l2" d="M2 12h14"/></svg>
       </button>
@@ -60,7 +68,7 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#outcome">Outcome</a></li>
       </ul>
-      <a class="btn btn--sm" href="/about/#contact">Get in touch</a>
+      <a class="btn btn--sm" href="/about/#contact">Contact</a>
     </div>
   </nav>
 
@@ -68,8 +76,8 @@
     <section class="hero" id="top">
       <div class="container">
         <p class="t-eyebrow hero__eyebrow">Case study · Mixed reality · First place</p>
-        <h1 class="t-display hero__title hero__title--wide">Bringing prehistoric petroglyphs within reach.</h1>
-        <p class="t-lead hero__lead">The Bangudae and Cheonjeon-ri petroglyphs line a cliff along Ulsan’s Daegokcheon Stream. I built a Meta Quest 3 mixed-reality app that brings the stream’s heritage, from carvings to dinosaur footprints, into any room.</p>
+        <h1 class="t-display hero__title hero__title--wide">Bringing the Bangudae petroglyphs indoors through mixed reality</h1>
+        <p class="t-lead hero__lead">The Bangudae and Cheonjeon-ri petroglyphs line a cliff along Ulsan’s Daegokcheon Stream. Bangudae XR is a Meta Quest 3 mixed-reality application that brings the stream’s heritage, from the carvings to dinosaur footprints, into any indoor space.</p>
         <a class="award" href="#outcome">
           <svg class="award__laurel" aria-hidden="true"><use href="#laurel"/></svg>
           <span class="award__text"><span class="award__title">First place</span><span class="award__sub">3rd Korea Heritage Digital Contents Contest, 2024</span></span>
@@ -102,7 +110,7 @@
           <div><span class="fact__label">Organizers</span><p class="fact__value">Korea Heritage Service and Korea National University of Heritage</p></div>
           <div><span class="fact__label">Category</span><p class="fact__value">Development of digital heritage content through XR</p></div>
         </div>
-        <p class="t-two-tone" style="margin-top: clamp(64px,8vw,112px)" data-reveal>At the site, visitors look at the carvings from across the stream, often through a viewing scope. <strong>The heritage is right there, and still out of reach.</strong> My question was simple: <strong>what if you could hold it?</strong></p>
+        <p class="t-two-tone" style="margin-top: clamp(64px,8vw,112px)" data-reveal>On site, visitors view the carvings from across the stream, often through a viewing scope. <strong>The heritage is visible but physically inaccessible.</strong> The project uses mixed reality to <strong>bring it within arm’s reach.</strong></p>
       </div>
     </section>
 
@@ -111,8 +119,8 @@
       <div class="container">
         <div class="shead" data-reveal>
           <div>
-            <h2 class="t-h2 shead__title" id="site-title">Fieldwork at the stream.</h2>
-            <p class="shead__text t-lead">I documented the landscape, the rock surfaces and the way visitors see the site today.</p>
+            <h2 class="t-h2 shead__title" id="site-title">Field documentation of the Daegokcheon Stream</h2>
+            <p class="shead__text t-lead">Fieldwork documented the landscape, the rock surfaces and how visitors currently view the site.</p>
           </div>
         </div>
         <div class="fig-row fig-row--3" data-reveal>
@@ -137,8 +145,8 @@
       <div class="container">
         <div class="shead" data-reveal>
           <div>
-            <h2 class="t-h2 shead__title" id="capture-title">From photographs to 3D.</h2>
-            <p class="shead__text t-lead">Photogrammetry turned rock surfaces into textured meshes. For buildings and larger structures, I used AI-based Gaussian splatting.</p>
+            <h2 class="t-h2 shead__title" id="capture-title">3D capture with photogrammetry and Gaussian splatting</h2>
+            <p class="shead__text t-lead">Photogrammetry converted rock surfaces into textured meshes; AI-based Gaussian splatting captured buildings and larger structures.</p>
           </div>
         </div>
         <figure class="fig" data-reveal>
@@ -163,8 +171,8 @@
       <div class="container">
         <div class="shead" data-reveal>
           <div>
-            <h2 class="t-h2 shead__title" id="exp-title">The stream’s history, in your room.</h2>
-            <p class="shead__text t-lead">Passthrough keeps visitors grounded in their own space while the artifacts float in front of them.</p>
+            <h2 class="t-h2 shead__title" id="exp-title">Passthrough mixed reality for indoor heritage viewing</h2>
+            <p class="shead__text t-lead">Passthrough keeps users anchored in their physical surroundings while the scanned artifacts are presented in front of them.</p>
           </div>
         </div>
       </div>
@@ -184,16 +192,16 @@
       <div class="container" style="margin-top: clamp(48px,6vw,80px)">
         <div class="principles" data-reveal>
           <div>
-            <h3>Stay grounded.</h3>
-            <p>Passthrough keeps visitors aware of their own room while the artifacts float in front of them.</p>
+            <h3>Spatial grounding through passthrough</h3>
+            <p>Passthrough maintains awareness of the physical room while the artifacts are displayed in front of the user.</p>
           </div>
           <div>
-            <h3>Walk through time.</h3>
-            <p>Five scanned artifacts run in order, from Mesozoic dinosaur footprints to the Joseon Dynasty, each with its title, era and story.</p>
+            <h3>Chronological sequence</h3>
+            <p>Five scanned artifacts are presented in chronological order, from Mesozoic dinosaur footprints to the Joseon Dynasty, each with its title, era and description.</p>
           </div>
           <div>
-            <h3>Keep it simple.</h3>
-            <p>Just Previous, Home and Next, so the experience stays stable, easy to learn and easy to test.</p>
+            <h3>Minimal navigation</h3>
+            <p>Navigation is limited to Previous, Home and Next, keeping the experience stable, easy to learn and easy to test.</p>
           </div>
         </div>
       </div>
@@ -204,8 +212,8 @@
           </figure>
           <div class="feature__text">
             <p class="t-eyebrow">Main menu</p>
-            <h3 class="t-h3">One menu, four ways in.</h3>
-            <p>3D artifacts, 3D environments, panoramas and a photo gallery, floating over the room. It is a working layout, built so new sections and new scans can be added as they become available.</p>
+            <h3 class="t-h3">A main menu with four content types</h3>
+            <p>3D artifacts, 3D environments, panoramas and a photo gallery are accessed from a menu displayed over the room. The layout is extensible, so new sections and scans can be added as they become available.</p>
           </div>
         </div>
         <div class="feature feature--flip" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
@@ -214,8 +222,8 @@
           </figure>
           <div class="feature__text">
             <p class="t-eyebrow">Design decisions</p>
-            <h3 class="t-h3">Simple on purpose.</h3>
-            <p>The interface stays deliberately minimal, just Previous, Home and Next, so the experience stays stable and easy to test. Panoramas and a photo gallery let prospective visitors get a feel for the site before they go.</p>
+            <h3 class="t-h3">Deliberately minimal interaction</h3>
+            <p>The interface is limited to Previous, Home and Next to keep the experience stable and easy to test. Panoramas and a photo gallery let prospective visitors preview the site before visiting.</p>
           </div>
         </div>
       </div>
@@ -227,12 +235,12 @@
         <div class="feature" data-reveal>
           <div class="feature__text">
             <p class="t-eyebrow">Outcome</p>
-            <h2 class="t-h2" id="outcome-title">First place.</h2>
-            <p>The project won first place at the <strong>3rd Korea Heritage Digital Contents Contest</strong> in 2024, organized by the Korea Heritage Service and the Korea National University of Heritage. Entries went through a written preliminary round and an on-site final presentation.</p>
+            <h2 class="t-h2" id="outcome-title">First place, 3rd Korea Heritage Digital Contents Contest</h2>
+            <p>The project received first place at the <strong>3rd Korea Heritage Digital Contents Contest</strong> in 2024, organized by the Korea Heritage Service and the Korea National University of Heritage. Entries were assessed through a written preliminary round and an on-site final presentation.</p>
           </div>
           <figure class="fig feature__media">
             <div class="fig__media"><img src="/assets/img/bangudae/stage.jpg" width="2000" height="1126" alt="Danyal presenting at a lectern on stage in front of a large screen" loading="lazy"></div>
-            <figcaption class="fig__cap">Presenting at the final round.</figcaption>
+            <figcaption class="fig__cap">Final-round presentation.</figcaption>
           </figure>
         </div>
       </div>
@@ -244,9 +252,9 @@
         <a class="tile tile--white" href="/research/life-size-ar/" data-reveal>
           <div class="tile__body">
             <p class="t-eyebrow">Next case study</p>
-            <h2 class="t-h2" id="next-title">Can AR stand in for a prototype?</h2>
-            <p class="tile__text">Life-size AR on iPhone and Apple Vision Pro, tested in people’s own homes.</p>
-            <span class="link-more">Continue</span>
+            <h2 class="t-h2" id="next-title">Evaluating life-size AR as a stand-in for physical prototypes</h2>
+            <p class="tile__text">Life-size AR on iPhone and Apple Vision Pro, evaluated in participants’ own homes.</p>
+            <span class="link-more">Read the case study</span>
           </div>
         </a>
       </div>
@@ -256,6 +264,11 @@
   <footer class="gfooter">
     <div class="gfooter__inner">
       <nav class="gfooter__dir" aria-label="Site directory">
+        <div class="gfooter__col"><h3>Design</h3><ul>
+          <li><a href="/design/#lg">LG sensor module</a></li>
+          <li><a href="/design/#waveform">Waveform</a></li>
+          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+        </ul></div>
         <div class="gfooter__col"><h3>Research</h3><ul>
           <li><a href="/research/bangudae-xr/">Bangudae XR</a></li>
           <li><a href="/research/life-size-ar/">Life-size AR</a></li>
@@ -264,21 +277,17 @@
           <li><a href="/research/lemmy/">Robot motion</a></li>
           <li><a href="/research/lemmy-framework/">MSc thesis framework</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>Tools</h3><ul>
+        <div class="gfooter__col"><h3>Publications</h3><ul>
+          <li><a href="/research/#publications">Papers</a></li>
+          <li><a href="/research/#thesis">MSc thesis</a></li>
+          <li><a href="/research/#talks">Talks</a></li>
+          <li><a href="/research/#experiments">Experiments</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Artifacts</h3><ul>
           <li><a href="/tools/#lemmy-ar">Lemmy AR Experience</a></li>
           <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
           <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
-          <li><a href="/tools/#more">More tools</a></li>
-        </ul></div>
-        <div class="gfooter__col"><h3>Publications</h3><ul>
-          <li><a href="/publications/">Papers</a></li>
-          <li><a href="/publications/#thesis">MSc thesis</a></li>
-          <li><a href="/research/#experiments">Experiments</a></li>
-        </ul></div>
-        <div class="gfooter__col"><h3>Design</h3><ul>
-          <li><a href="/design/#lg">LG sensor module</a></li>
-          <li><a href="/design/#waveform">Waveform</a></li>
-          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+          <li><a href="/tools/#more">More artifacts</a></li>
         </ul></div>
         <div class="gfooter__col"><h3>About</h3><ul>
           <li><a href="/about/">Bio</a></li>

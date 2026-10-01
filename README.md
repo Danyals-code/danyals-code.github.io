@@ -16,8 +16,8 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies.
 /research/product-form/        Case study: multi-view product form analysis (KSDS 2026)
 /research/lemmy/               Case study: component-based robot motion (IASDR 2025, KSDS 2025)
 /research/lemmy-framework/     Case study: MSc thesis framework (Blender add-on, AR app)
-/tools/                        Lemmy AR Experience, AR/VR UI Designer, True RoboAnimator, experiments
-/publications/                 Papers with summaries, DOIs and BibTeX; thesis; talks
+/tools/                        Artifacts: Lemmy AR Experience, AR/VR UI Designer, True RoboAnimator, experiments
+/publications/                 Redirects to /research/#publications
 /design/                       Industrial design and 3D work (dark page)
 /about/                        Bio, timeline, experience, education, skills, contact
 /404.html                      Not-found page

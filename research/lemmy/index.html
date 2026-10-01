@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>(function(d){d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
-  <title>Lemmy: How should a care robot move? · Danyal Sarfraz</title>
+  <script>(function(d){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
+  <title>Lemmy: Component-based motion design for a care robot · Danyal Sarfraz</title>
   <meta name="description" content="A component-based method for designing the motion of Lemmy, a non-humanoid companion robot for older adults: a designer workshop, expert interviews, a preference study with 25 older adults and a validation study with 15.">
   <link rel="canonical" href="https://danyals-code.github.io/research/lemmy/">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="How should a care robot move? · Danyal Sarfraz">
-  <meta property="og:description" content="Designing Lemmy’s motion with older adults, one component at a time.">
+  <meta property="og:title" content="Component-based motion design for a care robot · Danyal Sarfraz">
+  <meta property="og:description" content="A component-based method for designing Lemmy’s motion, developed and evaluated with older adults.">
   <meta property="og:image" content="https://danyals-code.github.io/assets/img/lemmy/persp-3.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=6">
-  <script src="/assets/js/site.js?v=6" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=11">
+  <script src="/assets/js/site.js?v=12" defer></script>
 </head>
 <body class="has-lnav">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -33,14 +33,22 @@
         Danyal Sarfraz
       </a>
       <ul class="gnav__list" id="gnav-list">
-        <li><a href="/research/" aria-current="page">Research</a></li>
-        <li><a href="/tools/">Tools</a></li>
-        <li><a href="/publications/">Publications</a></li>
         <li><a href="/design/">Design</a></li>
+        <li><a href="/research/" aria-current="page">Research</a></li>
+        <li><a href="/tools/">Artifacts</a></li>
         <li><a href="/about/">About</a></li>
-        <li class="gnav__only-menu"><a href="/about/#contact">Contact</a></li>
+        <li><a href="/about/#contact">Contact</a></li>
       </ul>
-      <a class="btn btn--sm gnav__cta" href="/about/#contact">Contact</a>
+      <div class="gnav__tools">
+        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search (⌘K)">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-theme-toggle aria-label="Theme: automatic (system)" title="Theme: automatic (system)">
+          <svg class="theme-icon theme-icon--auto" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.6"/><path d="M8 2.4v11.2a5.6 5.6 0 0 0 0-11.2z" fill="currentColor" stroke="none"/></svg>
+          <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
+          <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
+        </button>
+      </div>
       <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
         <svg viewBox="0 0 18 18" aria-hidden="true"><path class="l1" d="M2 6h14"/><path class="l2" d="M2 12h14"/></svg>
       </button>
@@ -64,8 +72,8 @@
     <section class="hero" id="top">
       <div class="container">
         <p class="t-eyebrow hero__eyebrow">Case study · Human–robot interaction</p>
-        <h1 class="t-display hero__title">How should a care robot move?</h1>
-        <p class="t-lead hero__lead">Lemmy is a two-wheeled companion robot for older adults. It can’t gesture like we do, so how it moves carries much of what it communicates. My research asked how that motion should be designed, and who should decide.</p>
+        <h1 class="t-display hero__title">Component-based motion design for a care robot</h1>
+        <p class="t-lead hero__lead">Lemmy is a two-wheeled companion robot for older adults. Without human-like gestures, its motion carries much of what it communicates. This research asks how that motion should be designed, and who should inform it.</p>
       </div>
       <figure class="fig fig--center" style="margin-top: clamp(28px,5vw,56px)">
         <div class="container-wide">
@@ -73,7 +81,7 @@
             <img src="/assets/img/lemmy/persp-3.jpg" width="1600" height="1600" alt="Lemmy in three-quarter view: a white, rounded body on two large wheels with a dark screen face" style="max-height: 640px; width: auto; margin-inline: auto" fetchpriority="high">
           </div>
         </div>
-        <figcaption class="fig__cap container">Lemmy is a multi-team UNIST project with Shinsung Delta Tech. Partner teams designed its body and hardware. My work was its motion.</figcaption>
+        <figcaption class="fig__cap container">Lemmy is a multi-team UNIST project with Shinsung Delta Tech. Partner teams designed the body and hardware; my contribution was its motion.</figcaption>
       </figure>
     </section>
 
@@ -87,10 +95,10 @@
           <div><span class="fact__label">Timeline</span><p class="fact__value">2024 – 2025</p></div>
           <div><span class="fact__label">Methods</span><p class="fact__value">Designer workshop, expert interviews, paired-comparison study, validation study, thematic analysis</p></div>
           <div><span class="fact__label">Participants</span><p class="fact__value">6 designers in the workshop, 25 adults aged 65+ for preferences, 15 more for validation</p></div>
-          <div><span class="fact__label">Outputs</span><p class="fact__value"><a href="/publications/#ksds-2025">KSDS 2025</a>, <a href="https://doi.org/10.21606/iasdr.2025.1139">IASDR 2025</a>, and a CES 2025 Innovation Award with the Lemmy team</p></div>
+          <div><span class="fact__label">Outputs</span><p class="fact__value"><a href="/research/#ksds-2025">KSDS 2025</a>, <a href="https://doi.org/10.21606/iasdr.2025.1139">IASDR 2025</a>, and a CES 2025 Innovation Award with the Lemmy team</p></div>
         </div>
 
-        <p class="t-two-tone" style="margin-top: clamp(64px,8vw,112px)" data-reveal>Co-designing with older adults matters, but long sessions are tiring and hard to repeat. Robot motion usually gets settled late, by intuition, once hardware exists. <strong>So I asked a different question: what if we learned people’s preferences once, for a few simple motion “ingredients,” and built every new action from them?</strong></p>
+        <p class="t-two-tone" style="margin-top: clamp(64px,8vw,112px)" data-reveal>Co-design with older adults is valuable, but long sessions are tiring and difficult to repeat. Robot motion is typically settled late, by intuition, once hardware exists. <strong>This work instead elicits preferences once for a small set of motion components, and composes new actions from them.</strong></p>
       </div>
     </section>
 
@@ -98,23 +106,23 @@
     <section class="section section--alt" aria-labelledby="gap-title">
       <div class="container">
         <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="gap-title">Three gaps in how robot motion gets designed.</h2>
+          <h2 class="t-h2 shead__title" id="gap-title">Three gaps in robot motion design practice</h2>
         </div>
         <ol class="steps steps--3">
           <li class="step" data-reveal>
             <span class="step__num">1</span>
-            <h3 class="step__title">Theory rarely becomes method.</h3>
-            <p class="step__text">There are good frameworks for describing expressive motion, but few step-by-step processes a designer can actually follow.</p>
+            <h3 class="step__title">Theory rarely becomes method</h3>
+            <p class="step__text">Established frameworks describe expressive motion, but few provide step-by-step processes a designer can follow.</p>
           </li>
           <li class="step" data-reveal>
             <span class="step__num">2</span>
-            <h3 class="step__title">Co-design wears people out.</h3>
-            <p class="step__text">Cognitive load, fatigue and unfamiliar technology make intensive co-creation sessions with older adults hard to sustain.</p>
+            <h3 class="step__title">Intensive co-design burdens older participants</h3>
+            <p class="step__text">Cognitive load, fatigue and unfamiliar technology make intensive co-creation sessions with older adults difficult to sustain.</p>
           </li>
           <li class="step" data-reveal>
             <span class="step__num">3</span>
-            <h3 class="step__title">No reusable building blocks.</h3>
-            <p class="step__text">There was no validated way to break an action into parts that can be tuned once and recombined into new actions.</p>
+            <h3 class="step__title">No validated reusable components</h3>
+            <p class="step__text">No validated method existed for decomposing an action into parts that can be tuned once and recombined into new actions.</p>
           </li>
         </ol>
       </div>
@@ -125,8 +133,8 @@
       <div class="container">
         <div class="shead" data-reveal>
           <div>
-            <h2 class="t-h2 shead__title" id="method-title">Four steps, from ideas to evidence.</h2>
-            <p class="shead__text t-lead">Everything was tested on a high-fidelity digital twin: Lemmy’s CAD model, brought into Blender and animated only within the robot’s real limits. That let us iterate quickly, control every variable and run studies while the hardware was still being built.</p>
+            <h2 class="t-h2 shead__title" id="method-title">A four-stage method from action ideation to validation</h2>
+            <p class="shead__text t-lead">All studies used a high-fidelity digital twin: Lemmy’s CAD model, imported into Blender and animated strictly within the robot’s physical limits. This enabled rapid iteration, full control of variables, and studies conducted while the hardware was still in development.</p>
           </div>
         </div>
 
@@ -137,9 +145,9 @@
           </figure>
           <div class="feature__text">
             <p class="t-eyebrow">Step 1 · Action catalogue</p>
-            <h3 class="t-h3">What should a companion robot do all day?</h3>
-            <p>I ran a participatory workshop with <strong>six designers in three teams</strong>. Working from everyday stories, such as an older adult preparing breakfast or looking for a misplaced item, they listed every moment where Lemmy could help, then clustered the ideas.</p>
-            <p>The teams produced <strong>more than 40 action ideas</strong>, which I consolidated into a catalogue of 22 actions: 14 functional and 8 expressive. Five came up in every team: approach the user, follow, return to dock, reposition and nod.</p>
+            <h3 class="t-h3">A 22-action catalogue from a participatory workshop</h3>
+            <p>I ran a participatory workshop with <strong>six designers in three teams</strong>. Working from everyday scenarios, such as an older adult preparing breakfast or searching for a misplaced item, the teams listed each moment where Lemmy could assist, then clustered the ideas.</p>
+            <p>The teams generated <strong>more than 40 action ideas</strong>, consolidated into a catalogue of 22 actions: 14 functional and 8 expressive. Five appeared in every team: approach the user, follow, return to dock, reposition and nod.</p>
           </div>
         </div>
 
@@ -150,27 +158,27 @@
           </figure>
           <div class="feature__text">
             <p class="t-eyebrow">Step 2 · Components</p>
-            <h3 class="t-h3">Find the knobs designers actually turn.</h3>
-            <p>Interviews with professional designers surfaced how they think about motion: the variables they adjust and how they break an action down. Four components were both easy to design with and easy for older adults to notice.</p>
+            <h3 class="t-h3">Four motion components identified through expert interviews</h3>
+            <p>Interviews with professional designers revealed how they reason about motion: the variables they adjust and how they decompose an action. Four components were both practical to design with and readily perceived by older adults.</p>
             <ul class="chips">
               <li>Speed</li>
               <li>Path</li>
               <li>Posture</li>
               <li>Turn type</li>
             </ul>
-            <p>Thematic analysis also surfaced rhythm, repetition and acceleration, which I set aside to keep the tests simple.</p>
+            <p>Thematic analysis also identified rhythm, repetition and acceleration, which were set aside to keep the tests simple.</p>
           </div>
         </div>
 
         <div class="feature" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
           <figure class="fig feature__media">
             <div class="fig__media fig__media--white"><img class="blend-white" src="/assets/img/lemmy/components-sketch.jpg" width="1200" height="1600" alt="Sketches of an older adult seated beside Lemmy as it follows straight and curved paths, holds different postures and turns sharply or smoothly" loading="lazy" style="max-height: 620px; width: auto; margin-inline: auto"></div>
-            <figcaption class="fig__cap">Each component had two variants, so every trial was a simple either-or choice.</figcaption>
+            <figcaption class="fig__cap">Each component had two variants, so each trial was a binary choice.</figcaption>
           </figure>
           <div class="feature__text">
             <p class="t-eyebrow">Step 3 · Preferences</p>
-            <h3 class="t-h3">Ask older adults, one component at a time.</h3>
-            <p><strong>Twenty-five adults aged 65 and over</strong>, all in Pakistan, watched pairs of 3D animations that differed in a single component and picked the one they preferred. Trial order was randomized.</p>
+            <h3 class="t-h3">Paired-comparison preferences from 25 older adults</h3>
+            <p><strong>Twenty-five adults aged 65 and over</strong>, all in Pakistan, viewed pairs of 3D animations that differed in a single component and selected the one they preferred. Trial order was randomized.</p>
             <ul class="prose" style="padding-left:1.2em">
               <li><strong>Speed:</strong> normal (about 0.5–0.7 m/s, a small pet’s walking pace) or fast (over 0.7 m/s)</li>
               <li><strong>Path:</strong> straight or gently curved</li>
@@ -187,14 +195,14 @@
           </figure>
           <div class="feature__text">
             <p class="t-eyebrow">Step 4 · Validation</p>
-            <h3 class="t-h3">Do the preferences add up to better actions?</h3>
-            <p>I built three actions, approach the user, return to dock and a dance, in four variants each:</p>
+            <h3 class="t-h3">Validating preference-based actions with a new sample</h3>
+            <p>Three actions (approach the user, return to dock and a dance) were each built in four variants:</p>
             <ul class="prose" style="padding-left:1.2em">
               <li><strong>V1</strong> from the preferred components</li>
               <li><strong>V2</strong> from the non-preferred ones</li>
               <li><strong>V3 and V4</strong> from random mixes</li>
             </ul>
-            <p>A <strong>new group of 15 older adults</strong>, who had never seen the component tests, rated each of the 12 videos out of 10 and explained their ratings.</p>
+            <p>A <strong>new group of 15 older adults</strong>, with no exposure to the component tests, rated each of the 12 videos out of 10 and explained their ratings.</p>
           </div>
         </div>
       </div>
@@ -204,7 +212,7 @@
     <section class="section section--alt" id="findings" aria-labelledby="findings-title">
       <div class="container">
         <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="findings-title">What we found.</h2>
+          <h2 class="t-h2 shead__title" id="findings-title">Preferred components produced the highest-rated actions</h2>
         </div>
 
         <div class="chart" data-reveal>
@@ -216,7 +224,7 @@
             <li class="bar"><span class="bar__label">Dynamic posture<small>vs static</small></span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:64%"></span></span><span class="bar__value">64%</span></li>
             <li class="bar"><span class="bar__label">Smooth arc turn<small>vs sharp pivot</small></span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:64%"></span></span><span class="bar__value">64%</span></li>
           </ul>
-          <p class="t-small t-muted" style="margin-top:22px">Posture, path and turn-type preferences did not reach statistical significance in this sample, so treat them as directional. The result was a default profile for Lemmy: moderate pace, straight paths, smooth turns and a body that leans into what it’s doing.</p>
+          <p class="t-small t-muted" style="margin-top:22px">Posture, path and turn-type preferences did not reach statistical significance in this sample and should be treated as directional. Together they define a default motion profile for Lemmy: moderate pace, straight paths, smooth turns and a body that leans into the action.</p>
         </div>
 
         <div class="chart" style="margin-top:20px" data-reveal>
@@ -271,15 +279,15 @@
         <div class="findings" style="margin-top:20px">
           <div class="finding" data-reveal>
             <span class="finding__num t-grad">7.7 vs 5.3</span>
-            <p class="finding__text"><strong>Preferred components won overall.</strong> Across all actions, V1 scored highest with the tightest agreement (95% CI 7.24–8.10). Non-preferred assemblies scored lowest every time.</p>
+            <p class="finding__text"><strong>Preferred components scored highest overall.</strong> Across all actions, V1 received the highest mean rating with the narrowest spread (95% CI 7.24–8.10). Non-preferred assemblies scored lowest for every action.</p>
           </div>
           <div class="finding" data-reveal>
             <span class="finding__num">8.5</span>
-            <p class="finding__text"><strong>Legibility matters most when the goal is obvious.</strong> “Return to dock” built from preferred components scored highest (SD 0.88). Its confidence interval overlapped no other variant.</p>
+            <p class="finding__text"><strong>Legibility matters most when the goal is clear.</strong> “Return to dock” built from preferred components received the highest score (SD 0.88), with a confidence interval that overlapped no other variant.</p>
           </div>
           <div class="finding" data-reveal>
             <span class="finding__num">7.0 vs 6.7</span>
-            <p class="finding__text"><strong>Expressive actions tolerate more.</strong> For the dance, a random mix came close to the preferred version, and opinions were more divided.</p>
+            <p class="finding__text"><strong>Expressive actions tolerate more variation.</strong> For the dance, a random mix scored close to the preferred version, and ratings were more divided.</p>
           </div>
         </div>
       </div>
@@ -289,31 +297,31 @@
     <section class="section" id="takeaways" aria-labelledby="takeaways-title">
       <div class="container">
         <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="takeaways-title">What designers can take from this.</h2>
+          <h2 class="t-h2 shead__title" id="takeaways-title">Implications for robot motion design</h2>
         </div>
         <div class="bento bento--thirds">
           <div class="tile span-2" data-reveal>
             <div class="tile__body">
-              <h3 class="tile__title tile__title--sm">Learn preferences once. Reuse them everywhere.</h3>
-              <p class="tile__text">A small library of preferred component values acts as a design prior. New actions can be composed from it, and only deliberate departures need another test. That saves participants’ time, which is precious in eldercare.</p>
+              <h3 class="tile__title tile__title--sm">Preferences elicited once can be reused across actions</h3>
+              <p class="tile__text">A small library of preferred component values serves as a design prior. New actions can be composed from it, and only deliberate departures require further testing. This conserves participants’ time, a scarce resource in eldercare.</p>
             </div>
           </div>
           <div class="tile span-2" data-reveal>
             <div class="tile__body">
-              <h3 class="tile__title tile__title--sm">Predictable for tasks, freer for expression.</h3>
-              <p class="tile__text">Straight paths and smooth turns matter most for task actions, where people need to read the robot’s intent. Expressive actions like dancing can relax those rules without hurting acceptance.</p>
+              <h3 class="tile__title tile__title--sm">Predictable motion for tasks, more latitude for expression</h3>
+              <p class="tile__text">Straight paths and smooth turns matter most for task actions, where people must read the robot’s intent. Expressive actions such as dancing can relax these constraints without reducing acceptance.</p>
             </div>
           </div>
           <div class="tile span-2" data-reveal>
             <div class="tile__body">
-              <h3 class="tile__title tile__title--sm">Test before the hardware exists.</h3>
-              <p class="tile__text">Animation bounded by the real robot’s limits made it possible to study motion while the physical prototype was still in development, without tying design decisions to what the hardware could do that week.</p>
+              <h3 class="tile__title tile__title--sm">Motion can be evaluated before the hardware exists</h3>
+              <p class="tile__text">Animation bounded by the robot’s physical limits allowed motion to be studied while the prototype was still in development, without tying design decisions to the hardware’s interim capabilities.</p>
             </div>
           </div>
         </div>
 
         <div class="callout-note" style="margin-top: clamp(40px,5vw,64px)" data-reveal>
-          <p><strong>Limitations.</strong> Each component had only two variants, to keep the tests easy, so fine distinctions weren’t captured. Animation can’t reproduce live timing, personal space or real reactions. The samples were small and from a single country, and the next step is embodied testing. Two of these limits shaped what I built next: a tool that keeps animations physically possible, and AR tests that put the robot at life size in real rooms.</p>
+          <p><strong>Limitations.</strong> Each component had only two variants to keep the tests tractable, so finer distinctions were not captured. Animation cannot reproduce live timing, personal space or real reactions. Samples were small and drawn from a single country; embodied testing is the next step. Two of these limitations shaped the subsequent work: a tool that keeps animations physically feasible, and AR studies that place the robot at life size in real rooms.</p>
         </div>
       </div>
     </section>
@@ -325,9 +333,9 @@
           <div class="feature" style="padding: clamp(26px,3.4vw,44px)">
             <div class="feature__text">
               <p class="t-eyebrow">Next case study</p>
-              <h2 class="t-h2" id="next-title">From animation, to engineering, to your living room.</h2>
-              <p>How my MSc thesis turned this method into a framework, with a Blender add-on for engineers and an AR app for life-size testing.</p>
-              <span class="link-more">Continue</span>
+              <h2 class="t-h2" id="next-title">A design-to-engineering framework for non-humanoid robot actions</h2>
+              <p>My MSc thesis extends this method into a framework, with a Blender add-on for engineers and an AR app for life-size testing.</p>
+              <span class="link-more">Read the case study</span>
             </div>
             <div class="feature__media fig__media"><img src="/assets/img/app/in-room.jpg" width="2400" height="729" alt="An iPhone on a tripod showing Lemmy in AR in a real room" loading="lazy" class="ratio-16-10"></div>
           </div>
@@ -347,6 +355,11 @@
         </ol>
       </section>
       <nav class="gfooter__dir" aria-label="Site directory">
+        <div class="gfooter__col"><h3>Design</h3><ul>
+          <li><a href="/design/#lg">LG sensor module</a></li>
+          <li><a href="/design/#waveform">Waveform</a></li>
+          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+        </ul></div>
         <div class="gfooter__col"><h3>Research</h3><ul>
           <li><a href="/research/bangudae-xr/">Bangudae XR</a></li>
           <li><a href="/research/life-size-ar/">Life-size AR</a></li>
@@ -355,21 +368,17 @@
           <li><a href="/research/lemmy/">Robot motion</a></li>
           <li><a href="/research/lemmy-framework/">MSc thesis framework</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>Tools</h3><ul>
+        <div class="gfooter__col"><h3>Publications</h3><ul>
+          <li><a href="/research/#publications">Papers</a></li>
+          <li><a href="/research/#thesis">MSc thesis</a></li>
+          <li><a href="/research/#talks">Talks</a></li>
+          <li><a href="/research/#experiments">Experiments</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Artifacts</h3><ul>
           <li><a href="/tools/#lemmy-ar">Lemmy AR Experience</a></li>
           <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
           <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
-          <li><a href="/tools/#more">More tools</a></li>
-        </ul></div>
-        <div class="gfooter__col"><h3>Publications</h3><ul>
-          <li><a href="/publications/">Papers</a></li>
-          <li><a href="/publications/#thesis">MSc thesis</a></li>
-          <li><a href="/research/#experiments">Experiments</a></li>
-        </ul></div>
-        <div class="gfooter__col"><h3>Design</h3><ul>
-          <li><a href="/design/#lg">LG sensor module</a></li>
-          <li><a href="/design/#waveform">Waveform</a></li>
-          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+          <li><a href="/tools/#more">More artifacts</a></li>
         </ul></div>
         <div class="gfooter__col"><h3>About</h3><ul>
           <li><a href="/about/">Bio</a></li>

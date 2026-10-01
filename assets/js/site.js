@@ -78,6 +78,350 @@
     map.forEach((_, section) => io.observe(section));
   }
 
+  /* ------------------------------------------------------------------ global nav: hide on scroll down
+     Only on pages with a local nav; elsewhere the global nav simply stays put. */
+
+  function initNavReveal() {
+    const body = document.body;
+    if (!body.classList.contains('has-lnav')) return;
+    const gnav = document.querySelector('.gnav');
+    let lastY = window.scrollY;
+    // Runs on every scroll event (it only toggles a class), so the bar
+    // reacts to the very first upward movement.
+    const update = () => {
+      const y = Math.max(0, window.scrollY);
+      if (y <= gnav.offsetHeight) {
+        body.classList.remove('gnav-hidden');
+        lastY = y;
+        return;
+      }
+      if (y > lastY + 6) body.classList.add('gnav-hidden');
+      else if (y < lastY - 4) body.classList.remove('gnav-hidden');
+      else return;
+      lastY = y;
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    // Keyboard users tabbing into the hidden bar should see it.
+    document.querySelector('.gnav').addEventListener('focusin', () => body.classList.remove('gnav-hidden'));
+  }
+
+  /* ------------------------------------------------------------------ theme: auto, light or dark
+     Auto follows the system. A manual choice is remembered and applied before
+     first paint by the inline script in each page's <head>. */
+
+  function initTheme() {
+    const button = document.querySelector('[data-theme-toggle]');
+    if (!button) return;
+    const order = ['auto', 'light', 'dark'];
+    const labels = { auto: 'Theme: automatic (system)', light: 'Theme: light', dark: 'Theme: dark' };
+    // Browser chrome colour and theme-specific images follow the choice too.
+    const metas = Array.from(document.querySelectorAll('meta[name="theme-color"][media]'));
+    const sources = Array.from(document.querySelectorAll('source[media*="prefers-color-scheme"]'));
+    [...metas, ...sources].forEach((el) => (el.dataset.media = el.getAttribute('media')));
+    const forced = (el, pref) => (el.dataset.media.includes(pref) ? 'all' : 'not all');
+
+    const apply = (pref) => {
+      if (pref === 'auto') root.removeAttribute('data-theme');
+      else root.setAttribute('data-theme', pref);
+      root.setAttribute('data-theme-pref', pref);
+      [...metas, ...sources].forEach((el) => el.setAttribute('media', pref === 'auto' ? el.dataset.media : forced(el, pref)));
+      button.setAttribute('aria-label', labels[pref]);
+      button.title = labels[pref];
+    };
+
+    let pref = root.getAttribute('data-theme') || 'auto';
+    apply(pref);
+    button.addEventListener('click', () => {
+      pref = order[(order.indexOf(pref) + 1) % order.length];
+      try {
+        if (pref === 'auto') localStorage.removeItem('theme');
+        else localStorage.setItem('theme', pref);
+      } catch (e) {}
+      apply(pref);
+    });
+  }
+
+  /* ------------------------------------------------------------------ site search
+     The index is built in the browser on first open: every page linked from the
+     navigation is fetched and split into one entry per heading, so new content
+     is searchable without a build step. Choosing a result opens that page and
+     scrolls to the exact heading. */
+
+  const SEARCH_KEY = 'search-target';
+  const SEARCH_BOXES = '.pub, .row, .step, .tile, .rail__item, .chart, .feature__text, .shead, .page-hero, .hero, .band__head, section';
+  const SUGGESTIONS = [
+    { page: 'Research', heading: 'Research questions and projects', url: '/research/' },
+    { page: 'Research', heading: 'Publications', url: '/research/#publications' },
+    { page: 'Artifacts', heading: 'Research tools and spatial applications', url: '/tools/' },
+    { page: 'Design', heading: 'Industrial design and CGI', url: '/design/' },
+    { page: 'About', heading: 'Experience and education', url: '/about/#experience' },
+    { page: 'About', heading: 'Contact', url: '/about/#contact' },
+  ];
+
+  const clean = (text) => (text || '').replace(/\s+/g, ' ').trim();
+  const fold = (text) => clean(text).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[’‘]/g, "'");
+  // Index fields and query terms are reduced to space-separated words, so terms
+  // match from the start of a word ("unity" finds Unity, not "community").
+  const words = (text) => ` ${fold(text).replace(/[^a-z0-9']+/g, ' ').trim()}`;
+  const escapeHTML = (text) => text.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+
+  function indexPage(path, doc) {
+    const main = doc.querySelector('main');
+    if (!main) return [];
+    main.querySelectorAll('pre, script, style, svg, button, video').forEach((el) => el.remove());
+    const title = clean(doc.title).split(' · ')[0].split(': ')[0];
+    const page = path === '/' ? 'Home' : title;
+    const description = doc.querySelector('meta[name="description"]');
+    const entries = [{ page, heading: page, text: description ? description.content : '', path, id: '', top: true }];
+
+    main.querySelectorAll('h1, h2, h3, h4').forEach((h) => {
+      // Teaser cards that link to another page are covered by that page's own entries.
+      const card = h.closest('a[href]');
+      if (card) {
+        const url = new URL(card.getAttribute('href'), location.origin + path);
+        if (url.origin === location.origin && url.pathname !== path) return;
+      }
+      const heading = clean(h.textContent);
+      if (!heading) return;
+      let box = h.closest(SEARCH_BOXES) || h.parentElement;
+      // A section title also stands for the loose text in its section.
+      if (box.matches('.shead, .band__head') && box.closest('section')) box = box.closest('section');
+      const text = clean(box.textContent).replace(heading, '').trim().slice(0, 700);
+      const anchor = h.id ? h : h.parentElement.closest('[id]');
+      const id = anchor && anchor !== main ? anchor.id : '';
+      entries.push({ page, heading, text, path, id });
+    });
+    return entries;
+  }
+
+  async function buildIndex() {
+    const paths = new Set(['/']);
+    document.querySelectorAll('.gnav a[href^="/"], .gfooter a[href^="/"]').forEach((a) => {
+      const { pathname } = new URL(a.href);
+      if (pathname.endsWith('/') && pathname !== '/publications/') paths.add(pathname);
+    });
+    const pages = await Promise.all(
+      Array.from(paths).map(async (path) => {
+        try {
+          const response = await fetch(path);
+          if (!response.ok) return [];
+          return indexPage(path, new DOMParser().parseFromString(await response.text(), 'text/html'));
+        } catch (e) {
+          return [];
+        }
+      })
+    );
+    const seen = new Set();
+    return pages.flat().filter((entry) => {
+      const key = `${entry.path}#${entry.id}|${entry.heading}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      entry.h = words(entry.heading);
+      entry.t = words(entry.text);
+      entry.p = words(entry.page);
+      return true;
+    });
+  }
+
+  function searchIndex(index, query) {
+    const q = words(query);
+    const terms = q.split(' ').filter(Boolean);
+    if (!terms.length) return [];
+    const scored = [];
+    for (const entry of index) {
+      let score = 0;
+      for (const term of terms) {
+        const t = ` ${term}`;
+        if (entry.h.includes(t)) score += entry.h.startsWith(t) ? 12 : 9;
+        else if (entry.p.includes(t)) score += 4;
+        else if (entry.t.includes(t)) score += 2;
+        else {
+          score = 0;
+          break;
+        }
+      }
+      if (!score) continue;
+      if (entry.h === q) score += 20;
+      if (entry.top) score += 3;
+      scored.push({ entry, score });
+    }
+    return scored.sort((a, b) => b.score - a.score).slice(0, 24).map((s) => s.entry);
+  }
+
+  function highlight(text, terms) {
+    let html = escapeHTML(text);
+    terms.forEach((term) => {
+      if (term.length < 2) return;
+      const pattern = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/'/g, "['’]");
+      html = html.replace(new RegExp(`(^|[^\\p{L}\\p{N}])(${pattern})`, 'giu'), '$1<mark>$2</mark>');
+    });
+    return html;
+  }
+
+  function snippet(text, terms) {
+    if (!text) return '';
+    const lower = fold(text);
+    const at = terms.map((t) => lower.indexOf(t)).filter((i) => i >= 0).sort((a, b) => a - b)[0] || 0;
+    const start = Math.max(0, at - 50);
+    return (start ? '…' : '') + text.slice(start, start + 170) + (start + 170 < text.length ? '…' : '');
+  }
+
+  function scrollToHeading(text) {
+    const target = Array.from(document.querySelectorAll('main h1, main h2, main h3, main h4')).find((h) => clean(h.textContent) === text);
+    if (!target) return;
+    target.scrollIntoView({ block: 'start', behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+    target.classList.remove('search-target');
+    void target.offsetWidth;
+    target.classList.add('search-target');
+    target.addEventListener('animationend', () => target.classList.remove('search-target'), { once: true });
+  }
+
+  function landOnSearchTarget() {
+    let stored = null;
+    try {
+      stored = JSON.parse(sessionStorage.getItem(SEARCH_KEY));
+      sessionStorage.removeItem(SEARCH_KEY);
+    } catch (e) {}
+    if (!stored || stored.path !== location.pathname) return;
+    // Wait for layout to settle so lazy media above the target doesn't push it away.
+    const go = () => setTimeout(() => scrollToHeading(stored.heading), 120);
+    if (document.readyState === 'complete') go();
+    else window.addEventListener('load', go, { once: true });
+  }
+
+  function initSearch() {
+    landOnSearchTarget();
+    const opener = document.querySelector('[data-search-open]');
+    if (!opener) return;
+    if (!window.HTMLDialogElement) {
+      opener.hidden = true;
+      return;
+    }
+
+    const dialog = document.createElement('dialog');
+    dialog.className = 'search';
+    dialog.setAttribute('aria-label', 'Search the site');
+    dialog.innerHTML = `
+      <div class="search__bar">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
+        <input class="search__input" type="search" placeholder="Search research, publications, artifacts…" aria-label="Search the site" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="search-results" aria-autocomplete="list">
+        <kbd>esc</kbd>
+      </div>
+      <ul class="search__results" id="search-results" role="listbox" aria-label="Results"></ul>
+      <p class="search__status" aria-live="polite"></p>`;
+    document.body.appendChild(dialog);
+
+    const input = dialog.querySelector('.search__input');
+    const list = dialog.querySelector('.search__results');
+    const status = dialog.querySelector('.search__status');
+    let index = null;
+    let indexing = null;
+    let hits = [];
+    let active = -1;
+
+    const urlFor = (entry) => entry.url || entry.path + (entry.id ? `#${entry.id}` : '');
+
+    const setActive = (i) => {
+      const links = list.querySelectorAll('.search__hit');
+      if (!links.length) return;
+      active = (i + links.length) % links.length;
+      links.forEach((link, n) => link.setAttribute('aria-selected', String(n === active)));
+      input.setAttribute('aria-activedescendant', links[active].id);
+      links[active].scrollIntoView({ block: 'nearest' });
+    };
+
+    const render = () => {
+      const query = input.value;
+      const terms = words(query).split(' ').filter(Boolean);
+      if (!terms.length) {
+        hits = SUGGESTIONS;
+        status.textContent = '';
+      } else if (!index) {
+        hits = [];
+        status.textContent = 'Indexing the site…';
+      } else {
+        hits = searchIndex(index, query);
+        status.textContent = hits.length ? '' : `No results for “${clean(query)}”.`;
+      }
+      list.innerHTML =
+        (terms.length ? '' : '<li class="search__group" role="presentation">Go to</li>') +
+        hits
+          .map(
+            (entry, i) => `
+          <li role="presentation"><a class="search__hit" id="search-hit-${i}" role="option" aria-selected="false" href="${escapeHTML(urlFor(entry))}" data-i="${i}">
+            <span class="search__page">${escapeHTML(entry.page)}</span>
+            <span class="search__title">${highlight(entry.heading, terms)}</span>
+            ${terms.length && entry.text ? `<span class="search__snip">${highlight(snippet(entry.text, terms), terms)}</span>` : ''}
+          </a></li>`
+          )
+          .join('');
+      active = -1;
+      input.removeAttribute('aria-activedescendant');
+      if (hits.length && terms.length) setActive(0);
+    };
+
+    const go = (entry) => {
+      const url = urlFor(entry);
+      dialog.close();
+      if (entry.url) {
+        location.href = url;
+        return;
+      }
+      if (entry.path === location.pathname) {
+        if (entry.top) window.scrollTo({ top: 0, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+        else scrollToHeading(entry.heading);
+        return;
+      }
+      try {
+        if (!entry.top) sessionStorage.setItem(SEARCH_KEY, JSON.stringify({ path: entry.path, heading: entry.heading }));
+      } catch (e) {}
+      location.href = url;
+    };
+
+    const open = () => {
+      if (dialog.open) return;
+      dialog.showModal();
+      input.select();
+      render();
+      if (!indexing) {
+        indexing = buildIndex().then((built) => {
+          index = built;
+          if (dialog.open) render();
+        });
+      }
+    };
+
+    opener.addEventListener('click', open);
+    input.addEventListener('input', render);
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        setActive(active + (event.key === 'ArrowDown' ? 1 : -1));
+      } else if (event.key === 'Enter') {
+        event.preventDefault();
+        const entry = hits[Math.max(active, 0)];
+        if (entry) go(entry);
+      }
+    });
+    list.addEventListener('click', (event) => {
+      const link = event.target.closest('.search__hit');
+      if (!link || event.metaKey || event.ctrlKey || event.shiftKey) return;
+      event.preventDefault();
+      go(hits[Number(link.dataset.i)]);
+    });
+    // A click on the backdrop (outside the panel) closes it.
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    document.addEventListener('keydown', (event) => {
+      const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName) || document.activeElement.isContentEditable;
+      if ((event.key === 'k' && (event.metaKey || event.ctrlKey)) || (event.key === '/' && !typing)) {
+        event.preventDefault();
+        open();
+      }
+    });
+  }
+
   /* ------------------------------------------------------------------ cascade indices
      Children of lists and grids get --ci (their position) so CSS can stagger them. */
 
@@ -508,6 +852,9 @@
 
   initMenu();
   initLocalNav();
+  initNavReveal();
+  initTheme();
+  initSearch();
   initCascade();
   initReveal();
   initBars();

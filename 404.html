@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>(function(d){d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
+  <script>(function(d){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
   <title>Page not found · Danyal Sarfraz</title>
   <meta name="robots" content="noindex">
   <meta name="color-scheme" content="light dark">
@@ -12,8 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=6">
-  <script src="/assets/js/site.js?v=6" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=11">
+  <script src="/assets/js/site.js?v=12" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -25,14 +25,22 @@
         Danyal Sarfraz
       </a>
       <ul class="gnav__list" id="gnav-list">
-        <li><a href="/research/">Research</a></li>
-        <li><a href="/tools/">Tools</a></li>
-        <li><a href="/publications/">Publications</a></li>
         <li><a href="/design/">Design</a></li>
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/tools/">Artifacts</a></li>
         <li><a href="/about/">About</a></li>
-        <li class="gnav__only-menu"><a href="/about/#contact">Contact</a></li>
+        <li><a href="/about/#contact">Contact</a></li>
       </ul>
-      <a class="btn btn--sm gnav__cta" href="/about/#contact">Contact</a>
+      <div class="gnav__tools">
+        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search (⌘K)">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-theme-toggle aria-label="Theme: automatic (system)" title="Theme: automatic (system)">
+          <svg class="theme-icon theme-icon--auto" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.6"/><path d="M8 2.4v11.2a5.6 5.6 0 0 0 0-11.2z" fill="currentColor" stroke="none"/></svg>
+          <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
+          <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
+        </button>
+      </div>
       <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
         <svg viewBox="0 0 18 18" aria-hidden="true"><path class="l1" d="M2 6h14"/><path class="l2" d="M2 12h14"/></svg>
       </button>
@@ -42,11 +50,11 @@
   <main id="main" class="hero" style="min-height: 70vh; padding-bottom: 120px">
     <div class="container">
       <p class="t-eyebrow hero__eyebrow">404</p>
-      <h1 class="t-display hero__title">This page moved out of frame.</h1>
+      <h1 class="t-display hero__title">Page not found</h1>
       <p class="t-lead hero__lead">The link may be out of date, or the page may have moved.</p>
       <div class="cta-row">
-        <a class="btn" href="/">Go to the home page</a>
-        <a class="link-more" href="/research/">See the research</a>
+        <a class="btn" href="/">Home</a>
+        <a class="link-more" href="/research/">Research</a>
       </div>
     </div>
   </main>

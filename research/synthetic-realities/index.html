@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>(function(d){d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
-  <title>Synthetic Realities: Can people still tell what’s real? · Danyal Sarfraz</title>
+  <script>(function(d){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
+  <title>Synthetic Realities: Human detection of AI-generated video · Danyal Sarfraz</title>
   <meta name="description" content="A controlled online study of how accurately 87 untrained viewers distinguish AI-generated video from real footage across three generation techniques and three themes. IASDR 2025 pictorial.">
   <link rel="canonical" href="https://danyals-code.github.io/research/synthetic-realities/">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Can people still tell what’s real? · Danyal Sarfraz">
-  <meta property="og:description" content="87 people, 36 clips, 3,132 judgments: how well people spot AI-generated video.">
+  <meta property="og:title" content="Human detection of AI-generated video · Danyal Sarfraz">
+  <meta property="og:description" content="87 participants, 36 clips, 3,132 judgments: how accurately untrained viewers detect AI-generated video.">
   <meta property="og:image" content="https://danyals-code.github.io/assets/img/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=6">
-  <script src="/assets/js/site.js?v=6" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=11">
+  <script src="/assets/js/site.js?v=12" defer></script>
 </head>
 <body class="has-lnav">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -33,14 +33,22 @@
         Danyal Sarfraz
       </a>
       <ul class="gnav__list" id="gnav-list">
-        <li><a href="/research/" aria-current="page">Research</a></li>
-        <li><a href="/tools/">Tools</a></li>
-        <li><a href="/publications/">Publications</a></li>
         <li><a href="/design/">Design</a></li>
+        <li><a href="/research/" aria-current="page">Research</a></li>
+        <li><a href="/tools/">Artifacts</a></li>
         <li><a href="/about/">About</a></li>
-        <li class="gnav__only-menu"><a href="/about/#contact">Contact</a></li>
+        <li><a href="/about/#contact">Contact</a></li>
       </ul>
-      <a class="btn btn--sm gnav__cta" href="/about/#contact">Contact</a>
+      <div class="gnav__tools">
+        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search (⌘K)">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-theme-toggle aria-label="Theme: automatic (system)" title="Theme: automatic (system)">
+          <svg class="theme-icon theme-icon--auto" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.6"/><path d="M8 2.4v11.2a5.6 5.6 0 0 0 0-11.2z" fill="currentColor" stroke="none"/></svg>
+          <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
+          <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
+        </button>
+      </div>
       <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
         <svg viewBox="0 0 18 18" aria-hidden="true"><path class="l1" d="M2 6h14"/><path class="l2" d="M2 12h14"/></svg>
       </button>
@@ -64,15 +72,15 @@
     <section class="hero" id="top">
       <div class="container">
         <p class="t-eyebrow hero__eyebrow">Case study · Human-centered AI</p>
-        <h1 class="t-display hero__title">Can people still tell what’s real?</h1>
-        <p class="t-lead hero__lead">Generative video has gone from uncanny to convincing in a few years. I ran a controlled study of how well everyday viewers can spot it, and what makes them fail.</p>
+        <h1 class="t-display hero__title">Human detection of AI-generated video</h1>
+        <p class="t-lead hero__lead">Generative video has moved from uncanny to convincing within a few years. This controlled study measures how accurately untrained viewers detect it, and under which conditions detection fails.</p>
       </div>
       <div class="container-wide" style="margin-top: clamp(36px,5vw,64px)">
         <div class="tile theme-dark" style="text-align:center">
           <div class="tile__body tile__body--center" style="padding-block: clamp(48px,7vw,96px)">
             <span class="stat__kicker">Average accuracy</span>
             <span class="stat__num t-grad" style="font-size: clamp(96px,16vw,220px)" data-count="60" data-suffix="%">60%</span>
-            <p class="stat__cap" style="max-width:30em">across 3,132 real-or-AI judgments by 87 people. Chance is 50%.</p>
+            <p class="stat__cap" style="max-width:30em">across 3,132 real-or-AI judgments by 87 participants, against a 50% chance level.</p>
           </div>
         </div>
       </div>
@@ -91,19 +99,19 @@
           <div><span class="fact__label">Analysis</span><p class="fact__value">Logistic regression with Holm–Bonferroni correction</p></div>
         </div>
 
-        <p class="t-two-tone" style="margin-top: clamp(64px,8vw,112px)" data-reveal>Most research on synthetic media focuses on deepfakes of faces and voices. But designers and media artists now use AI video in three quite different ways, <strong>writing clips from text, animating still images, and extending real footage beyond its frame.</strong> Nobody had compared them side by side.</p>
+        <p class="t-two-tone" style="margin-top: clamp(64px,8vw,112px)" data-reveal>Research on synthetic media has concentrated on face and voice deepfakes. Designers and media artists, however, now use AI video in three distinct ways: <strong>generating clips from text, animating still images, and extending real footage beyond its frame.</strong> These techniques had not been compared side by side.</p>
 
         <div class="bento" style="margin-top: clamp(48px,6vw,80px)">
           <div class="tile span-3" data-reveal>
             <div class="tile__body">
-              <span class="tile__eyebrow">Question 1</span>
+              <span class="tile__eyebrow">Research question 1</span>
               <h3 class="tile__title tile__title--sm">How accurately can untrained viewers detect each generation technique?</h3>
             </div>
           </div>
           <div class="tile span-3" data-reveal>
             <div class="tile__body">
-              <span class="tile__eyebrow">Question 2</span>
-              <h3 class="tile__title tile__title--sm">How does the content’s theme change detection across techniques?</h3>
+              <span class="tile__eyebrow">Research question 2</span>
+              <h3 class="tile__title tile__title--sm">How does content theme moderate detection across techniques?</h3>
             </div>
           </div>
         </div>
@@ -115,8 +123,8 @@
       <div class="container">
         <div class="shead" data-reveal>
           <div>
-            <h2 class="t-h2 shead__title" id="study-title">A balanced set of 36 clips.</h2>
-            <p class="shead__text t-lead">Half real, half AI, spread evenly across three themes. Pilot tests showed that AI handles some subjects, like static objects, far better than people or motion, so varied themes kept the comparison fair.</p>
+            <h2 class="t-h2 shead__title" id="study-title">A balanced stimulus set of 36 clips</h2>
+            <p class="shead__text t-lead">Half real and half AI-generated, distributed evenly across three themes. Pilot tests showed that AI renders some subjects, such as static objects, far better than people or motion; varying the themes kept the comparison balanced.</p>
           </div>
         </div>
 
@@ -157,19 +165,19 @@
 
         <div class="feature" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
           <div class="feature__text">
-            <p class="t-eyebrow">Making the AI clips</p>
-            <h3 class="t-h3">One pipeline, so only the technique varied.</h3>
-            <p>Every AI clip was produced in <strong>ComfyUI</strong>, whose node graphs let us replicate diffusion steps, guidance and prompt weights across methods. Five designers generated candidates for each condition. We kept the best one by <strong>visual fidelity, temporal coherence and thematic relevance</strong>.</p>
-            <p>Real clips came from publicly available stock and archival footage matched to the same themes. All 36 were trimmed to 8–12 seconds, standardized to 1080p and shown without sound.</p>
+            <p class="t-eyebrow">Stimulus generation</p>
+            <h3 class="t-h3">A single pipeline, so that only the technique varied</h3>
+            <p>All AI clips were produced in <strong>ComfyUI</strong>, whose node graphs allowed diffusion steps, guidance and prompt weights to be replicated across methods. Five designers generated candidates for each condition, and one was selected for <strong>visual fidelity, temporal coherence and thematic relevance</strong>.</p>
+            <p>Real clips were drawn from publicly available stock and archival footage matched to the same themes. All 36 clips were trimmed to 8–12 seconds, standardized to 1080p and presented without sound.</p>
           </div>
           <div class="feature__text">
             <p class="t-eyebrow">Procedure</p>
-            <h3 class="t-h3">One question, 36 times.</h3>
+            <h3 class="t-h3">Binary forced choice across 36 trials</h3>
             <ol class="icon-list" style="margin-top:8px">
-              <li><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="4" y="6" width="18" height="14" rx="3"/><path d="m11 10 5 3-5 3z"/></svg><p>Each clip plays alone, in random order, as many times as the participant likes.</p></li>
-              <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="9"/><path d="M10 10.5a3 3 0 1 1 3 3v2M13 18.5v.5"/></svg><p><strong>“Do you believe this video is real or AI-generated?”</strong> Real, or AI.</p></li>
+              <li><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="4" y="6" width="18" height="14" rx="3"/><path d="m11 10 5 3-5 3z"/></svg><p>Each clip is shown individually, in randomized order, and can be replayed without limit.</p></li>
+              <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="9"/><path d="M10 10.5a3 3 0 1 1 3 3v2M13 18.5v.5"/></svg><p><strong>“Do you believe this video is real or AI-generated?”</strong> Response options: real or AI.</p></li>
               <li><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M8 4v18M18 4v18"/></svg><p>A short break after 18 clips to limit fatigue.</p></li>
-              <li><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M5 20V8M11 20V5M17 20v-9M23 20v-6"/></svg><p>Participants weren’t told how many clips were AI, only to judge each one on what they saw.</p></li>
+              <li><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M5 20V8M11 20V5M17 20v-9M23 20v-6"/></svg><p>Participants were not told the proportion of AI clips and were instructed to judge each clip on its visual content alone.</p></li>
             </ol>
           </div>
         </div>
@@ -180,7 +188,7 @@
     <section class="section" id="results" aria-labelledby="results-title">
       <div class="container">
         <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="results-title">What people got right, and wrong.</h2>
+          <h2 class="t-h2 shead__title" id="results-title">Detection accuracy depended on technique and theme</h2>
         </div>
 
         <div class="chart" data-reveal>
@@ -192,21 +200,21 @@
             <li class="bar"><span class="bar__label">Outpainting</span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:49%"></span></span><span class="bar__value">49%</span></li>
             <li class="bar"><span class="bar__label">Text-to-video</span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:43%"></span></span><span class="bar__value">43%</span></li>
           </ul>
-          <p class="t-small t-muted" style="margin-top:22px">Text-to-video fooled people more often than chance, and outpainting sat right at it. Image-to-video left motion cues that viewers could pick up on.</p>
+          <p class="t-small t-muted" style="margin-top:22px">Text-to-video accuracy fell below chance, and outpainting accuracy was at chance. Image-to-video retained motion cues that viewers could detect.</p>
         </div>
 
         <div class="findings" style="margin-top:20px">
           <div class="finding" data-reveal>
             <span class="finding__num t-grad">48%</span>
-            <p class="finding__text"><strong>Nature looked fake.</strong> Real environmental footage was judged correctly only about 48% of the time. Pristine natural scenery often read as synthetic.</p>
+            <p class="finding__text"><strong>Real nature footage was often judged synthetic.</strong> Real environmental clips were classified correctly only about 48% of the time; pristine natural scenery frequently read as AI-generated.</p>
           </div>
           <div class="finding" data-reveal>
             <span class="finding__num">61% → 32%</span>
-            <p class="finding__text"><strong>Context flips the result.</strong> Outpainting was easy to catch in environment scenes (61%) but hard in historical ones (32%).</p>
+            <p class="finding__text"><strong>Theme strongly moderated outpainting detection.</strong> Outpainting was detected in 61% of environment trials but only 32% of historical trials.</p>
           </div>
           <div class="finding" data-reveal>
             <span class="finding__num">75–83%</span>
-            <p class="finding__text"><strong>Some tells survive every theme.</strong> Image-to-video was spotted consistently in film, history and environment clips.</p>
+            <p class="finding__text"><strong>Image-to-video cues held across themes.</strong> Image-to-video clips were identified consistently in the film, history and environment themes.</p>
           </div>
         </div>
 
@@ -243,30 +251,30 @@
     <section class="section section--alt" id="implications" aria-labelledby="impl-title">
       <div class="container">
         <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="impl-title">What it means.</h2>
+          <h2 class="t-h2 shead__title" id="impl-title">Implications for media literacy and creative practice</h2>
         </div>
         <div class="bento bento--thirds">
           <div class="tile tile--white span-2" data-reveal>
             <div class="tile__body">
-              <h3 class="tile__title tile__title--sm">Knowing AI exists makes real footage suspect.</h3>
-              <p class="tile__text">Real clips were judged correctly only 64% of the time. Once viewers know AI may be present, even authentic images start to look synthetic.</p>
+              <h3 class="tile__title tile__title--sm">Awareness of AI undermines trust in real footage</h3>
+              <p class="tile__text">Real clips were classified correctly only 64% of the time. When viewers expect AI content, authentic footage also begins to appear synthetic.</p>
             </div>
           </div>
           <div class="tile tile--white span-2" data-reveal>
             <div class="tile__body">
-              <h3 class="tile__title tile__title--sm">Realism depends on context, not just the model.</h3>
-              <p class="tile__text">Realism isn’t a fixed property of a model. It emerges from what a clip shows. Creators can use that deliberately to set how real a piece feels.</p>
+              <h3 class="tile__title tile__title--sm">Perceived realism depends on content, not only the model</h3>
+              <p class="tile__text">Perceived realism is not a fixed property of a model; it depends on what a clip depicts. Creators can use this deliberately to calibrate how real a piece appears.</p>
             </div>
           </div>
           <div class="tile tile--white span-2" data-reveal>
             <div class="tile__body">
-              <h3 class="tile__title tile__title--sm">Teach context, not just artifacts.</h3>
-              <p class="tile__text">Media-literacy efforts and detection tools should cover contextual cues as well as model-specific artifacts, because intuition alone isn’t enough.</p>
+              <h3 class="tile__title tile__title--sm">Detection training should address context as well as artifacts</h3>
+              <p class="tile__text">Media-literacy programs and detection tools should cover contextual cues as well as model-specific artifacts; intuition alone is insufficient.</p>
             </div>
           </div>
         </div>
         <div class="callout-note" style="margin-top: clamp(40px,5vw,64px)" data-reveal>
-          <p><strong>Limitations and next steps.</strong> Short, silent clips viewed online limit ecological validity. Future studies should add techniques such as inpainting, ControlNet and depth-aware video, collect confidence ratings, broaden the demographics, and test whether training improves detection over time.</p>
+          <p><strong>Limitations and next steps.</strong> Short, silent clips viewed online limit ecological validity. Future work should include techniques such as inpainting, ControlNet and depth-aware video, collect confidence ratings, broaden the demographic sample, and test whether training improves detection over time.</p>
         </div>
       </div>
     </section>
@@ -278,9 +286,9 @@
           <div class="feature" style="padding: clamp(26px,3.4vw,44px)">
             <div class="feature__text">
               <p class="t-eyebrow">Next case study</p>
-              <h2 class="t-h2" id="next-title">Measuring product form from a handful of images.</h2>
-              <p>A 23-parameter computer-vision pipeline that turns ordinary product renders into design data.</p>
-              <span class="link-more">Continue</span>
+              <h2 class="t-h2" id="next-title">Multi-view consistency in automated product form analysis</h2>
+              <p>A 23-parameter computer-vision pipeline that derives form parameters from standard product renders.</p>
+              <span class="link-more">Read the case study</span>
             </div>
             <div class="feature__media fig__media fig__media--white fig__media--pad white-stage"><img class="blend-white" src="/assets/img/product-form/consistency.png" width="2180" height="1576" alt="Bar chart of per-parameter consistency between 16-view and 180-view analyses; most bars are above 90 percent" loading="lazy"></div>
           </div>
@@ -298,6 +306,11 @@
         </ol>
       </section>
       <nav class="gfooter__dir" aria-label="Site directory">
+        <div class="gfooter__col"><h3>Design</h3><ul>
+          <li><a href="/design/#lg">LG sensor module</a></li>
+          <li><a href="/design/#waveform">Waveform</a></li>
+          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+        </ul></div>
         <div class="gfooter__col"><h3>Research</h3><ul>
           <li><a href="/research/bangudae-xr/">Bangudae XR</a></li>
           <li><a href="/research/life-size-ar/">Life-size AR</a></li>
@@ -306,21 +319,17 @@
           <li><a href="/research/lemmy/">Robot motion</a></li>
           <li><a href="/research/lemmy-framework/">MSc thesis framework</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>Tools</h3><ul>
+        <div class="gfooter__col"><h3>Publications</h3><ul>
+          <li><a href="/research/#publications">Papers</a></li>
+          <li><a href="/research/#thesis">MSc thesis</a></li>
+          <li><a href="/research/#talks">Talks</a></li>
+          <li><a href="/research/#experiments">Experiments</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Artifacts</h3><ul>
           <li><a href="/tools/#lemmy-ar">Lemmy AR Experience</a></li>
           <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
           <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
-          <li><a href="/tools/#more">More tools</a></li>
-        </ul></div>
-        <div class="gfooter__col"><h3>Publications</h3><ul>
-          <li><a href="/publications/">Papers</a></li>
-          <li><a href="/publications/#thesis">MSc thesis</a></li>
-          <li><a href="/research/#experiments">Experiments</a></li>
-        </ul></div>
-        <div class="gfooter__col"><h3>Design</h3><ul>
-          <li><a href="/design/#lg">LG sensor module</a></li>
-          <li><a href="/design/#waveform">Waveform</a></li>
-          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+          <li><a href="/tools/#more">More artifacts</a></li>
         </ul></div>
         <div class="gfooter__col"><h3>About</h3><ul>
           <li><a href="/about/">Bio</a></li>

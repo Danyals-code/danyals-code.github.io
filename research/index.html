@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>(function(d){d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
+  <script>(function(d){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
   <title>Research · Danyal Sarfraz</title>
-  <meta name="description" content="HCI research by Danyal Sarfraz: mixed reality and spatial computing, human-centered AI and human–robot interaction, from AR field studies to controlled perception studies.">
+  <meta name="description" content="HCI research by Danyal Sarfraz: mixed reality and spatial computing, human-centered AI and human–robot interaction, from AR field studies to controlled perception studies, plus peer-reviewed papers with DOIs and BibTeX.">
   <link rel="canonical" href="https://danyals-code.github.io/research/">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -20,10 +20,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=6">
-  <script src="/assets/js/site.js?v=6" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=11">
+  <script src="/assets/js/site.js?v=12" defer></script>
 </head>
-<body>
+<body class="has-lnav">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="gnav">
@@ -33,36 +33,98 @@
         Danyal Sarfraz
       </a>
       <ul class="gnav__list" id="gnav-list">
-        <li><a href="/research/" aria-current="page">Research</a></li>
-        <li><a href="/tools/">Tools</a></li>
-        <li><a href="/publications/">Publications</a></li>
         <li><a href="/design/">Design</a></li>
+        <li><a href="/research/" aria-current="page">Research</a></li>
+        <li><a href="/tools/">Artifacts</a></li>
         <li><a href="/about/">About</a></li>
-        <li class="gnav__only-menu"><a href="/about/#contact">Contact</a></li>
+        <li><a href="/about/#contact">Contact</a></li>
       </ul>
-      <a class="btn btn--sm gnav__cta" href="/about/#contact">Contact</a>
+      <div class="gnav__tools">
+        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search (⌘K)">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-theme-toggle aria-label="Theme: automatic (system)" title="Theme: automatic (system)">
+          <svg class="theme-icon theme-icon--auto" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.6"/><path d="M8 2.4v11.2a5.6 5.6 0 0 0 0-11.2z" fill="currentColor" stroke="none"/></svg>
+          <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
+          <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
+        </button>
+      </div>
       <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
         <svg viewBox="0 0 18 18" aria-hidden="true"><path class="l1" d="M2 6h14"/><path class="l2" d="M2 12h14"/></svg>
       </button>
     </nav>
   </header>
 
+  <nav class="lnav" aria-label="Research">
+    <div class="lnav__inner">
+      <a class="lnav__title" href="#top">Research</a>
+      <ul class="lnav__links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experiments">Experiments</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#methods">Methods</a></li>
+        <li><a href="#lab-projects">Lab</a></li>
+      </ul>
+      <a class="btn btn--sm" href="/about/#contact">Contact</a>
+    </div>
+  </nav>
+
   <main id="main">
-    <section class="page-hero">
+    <section class="page-hero" id="top">
       <div class="container">
         <p class="t-eyebrow">Research</p>
-        <h1 class="t-h1 page-hero__title">Research that starts with people.</h1>
-        <p class="t-lead page-hero__lead">I study how people experience spatial and intelligent systems, using mixed-reality and AR prototypes, controlled perception studies and participatory workshops. Most of this work was done at UNIST’s Integration and Innovation Design Lab (IID Lab) with Prof. KwanMyung Kim.</p>
+        <h1 class="t-h1 page-hero__title">Human-centered research in spatial and intelligent systems</h1>
+        <p class="t-lead page-hero__lead">My research examines how people experience spatial and intelligent systems, combining mixed-reality and AR prototypes, controlled perception studies and participatory workshops. It was conducted primarily at UNIST’s Integration and Innovation Design Lab (IID Lab) under Prof. KwanMyung Kim.</p>
+        <div class="facts" style="margin-top: clamp(40px,5vw,64px)" data-reveal>
+          <div><span class="fact__label">Focus</span><p class="fact__value">Spatial computing and XR, human-centered AI, human–robot interaction</p></div>
+          <div><span class="fact__label">Lab</span><p class="fact__value">IID Lab, UNIST, with Prof. KwanMyung Kim, since February 2024</p></div>
+          <div><span class="fact__label">Output</span><p class="fact__value">Four peer-reviewed papers at IASDR and KSDS, an MSc thesis, and a paper under review at CHI 2027</p></div>
+        </div>
       </div>
     </section>
 
+    <!-- Overview: the three questions -->
+    <section class="section section--tight" id="overview" aria-labelledby="overview-title" style="padding-top:0">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+            <p class="t-eyebrow">Overview</p>
+            <h2 class="t-h2 shead__title" id="overview-title">Three research questions</h2>
+          </div>
+        </div>
+        <ol class="steps steps--3">
+          <li class="step" data-reveal>
+            <span class="step__num">1</span>
+            <h3 class="step__title">What can be evaluated before a product is built?</h3>
+            <p class="step__text">Mixed reality and AR as substitutes for physical sites and prototypes.</p>
+            <a class="step__meta link-more" href="#xr">Spatial computing and XR</a>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__num">2</span>
+            <h3 class="step__title">How do people interpret AI-generated content?</h3>
+            <p class="step__text">Perception of AI-generated video, and automated form analysis from sparse imagery.</p>
+            <a class="step__meta link-more" href="#ai">Human-centered AI</a>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__num">3</span>
+            <h3 class="step__title">How should robots move around people?</h3>
+            <p class="step__text">Motion design for a care robot, developed with its intended older-adult users.</p>
+            <a class="step__meta link-more" href="#hri">Human–robot interaction</a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <div id="projects">
     <!-- Area 1: Spatial computing -->
-    <section class="section section--tight" id="xr" aria-labelledby="xr-title" style="padding-top:0">
+    <section class="section section--tight" id="xr" aria-labelledby="xr-title">
       <div class="container-wide">
         <div class="shead" data-reveal>
           <div>
-            <p class="t-eyebrow">Spatial computing and XR</p>
-            <h2 class="t-h2 shead__title" id="xr-title">What can we test before anything is built?</h2>
+            <p class="t-eyebrow">RQ1 · Spatial computing and XR</p>
+            <h2 class="t-h2 shead__title" id="xr-title">What can be evaluated before a product is built?</h2>
           </div>
         </div>
         <div class="bento">
@@ -73,8 +135,8 @@
               </div>
               <div class="feature__text">
                 <span class="tile__eyebrow">Mixed reality · First place, 2024</span>
-                <h3 class="tile__title">Bringing prehistoric petroglyphs within reach.</h3>
-                <p>Fieldwork, photogrammetry, Gaussian splatting and a Meta Quest 3 app that brings the heritage of Ulsan’s Daegokcheon Stream into any room. It won the 3rd Korea Heritage Digital Contents Contest.</p>
+                <h3 class="tile__title">Mixed-reality access to the Bangudae petroglyphs</h3>
+                <p>Fieldwork, photogrammetry, Gaussian splatting and a Meta Quest 3 application that brings the heritage of Ulsan’s Daegokcheon Stream into any room. Awarded first place at the 3rd Korea Heritage Digital Contents Contest.</p>
                 <span class="link-more">Read the case study</span>
               </div>
             </div>
@@ -83,8 +145,8 @@
           <a class="tile tile--white span-3" href="/research/life-size-ar/" data-reveal>
             <div class="tile__body">
               <span class="tile__eyebrow">iOS and visionOS · MSc thesis</span>
-              <h3 class="tile__title tile__title--sm">Can AR stand in for a prototype?</h3>
-              <p class="tile__text">A native ARKit and RealityKit app that puts a life-size robot concept in people’s homes, and an at-home study of what AR can and can’t convey.</p>
+              <h3 class="tile__title tile__title--sm">Life-size AR as a substitute for physical prototypes</h3>
+              <p class="tile__text">A native ARKit and RealityKit application that places a life-size robot concept in participants’ homes, and an at-home study of what AR can and cannot convey.</p>
               <span class="link-more">Read the case study</span>
             </div>
             <div class="tile__media">
@@ -95,9 +157,9 @@
           <a class="tile span-3" href="#experiments" data-reveal>
             <div class="tile__body">
               <span class="tile__eyebrow">Interaction experiments</span>
-              <h3 class="tile__title tile__title--sm">Pointing, snapping and head-tracked 3D.</h3>
-              <p class="tile__text">A Fitts’ law study across three input devices, window snapping in Unreal Engine, and fish-tank VR in the browser.</p>
-              <span class="link-more">See the experiments</span>
+              <h3 class="tile__title tile__title--sm">Pointing, window snapping and head-coupled perspective</h3>
+              <p class="tile__text">A Fitts’ law comparison of three input devices, window snapping in Unreal Engine, and browser-based fish-tank VR.</p>
+              <span class="link-more">View the experiments</span>
             </div>
             <div class="tile__media">
               <img src="/assets/img/coursework/sliding-poster.jpg" width="1280" height="720" alt="A window-management prototype in Unreal Engine, with several windows on a dark screen" loading="lazy">
@@ -112,16 +174,16 @@
       <div class="container-wide">
         <div class="shead" data-reveal>
           <div>
-            <p class="t-eyebrow">Human-centered AI</p>
-            <h2 class="t-h2 shead__title" id="ai-title">How do people read what AI makes?</h2>
+            <p class="t-eyebrow">RQ2 · Human-centered AI</p>
+            <h2 class="t-h2 shead__title" id="ai-title">How do people interpret AI-generated content?</h2>
           </div>
         </div>
         <div class="bento">
           <a class="tile span-3 theme-dark" href="/research/synthetic-realities/" data-reveal>
             <div class="tile__body">
               <span class="tile__eyebrow">Perception study · IASDR 2025</span>
-              <h3 class="tile__title tile__title--sm">Can people still tell what’s real?</h3>
-              <p class="tile__text">A controlled online study: 87 people, 36 clips, three generation techniques and three themes. Accuracy was 60%, and context mattered more than the model.</p>
+              <h3 class="tile__title tile__title--sm">Human detection of AI-generated video</h3>
+              <p class="tile__text">A controlled online study with 87 participants, 36 clips, three generation techniques and three themes. Overall accuracy was 60%, and context influenced detection more than the generation model.</p>
               <span class="link-more">Read the case study</span>
             </div>
             <div class="tile__foot">
@@ -133,8 +195,8 @@
           <a class="tile tile--white span-3" href="/research/product-form/" data-reveal style="background:var(--bg-2)">
             <div class="tile__body">
               <span class="tile__eyebrow">Computational design · KSDS 2026</span>
-              <h3 class="tile__title tile__title--sm">Measuring product form from a handful of images.</h3>
-              <p class="tile__text">A 23-parameter pipeline built on masks and monocular depth. Sixteen views gave the same answers as 180 for 20 of 23 parameters.</p>
+              <h3 class="tile__title tile__title--sm">Product form analysis from sparse imagery</h3>
+              <p class="tile__text">A 23-parameter pipeline based on silhouette masks and monocular depth. Sixteen views reproduced the 180-view results for 20 of 23 parameters.</p>
               <span class="link-more">Read the case study</span>
             </div>
             <div class="tile__media tile__media--pad white-stage">
@@ -150,16 +212,16 @@
       <div class="container-wide">
         <div class="shead" data-reveal>
           <div>
-            <p class="t-eyebrow">Human–robot interaction</p>
-            <h2 class="t-h2 shead__title" id="hri-title">How should machines move around people?</h2>
+            <p class="t-eyebrow">RQ3 · Human–robot interaction</p>
+            <h2 class="t-h2 shead__title" id="hri-title">How should robots move around people?</h2>
           </div>
         </div>
         <div class="bento">
           <a class="tile tile--white span-3" href="/research/lemmy/" data-reveal style="background:var(--bg-2)">
             <div class="tile__body">
               <span class="tile__eyebrow">Participatory design · IASDR 2025 · KSDS 2025</span>
-              <h3 class="tile__title tile__title--sm">How should a care robot move?</h3>
-              <p class="tile__text">A component-based method for designing the motion of a non-humanoid companion robot, with a designer workshop, expert interviews and studies with 40 older adults.</p>
+              <h3 class="tile__title tile__title--sm">Component-based motion design for a care robot</h3>
+              <p class="tile__text">A component-based method for designing the motion of a non-humanoid companion robot, developed through a designer workshop, expert interviews and studies with 40 older adults.</p>
               <span class="link-more">Read the case study</span>
             </div>
             <div class="tile__media white-stage">
@@ -170,8 +232,8 @@
           <a class="tile span-3" href="/research/lemmy-framework/" data-reveal>
             <div class="tile__body">
               <span class="tile__eyebrow">MSc thesis · Framework and tools</span>
-              <h3 class="tile__title tile__title--sm">Robot motion designers can imagine and engineers can build.</h3>
-              <p class="tile__text">Three stages: design actions with users, check and export them with a Blender add-on, then test them life-size in AR on iPhone and Apple Vision Pro.</p>
+              <h3 class="tile__title tile__title--sm">A framework for designing feasible robot actions</h3>
+              <p class="tile__text">Three stages: co-design actions with users, validate and export them with a Blender add-on, and evaluate them at life size in AR on iPhone and Apple Vision Pro.</p>
               <span class="link-more">Read the case study</span>
             </div>
             <div class="tile__media tile__media--pad">
@@ -181,14 +243,267 @@
         </div>
       </div>
     </section>
+    </div>
 
-    <!-- Methods -->
-    <section class="section section--alt" aria-labelledby="methods-title">
+    <!-- Interaction experiments -->
+    <section class="section section--alt" id="experiments" aria-labelledby="exp-title">
       <div class="container">
         <div class="shead" data-reveal>
           <div>
-            <h2 class="t-h2 shead__title" id="methods-title">How I work.</h2>
-            <p class="shead__text t-lead">Methods I’ve used in published studies, chosen to keep the burden on participants low and the evidence honest.</p>
+            <p class="t-eyebrow">Experiments</p>
+            <h2 class="t-h2 shead__title" id="exp-title">Interaction experiments</h2>
+            <p class="shead__text t-lead">Focused studies on established HCI problems: pointing, window management and head-coupled perspective. The first two originated in UNIST’s Advanced Human–Computer Interaction course in 2025.</p>
+          </div>
+        </div>
+
+        <div class="feature" data-reveal>
+          <div class="chart" data-seg-chart>
+            <h3 class="chart__title">Fitts’ law, three ways</h3>
+            <p class="chart__sub" data-seg-caption>Throughput in bits per second. Higher is better.</p>
+            <div class="seg" role="group" aria-label="Metric">
+              <button type="button" data-seg="tp" data-caption="Throughput in bits per second. Higher is better." aria-pressed="true">Throughput</button>
+              <button type="button" data-seg="err" data-caption="Share of clicks that missed the target. Lower is better." aria-pressed="false">Error rate</button>
+              <button type="button" data-seg="mt" data-caption="Mean completion time per target in milliseconds. Lower is better. The Cintiq mean includes one setup delay." aria-pressed="false">Time</button>
+            </div>
+            <ul class="bars">
+              <li class="bar" data-values='[{"value":5.64,"label":"5.6"},{"value":1.01,"label":"1%"},{"value":601,"label":"601"}]'>
+                <span class="bar__label">Mouse</span><span class="bar__track"><span class="bar__fill" style="--v:100%"></span></span><span class="bar__value">5.6</span>
+              </li>
+              <li class="bar" data-values='[{"value":3.99,"label":"4.0"},{"value":10.1,"label":"10%"},{"value":1132,"label":"1,132"}]'>
+                <span class="bar__label">Wacom Cintiq Pro<small>stylus</small></span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:71%"></span></span><span class="bar__value">4.0</span>
+              </li>
+              <li class="bar" data-values='[{"value":2.23,"label":"2.2"},{"value":10.1,"label":"10%"},{"value":1091,"label":"1,091"}]'>
+                <span class="bar__label">iPad with mouse</span><span class="bar__track"><span class="bar__fill bar__fill--blue" style="--v:40%"></span></span><span class="bar__value">2.2</span>
+              </li>
+            </ul>
+            <p class="t-small t-muted" style="margin-top:22px">WebFitts tasks at three amplitudes (200, 400, 800 px) and three widths (40, 80, 160 px), 11 targets per condition, one session per device.</p>
+          </div>
+          <div class="feature__text">
+            <p class="t-eyebrow">Pointing performance</p>
+            <h3 class="t-h3">Mouse input outperformed stylus and iPadOS pointer input</h3>
+            <p>A comparison of a mouse, a Wacom Cintiq Pro stylus and an iPad operated with a mouse. The mouse was fastest and most accurate. Stylus performance was limited by misclicks and calibration offsets, and the iPad was slowest, with limited pointer control within applications.</p>
+            <figure class="fig">
+              <div class="fig__media"><img src="/assets/img/coursework/fitts-setup.jpg" width="1050" height="1400" alt="A Wacom Cintiq Pro display showing a WebFitts pointing task, with a stylus beside it" loading="lazy" class="ratio-4-3"></div>
+            </figure>
+          </div>
+        </div>
+
+        <div class="feature feature--flip" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+          <div class="feature__media">
+            <div class="fig__media loop" data-manual>
+              <video src="/assets/video/coursework/sliding-windows.mp4" poster="/assets/img/coursework/sliding-poster.jpg" muted loop playsinline preload="none"></video>
+              <button class="loop__toggle" type="button" aria-label="Play or pause the video">
+                <svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="3" y="2" width="3" height="10" rx="1"/><rect x="8" y="2" width="3" height="10" rx="1"/></svg>
+                <svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6L11.5 7z"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="feature__text">
+            <p class="t-eyebrow">Interaction technique</p>
+            <h3 class="t-h3">Physics-based window snapping</h3>
+            <p>A window-management prototype built with Unreal Engine Blueprints. Windows move with velocity and a speed limit, check for collisions, and snap to screen edges and corners, with tunable snap strength and distances.</p>
+          </div>
+        </div>
+
+        <div class="feature" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+          <figure class="fig feature__media">
+            <div class="fig__media"><img src="/assets/img/tools/head-tracked.jpg" width="1600" height="1000" alt="The start card of 3D Shelf, a head-tracked window into your monitor" loading="lazy" class="ratio-16-10"></div>
+          </figure>
+          <div class="feature__text">
+            <p class="t-eyebrow">Head-coupled perspective</p>
+            <h3 class="t-h3">Fish-tank VR with webcam head tracking</h3>
+            <p>Browser-based fish-tank VR. Webcam face tracking drives an off-axis projection, so the display behaves as a window onto a 3D scene that responds to head movement. Builds on work by Ware, Arthur and Booth, and by Deering. All video is processed on-device.</p>
+            <div class="links-inline">
+              <a class="link-ext" href="https://danyals-code.github.io/head-tracked-perspective/">Try the live demo</a>
+              <a class="link-ext" href="https://github.com/Danyals-code/head-tracked-perspective">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="publications">
+    <!-- Publications -->
+    <section class="section" id="papers" aria-labelledby="papers-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+            <p class="t-eyebrow">Publications</p>
+            <h2 class="t-h2 shead__title" id="papers-title">Publications</h2>
+            <p class="shead__text t-lead">Peer-reviewed papers at IASDR and the Korean Society of Design Science (KSDS), with summaries, DOIs and BibTeX.</p>
+          </div>
+        </div>
+
+        <div class="callout-note" data-reveal>
+          <p><strong>Under review.</strong> A paper based on the MSc thesis is under review at ACM CHI 2027.</p>
+        </div>
+
+        <div class="pubyear" style="margin-top: clamp(32px,4vw,48px)" data-reveal>
+          <p class="pubyear__label">2026</p>
+          <ul class="pubs">
+            <li class="pub" id="ksds-2026">
+              <div class="pub__badges"><span class="badge">Conference paper</span><span class="badge">KSDS 2026</span></div>
+              <h3 class="pub__title">Assessment of Multi-View Consistency in Automated Product Form Analysis</h3>
+              <p class="pub__authors"><b>Danyal Sarfraz</b>, KwanMyung Kim</p>
+              <p class="pub__venue">KSDS 2026 International Conference · June 2026</p>
+              <div class="pub__actions">
+                <a class="link-more" href="/research/product-form/">Case study</a>
+                <button type="button" data-toggle aria-controls="sum-ksds26">Summary</button>
+                <button type="button" data-toggle aria-controls="bib-ksds26">BibTeX</button>
+              </div>
+              <div class="pub__summary" id="sum-ksds26" hidden>A 23-parameter pipeline turns product images into form descriptors using a silhouette mask and monocular depth. Across seven products rendered on a turntable, parameters from 16 views matched those from 180 views for 20 of 23 parameters (90% consistency or better), so sparse imagery is enough for this class of analysis.</div>
+              <div class="pub__bib" id="bib-ksds26" hidden>
+                <pre id="bibtex-ksds26">@inproceedings{sarfraz2026multiview,
+  author       = {Sarfraz, Danyal and Kim, KwanMyung},
+  title        = {Assessment of Multi-View Consistency in Automated Product Form Analysis},
+  booktitle    = {Proceedings of the KSDS 2026 International Conference},
+  organization = {Korean Society of Design Science},
+  year         = {2026}
+}</pre>
+                <button class="btn btn--sm" type="button" data-copy-target="bibtex-ksds26"><span data-copy-label>Copy</span></button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pubyear" data-reveal>
+          <p class="pubyear__label">2025</p>
+          <ul class="pubs">
+            <li class="pub" id="iasdr-2025-actions">
+              <div class="pub__badges"><span class="badge badge--accent">Full paper</span><span class="badge">IASDR 2025</span></div>
+              <h3 class="pub__title">A Component-Based Approach for Developing Actions in Non-Humanoid Elderly Care Robots</h3>
+              <p class="pub__authors"><b>Danyal Sarfraz</b>, Ulugbek Vahobjon Ugli Ismatullaev, KwanMyung Kim</p>
+              <p class="pub__venue">IASDR 2025: Design Next · Taipei, Taiwan · December 2025</p>
+              <div class="pub__actions">
+                <a class="link-ext" href="https://doi.org/10.21606/iasdr.2025.1139">doi:10.21606/iasdr.2025.1139</a>
+                <a class="link-more" href="/research/lemmy/">Case study</a>
+                <button type="button" data-toggle aria-controls="sum-iasdr-a">Summary</button>
+                <button type="button" data-toggle aria-controls="bib-iasdr-a">BibTeX</button>
+              </div>
+              <div class="pub__summary" id="sum-iasdr-a" hidden>A hybrid method for designing expressive motion for Lemmy, a two-wheeled companion robot for older adults. A designer workshop produced an action catalogue, and expert interviews defined four motion components: speed, path, posture and turn type. Paired comparisons with 25 older adults set preferred values. In a validation study with 15 new participants, actions assembled from preferred components rated highest (M = 7.67 of 10), which suggests validated components can be recombined into new actions without re-testing each one.</div>
+              <div class="pub__bib" id="bib-iasdr-a" hidden>
+                <pre id="bibtex-iasdr-a">@inproceedings{sarfraz2025component,
+  author    = {Sarfraz, Danyal and Ismatullaev, Ulugbek Vahobjon Ugli and Kim, KwanMyung},
+  title     = {A Component-Based Approach for Developing Actions in Non-Humanoid Elderly Care Robots},
+  booktitle = {IASDR 2025: Design Next},
+  address   = {Taipei, Taiwan},
+  publisher = {Design Research Society},
+  year      = {2025},
+  doi       = {10.21606/iasdr.2025.1139}
+}</pre>
+                <button class="btn btn--sm" type="button" data-copy-target="bibtex-iasdr-a"><span data-copy-label>Copy</span></button>
+              </div>
+            </li>
+
+            <li class="pub" id="iasdr-2025-synthetic">
+              <div class="pub__badges"><span class="badge badge--blue">Pictorial</span><span class="badge">IASDR 2025</span></div>
+              <h3 class="pub__title">Synthetic Realities: Evaluating Human Ability to Distinguish AI-Generated Videos from Real Footage</h3>
+              <p class="pub__authors"><b>Danyal Sarfraz</b>, Raja Mubashar Karim, KwanMyung Kim</p>
+              <p class="pub__venue">IASDR 2025: Design Next · Taipei, Taiwan · December 2025</p>
+              <div class="pub__actions">
+                <a class="link-ext" href="https://doi.org/10.21606/iasdr.2025.1050">doi:10.21606/iasdr.2025.1050</a>
+                <a class="link-more" href="/research/synthetic-realities/">Case study</a>
+                <button type="button" data-toggle aria-controls="sum-iasdr-s">Summary</button>
+                <button type="button" data-toggle aria-controls="bib-iasdr-s">BibTeX</button>
+              </div>
+              <div class="pub__summary" id="sum-iasdr-s" hidden>A controlled online study compared text-to-video, image-to-video and outpainting against real footage across film, historical and environmental themes. 87 untrained participants made 3,132 real-or-AI judgments and were correct 60% of the time. Image-to-video was the easiest to spot and text-to-video the hardest. Theme, technique and their interaction all mattered, and viewers showed a bias toward calling real footage synthetic.</div>
+              <div class="pub__bib" id="bib-iasdr-s" hidden>
+                <pre id="bibtex-iasdr-s">@inproceedings{sarfraz2025synthetic,
+  author    = {Sarfraz, Danyal and Karim, Raja Mubashar and Kim, KwanMyung},
+  title     = {Synthetic Realities: Evaluating Human Ability to Distinguish AI-Generated Videos from Real Footage},
+  booktitle = {IASDR 2025: Design Next},
+  address   = {Taipei, Taiwan},
+  publisher = {Design Research Society},
+  year      = {2025},
+  doi       = {10.21606/iasdr.2025.1050}
+}</pre>
+                <button class="btn btn--sm" type="button" data-copy-target="bibtex-iasdr-s"><span data-copy-label>Copy</span></button>
+              </div>
+            </li>
+
+            <li class="pub" id="ksds-2025">
+              <div class="pub__badges"><span class="badge">Conference paper</span><span class="badge">KSDS 2025</span></div>
+              <h3 class="pub__title">Developing a Hierarchically Structured Action Catalogue for an Elderly Care Robot through Participatory Design</h3>
+              <p class="pub__authors"><b>Danyal Sarfraz</b>, Ulugbek Ismatullaev, KwanMyung Kim</p>
+              <p class="pub__venue">KSDS 2025 International Conference · Kookmin University, Seoul · June 2025 · pp. 166–167</p>
+              <div class="pub__actions">
+                <a class="link-more" href="/research/lemmy/#method">Case study</a>
+                <button type="button" data-toggle aria-controls="sum-ksds25">Summary</button>
+                <button type="button" data-toggle aria-controls="bib-ksds25">BibTeX</button>
+              </div>
+              <div class="pub__summary" id="sum-ksds25" hidden>A participatory workshop with six industrial-design researchers, working in pairs from everyday user stories, produced more than 40 action ideas for Lemmy. The teams clustered them in three different ways, and the ideas were organized into a hierarchy by how often teams proposed them. All three teams favored social and emotional presence over pure efficiency, with actions like pausing near the user until acknowledged.</div>
+              <div class="pub__bib" id="bib-ksds25" hidden>
+                <pre id="bibtex-ksds25">@inproceedings{sarfraz2025catalogue,
+  author       = {Sarfraz, Danyal and Ismatullaev, Ulugbek and Kim, KwanMyung},
+  title        = {Developing a Hierarchically Structured Action Catalogue for an Elderly Care Robot through Participatory Design},
+  booktitle    = {Proceedings of the KSDS 2025 International Conference},
+  organization = {Korean Society of Design Science},
+  pages        = {166--167},
+  year         = {2025}
+}</pre>
+                <button class="btn btn--sm" type="button" data-copy-target="bibtex-ksds25"><span data-copy-label>Copy</span></button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thesis -->
+    <section class="section section--alt" id="thesis" aria-labelledby="thesis-title">
+      <div class="container">
+        <div class="feature" data-reveal>
+          <div class="feature__text">
+            <p class="t-eyebrow">MSc thesis · 2026</p>
+            <h2 class="t-h3" id="thesis-title">A Framework for Designing Contextually Appropriate Physical Actions in Non-Humanoid Robots</h2>
+            <p>Ulsan National Institute of Science and Technology (UNIST), Department of Design. Advised by Prof. KwanMyung Kim, with committee members Prof. James Self and Prof. Jaeyeon Lee.</p>
+            <div class="pub__actions">
+              <a class="link-more" href="/research/lemmy-framework/">Case study</a>
+              <button type="button" data-toggle aria-controls="bib-thesis">BibTeX</button>
+            </div>
+            <div class="pub__bib" id="bib-thesis" hidden>
+              <pre id="bibtex-thesis">@mastersthesis{sarfraz2026framework,
+  author = {Sarfraz, Danyal},
+  title  = {A Framework for Designing Contextually Appropriate Physical Actions in Non-Humanoid Robots},
+  school = {Ulsan National Institute of Science and Technology},
+  type   = {{MSc} thesis},
+  year   = {2026}
+}</pre>
+              <button class="btn btn--sm" type="button" data-copy-target="bibtex-thesis"><span data-copy-label>Copy</span></button>
+            </div>
+          </div>
+          <figure class="fig feature__media">
+            <div class="fig__media"><img src="/assets/img/lemmy/thesis-book.jpg" width="2200" height="1466" alt="The bound thesis, a black hardcover, beside an orange 3D-printed part" loading="lazy"></div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Talks -->
+    <section class="section" id="talks" aria-labelledby="talks-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <h2 class="t-h2 shead__title" id="talks-title">Talks and exhibitions</h2>
+        </div>
+        <ul class="rows" data-reveal>
+          <li class="row"><span class="row__when">June 2026</span><div><h3 class="row__title">KSDS 2026 International Conference</h3><p class="row__text">Paper presentation on multi-view consistency in automated product form analysis.</p></div></li>
+          <li class="row"><span class="row__when">December 2025</span><div><h3 class="row__title">IASDR 2025, Taipei</h3><p class="row__text">Full paper presentation on component-based robot actions, and a pictorial on the perception of AI-generated video.</p></div></li>
+          <li class="row"><span class="row__when">Autumn 2025</span><div><h3 class="row__title">Gwangju Design Biennale 2025</h3><p class="row__text">Lemmy exhibited with a VR experience zone, with the IID Lab team, UNIST.</p></div></li>
+          <li class="row"><span class="row__when">June 2025</span><div><h3 class="row__title">KSDS 2025 International Conference, Kookmin University</h3><p class="row__text">Paper presentation on the participatory design of Lemmy’s action catalogue.</p></div></li>
+          <li class="row"><span class="row__when">2024</span><div><h3 class="row__title">3rd Korea Heritage Digital Contents Contest, final round</h3><p class="row__text">Presentation of the Daegokcheon Stream mixed-reality application; awarded first place.</p></div></li>
+        </ul>
+      </div>
+    </section>
+    </div>
+
+    <!-- Methods -->
+    <section class="section section--alt" id="methods" aria-labelledby="methods-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+            <p class="t-eyebrow">Methods</p>
+            <h2 class="t-h2 shead__title" id="methods-title">Research methods</h2>
+            <p class="shead__text t-lead">Methods applied in the published studies, selected to minimize participant burden while maintaining rigorous evidence.</p>
           </div>
         </div>
         <div class="bento bento--thirds">
@@ -240,8 +555,9 @@
       <div class="container">
         <div class="shead" data-reveal>
           <div>
-            <h2 class="t-h2 shead__title" id="lab-title">Funded lab projects.</h2>
-            <p class="shead__text t-lead">Industry and government projects I worked on at IID Lab, UNIST, from February 2024.</p>
+            <p class="t-eyebrow">Lab</p>
+            <h2 class="t-h2 shead__title" id="lab-title">Funded projects and teaching</h2>
+            <p class="shead__text t-lead">Industry and government projects at IID Lab, UNIST, since February 2024, and teaching.</p>
           </div>
         </div>
         <ul class="rows" data-reveal>
@@ -249,7 +565,7 @@
             <span class="row__when">2024 – 2026</span>
             <div>
               <h3 class="row__title">An intelligent, customized care product-service system for older adults</h3>
-              <p class="row__text">Human–robot interaction, AR-based prototyping, action and behavior design. This is the project behind <a href="/research/lemmy/">Lemmy</a> and my <a href="/research/lemmy-framework/">thesis</a>.</p>
+              <p class="row__text">Human–robot interaction, AR-based prototyping, action and behavior design. The project underlying <a href="/research/lemmy/">Lemmy</a> and the <a href="/research/lemmy-framework/">MSc thesis</a>.</p>
             </div>
             <span class="row__side">With Shinsung Delta Tech</span>
           </li>
@@ -257,7 +573,7 @@
             <span class="row__when">2025 – now</span>
             <div>
               <h3 class="row__title">Predicting and optimizing design–production conflict factors</h3>
-              <p class="row__text">Human-centered AI, AI model training and ComfyUI workflows. It supported <a href="/research/synthetic-realities/">Synthetic Realities</a> and <a href="/research/product-form/">product form analysis</a>.</p>
+              <p class="row__text">Human-centered AI, AI model training and ComfyUI workflows. Supported <a href="/research/synthetic-realities/">Synthetic Realities</a> and <a href="/research/product-form/">product form analysis</a>.</p>
             </div>
             <span class="row__side">With Intensive and Korea University</span>
           </li>
@@ -273,106 +589,35 @@
             <span class="row__when">2024</span>
             <div>
               <h3 class="row__title">Sensor modules that monitor upper-body angle and speed</h3>
-              <p class="row__text">Product design and R&amp;D for a wearable strap module. See the <a href="/design/#lg">design concept</a>.</p>
+              <p class="row__text">Product design and R&amp;D for a wearable strap module (<a href="/design/#lg">design concept</a>).</p>
             </div>
             <span class="row__side">With LG Electronics</span>
           </li>
         </ul>
-      </div>
-    </section>
-
-    <!-- Interaction experiments -->
-    <section class="section section--alt" id="experiments" aria-labelledby="exp-title">
-      <div class="container">
-        <div class="shead" data-reveal>
-          <div>
-            <h2 class="t-h2 shead__title" id="exp-title">Interaction experiments.</h2>
-            <p class="shead__text t-lead">Small studies and prototypes on classic HCI questions: pointing, window management and head-coupled perspective. The first two began in UNIST’s Advanced Human–Computer Interaction course in 2025.</p>
-          </div>
-        </div>
-
-        <div class="feature" data-reveal>
-          <div class="chart" data-seg-chart>
-            <h3 class="chart__title">Fitts’ law, three ways</h3>
-            <p class="chart__sub" data-seg-caption>Throughput in bits per second. Higher is better.</p>
-            <div class="seg" role="group" aria-label="Metric">
-              <button type="button" data-seg="tp" data-caption="Throughput in bits per second. Higher is better." aria-pressed="true">Throughput</button>
-              <button type="button" data-seg="err" data-caption="Share of clicks that missed the target. Lower is better." aria-pressed="false">Error rate</button>
-              <button type="button" data-seg="mt" data-caption="Mean completion time per target in milliseconds. Lower is better. The Cintiq mean includes one setup delay." aria-pressed="false">Time</button>
-            </div>
-            <ul class="bars">
-              <li class="bar" data-values='[{"value":5.64,"label":"5.6"},{"value":1.01,"label":"1%"},{"value":601,"label":"601"}]'>
-                <span class="bar__label">Mouse</span><span class="bar__track"><span class="bar__fill" style="--v:100%"></span></span><span class="bar__value">5.6</span>
-              </li>
-              <li class="bar" data-values='[{"value":3.99,"label":"4.0"},{"value":10.1,"label":"10%"},{"value":1132,"label":"1,132"}]'>
-                <span class="bar__label">Wacom Cintiq Pro<small>stylus</small></span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:71%"></span></span><span class="bar__value">4.0</span>
-              </li>
-              <li class="bar" data-values='[{"value":2.23,"label":"2.2"},{"value":10.1,"label":"10%"},{"value":1091,"label":"1,091"}]'>
-                <span class="bar__label">iPad with mouse</span><span class="bar__track"><span class="bar__fill bar__fill--blue" style="--v:40%"></span></span><span class="bar__value">2.2</span>
-              </li>
-            </ul>
-            <p class="t-small t-muted" style="margin-top:22px">WebFitts tasks at three amplitudes (200, 400, 800 px) and three widths (40, 80, 160 px), 11 targets per condition, one session per device.</p>
-          </div>
-          <div class="feature__text">
-            <p class="t-eyebrow">Pointing performance</p>
-            <h3 class="t-h3">The mouse won, and iPadOS pointer support lost.</h3>
-            <p>I compared a mouse, a Wacom Cintiq Pro stylus and an iPad driven by a mouse. The mouse was fastest and most accurate. The stylus suffered from misclicks and calibration offsets. The iPad was slowest, with very little pointer control inside apps.</p>
-            <figure class="fig">
-              <div class="fig__media"><img src="/assets/img/coursework/fitts-setup.jpg" width="1050" height="1400" alt="A Wacom Cintiq Pro display showing a WebFitts pointing task, with a stylus beside it" loading="lazy" class="ratio-4-3"></div>
-            </figure>
-          </div>
-        </div>
-
-        <div class="feature feature--flip" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
-          <div class="feature__media">
-            <div class="fig__media loop" data-manual>
-              <video src="/assets/video/coursework/sliding-windows.mp4" poster="/assets/img/coursework/sliding-poster.jpg" muted loop playsinline preload="none"></video>
-              <button class="loop__toggle" type="button" aria-label="Play or pause the video">
-                <svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="3" y="2" width="3" height="10" rx="1"/><rect x="8" y="2" width="3" height="10" rx="1"/></svg>
-                <svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6L11.5 7z"/></svg>
-              </button>
-            </div>
-          </div>
-          <div class="feature__text">
-            <p class="t-eyebrow">Interaction technique</p>
-            <h3 class="t-h3">Windows that slide and snap.</h3>
-            <p>A window-management prototype built with Unreal Engine Blueprints. Windows move with velocity and a speed limit, check for collisions, and snap to screen edges and corners, with tunable snap strength and distances.</p>
-          </div>
-        </div>
-
-        <div class="feature" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
-          <figure class="fig feature__media">
-            <div class="fig__media"><img src="/assets/img/tools/head-tracked.jpg" width="1600" height="1000" alt="The start card of 3D Shelf, a head-tracked window into your monitor" loading="lazy" class="ratio-16-10"></div>
-          </figure>
-          <div class="feature__text">
-            <p class="t-eyebrow">Head-coupled perspective</p>
-            <h3 class="t-h3">A monitor that works like a window.</h3>
-            <p>Fish-tank VR in the browser. Webcam face tracking drives an off-axis projection, so the screen becomes a window onto a small 3D room that shifts as you move your head. It builds on classic work by Ware, Arthur and Booth, and by Deering. No video leaves the device.</p>
-            <div class="links-inline">
-              <a class="link-ext" href="https://danyals-code.github.io/head-tracked-perspective/">Try the live demo</a>
-              <a class="link-ext" href="https://github.com/Danyals-code/head-tracked-perspective">GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Teaching -->
-    <section class="section" aria-labelledby="teach-title">
-      <div class="container">
-        <div class="feature" data-reveal>
+        <div style="margin-top: clamp(48px,6vw,80px)" data-reveal>
           <div class="feature__text">
             <p class="t-eyebrow">Teaching</p>
-            <h2 class="t-h2" id="teach-title">Teaching assistant, 3D CAD and Prototyping.</h2>
-            <p>For DES232 at UNIST, I supported SolidWorks modeling in the first half of the semester and prototyping methods in the second. I also helped bring a Blender and generative-AI visualization pipeline into the course as an alternative to KeyShot rendering.</p>
-          </div>
-          <div class="feature__text">
-            <p class="t-eyebrow t-eyebrow--muted">Next</p>
-            <h3 class="t-h3">Every paper, with citations.</h3>
-            <p>Full publication list with summaries, DOIs and BibTeX.</p>
-            <a class="btn" href="/publications/">View publications</a>
+            <h3 class="t-h3">Teaching Assistant, DES232 3D CAD and Prototyping</h3>
+            <p>Supported instruction in SolidWorks modeling in the first half of the semester and prototyping methods in the second, and co-introduced a Blender and generative-AI visualization pipeline as an alternative to KeyShot rendering.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Next -->
+    <section class="section section--alt" aria-labelledby="next-title">
+      <div class="container">
+        <a class="tile tile--white" href="/tools/" data-reveal>
+          <div class="feature" style="padding: clamp(26px,3.4vw,44px)">
+            <div class="feature__text">
+              <p class="t-eyebrow">Next</p>
+              <h2 class="t-h2" id="next-title">Research tools and applications</h2>
+              <p>The AR application, Blender add-on and design tools developed for these studies, most available as open source.</p>
+              <span class="link-more">View the artifacts</span>
+            </div>
+            <div class="feature__media fig__media"><img src="/assets/img/tools/ui-designer.jpg" width="1600" height="1000" alt="The AR/VR UI Designer web app: panels and controls laid out on a 3D canvas" loading="lazy" class="ratio-16-10"></div>
+          </div>
+        </a>
       </div>
     </section>
   </main>
@@ -380,6 +625,11 @@
   <footer class="gfooter">
     <div class="gfooter__inner">
       <nav class="gfooter__dir" aria-label="Site directory">
+        <div class="gfooter__col"><h3>Design</h3><ul>
+          <li><a href="/design/#lg">LG sensor module</a></li>
+          <li><a href="/design/#waveform">Waveform</a></li>
+          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+        </ul></div>
         <div class="gfooter__col"><h3>Research</h3><ul>
           <li><a href="/research/bangudae-xr/">Bangudae XR</a></li>
           <li><a href="/research/life-size-ar/">Life-size AR</a></li>
@@ -388,21 +638,17 @@
           <li><a href="/research/lemmy/">Robot motion</a></li>
           <li><a href="/research/lemmy-framework/">MSc thesis framework</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>Tools</h3><ul>
+        <div class="gfooter__col"><h3>Publications</h3><ul>
+          <li><a href="/research/#publications">Papers</a></li>
+          <li><a href="/research/#thesis">MSc thesis</a></li>
+          <li><a href="/research/#talks">Talks</a></li>
+          <li><a href="/research/#experiments">Experiments</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Artifacts</h3><ul>
           <li><a href="/tools/#lemmy-ar">Lemmy AR Experience</a></li>
           <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
           <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
-          <li><a href="/tools/#more">More tools</a></li>
-        </ul></div>
-        <div class="gfooter__col"><h3>Publications</h3><ul>
-          <li><a href="/publications/">Papers</a></li>
-          <li><a href="/publications/#thesis">MSc thesis</a></li>
-          <li><a href="/research/#experiments">Experiments</a></li>
-        </ul></div>
-        <div class="gfooter__col"><h3>Design</h3><ul>
-          <li><a href="/design/#lg">LG sensor module</a></li>
-          <li><a href="/design/#waveform">Waveform</a></li>
-          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+          <li><a href="/tools/#more">More artifacts</a></li>
         </ul></div>
         <div class="gfooter__col"><h3>About</h3><ul>
           <li><a href="/about/">Bio</a></li>

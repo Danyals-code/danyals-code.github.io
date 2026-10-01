@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>(function(d){d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
+  <script>(function(d){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
   <title>Design &amp; 3D · Danyal Sarfraz</title>
   <meta name="description" content="Industrial design and photoreal CGI by Danyal Sarfraz: a wearable sensor concept for LG Electronics, Lemmy visualization, the Waveform BSc thesis and cinematic 3D work.">
   <link rel="canonical" href="https://danyals-code.github.io/design/">
@@ -11,7 +11,7 @@
   <meta name="theme-color" content="#000000">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Design &amp; 3D · Danyal Sarfraz">
-  <meta property="og:description" content="Industrial design and photoreal CGI.">
+  <meta property="og:description" content="Industrial design, product visualization and photoreal CGI by Danyal Sarfraz.">
   <meta property="og:image" content="https://danyals-code.github.io/assets/img/lg/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -19,8 +19,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=6">
-  <script src="/assets/js/site.js?v=6" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=11">
+  <script src="/assets/js/site.js?v=12" defer></script>
 </head>
 <body class="theme-dark">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -32,14 +32,22 @@
         Danyal Sarfraz
       </a>
       <ul class="gnav__list" id="gnav-list">
-        <li><a href="/research/">Research</a></li>
-        <li><a href="/tools/">Tools</a></li>
-        <li><a href="/publications/">Publications</a></li>
         <li><a href="/design/" aria-current="page">Design</a></li>
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/tools/">Artifacts</a></li>
         <li><a href="/about/">About</a></li>
-        <li class="gnav__only-menu"><a href="/about/#contact">Contact</a></li>
+        <li><a href="/about/#contact">Contact</a></li>
       </ul>
-      <a class="btn btn--sm gnav__cta" href="/about/#contact">Contact</a>
+      <div class="gnav__tools">
+        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search (⌘K)">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-theme-toggle aria-label="Theme: automatic (system)" title="Theme: automatic (system)">
+          <svg class="theme-icon theme-icon--auto" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.6"/><path d="M8 2.4v11.2a5.6 5.6 0 0 0 0-11.2z" fill="currentColor" stroke="none"/></svg>
+          <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
+          <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
+        </button>
+      </div>
       <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
         <svg viewBox="0 0 18 18" aria-hidden="true"><path class="l1" d="M2 6h14"/><path class="l2" d="M2 12h14"/></svg>
       </button>
@@ -50,8 +58,8 @@
     <section class="hero">
       <div class="container">
         <p class="t-eyebrow hero__eyebrow">Design &amp; 3D</p>
-        <h1 class="t-display hero__title">Form. Material. Light.</h1>
-        <p class="t-lead hero__lead">I trained as an industrial designer and spent years as a 3D artist. It’s still how I prototype, communicate and test ideas.</p>
+        <h1 class="t-display hero__title">Form, material, light</h1>
+        <p class="t-lead hero__lead">A foundation in industrial design and four years of professional 3D work, which continue to inform how ideas are prototyped, communicated and tested.</p>
       </div>
       <figure class="fig" style="margin-top: clamp(28px,5vw,56px)">
         <div class="container-wide">
@@ -68,9 +76,9 @@
         <div class="feature" data-reveal>
           <div class="feature__text">
             <p class="t-eyebrow">Industrial design · With LG Electronics · 2024</p>
-            <h2 class="t-h2" id="lg-title">A sensor you wear, not notice.</h2>
-            <p>Concept design for a wearable module that monitors upper-body angle and speed, from an IID Lab R&amp;D project with LG Electronics. The work covered product design, research and development, and how the module attaches to a strap.</p>
-            <p>The renders show the concept, an exploded view of its parts, and a manufacturing-oriented variant.</p>
+            <h2 class="t-h2" id="lg-title">Wearable posture sensor module</h2>
+            <p>Concept design for a wearable module that monitors upper-body angle and speed, developed within an IID Lab R&amp;D project with LG Electronics. The scope covered product design, research and development, and the strap attachment system.</p>
+            <p>Renders show the concept, an exploded assembly and a variant optimized for manufacturing.</p>
           </div>
           <figure class="fig feature__media">
             <div class="fig__media" style="background:#06101f"><img src="/assets/img/lg/exploded.jpg" width="1600" height="1600" alt="Exploded view of the sensor module: a blue ring-shaped top cover lifted above the base" loading="lazy"></div>
@@ -90,8 +98,8 @@
         <div class="shead" data-reveal>
           <div>
             <p class="t-eyebrow">Product visualization</p>
-            <h2 class="t-h2 shead__title" id="viz-title">Rendering Lemmy.</h2>
-            <p class="shead__text t-lead">Studio renders I made for research stimuli, papers and the AR app. Partner teams designed Lemmy itself.</p>
+            <h2 class="t-h2 shead__title" id="viz-title">Lemmy product visualization</h2>
+            <p class="shead__text t-lead">Studio renders produced for research stimuli, publications and the AR application. Lemmy’s industrial design is by partner teams.</p>
           </div>
         </div>
       </div>
@@ -115,9 +123,9 @@
           </figure>
           <div class="feature__text">
             <p class="t-eyebrow">BSc thesis · NUST · 2023</p>
-            <h2 class="t-h2" id="wf-title">Waveform.</h2>
-            <p>A monitor-mounted device that encourages people to move during long stretches of screen time. Supervised by Dr. Raja Mubashir Karim, it earned the <strong>highest score in my batch (91%)</strong>.</p>
-            <a class="link-ext" href="https://www.behance.net/gallery/176802621/Waveform-Industrial-Product-Design">See the full project on Behance</a>
+            <h2 class="t-h2" id="wf-title">Waveform</h2>
+            <p>A monitor-mounted device that prompts physical movement during prolonged screen use. Supervised by Dr. Raja Mubashir Karim, the thesis received the <strong>highest score in the cohort (91%)</strong>.</p>
+            <a class="link-ext" href="https://www.behance.net/gallery/176802621/Waveform-Industrial-Product-Design">Full project on Behance</a>
           </div>
         </div>
       </div>
@@ -129,8 +137,8 @@
         <div class="shead" data-reveal>
           <div>
             <p class="t-eyebrow">CGI · 2021–2024</p>
-            <h2 class="t-h2 shead__title" id="cgi-title">Photoreal 3D.</h2>
-            <p class="shead__text t-lead">Personal studies and concepts built in Blender, Substance Painter and Unreal Engine.</p>
+            <h2 class="t-h2 shead__title" id="cgi-title">Photoreal CGI</h2>
+            <p class="shead__text t-lead">Self-directed studies and concepts in Blender, Substance Painter and Unreal Engine.</p>
           </div>
           <a class="link-ext shead__link" href="https://www.behance.net/designedbydanyal">All projects on Behance</a>
         </div>
@@ -175,28 +183,28 @@
     <section class="section" aria-labelledby="free-title">
       <div class="container">
         <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="free-title">Freelance and studio work.</h2>
+          <h2 class="t-h2 shead__title" id="free-title">Freelance and studio work</h2>
         </div>
         <div class="bento bento--thirds">
           <div class="tile stat span-2" data-reveal>
             <div class="tile__body">
               <span class="stat__kicker">Upwork</span>
               <span class="stat__num t-grad">Top 3%</span>
-              <p class="stat__cap">Top Rated Plus among 12 million freelancers, with 70+ fixed-budget contracts and 1,200+ hours, 2020–2024.</p>
+              <p class="stat__cap">Top Rated Plus, with more than 70 contracts and 1,200 hours, 2020–2024.</p>
             </div>
           </div>
           <div class="tile span-2" data-reveal>
             <div class="tile__body">
               <span class="tile__eyebrow">Metablaze · Full-time</span>
               <h3 class="tile__title tile__title--sm">3D artist</h3>
-              <p class="tile__text">3D models for in-game use and cinematic trailers, working with a design team in the USA and Turkey. Gaea, Unreal Engine, Substance Painter, Blender.</p>
+              <p class="tile__text">Game-ready assets and cinematic trailers, with a design team in the USA and Turkey. Gaea, Unreal Engine, Substance Painter, Blender.</p>
             </div>
           </div>
           <div class="tile span-2" data-reveal>
             <div class="tile__body">
               <span class="tile__eyebrow">Jackbots.io · Symspace Labs</span>
-              <h3 class="tile__title tile__title--sm">Ads and AR fashion</h3>
-              <p class="tile__text">Campaign visuals that ran in Times Square, New York, and artwork projected onto clothing through mobile AR.</p>
+              <h3 class="tile__title tile__title--sm">Advertising and AR fashion</h3>
+              <p class="tile__text">Campaign visuals displayed in Times Square, New York, and mobile AR artwork projected onto clothing.</p>
             </div>
           </div>
         </div>
@@ -207,6 +215,11 @@
   <footer class="gfooter">
     <div class="gfooter__inner">
       <nav class="gfooter__dir" aria-label="Site directory">
+        <div class="gfooter__col"><h3>Design</h3><ul>
+          <li><a href="/design/#lg">LG sensor module</a></li>
+          <li><a href="/design/#waveform">Waveform</a></li>
+          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+        </ul></div>
         <div class="gfooter__col"><h3>Research</h3><ul>
           <li><a href="/research/bangudae-xr/">Bangudae XR</a></li>
           <li><a href="/research/life-size-ar/">Life-size AR</a></li>
@@ -215,21 +228,17 @@
           <li><a href="/research/lemmy/">Robot motion</a></li>
           <li><a href="/research/lemmy-framework/">MSc thesis framework</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>Tools</h3><ul>
+        <div class="gfooter__col"><h3>Publications</h3><ul>
+          <li><a href="/research/#publications">Papers</a></li>
+          <li><a href="/research/#thesis">MSc thesis</a></li>
+          <li><a href="/research/#talks">Talks</a></li>
+          <li><a href="/research/#experiments">Experiments</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3>Artifacts</h3><ul>
           <li><a href="/tools/#lemmy-ar">Lemmy AR Experience</a></li>
           <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
           <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
-          <li><a href="/tools/#more">More tools</a></li>
-        </ul></div>
-        <div class="gfooter__col"><h3>Publications</h3><ul>
-          <li><a href="/publications/">Papers</a></li>
-          <li><a href="/publications/#thesis">MSc thesis</a></li>
-          <li><a href="/research/#experiments">Experiments</a></li>
-        </ul></div>
-        <div class="gfooter__col"><h3>Design</h3><ul>
-          <li><a href="/design/#lg">LG sensor module</a></li>
-          <li><a href="/design/#waveform">Waveform</a></li>
-          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+          <li><a href="/tools/#more">More artifacts</a></li>
         </ul></div>
         <div class="gfooter__col"><h3>About</h3><ul>
           <li><a href="/about/">Bio</a></li>
