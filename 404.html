@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-langs="en ar zh">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>(function(d){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
-  <title>Page not found · Danyal Sarfraz</title>
+  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}},1500)})})(document.documentElement)</script>
+  <title data-i18n="404.title">Page not found · Danyal Sarfraz</title>
   <meta name="robots" content="noindex">
   <meta name="color-scheme" content="light dark">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -12,31 +12,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=11">
-  <script src="/assets/js/site.js?v=12" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=13">
+  <script src="/assets/js/i18n.js?v=2" defer></script>
+  <script src="/assets/js/site.js?v=14" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
   <header class="gnav">
-    <nav class="gnav__inner" aria-label="Global">
+    <nav class="gnav__inner" aria-label="Global" data-i18n-attr="aria-label:nav.label">
       <a class="gnav__logo" href="/">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
         Danyal Sarfraz
       </a>
       <ul class="gnav__list" id="gnav-list">
-        <li><a href="/design/">Design</a></li>
-        <li><a href="/research/">Research</a></li>
-        <li><a href="/tools/">Artifacts</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/about/#contact">Contact</a></li>
+        <li><a href="/design/" data-i18n="nav.design">Design</a></li>
+        <li><a href="/research/" data-i18n="nav.research">Research</a></li>
+        <li><a href="/tools/" data-i18n="nav.tools">Artifacts</a></li>
+        <li><a href="/about/" data-i18n="nav.about">About</a></li>
+        <li><a href="/about/#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="gnav__tools">
-        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search (⌘K)">
+        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search">
           <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
         </button>
-        <button class="gnav__icon" type="button" data-theme-toggle aria-label="Theme: automatic (system)" title="Theme: automatic (system)">
-          <svg class="theme-icon theme-icon--auto" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.6"/><path d="M8 2.4v11.2a5.6 5.6 0 0 0 0-11.2z" fill="currentColor" stroke="none"/></svg>
+        <button class="gnav__icon" type="button" data-lang-open aria-haspopup="true" aria-expanded="false" aria-label="Language: English" title="Language">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.6 2.6 3.6 2.6 6S9.7 12.4 8 14M8 2C6.3 3.6 5.4 5.6 5.4 8s.9 4.4 2.6 6"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Switch to dark theme">
           <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
           <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
         </button>
@@ -50,13 +53,60 @@
   <main id="main" class="hero" style="min-height: 70vh; padding-bottom: 120px">
     <div class="container">
       <p class="t-eyebrow hero__eyebrow">404</p>
-      <h1 class="t-display hero__title">Page not found</h1>
-      <p class="t-lead hero__lead">The link may be out of date, or the page may have moved.</p>
+      <h1 class="t-display hero__title" data-i18n="404.heading">Page not found</h1>
+      <p class="t-lead hero__lead" data-i18n="404.lead">The link may be out of date, or the page may have moved.</p>
       <div class="cta-row">
-        <a class="btn" href="/">Home</a>
-        <a class="link-more" href="/research/">Research</a>
+        <a class="btn" href="/" data-i18n="404.home">Home</a>
+        <a class="link-more" href="/research/" data-i18n="nav.research">Research</a>
       </div>
     </div>
   </main>
+
+  <footer class="gfooter">
+    <div class="gfooter__inner">
+      <nav class="gfooter__dir" aria-label="Site directory" data-i18n-attr="aria-label:footer.label">
+        <div class="gfooter__col"><h3 data-i18n="nav.design">Design</h3><ul>
+          <li><a href="/design/#cgi" data-i18n="footer.cgi">3D &amp; CGI</a></li>
+          <li><a href="/design/#waveform">Waveform</a></li>
+          <li><a href="/design/#viz" data-i18n="footer.viz">Product visualization</a></li>
+          <li><a href="/design/#freelance" data-i18n="footer.freelance">Freelance work</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="footer.caseStudies">Case studies</h3><ul>
+          <li><a href="/research/bangudae-xr/" data-i18n="footer.bangudae">Bangudae XR</a></li>
+          <li><a href="/research/life-size-ar/" data-i18n="footer.lifeSize">Life-size AR</a></li>
+          <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
+          <li><a href="/research/product-form/" data-i18n="footer.productForm">Product form analysis</a></li>
+          <li><a href="/research/lemmy/" data-i18n="footer.robotMotion">Robot motion</a></li>
+          <li><a href="/research/lemmy-framework/" data-i18n="footer.framework">MSc thesis framework</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="nav.research">Research</h3><ul>
+          <li><a href="/research/#publications" data-i18n="footer.publications">Publications</a></li>
+          <li><a href="/research/#thesis" data-i18n="footer.thesis">MSc thesis</a></li>
+          <li><a href="/research/#industry" data-i18n="footer.industry">Industry projects</a></li>
+          <li><a href="/research/#personal" data-i18n="footer.personal">Personal projects</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="nav.tools">Artifacts</h3><ul>
+          <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
+          <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
+          <li><a href="/tools/#more" data-i18n="footer.moreTools">More artifacts</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="nav.about">About</h3><ul>
+          <li><a href="/about/" data-i18n="footer.bio">Bio</a></li>
+          <li><a href="/about/#experience" data-i18n="footer.experience">Experience</a></li>
+          <li><a href="/about/#education" data-i18n="footer.education">Education</a></li>
+          <li><a href="/about/#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul></div>
+      </nav>
+      <div class="gfooter__legal">
+        <p data-i18n="footer.copyright">Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
+        <nav aria-label="Elsewhere" data-i18n-attr="aria-label:footer.elsewhere">
+          <a href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
+          <a href="https://github.com/Danyals-code">GitHub</a>
+          <a href="https://www.behance.net/designedbydanyal">Behance</a>
+          <a href="mailto:danialsarfraz2000@gmail.com" data-i18n="footer.email">Email</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

@@ -1,16 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-langs="en ar zh">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>(function(d){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
-  <title>Multi-view consistency in automated product form analysis · Danyal Sarfraz</title>
-  <meta name="description" content="A 23-parameter pipeline built on silhouette masks and monocular depth. Across seven products, 16 views matched 180 views at 90% consistency or higher for 20 of 23 parameters. KSDS 2026.">
+  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}},1500)})})(document.documentElement)</script>
+  <title data-i18n="product-form.title">Multi-view consistency in automated product form analysis · Danyal Sarfraz</title>
+  <meta name="description" content="A 23-parameter pipeline built on silhouette masks and monocular depth. Across seven products, 16 views matched 180 views at 90% consistency or higher for 20 of 23 parameters. KSDS 2026." data-i18n-attr="content:product-form.description">
   <link rel="canonical" href="https://danyals-code.github.io/research/product-form/">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Danyal Sarfraz">
+  <meta property="og:url" content="https://danyals-code.github.io/research/product-form/">
   <meta property="og:title" content="Multi-view consistency in automated product form analysis · Danyal Sarfraz">
   <meta property="og:description" content="Sixteen renders reproduce 180-view results for 20 of 23 form parameters.">
   <meta property="og:image" content="https://danyals-code.github.io/assets/img/og.png">
@@ -20,31 +22,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=11">
-  <script src="/assets/js/site.js?v=12" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=13">
+  <script src="/assets/js/i18n.js?v=2" defer></script>
+  <script src="/assets/js/i18n/product-form.js?v=1" defer></script>
+  <script src="/assets/js/site.js?v=14" defer></script>
 </head>
 <body class="has-lnav">
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
   <header class="gnav">
-    <nav class="gnav__inner" aria-label="Global">
+    <nav class="gnav__inner" aria-label="Global" data-i18n-attr="aria-label:nav.label">
       <a class="gnav__logo" href="/">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
         Danyal Sarfraz
       </a>
       <ul class="gnav__list" id="gnav-list">
-        <li><a href="/design/">Design</a></li>
-        <li><a href="/research/" aria-current="page">Research</a></li>
-        <li><a href="/tools/">Artifacts</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/about/#contact">Contact</a></li>
+        <li><a href="/design/" data-i18n="nav.design">Design</a></li>
+        <li><a href="/research/" aria-current="page" data-i18n="nav.research">Research</a></li>
+        <li><a href="/tools/" data-i18n="nav.tools">Artifacts</a></li>
+        <li><a href="/about/" data-i18n="nav.about">About</a></li>
+        <li><a href="/about/#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="gnav__tools">
-        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search (⌘K)">
+        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search">
           <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
         </button>
-        <button class="gnav__icon" type="button" data-theme-toggle aria-label="Theme: automatic (system)" title="Theme: automatic (system)">
-          <svg class="theme-icon theme-icon--auto" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.6"/><path d="M8 2.4v11.2a5.6 5.6 0 0 0 0-11.2z" fill="currentColor" stroke="none"/></svg>
+        <button class="gnav__icon" type="button" data-lang-open aria-haspopup="true" aria-expanded="false" aria-label="Language: English" title="Language">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.6 2.6 3.6 2.6 6S9.7 12.4 8 14M8 2C6.3 3.6 5.4 5.6 5.4 8s.9 4.4 2.6 6"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Switch to dark theme">
           <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
           <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
         </button>
@@ -55,51 +61,51 @@
     </nav>
   </header>
 
-  <nav class="lnav" aria-label="Case study">
+  <nav class="lnav" aria-label="Case study" data-i18n-attr="aria-label:product-form.nav.label">
     <div class="lnav__inner">
-      <a class="lnav__title" href="#top">Product Form</a>
+      <a class="lnav__title" href="#top" data-i18n="product-form.nav.title">Product Form</a>
       <ul class="lnav__links">
-        <li><a href="#why">Why</a></li>
-        <li><a href="#pipeline">Pipeline</a></li>
-        <li><a href="#results">Results</a></li>
+        <li><a href="#why" data-i18n="product-form.nav.why">Why</a></li>
+        <li><a href="#pipeline" data-i18n="product-form.nav.pipeline">Pipeline</a></li>
+        <li><a href="#results" data-i18n="product-form.nav.results">Results</a></li>
       </ul>
-      <a class="btn btn--sm" href="/research/#ksds-2026">Cite</a>
+      <a class="btn btn--sm" href="/research/#ksds-2026" data-i18n="product-form.nav.cite">Cite</a>
     </div>
   </nav>
 
   <main id="main">
     <section class="hero" id="top">
       <div class="container">
-        <p class="t-eyebrow hero__eyebrow">Case study · Computational design · KSDS 2026</p>
-        <h1 class="t-display hero__title hero__title--wide">Multi-view consistency in automated product form analysis</h1>
-        <p class="t-lead hero__lead">Data-driven design requires quantitative descriptors of product shape. This study tests whether sixteen standard renders can substitute for 3D CAD, which is proprietary and rarely available, as the input.</p>
+        <p class="t-eyebrow hero__eyebrow" data-i18n="product-form.hero.eyebrow">Case study · Computational design · KSDS 2026</p>
+        <h1 class="t-display hero__title hero__title--wide" data-i18n="product-form.hero.title">Multi-view consistency in automated product form analysis</h1>
+        <p class="t-lead hero__lead" data-i18n="product-form.hero.lead">Data-driven design requires quantitative descriptors of product shape. This study tests whether sixteen standard renders can substitute for 3D CAD, which is proprietary and rarely available, as the input.</p>
       </div>
       <div class="container-wide" style="margin-top: clamp(28px,5vw,56px)">
         <div class="fig-row fig-row--4 white-stage" style="border-radius: var(--r-xl); padding: clamp(12px,2vw,24px)">
-          <img class="blend-white" src="/assets/img/lemmy/front.jpg" width="1400" height="1400" alt="Lemmy seen from the front" fetchpriority="high">
-          <img class="blend-white" src="/assets/img/lemmy/persp.jpg" width="1600" height="1600" alt="Lemmy seen from a three-quarter angle">
-          <img class="blend-white" src="/assets/img/lemmy/side.jpg" width="1400" height="1400" alt="Lemmy seen from the side">
-          <img class="blend-white" src="/assets/img/lemmy/persp-2.jpg" width="1600" height="1600" alt="Lemmy seen from another three-quarter angle">
+          <img class="blend-white" src="/assets/img/lemmy/front.jpg" width="1400" height="1400" alt="Lemmy seen from the front" fetchpriority="high" data-i18n-attr="alt:product-form.hero.frontAlt">
+          <img class="blend-white" src="/assets/img/lemmy/persp.jpg" width="1600" height="1600" alt="Lemmy seen from a three-quarter angle" data-i18n-attr="alt:product-form.hero.perspAlt">
+          <img class="blend-white" src="/assets/img/lemmy/side.jpg" width="1400" height="1400" alt="Lemmy seen from the side" data-i18n-attr="alt:product-form.hero.sideAlt">
+          <img class="blend-white" src="/assets/img/lemmy/persp-2.jpg" width="1600" height="1600" alt="Lemmy seen from another three-quarter angle" data-i18n-attr="alt:product-form.hero.persp2Alt">
         </div>
-        <p class="fig__cap container" style="margin-top:14px">One of the seven products analyzed, each rendered on a full 360° turntable.</p>
+        <p class="fig__cap container" style="margin-top:14px" data-i18n="product-form.hero.cap">One of the seven products analyzed, each rendered on a full 360° turntable.</p>
       </div>
     </section>
 
     <section class="section" aria-labelledby="facts-title">
       <div class="container">
-        <h2 class="visually-hidden" id="facts-title">Project facts</h2>
+        <h2 class="visually-hidden" id="facts-title" data-i18n="product-form.facts.title">Project facts</h2>
         <div class="facts" data-reveal>
-          <div><span class="fact__label">Authors</span><p class="fact__value"><b>D. Sarfraz</b> and K. Kim, UNIST</p></div>
-          <div><span class="fact__label">Venue</span><p class="fact__value">KSDS 2026 International Conference</p></div>
-          <div><span class="fact__label">Stack</span><p class="fact__value">Python with OpenCV and scikit-image, and Depth-Anything-V2-Small via Hugging Face Transformers</p></div>
+          <div><span class="fact__label" data-i18n="product-form.facts.authorsLabel">Authors</span><p class="fact__value" data-i18n="product-form.facts.authors"><b>D. Sarfraz</b> and K. Kim, UNIST</p></div>
+          <div><span class="fact__label" data-i18n="product-form.facts.venueLabel">Venue</span><p class="fact__value" data-i18n="product-form.facts.venue">KSDS 2026 International Conference</p></div>
+          <div><span class="fact__label" data-i18n="product-form.facts.stackLabel">Stack</span><p class="fact__value" data-i18n="product-form.facts.stack">Python with OpenCV and scikit-image, and Depth-Anything-V2-Small via Hugging Face Transformers</p></div>
         </div>
       </div>
     </section>
 
     <section class="section section--alt" id="why" aria-labelledby="why-title">
       <div class="container">
-        <p class="t-two-tone" data-reveal>A compact vector describing <strong>elongation, symmetry, outline irregularity or apparent part count</strong> supports competitor comparison, tracking of design evolution, and linking form to judgments such as perceived quality. CAD would be the ideal input but is rarely available. <strong>Product images are widely available, and they are what expert evaluators assess.</strong></p>
-        <h2 class="visually-hidden" id="why-title">Why</h2>
+        <p class="t-two-tone" data-reveal data-i18n="product-form.why.text">A compact vector describing <strong>elongation, symmetry, outline irregularity or apparent part count</strong> supports competitor comparison, tracking of design evolution, and linking form to judgments such as perceived quality. CAD would be the ideal input but is rarely available. <strong>Product images are widely available, and they are what expert evaluators assess.</strong></p>
+        <h2 class="visually-hidden" id="why-title" data-i18n="product-form.why.title">Why</h2>
       </div>
     </section>
 
@@ -107,29 +113,29 @@
       <div class="container">
         <div class="shead" data-reveal>
           <div>
-            <h2 class="t-h2 shead__title" id="pipe-title">Silhouette and depth signals yield 23 form parameters</h2>
-            <p class="shead__text t-lead">Each image is decomposed into a silhouette mask and a depth map, then summarized with 23 established form parameters. The parameters themselves are not new; the contribution is extracting all 23 automatically from a small set of images.</p>
+            <h2 class="t-h2 shead__title" id="pipe-title" data-i18n="product-form.pipeline.title">Silhouette and depth signals yield 23 form parameters</h2>
+            <p class="shead__text t-lead" data-i18n="product-form.pipeline.lead">Each image is decomposed into a silhouette mask and a depth map, then summarized with 23 established form parameters. The parameters themselves are not new; the contribution is extracting all 23 automatically from a small set of images.</p>
           </div>
         </div>
         <ol class="steps steps--3">
           <li class="step" data-reveal>
             <span class="step__num">1</span>
-            <h3 class="step__title">Silhouette mask</h3>
-            <p class="step__text">From the alpha channel, or luminance thresholding plus a largest-contour fill.</p>
+            <h3 class="step__title" data-i18n="product-form.step.mask.title">Silhouette mask</h3>
+            <p class="step__text" data-i18n="product-form.step.mask.text">From the alpha channel, or luminance thresholding plus a largest-contour fill.</p>
           </li>
           <li class="step" data-reveal>
             <span class="step__num">2</span>
-            <h3 class="step__title">Monocular depth</h3>
-            <p class="step__text">Depth-Anything-V2-Small predicts depth from a single RGB image, normalized within the mask.</p>
+            <h3 class="step__title" data-i18n="product-form.step.depth.title">Monocular depth</h3>
+            <p class="step__text" data-i18n="product-form.step.depth.text">Depth-Anything-V2-Small predicts depth from a single RGB image, normalized within the mask.</p>
           </li>
           <li class="step" data-reveal>
             <span class="step__num">3</span>
-            <h3 class="step__title">23 parameters</h3>
-            <p class="step__text">Symmetry, proportion, curvature, visual complexity, convexity, balance and primitive fit. Fifteen use the mask alone; eight also incorporate depth.</p>
+            <h3 class="step__title" data-i18n="product-form.step.params.title">23 parameters</h3>
+            <p class="step__text" data-i18n="product-form.step.params.text">Symmetry, proportion, curvature, visual complexity, convexity, balance and primitive fit. Fifteen use the mask alone; eight also incorporate depth.</p>
           </li>
         </ol>
         <div class="callout-note" style="margin-top:20px" data-reveal>
-          <p><strong>Evaluation protocol.</strong> Seven products were each rendered on a full 360° turntable at two set sizes, 16 views (every 22.5°) and 180 views (every 2°): Lemmy, a Sony PSP-1000, a Teenage Engineering TP-7, a game controller, a Nokia handset, a Marshall speaker and a Canon lens. For each parameter, consistency = 1 − |v₁₆ − v₁₈₀| / |v₁₈₀|, averaged across products.</p>
+          <p data-i18n="product-form.protocol"><strong>Evaluation protocol.</strong> Seven products were each rendered on a full 360° turntable at two set sizes, 16 views (every 22.5°) and 180 views (every 2°): Lemmy, a Sony PSP-1000, a Teenage Engineering TP-7, a game controller, a Nokia handset, a Marshall speaker and a Canon lens. For each parameter, consistency = 1 − |v₁₆ − v₁₈₀| / |v₁₈₀|, averaged across products.</p>
         </div>
       </div>
     </section>
@@ -137,34 +143,34 @@
     <section class="section section--alt" id="results" aria-labelledby="results-title">
       <div class="container">
         <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="results-title">Sixteen views reproduced 180-view results for 20 of 23 parameters</h2>
+          <h2 class="t-h2 shead__title" id="results-title" data-i18n="product-form.results.title">Sixteen views reproduced 180-view results for 20 of 23 parameters</h2>
         </div>
         <div class="findings">
           <div class="finding" data-reveal>
-            <span class="finding__num t-grad">20 of 23</span>
-            <p class="finding__text"><strong>Highly consistent (90% or more).</strong> Led by solidity (99.9%), centroid balance, rectangularity and primitive fit (99.8%), convexity index (99.7%) and symmetry (99.6%).</p>
+            <span class="finding__num t-grad" data-i18n="product-form.results.highNum">20 of 23</span>
+            <p class="finding__text" data-i18n="product-form.results.high"><strong>Highly consistent (90% or more).</strong> Led by solidity (99.9%), centroid balance, rectangularity and primitive fit (99.8%), convexity index (99.7%) and symmetry (99.6%).</p>
           </div>
           <div class="finding" data-reveal>
             <span class="finding__num">2</span>
-            <p class="finding__text"><strong>Moderate (80–90%).</strong> Sub-band entropy (83.4%) and axis count (80.4%), which are sensitive to small native scales or integer thresholds.</p>
+            <p class="finding__text" data-i18n="product-form.results.moderate"><strong>Moderate (80–90%).</strong> Sub-band entropy (83.4%) and axis count (80.4%), which are sensitive to small native scales or integer thresholds.</p>
           </div>
           <div class="finding" data-reveal>
             <span class="finding__num">1</span>
-            <p class="finding__text"><strong>Lower (under 80%).</strong> Concavity part count (76.3%) is threshold-sensitive and degrades on products with minimal concavity.</p>
+            <p class="finding__text" data-i18n="product-form.results.lower"><strong>Lower (under 80%).</strong> Concavity part count (76.3%) is threshold-sensitive and degrades on products with minimal concavity.</p>
           </div>
         </div>
         <figure class="fig" style="margin-top:20px" data-reveal>
-          <div class="fig__media fig__media--white fig__media--pad"><img class="blend-white" src="/assets/img/product-form/consistency.png" width="2180" height="1576" alt="Horizontal bar chart of the 23 parameters’ consistency between 16-view and 180-view aggregates, with 20 bars above 90 percent" loading="lazy"></div>
-          <figcaption class="fig__cap">Per-parameter consistency, averaged across the seven products.</figcaption>
+          <div class="fig__media fig__media--white fig__media--pad"><img class="blend-white" src="/assets/img/product-form/consistency.png" width="2180" height="1576" alt="Horizontal bar chart of the 23 parameters’ consistency between 16-view and 180-view aggregates, with 20 bars above 90 percent" loading="lazy" data-i18n-attr="alt:product-form.results.chartAlt"></div>
+          <figcaption class="fig__cap" data-i18n="product-form.results.chartCap">Per-parameter consistency, averaged across the seven products.</figcaption>
         </figure>
         <div class="feature" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
           <div class="feature__text">
-            <h3 class="t-h3">Throughput enables dataset-scale form analysis</h3>
-            <p>A 23-parameter profile is computed in seconds from sixteen renders, which product catalogs often already contain. Across hundreds or thousands of products, this allows form parameters to be paired with expert evaluations to build the datasets that learning models require.</p>
+            <h3 class="t-h3" data-i18n="product-form.throughput.title">Throughput enables dataset-scale form analysis</h3>
+            <p data-i18n="product-form.throughput.text">A 23-parameter profile is computed in seconds from sixteen renders, which product catalogs often already contain. Across hundreds or thousands of products, this allows form parameters to be paired with expert evaluations to build the datasets that learning models require.</p>
           </div>
           <div class="feature__text">
-            <h3 class="t-h3">Scope and limitations</h3>
-            <p>The sample comprised seven products, rotated about a single axis with no pitch variation. Integer-count parameters require rescaling before they can be reported alongside the others. The study establishes stability across view counts, not geometric accuracy; linking the vectors to expert ratings is the next test.</p>
+            <h3 class="t-h3" data-i18n="product-form.limits.title">Scope and limitations</h3>
+            <p data-i18n="product-form.limits.text">The sample comprised seven products, rotated about a single axis with no pitch variation. Integer-count parameters require rescaling before they can be reported alongside the others. The study establishes stability across view counts, not geometric accuracy; linking the vectors to expert ratings is the next test.</p>
           </div>
         </div>
       </div>
@@ -175,18 +181,18 @@
         <div class="bento">
         <a class="tile span-3" href="/tools/#multiview" data-reveal>
           <div class="tile__body">
-            <p class="t-eyebrow">Related tool</p>
-            <h2 class="t-h3" id="related-title">MultiView Product Renderer</h2>
-            <p class="tile__text">A Blender add-on that generates consistent, batch-rendered multi-view image sets from CAD models.</p>
-            <span class="link-more">View project</span>
+            <p class="t-eyebrow" data-i18n="product-form.related.eyebrow">Related tool</p>
+            <h2 class="t-h3" id="related-title" translate="no">MultiView Product Renderer</h2>
+            <p class="tile__text" data-i18n="product-form.related.text">A Blender add-on that generates consistent, batch-rendered multi-view image sets from CAD models.</p>
+            <span class="link-more" data-i18n="product-form.related.link">View project</span>
           </div>
         </a>
           <a class="tile tile--white span-3" href="/research/lemmy/" data-reveal style="background:var(--bg-2)">
             <div class="tile__body">
-              <p class="t-eyebrow">Next case study</p>
-              <h2 class="t-h3">Component-based motion design for a care robot</h2>
-              <p class="tile__text">A component-based method for designing a companion robot’s motion, evaluated with 40 older adults.</p>
-              <span class="link-more">Read the case study</span>
+              <p class="t-eyebrow" data-i18n="product-form.next.eyebrow">Next case study</p>
+              <h2 class="t-h3" data-i18n="product-form.next.title">Component-based motion design for a care robot</h2>
+              <p class="tile__text" data-i18n="product-form.next.text">A component-based method for designing a companion robot’s motion, evaluated with 40 older adults.</p>
+              <span class="link-more" data-i18n="product-form.next.read">Read the case study</span>
             </div>
           </a>
         </div>
@@ -196,52 +202,52 @@
 
   <footer class="gfooter">
     <div class="gfooter__inner">
-      <section class="footnotes" aria-label="References">
+      <section class="footnotes" aria-label="References" data-i18n-attr="aria-label:footer.references">
         <ol>
-          <li>Sarfraz, D., &amp; Kim, K. (2026). Assessment of Multi-View Consistency in Automated Product Form Analysis. <i>KSDS 2026 International Conference</i>.</li>
-          <li>Supported by the Technology Innovation Program (RS-2025-04752997), Ministry of Trade, Industry &amp; Energy (MOTIE), Korea.</li>
+          <li translate="no" lang="en" dir="ltr">Sarfraz, D., &amp; Kim, K. (2026). Assessment of Multi-View Consistency in Automated Product Form Analysis. <i>KSDS 2026 International Conference</i>.</li>
+          <li data-i18n="product-form.note.funding">Supported by the Technology Innovation Program (RS-2025-04752997), Ministry of Trade, Industry &amp; Energy (MOTIE), Korea.</li>
         </ol>
       </section>
-      <nav class="gfooter__dir" aria-label="Site directory">
-        <div class="gfooter__col"><h3>Design</h3><ul>
-          <li><a href="/design/#lg">LG sensor module</a></li>
+      <nav class="gfooter__dir" aria-label="Site directory" data-i18n-attr="aria-label:footer.label">
+        <div class="gfooter__col"><h3 data-i18n="nav.design">Design</h3><ul>
+          <li><a href="/design/#cgi" data-i18n="footer.cgi">3D &amp; CGI</a></li>
           <li><a href="/design/#waveform">Waveform</a></li>
-          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+          <li><a href="/design/#viz" data-i18n="footer.viz">Product visualization</a></li>
+          <li><a href="/design/#freelance" data-i18n="footer.freelance">Freelance work</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>Research</h3><ul>
-          <li><a href="/research/bangudae-xr/">Bangudae XR</a></li>
-          <li><a href="/research/life-size-ar/">Life-size AR</a></li>
+        <div class="gfooter__col"><h3 data-i18n="footer.caseStudies">Case studies</h3><ul>
+          <li><a href="/research/bangudae-xr/" data-i18n="footer.bangudae">Bangudae XR</a></li>
+          <li><a href="/research/life-size-ar/" data-i18n="footer.lifeSize">Life-size AR</a></li>
           <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
-          <li><a href="/research/product-form/">Product form analysis</a></li>
-          <li><a href="/research/lemmy/">Robot motion</a></li>
-          <li><a href="/research/lemmy-framework/">MSc thesis framework</a></li>
+          <li><a href="/research/product-form/" data-i18n="footer.productForm">Product form analysis</a></li>
+          <li><a href="/research/lemmy/" data-i18n="footer.robotMotion">Robot motion</a></li>
+          <li><a href="/research/lemmy-framework/" data-i18n="footer.framework">MSc thesis framework</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>Publications</h3><ul>
-          <li><a href="/research/#publications">Papers</a></li>
-          <li><a href="/research/#thesis">MSc thesis</a></li>
-          <li><a href="/research/#talks">Talks</a></li>
-          <li><a href="/research/#experiments">Experiments</a></li>
+        <div class="gfooter__col"><h3 data-i18n="nav.research">Research</h3><ul>
+          <li><a href="/research/#publications" data-i18n="footer.publications">Publications</a></li>
+          <li><a href="/research/#thesis" data-i18n="footer.thesis">MSc thesis</a></li>
+          <li><a href="/research/#industry" data-i18n="footer.industry">Industry projects</a></li>
+          <li><a href="/research/#personal" data-i18n="footer.personal">Personal projects</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>Artifacts</h3><ul>
-          <li><a href="/tools/#lemmy-ar">Lemmy AR Experience</a></li>
+        <div class="gfooter__col"><h3 data-i18n="nav.tools">Artifacts</h3><ul>
           <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
           <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
-          <li><a href="/tools/#more">More artifacts</a></li>
+          <li><a href="/tools/#more" data-i18n="footer.moreTools">More artifacts</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>About</h3><ul>
-          <li><a href="/about/">Bio</a></li>
-          <li><a href="/about/#experience">Experience</a></li>
-          <li><a href="/about/#education">Education</a></li>
-          <li><a href="/about/#contact">Contact</a></li>
+        <div class="gfooter__col"><h3 data-i18n="nav.about">About</h3><ul>
+          <li><a href="/about/" data-i18n="footer.bio">Bio</a></li>
+          <li><a href="/about/#experience" data-i18n="footer.experience">Experience</a></li>
+          <li><a href="/about/#education" data-i18n="footer.education">Education</a></li>
+          <li><a href="/about/#contact" data-i18n="nav.contact">Contact</a></li>
         </ul></div>
       </nav>
       <div class="gfooter__legal">
-        <p>Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
-        <nav aria-label="Elsewhere">
+        <p data-i18n="footer.copyright">Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
+        <nav aria-label="Elsewhere" data-i18n-attr="aria-label:footer.elsewhere">
           <a href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
           <a href="https://github.com/Danyals-code">GitHub</a>
           <a href="https://www.behance.net/designedbydanyal">Behance</a>
-          <a href="mailto:danialsarfraz2000@gmail.com">Email</a>
+          <a href="mailto:danialsarfraz2000@gmail.com" data-i18n="footer.email">Email</a>
         </nav>
       </div>
     </div>

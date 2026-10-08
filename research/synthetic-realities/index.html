@@ -1,16 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-langs="en ar zh">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>(function(d){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
-  <title>Synthetic Realities: Human detection of AI-generated video · Danyal Sarfraz</title>
-  <meta name="description" content="A controlled online study of how accurately 87 untrained viewers distinguish AI-generated video from real footage across three generation techniques and three themes. IASDR 2025 pictorial.">
+  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}},1500)})})(document.documentElement)</script>
+  <title data-i18n="synthetic-realities.title">Synthetic Realities: Human detection of AI-generated video · Danyal Sarfraz</title>
+  <meta name="description" content="A controlled online study of how accurately 87 untrained viewers distinguish AI-generated video from real footage across three generation techniques and three themes. IASDR 2025 pictorial." data-i18n-attr="content:synthetic-realities.description">
   <link rel="canonical" href="https://danyals-code.github.io/research/synthetic-realities/">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Danyal Sarfraz">
+  <meta property="og:url" content="https://danyals-code.github.io/research/synthetic-realities/">
   <meta property="og:title" content="Human detection of AI-generated video · Danyal Sarfraz">
   <meta property="og:description" content="87 participants, 36 clips, 3,132 judgments: how accurately untrained viewers detect AI-generated video.">
   <meta property="og:image" content="https://danyals-code.github.io/assets/img/og.png">
@@ -20,31 +22,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=11">
-  <script src="/assets/js/site.js?v=12" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=13">
+  <script src="/assets/js/i18n.js?v=2" defer></script>
+  <script src="/assets/js/i18n/synthetic-realities.js?v=1" defer></script>
+  <script src="/assets/js/site.js?v=14" defer></script>
 </head>
 <body class="has-lnav">
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
   <header class="gnav">
-    <nav class="gnav__inner" aria-label="Global">
+    <nav class="gnav__inner" aria-label="Global" data-i18n-attr="aria-label:nav.label">
       <a class="gnav__logo" href="/">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
         Danyal Sarfraz
       </a>
       <ul class="gnav__list" id="gnav-list">
-        <li><a href="/design/">Design</a></li>
-        <li><a href="/research/" aria-current="page">Research</a></li>
-        <li><a href="/tools/">Artifacts</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/about/#contact">Contact</a></li>
+        <li><a href="/design/" data-i18n="nav.design">Design</a></li>
+        <li><a href="/research/" aria-current="page" data-i18n="nav.research">Research</a></li>
+        <li><a href="/tools/" data-i18n="nav.tools">Artifacts</a></li>
+        <li><a href="/about/" data-i18n="nav.about">About</a></li>
+        <li><a href="/about/#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="gnav__tools">
-        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search (⌘K)">
+        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search">
           <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
         </button>
-        <button class="gnav__icon" type="button" data-theme-toggle aria-label="Theme: automatic (system)" title="Theme: automatic (system)">
-          <svg class="theme-icon theme-icon--auto" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.6"/><path d="M8 2.4v11.2a5.6 5.6 0 0 0 0-11.2z" fill="currentColor" stroke="none"/></svg>
+        <button class="gnav__icon" type="button" data-lang-open aria-haspopup="true" aria-expanded="false" aria-label="Language: English" title="Language">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.6 2.6 3.6 2.6 6S9.7 12.4 8 14M8 2C6.3 3.6 5.4 5.6 5.4 8s.9 4.4 2.6 6"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Switch to dark theme">
           <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
           <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
         </button>
@@ -55,32 +61,32 @@
     </nav>
   </header>
 
-  <nav class="lnav" aria-label="Case study">
+  <nav class="lnav" aria-label="Case study" data-i18n-attr="aria-label:synthetic-realities.nav.label">
     <div class="lnav__inner">
-      <a class="lnav__title" href="#top">Synthetic Realities</a>
+      <a class="lnav__title" href="#top" translate="no">Synthetic Realities</a>
       <ul class="lnav__links">
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#study">Study</a></li>
-        <li><a href="#results">Results</a></li>
-        <li><a href="#implications">Implications</a></li>
+        <li><a href="#overview" data-i18n="synthetic-realities.nav.overview">Overview</a></li>
+        <li><a href="#study" data-i18n="synthetic-realities.nav.study">Study</a></li>
+        <li><a href="#results" data-i18n="synthetic-realities.nav.results">Results</a></li>
+        <li><a href="#implications" data-i18n="synthetic-realities.nav.implications">Implications</a></li>
       </ul>
-      <a class="btn btn--sm" href="https://doi.org/10.21606/iasdr.2025.1050">Read the paper</a>
+      <a class="btn btn--sm" href="https://doi.org/10.21606/iasdr.2025.1050" data-i18n="synthetic-realities.nav.paper">Read the paper</a>
     </div>
   </nav>
 
   <main id="main">
     <section class="hero" id="top">
       <div class="container">
-        <p class="t-eyebrow hero__eyebrow">Case study · Human-centered AI</p>
-        <h1 class="t-display hero__title">Human detection of AI-generated video</h1>
-        <p class="t-lead hero__lead">Generative video has moved from uncanny to convincing within a few years. This controlled study measures how accurately untrained viewers detect it, and under which conditions detection fails.</p>
+        <p class="t-eyebrow hero__eyebrow" data-i18n="synthetic-realities.hero.eyebrow">Case study · Human-centered AI</p>
+        <h1 class="t-display hero__title" data-i18n="synthetic-realities.hero.title">Human detection of AI-generated video</h1>
+        <p class="t-lead hero__lead" data-i18n="synthetic-realities.hero.lead">Generative video has moved from uncanny to convincing within a few years. This controlled study measures how accurately untrained viewers detect it, and under which conditions detection fails.</p>
       </div>
       <div class="container-wide" style="margin-top: clamp(36px,5vw,64px)">
         <div class="tile theme-dark" style="text-align:center">
           <div class="tile__body tile__body--center" style="padding-block: clamp(48px,7vw,96px)">
-            <span class="stat__kicker">Average accuracy</span>
+            <span class="stat__kicker" data-i18n="synthetic-realities.hero.statLabel">Average accuracy</span>
             <span class="stat__num t-grad" style="font-size: clamp(96px,16vw,220px)" data-count="60" data-suffix="%">60%</span>
-            <p class="stat__cap" style="max-width:30em">across 3,132 real-or-AI judgments by 87 participants, against a 50% chance level.</p>
+            <p class="stat__cap" style="max-width:30em" data-i18n="synthetic-realities.hero.statCap">across 3,132 real-or-AI judgments by 87 participants, against a 50% chance level.</p>
           </div>
         </div>
       </div>
@@ -89,29 +95,29 @@
     <!-- Overview -->
     <section class="section" id="overview" aria-labelledby="overview-title">
       <div class="container">
-        <h2 class="visually-hidden" id="overview-title">Overview</h2>
+        <h2 class="visually-hidden" id="overview-title" data-i18n="synthetic-realities.overview.title">Overview</h2>
         <div class="facts" data-reveal>
-          <div><span class="fact__label">Role</span><p class="fact__value">Designer and researcher, first author</p></div>
-          <div><span class="fact__label">Team</span><p class="fact__value">With Prof. R. M. Karim (NUST) and Prof. KwanMyung Kim (UNIST)</p></div>
-          <div><span class="fact__label">Published</span><p class="fact__value"><a href="https://doi.org/10.21606/iasdr.2025.1050">IASDR 2025</a>, pictorial track, Taipei</p></div>
-          <div><span class="fact__label">Participants</span><p class="fact__value">87 adults aged 18 to 70, none with professional AI, graphics or video experience</p></div>
-          <div><span class="fact__label">Design</span><p class="fact__value">Within-subjects online study, binary forced choice, randomized order</p></div>
-          <div><span class="fact__label">Analysis</span><p class="fact__value">Logistic regression with Holm–Bonferroni correction</p></div>
+          <div><span class="fact__label" data-i18n="synthetic-realities.fact.role">Role</span><p class="fact__value" data-i18n="synthetic-realities.fact.roleValue">Designer and researcher, first author</p></div>
+          <div><span class="fact__label" data-i18n="synthetic-realities.fact.team">Team</span><p class="fact__value" data-i18n="synthetic-realities.fact.teamValue">With Prof. R. M. Karim (NUST) and Prof. KwanMyung Kim (UNIST)</p></div>
+          <div><span class="fact__label" data-i18n="synthetic-realities.fact.published">Published</span><p class="fact__value" data-i18n="synthetic-realities.fact.publishedValue"><a href="https://doi.org/10.21606/iasdr.2025.1050">IASDR 2025</a>, pictorial track, Taipei</p></div>
+          <div><span class="fact__label" data-i18n="synthetic-realities.fact.participants">Participants</span><p class="fact__value" data-i18n="synthetic-realities.fact.participantsValue">87 adults aged 18 to 70, none with professional AI, graphics or video experience</p></div>
+          <div><span class="fact__label" data-i18n="synthetic-realities.fact.design">Design</span><p class="fact__value" data-i18n="synthetic-realities.fact.designValue">Within-subjects online study, binary forced choice, randomized order</p></div>
+          <div><span class="fact__label" data-i18n="synthetic-realities.fact.analysis">Analysis</span><p class="fact__value" data-i18n="synthetic-realities.fact.analysisValue">Logistic regression with Holm–Bonferroni correction</p></div>
         </div>
 
-        <p class="t-two-tone" style="margin-top: clamp(64px,8vw,112px)" data-reveal>Research on synthetic media has concentrated on face and voice deepfakes. Designers and media artists, however, now use AI video in three distinct ways: <strong>generating clips from text, animating still images, and extending real footage beyond its frame.</strong> These techniques had not been compared side by side.</p>
+        <p class="t-two-tone" style="margin-top: clamp(64px,8vw,112px)" data-reveal data-i18n="synthetic-realities.overview.intro">Research on synthetic media has concentrated on face and voice deepfakes. Designers and media artists, however, now use AI video in three distinct ways: <strong>generating clips from text, animating still images, and extending real footage beyond its frame.</strong> These techniques had not been compared side by side.</p>
 
         <div class="bento" style="margin-top: clamp(48px,6vw,80px)">
           <div class="tile span-3" data-reveal>
             <div class="tile__body">
-              <span class="tile__eyebrow">Research question 1</span>
-              <h3 class="tile__title tile__title--sm">How accurately can untrained viewers detect each generation technique?</h3>
+              <span class="tile__eyebrow" data-i18n="synthetic-realities.rq1.label">Research question 1</span>
+              <h3 class="tile__title tile__title--sm" data-i18n="synthetic-realities.rq1.text">How accurately can untrained viewers detect each generation technique?</h3>
             </div>
           </div>
           <div class="tile span-3" data-reveal>
             <div class="tile__body">
-              <span class="tile__eyebrow">Research question 2</span>
-              <h3 class="tile__title tile__title--sm">How does content theme moderate detection across techniques?</h3>
+              <span class="tile__eyebrow" data-i18n="synthetic-realities.rq2.label">Research question 2</span>
+              <h3 class="tile__title tile__title--sm" data-i18n="synthetic-realities.rq2.text">How does content theme moderate detection across techniques?</h3>
             </div>
           </div>
         </div>
@@ -123,38 +129,38 @@
       <div class="container">
         <div class="shead" data-reveal>
           <div>
-            <h2 class="t-h2 shead__title" id="study-title">A balanced stimulus set of 36 clips</h2>
-            <p class="shead__text t-lead">Half real and half AI-generated, distributed evenly across three themes. Pilot tests showed that AI renders some subjects, such as static objects, far better than people or motion; varying the themes kept the comparison balanced.</p>
+            <h2 class="t-h2 shead__title" id="study-title" data-i18n="synthetic-realities.study.title">A balanced stimulus set of 36 clips</h2>
+            <p class="shead__text t-lead" data-i18n="synthetic-realities.study.lead">Half real and half AI-generated, distributed evenly across three themes. Pilot tests showed that AI renders some subjects, such as static objects, far better than people or motion; varying the themes kept the comparison balanced.</p>
           </div>
         </div>
 
         <div class="chart" data-reveal>
-          <h3 class="chart__title">Stimulus design</h3>
-          <p class="chart__sub">Clips per theme and source</p>
-          <div class="matrix" style="margin-top:24px" role="table" aria-label="Clips per theme and source">
+          <h3 class="chart__title" data-i18n="synthetic-realities.matrix.title">Stimulus design</h3>
+          <p class="chart__sub" data-i18n="synthetic-realities.matrix.sub">Clips per theme and source</p>
+          <div class="matrix" style="margin-top:24px" role="table" aria-label="Clips per theme and source" data-i18n-attr="aria-label:synthetic-realities.matrix.label">
             <div role="row" style="display:contents">
               <span class="matrix__head" role="columnheader"></span>
-              <span class="matrix__head" role="columnheader">Real footage<small>stock and archival</small></span>
-              <span class="matrix__head" role="columnheader">Text-to-video<small>Google Veo 3</small></span>
-              <span class="matrix__head" role="columnheader">Image-to-video<small>LTX Video</small></span>
-              <span class="matrix__head" role="columnheader">Outpainting<small>Wan VACE</small></span>
+              <span class="matrix__head" role="columnheader" data-i18n="synthetic-realities.matrix.real">Real footage<small>stock and archival</small></span>
+              <span class="matrix__head" role="columnheader" data-i18n="synthetic-realities.matrix.t2v">Text-to-video<small>Google Veo 3</small></span>
+              <span class="matrix__head" role="columnheader" data-i18n="synthetic-realities.matrix.i2v">Image-to-video<small>LTX Video</small></span>
+              <span class="matrix__head" role="columnheader" data-i18n="synthetic-realities.matrix.out">Outpainting<small>Wan VACE</small></span>
             </div>
             <div role="row" style="display:contents">
-              <span class="matrix__row" role="rowheader">Film</span>
+              <span class="matrix__row" role="rowheader" data-i18n="synthetic-realities.theme.film">Film</span>
               <span class="matrix__cell matrix__cell--real" role="cell">6</span>
               <span class="matrix__cell matrix__cell--ai" role="cell">2</span>
               <span class="matrix__cell matrix__cell--ai" role="cell">2</span>
               <span class="matrix__cell matrix__cell--ai" role="cell">2</span>
             </div>
             <div role="row" style="display:contents">
-              <span class="matrix__row" role="rowheader">History</span>
+              <span class="matrix__row" role="rowheader" data-i18n="synthetic-realities.theme.history">History</span>
               <span class="matrix__cell matrix__cell--real" role="cell">6</span>
               <span class="matrix__cell matrix__cell--ai" role="cell">2</span>
               <span class="matrix__cell matrix__cell--ai" role="cell">2</span>
               <span class="matrix__cell matrix__cell--ai" role="cell">2</span>
             </div>
             <div role="row" style="display:contents">
-              <span class="matrix__row" role="rowheader">Environ&shy;ment</span>
+              <span class="matrix__row" role="rowheader" data-i18n="synthetic-realities.theme.environment">Environ&shy;ment</span>
               <span class="matrix__cell matrix__cell--real" role="cell">6</span>
               <span class="matrix__cell matrix__cell--ai" role="cell">2</span>
               <span class="matrix__cell matrix__cell--ai" role="cell">2</span>
@@ -165,19 +171,19 @@
 
         <div class="feature" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
           <div class="feature__text">
-            <p class="t-eyebrow">Stimulus generation</p>
-            <h3 class="t-h3">A single pipeline, so that only the technique varied</h3>
-            <p>All AI clips were produced in <strong>ComfyUI</strong>, whose node graphs allowed diffusion steps, guidance and prompt weights to be replicated across methods. Five designers generated candidates for each condition, and one was selected for <strong>visual fidelity, temporal coherence and thematic relevance</strong>.</p>
-            <p>Real clips were drawn from publicly available stock and archival footage matched to the same themes. All 36 clips were trimmed to 8–12 seconds, standardized to 1080p and presented without sound.</p>
+            <p class="t-eyebrow" data-i18n="synthetic-realities.gen.eyebrow">Stimulus generation</p>
+            <h3 class="t-h3" data-i18n="synthetic-realities.gen.title">A single pipeline, so that only the technique varied</h3>
+            <p data-i18n="synthetic-realities.gen.text">All AI clips were produced in <strong>ComfyUI</strong>, whose node graphs allowed diffusion steps, guidance and prompt weights to be replicated across methods. Five designers generated candidates for each condition, and one was selected for <strong>visual fidelity, temporal coherence and thematic relevance</strong>.</p>
+            <p data-i18n="synthetic-realities.gen.text2">Real clips were drawn from publicly available stock and archival footage matched to the same themes. All 36 clips were trimmed to 8–12 seconds, standardized to 1080p and presented without sound.</p>
           </div>
           <div class="feature__text">
-            <p class="t-eyebrow">Procedure</p>
-            <h3 class="t-h3">Binary forced choice across 36 trials</h3>
+            <p class="t-eyebrow" data-i18n="synthetic-realities.proc.eyebrow">Procedure</p>
+            <h3 class="t-h3" data-i18n="synthetic-realities.proc.title">Binary forced choice across 36 trials</h3>
             <ol class="icon-list" style="margin-top:8px">
-              <li><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="4" y="6" width="18" height="14" rx="3"/><path d="m11 10 5 3-5 3z"/></svg><p>Each clip is shown individually, in randomized order, and can be replayed without limit.</p></li>
-              <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="9"/><path d="M10 10.5a3 3 0 1 1 3 3v2M13 18.5v.5"/></svg><p><strong>“Do you believe this video is real or AI-generated?”</strong> Response options: real or AI.</p></li>
-              <li><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M8 4v18M18 4v18"/></svg><p>A short break after 18 clips to limit fatigue.</p></li>
-              <li><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M5 20V8M11 20V5M17 20v-9M23 20v-6"/></svg><p>Participants were not told the proportion of AI clips and were instructed to judge each clip on its visual content alone.</p></li>
+              <li><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="4" y="6" width="18" height="14" rx="3"/><path d="m11 10 5 3-5 3z"/></svg><p data-i18n="synthetic-realities.proc.step1">Each clip is shown individually, in randomized order, and can be replayed without limit.</p></li>
+              <li><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="9"/><path d="M10 10.5a3 3 0 1 1 3 3v2M13 18.5v.5"/></svg><p data-i18n="synthetic-realities.proc.step2"><strong>“Do you believe this video is real or AI-generated?”</strong> Response options: real or AI.</p></li>
+              <li><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M8 4v18M18 4v18"/></svg><p data-i18n="synthetic-realities.proc.step3">A short break after 18 clips to limit fatigue.</p></li>
+              <li><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M5 20V8M11 20V5M17 20v-9M23 20v-6"/></svg><p data-i18n="synthetic-realities.proc.step4">Participants were not told the proportion of AI clips and were instructed to judge each clip on its visual content alone.</p></li>
             </ol>
           </div>
         </div>
@@ -188,61 +194,61 @@
     <section class="section" id="results" aria-labelledby="results-title">
       <div class="container">
         <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="results-title">Detection accuracy depended on technique and theme</h2>
+          <h2 class="t-h2 shead__title" id="results-title" data-i18n="synthetic-realities.results.title">Detection accuracy depended on technique and theme</h2>
         </div>
 
         <div class="chart" data-reveal>
-          <h3 class="chart__title">Accuracy by source</h3>
-          <p class="chart__sub">Share of clips classified correctly. For real footage, correct means “real.”</p>
+          <h3 class="chart__title" data-i18n="synthetic-realities.accuracy.title">Accuracy by source</h3>
+          <p class="chart__sub" data-i18n="synthetic-realities.accuracy.sub">Share of clips classified correctly. For real footage, correct means “real.”</p>
           <ul class="bars" style="margin-top:44px">
-            <li class="bar"><span class="bar__label">Image-to-video</span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:79%"></span></span><span class="bar__value">79%</span></li>
-            <li class="bar"><span class="bar__label">Real footage</span><span class="bar__track"><span class="bar__fill bar__fill--blue" style="--v:64%"></span></span><span class="bar__value">64%</span></li>
-            <li class="bar"><span class="bar__label">Outpainting</span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:49%"></span></span><span class="bar__value">49%</span></li>
-            <li class="bar"><span class="bar__label">Text-to-video</span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:43%"></span></span><span class="bar__value">43%</span></li>
+            <li class="bar"><span class="bar__label" data-i18n="synthetic-realities.source.i2v">Image-to-video</span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:79%"></span></span><span class="bar__value">79%</span></li>
+            <li class="bar"><span class="bar__label" data-i18n="synthetic-realities.source.real">Real footage</span><span class="bar__track"><span class="bar__fill bar__fill--blue" style="--v:64%"></span></span><span class="bar__value">64%</span></li>
+            <li class="bar"><span class="bar__label" data-i18n="synthetic-realities.source.out">Outpainting</span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:49%"></span></span><span class="bar__value">49%</span></li>
+            <li class="bar"><span class="bar__label" data-i18n="synthetic-realities.source.t2v">Text-to-video</span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:43%"></span></span><span class="bar__value">43%</span></li>
           </ul>
-          <p class="t-small t-muted" style="margin-top:22px">Text-to-video accuracy fell below chance, and outpainting accuracy was at chance. Image-to-video retained motion cues that viewers could detect.</p>
+          <p class="t-small t-muted" style="margin-top:22px" data-i18n="synthetic-realities.accuracy.note">Text-to-video accuracy fell below chance, and outpainting accuracy was at chance. Image-to-video retained motion cues that viewers could detect.</p>
         </div>
 
         <div class="findings" style="margin-top:20px">
           <div class="finding" data-reveal>
             <span class="finding__num t-grad">48%</span>
-            <p class="finding__text"><strong>Real nature footage was often judged synthetic.</strong> Real environmental clips were classified correctly only about 48% of the time; pristine natural scenery frequently read as AI-generated.</p>
+            <p class="finding__text" data-i18n="synthetic-realities.finding.nature"><strong>Real nature footage was often judged synthetic.</strong> Real environmental clips were classified correctly only about 48% of the time; pristine natural scenery frequently read as AI-generated.</p>
           </div>
           <div class="finding" data-reveal>
-            <span class="finding__num">61% → 32%</span>
-            <p class="finding__text"><strong>Theme strongly moderated outpainting detection.</strong> Outpainting was detected in 61% of environment trials but only 32% of historical trials.</p>
+            <span class="finding__num" data-i18n="synthetic-realities.finding.outpainting.num">61% → 32%</span>
+            <p class="finding__text" data-i18n="synthetic-realities.finding.outpainting"><strong>Theme strongly moderated outpainting detection.</strong> Outpainting was detected in 61% of environment trials but only 32% of historical trials.</p>
           </div>
           <div class="finding" data-reveal>
             <span class="finding__num">75–83%</span>
-            <p class="finding__text"><strong>Image-to-video cues held across themes.</strong> Image-to-video clips were identified consistently in the film, history and environment themes.</p>
+            <p class="finding__text" data-i18n="synthetic-realities.finding.i2v"><strong>Image-to-video cues held across themes.</strong> Image-to-video clips were identified consistently in the film, history and environment themes.</p>
           </div>
         </div>
 
         <div class="table-wrap" style="margin-top:20px" data-reveal>
           <table class="table">
-            <caption>Logistic regression on correct identification</caption>
+            <caption data-i18n="synthetic-realities.table.caption">Logistic regression on correct identification</caption>
             <thead>
-              <tr><th scope="col">Term, compared with real film footage</th><th scope="col" class="num">Odds ratio</th><th scope="col" class="num">p</th></tr>
+              <tr><th scope="col" data-i18n="synthetic-realities.table.term">Term, compared with real film footage</th><th scope="col" class="num" data-i18n="synthetic-realities.table.odds">Odds ratio</th><th scope="col" class="num">p</th></tr>
             </thead>
             <tbody>
-              <tr><th scope="row">Image-to-video</th><td class="num">1.13</td><td class="num">n.s.</td></tr>
-              <tr><th scope="row">Text-to-video</th><td class="num">0.50</td><td class="num">.001</td></tr>
-              <tr><th scope="row">Outpainting</th><td class="num">0.45</td><td class="num">.001</td></tr>
-              <tr><th scope="row">Environment theme</th><td class="num">0.37</td><td class="num">&lt; .001</td></tr>
-              <tr><th scope="row">Image-to-video × Environment</th><td class="num hi">8.22</td><td class="num">&lt; .001</td></tr>
-              <tr><th scope="row">Outpainting × Environment</th><td class="num hi">6.89</td><td class="num">&lt; .001</td></tr>
-              <tr><th scope="row">Text-to-video × History</th><td class="num">0.44</td><td class="num">.003</td></tr>
-              <tr><th scope="row">Outpainting × History</th><td class="num">0.41</td><td class="num">&lt; .001</td></tr>
+              <tr><th scope="row" data-i18n="synthetic-realities.source.i2v">Image-to-video</th><td class="num">1.13</td><td class="num" dir="ltr">n.s.</td></tr>
+              <tr><th scope="row" data-i18n="synthetic-realities.source.t2v">Text-to-video</th><td class="num">0.50</td><td class="num" dir="ltr">.001</td></tr>
+              <tr><th scope="row" data-i18n="synthetic-realities.source.out">Outpainting</th><td class="num">0.45</td><td class="num" dir="ltr">.001</td></tr>
+              <tr><th scope="row" data-i18n="synthetic-realities.table.environment">Environment theme</th><td class="num">0.37</td><td class="num" dir="ltr">&lt; .001</td></tr>
+              <tr><th scope="row" data-i18n="synthetic-realities.table.i2vEnvironment">Image-to-video × Environment</th><td class="num hi">8.22</td><td class="num" dir="ltr">&lt; .001</td></tr>
+              <tr><th scope="row" data-i18n="synthetic-realities.table.outEnvironment">Outpainting × Environment</th><td class="num hi">6.89</td><td class="num" dir="ltr">&lt; .001</td></tr>
+              <tr><th scope="row" data-i18n="synthetic-realities.table.t2vHistory">Text-to-video × History</th><td class="num">0.44</td><td class="num" dir="ltr">.003</td></tr>
+              <tr><th scope="row" data-i18n="synthetic-realities.table.outHistory">Outpainting × History</th><td class="num">0.41</td><td class="num" dir="ltr">&lt; .001</td></tr>
             </tbody>
             <tfoot>
-              <tr><td colspan="3">Technique, theme and their interaction were all significant (p &lt; .001). p-values Holm–Bonferroni adjusted. 87 participants × 36 clips = 3,132 observations.</td></tr>
+              <tr><td colspan="3" data-i18n="synthetic-realities.table.note">Technique, theme and their interaction were all significant (p &lt; .001). p-values Holm–Bonferroni adjusted. 87 participants × 36 clips = 3,132 observations.</td></tr>
             </tfoot>
           </table>
         </div>
 
         <figure class="fig" style="margin-top: clamp(40px,5vw,64px)" data-reveal>
-          <div class="fig__media"><img src="/assets/img/synthetic/talk.jpg" width="1147" height="765" alt="An audience in a conference room watching a presentation of the accuracy chart" loading="lazy"></div>
-          <figcaption class="fig__cap">Presenting the results at IASDR 2025 in Taipei.</figcaption>
+          <div class="fig__media"><img src="/assets/img/synthetic/talk.jpg" width="1147" height="765" alt="An audience in a conference room watching a presentation of the accuracy chart" loading="lazy" data-i18n-attr="alt:synthetic-realities.talk.alt"></div>
+          <figcaption class="fig__cap" data-i18n="synthetic-realities.talk.caption">Presenting the results at IASDR 2025 in Taipei.</figcaption>
         </figure>
       </div>
     </section>
@@ -251,30 +257,30 @@
     <section class="section section--alt" id="implications" aria-labelledby="impl-title">
       <div class="container">
         <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="impl-title">Implications for media literacy and creative practice</h2>
+          <h2 class="t-h2 shead__title" id="impl-title" data-i18n="synthetic-realities.implications.title">Implications for media literacy and creative practice</h2>
         </div>
         <div class="bento bento--thirds">
           <div class="tile tile--white span-2" data-reveal>
             <div class="tile__body">
-              <h3 class="tile__title tile__title--sm">Awareness of AI undermines trust in real footage</h3>
-              <p class="tile__text">Real clips were classified correctly only 64% of the time. When viewers expect AI content, authentic footage also begins to appear synthetic.</p>
+              <h3 class="tile__title tile__title--sm" data-i18n="synthetic-realities.implications.trust.title">Awareness of AI undermines trust in real footage</h3>
+              <p class="tile__text" data-i18n="synthetic-realities.implications.trust.text">Real clips were classified correctly only 64% of the time. When viewers expect AI content, authentic footage also begins to appear synthetic.</p>
             </div>
           </div>
           <div class="tile tile--white span-2" data-reveal>
             <div class="tile__body">
-              <h3 class="tile__title tile__title--sm">Perceived realism depends on content, not only the model</h3>
-              <p class="tile__text">Perceived realism is not a fixed property of a model; it depends on what a clip depicts. Creators can use this deliberately to calibrate how real a piece appears.</p>
+              <h3 class="tile__title tile__title--sm" data-i18n="synthetic-realities.implications.realism.title">Perceived realism depends on content, not only the model</h3>
+              <p class="tile__text" data-i18n="synthetic-realities.implications.realism.text">Perceived realism is not a fixed property of a model; it depends on what a clip depicts. Creators can use this deliberately to calibrate how real a piece appears.</p>
             </div>
           </div>
           <div class="tile tile--white span-2" data-reveal>
             <div class="tile__body">
-              <h3 class="tile__title tile__title--sm">Detection training should address context as well as artifacts</h3>
-              <p class="tile__text">Media-literacy programs and detection tools should cover contextual cues as well as model-specific artifacts; intuition alone is insufficient.</p>
+              <h3 class="tile__title tile__title--sm" data-i18n="synthetic-realities.implications.training.title">Detection training should address context as well as artifacts</h3>
+              <p class="tile__text" data-i18n="synthetic-realities.implications.training.text">Media-literacy programs and detection tools should cover contextual cues as well as model-specific artifacts; intuition alone is insufficient.</p>
             </div>
           </div>
         </div>
         <div class="callout-note" style="margin-top: clamp(40px,5vw,64px)" data-reveal>
-          <p><strong>Limitations and next steps.</strong> Short, silent clips viewed online limit ecological validity. Future work should include techniques such as inpainting, ControlNet and depth-aware video, collect confidence ratings, broaden the demographic sample, and test whether training improves detection over time.</p>
+          <p data-i18n="synthetic-realities.limitations"><strong>Limitations and next steps.</strong> Short, silent clips viewed online limit ecological validity. Future work should include techniques such as inpainting, ControlNet and depth-aware video, collect confidence ratings, broaden the demographic sample, and test whether training improves detection over time.</p>
         </div>
       </div>
     </section>
@@ -285,12 +291,12 @@
         <a class="tile" href="/research/product-form/" data-reveal>
           <div class="feature" style="padding: clamp(26px,3.4vw,44px)">
             <div class="feature__text">
-              <p class="t-eyebrow">Next case study</p>
-              <h2 class="t-h2" id="next-title">Multi-view consistency in automated product form analysis</h2>
-              <p>A 23-parameter computer-vision pipeline that derives form parameters from standard product renders.</p>
-              <span class="link-more">Read the case study</span>
+              <p class="t-eyebrow" data-i18n="synthetic-realities.next.eyebrow">Next case study</p>
+              <h2 class="t-h2" id="next-title" data-i18n="synthetic-realities.next.title">Multi-view consistency in automated product form analysis</h2>
+              <p data-i18n="synthetic-realities.next.text">A 23-parameter computer-vision pipeline that derives form parameters from standard product renders.</p>
+              <span class="link-more" data-i18n="synthetic-realities.next.cta">Read the case study</span>
             </div>
-            <div class="feature__media fig__media fig__media--white fig__media--pad white-stage"><img class="blend-white" src="/assets/img/product-form/consistency.png" width="2180" height="1576" alt="Bar chart of per-parameter consistency between 16-view and 180-view analyses; most bars are above 90 percent" loading="lazy"></div>
+            <div class="feature__media fig__media fig__media--white fig__media--pad white-stage"><img class="blend-white" src="/assets/img/product-form/consistency.png" width="2180" height="1576" alt="Bar chart of per-parameter consistency between 16-view and 180-view analyses; most bars are above 90 percent" loading="lazy" data-i18n-attr="alt:synthetic-realities.next.alt"></div>
           </div>
         </a>
       </div>
@@ -299,52 +305,52 @@
 
   <footer class="gfooter">
     <div class="gfooter__inner">
-      <section class="footnotes" aria-label="References">
+      <section class="footnotes" aria-label="References" data-i18n-attr="aria-label:footer.references">
         <ol>
-          <li>Sarfraz, D., Karim, R. M., &amp; Kim, K. (2025). Synthetic Realities: Evaluating Human Ability to Distinguish AI-Generated Videos from Real Footage. <i>IASDR 2025</i>, Taipei. <a href="https://doi.org/10.21606/iasdr.2025.1050">doi:10.21606/iasdr.2025.1050</a></li>
-          <li>Supported by the Technology Innovation Program (RS-2025-04752997), Ministry of Trade, Industry &amp; Energy (MOTIE), Korea.</li>
+          <li translate="no" lang="en" dir="ltr">Sarfraz, D., Karim, R. M., &amp; Kim, K. (2025). Synthetic Realities: Evaluating Human Ability to Distinguish AI-Generated Videos from Real Footage. <i>IASDR 2025</i>, Taipei. <a href="https://doi.org/10.21606/iasdr.2025.1050">doi:10.21606/iasdr.2025.1050</a></li>
+          <li data-i18n="synthetic-realities.note.funding">Supported by the Technology Innovation Program (RS-2025-04752997), Ministry of Trade, Industry &amp; Energy (MOTIE), Korea.</li>
         </ol>
       </section>
-      <nav class="gfooter__dir" aria-label="Site directory">
-        <div class="gfooter__col"><h3>Design</h3><ul>
-          <li><a href="/design/#lg">LG sensor module</a></li>
+      <nav class="gfooter__dir" aria-label="Site directory" data-i18n-attr="aria-label:footer.label">
+        <div class="gfooter__col"><h3 data-i18n="nav.design">Design</h3><ul>
+          <li><a href="/design/#cgi" data-i18n="footer.cgi">3D &amp; CGI</a></li>
           <li><a href="/design/#waveform">Waveform</a></li>
-          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+          <li><a href="/design/#viz" data-i18n="footer.viz">Product visualization</a></li>
+          <li><a href="/design/#freelance" data-i18n="footer.freelance">Freelance work</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>Research</h3><ul>
-          <li><a href="/research/bangudae-xr/">Bangudae XR</a></li>
-          <li><a href="/research/life-size-ar/">Life-size AR</a></li>
+        <div class="gfooter__col"><h3 data-i18n="footer.caseStudies">Case studies</h3><ul>
+          <li><a href="/research/bangudae-xr/" data-i18n="footer.bangudae">Bangudae XR</a></li>
+          <li><a href="/research/life-size-ar/" data-i18n="footer.lifeSize">Life-size AR</a></li>
           <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
-          <li><a href="/research/product-form/">Product form analysis</a></li>
-          <li><a href="/research/lemmy/">Robot motion</a></li>
-          <li><a href="/research/lemmy-framework/">MSc thesis framework</a></li>
+          <li><a href="/research/product-form/" data-i18n="footer.productForm">Product form analysis</a></li>
+          <li><a href="/research/lemmy/" data-i18n="footer.robotMotion">Robot motion</a></li>
+          <li><a href="/research/lemmy-framework/" data-i18n="footer.framework">MSc thesis framework</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>Publications</h3><ul>
-          <li><a href="/research/#publications">Papers</a></li>
-          <li><a href="/research/#thesis">MSc thesis</a></li>
-          <li><a href="/research/#talks">Talks</a></li>
-          <li><a href="/research/#experiments">Experiments</a></li>
+        <div class="gfooter__col"><h3 data-i18n="nav.research">Research</h3><ul>
+          <li><a href="/research/#publications" data-i18n="footer.publications">Publications</a></li>
+          <li><a href="/research/#thesis" data-i18n="footer.thesis">MSc thesis</a></li>
+          <li><a href="/research/#industry" data-i18n="footer.industry">Industry projects</a></li>
+          <li><a href="/research/#personal" data-i18n="footer.personal">Personal projects</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>Artifacts</h3><ul>
-          <li><a href="/tools/#lemmy-ar">Lemmy AR Experience</a></li>
+        <div class="gfooter__col"><h3 data-i18n="nav.tools">Artifacts</h3><ul>
           <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
           <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
-          <li><a href="/tools/#more">More artifacts</a></li>
+          <li><a href="/tools/#more" data-i18n="footer.moreTools">More artifacts</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>About</h3><ul>
-          <li><a href="/about/">Bio</a></li>
-          <li><a href="/about/#experience">Experience</a></li>
-          <li><a href="/about/#education">Education</a></li>
-          <li><a href="/about/#contact">Contact</a></li>
+        <div class="gfooter__col"><h3 data-i18n="nav.about">About</h3><ul>
+          <li><a href="/about/" data-i18n="footer.bio">Bio</a></li>
+          <li><a href="/about/#experience" data-i18n="footer.experience">Experience</a></li>
+          <li><a href="/about/#education" data-i18n="footer.education">Education</a></li>
+          <li><a href="/about/#contact" data-i18n="nav.contact">Contact</a></li>
         </ul></div>
       </nav>
       <div class="gfooter__legal">
-        <p>Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
-        <nav aria-label="Elsewhere">
+        <p data-i18n="footer.copyright">Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
+        <nav aria-label="Elsewhere" data-i18n-attr="aria-label:footer.elsewhere">
           <a href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
           <a href="https://github.com/Danyals-code">GitHub</a>
           <a href="https://www.behance.net/designedbydanyal">Behance</a>
-          <a href="mailto:danialsarfraz2000@gmail.com">Email</a>
+          <a href="mailto:danialsarfraz2000@gmail.com" data-i18n="footer.email">Email</a>
         </nav>
       </div>
     </div>

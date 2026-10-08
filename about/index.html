@@ -1,16 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-langs="en ar zh">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>(function(d){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){if(!window.__site)d.classList.remove("js")},1500)})})(document.documentElement)</script>
-  <title>About · Danyal Sarfraz</title>
-  <meta name="description" content="About Danyal Sarfraz, an HCI researcher and designer working on mixed reality, spatial interfaces and human-centered AI: bio, timeline, experience, education, skills and contact.">
+  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}},1500)})})(document.documentElement)</script>
+  <title data-i18n="about.title">About · Danyal Sarfraz</title>
+  <meta name="description" content="About Danyal Sarfraz, an HCI researcher and designer working on mixed reality, spatial interfaces and human-centered AI: bio, experience, education, skills, recognition and contact." data-i18n-attr="content:about.description">
   <link rel="canonical" href="https://danyals-code.github.io/about/">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Danyal Sarfraz">
+  <meta property="og:url" content="https://danyals-code.github.io/about/">
   <meta property="og:title" content="About · Danyal Sarfraz">
   <meta property="og:description" content="HCI researcher and designer: mixed reality, spatial interfaces and human-centered AI. MSc Engineering Design, UNIST.">
   <meta property="og:image" content="https://danyals-code.github.io/assets/img/og.png">
@@ -20,31 +22,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=11">
-  <script src="/assets/js/site.js?v=12" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=13">
+  <script src="/assets/js/i18n.js?v=2" defer></script>
+  <script src="/assets/js/i18n/about.js?v=1" defer></script>
+  <script src="/assets/js/site.js?v=14" defer></script>
 </head>
 <body class="has-lnav">
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
   <header class="gnav">
-    <nav class="gnav__inner" aria-label="Global">
+    <nav class="gnav__inner" aria-label="Global" data-i18n-attr="aria-label:nav.label">
       <a class="gnav__logo" href="/">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
         Danyal Sarfraz
       </a>
       <ul class="gnav__list" id="gnav-list">
-        <li><a href="/design/">Design</a></li>
-        <li><a href="/research/">Research</a></li>
-        <li><a href="/tools/">Artifacts</a></li>
-        <li><a href="/about/" aria-current="page">About</a></li>
-        <li><a href="/about/#contact">Contact</a></li>
+        <li><a href="/design/" data-i18n="nav.design">Design</a></li>
+        <li><a href="/research/" data-i18n="nav.research">Research</a></li>
+        <li><a href="/tools/" data-i18n="nav.tools">Artifacts</a></li>
+        <li><a href="/about/" aria-current="page" data-i18n="nav.about">About</a></li>
+        <li><a href="/about/#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="gnav__tools">
-        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search (⌘K)">
+        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search">
           <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
         </button>
-        <button class="gnav__icon" type="button" data-theme-toggle aria-label="Theme: automatic (system)" title="Theme: automatic (system)">
-          <svg class="theme-icon theme-icon--auto" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.6"/><path d="M8 2.4v11.2a5.6 5.6 0 0 0 0-11.2z" fill="currentColor" stroke="none"/></svg>
+        <button class="gnav__icon" type="button" data-lang-open aria-haspopup="true" aria-expanded="false" aria-label="Language: English" title="Language">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.6 2.6 3.6 2.6 6S9.7 12.4 8 14M8 2C6.3 3.6 5.4 5.6 5.4 8s.9 4.4 2.6 6"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Switch to dark theme">
           <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
           <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
         </button>
@@ -55,17 +61,16 @@
     </nav>
   </header>
 
-  <nav class="lnav" aria-label="About">
+  <nav class="lnav" aria-label="About" data-i18n-attr="aria-label:about.lnav.label">
     <div class="lnav__inner">
-      <a class="lnav__title" href="#top">About</a>
+      <a class="lnav__title" href="#top" data-i18n="about.lnav.title">About</a>
       <ul class="lnav__links">
-        <li><a href="#timeline">Timeline</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#recognition">Recognition</a></li>
+        <li><a href="#experience" data-i18n="about.lnav.experience">Experience</a></li>
+        <li><a href="#education" data-i18n="about.lnav.education">Education</a></li>
+        <li><a href="#skills" data-i18n="about.lnav.skills">Skills</a></li>
+        <li><a href="#recognition" data-i18n="about.lnav.recognition">Recognition</a></li>
       </ul>
-      <a class="btn btn--sm" href="#contact">Contact</a>
+      <a class="btn btn--sm" href="#contact" data-i18n="about.lnav.contact">Contact</a>
     </div>
   </nav>
 
@@ -74,26 +79,22 @@
       <div class="container">
         <div class="feature">
           <div class="feature__text">
-            <p class="t-eyebrow">About</p>
-            <h1 class="t-h1">Danyal Sarfraz</h1>
-            <p class="t-lead" style="color:var(--fg-2)">HCI researcher and designer with an MSc in Engineering Design from UNIST, South Korea. My research designs and evaluates mixed-reality, AR and AI systems with the people who use them, including an award-winning Meta Quest 3 heritage application, a life-size AR application for iPhone and Apple Vision Pro, and studies of human perception of AI-generated video.</p>
-            <p>My background is in industrial design (BSc, NUST, Pakistan) and four years of professional 3D work for international clients. Across projects, the central questions are what can be evaluated before a product exists, how people judge machine-generated content, and how machines should behave around people. I favor low-burden study methods and research tools that transfer into design practice.</p>
+            <p class="t-eyebrow" data-i18n="about.eyebrow">About</p>
+            <h1 class="t-h1" translate="no">Danyal Sarfraz</h1>
+            <p class="t-lead" style="color:var(--fg-2)" data-i18n="about.lead">HCI researcher and designer with an MSc in Engineering Design from UNIST, South Korea. My research designs and evaluates mixed-reality, AR and AI systems with the people who use them, including an award-winning Meta Quest 3 heritage application, a life-size AR application for iPhone and Apple Vision Pro, and studies of human perception of AI-generated video.</p>
+            <p data-i18n="about.background">My background is in industrial design (BSc, NUST, Pakistan) and four years of professional 3D work for international clients. I favor low-burden study methods and research tools that transfer into design practice.</p>
+            <div class="item-actions">
+              <button class="expand" type="button" data-toggle aria-controls="short-bio-panel" data-i18n="about.bio.toggle">Short bio for introductions</button>
+            </div>
+            <div class="expand-panel" id="short-bio-panel" hidden>
+              <p id="short-bio" data-i18n="about.bio.short">Danyal Sarfraz is an HCI researcher and designer working on mixed reality, spatial interfaces and human-centered AI. Danyal holds an MSc in Engineering Design from UNIST (2026). Work at UNIST includes a Meta Quest 3 heritage app that won first place at the 3rd Korea Heritage Digital Contents Contest, a life-size AR app for iPhone and Apple Vision Pro, papers at IASDR and KSDS, a Blender add-on with more than 7,000 downloads, and work on Lemmy, a companion robot recognized with a CES 2025 Innovation Award. Danyal also holds a BSc in Industrial Design from NUST.</p>
+              <button class="btn btn--sm btn--secondary" type="button" data-copy-target="short-bio" style="margin-top:14px"><span data-copy-label data-i18n="about.bio.copy">Copy bio</span></button>
+            </div>
           </div>
           <figure class="portrait">
-            <img src="/assets/img/news/portrait.jpg" width="756" height="1100" alt="Danyal in red graduation robes, smiling and holding a bouquet of yellow flowers, with the UNIST campus lake behind" fetchpriority="high" style="object-position: 50% 12%">
+            <img src="/assets/img/news/portrait.jpg" width="756" height="1100" alt="Danyal in red graduation robes, smiling and holding a bouquet of yellow flowers, with the UNIST campus lake behind" data-i18n-attr="alt:about.portrait.alt" fetchpriority="high" style="object-position: 50% 12%">
           </figure>
         </div>
-      </div>
-    </section>
-
-    <!-- Short bio -->
-    <section class="section section--tight section--alt" aria-labelledby="bio-title">
-      <div class="container">
-        <div class="shead" style="margin-bottom:20px" data-reveal>
-          <h2 class="t-h3" id="bio-title">Short bio</h2>
-          <button class="btn btn--md btn--secondary" type="button" data-copy-target="short-bio"><span data-copy-label>Copy bio</span></button>
-        </div>
-        <p class="t-lead" id="short-bio" data-reveal>Danyal Sarfraz is an HCI researcher and designer working on mixed reality, spatial interfaces and human-centered AI. Danyal holds an MSc in Engineering Design from UNIST (2026). Work at UNIST includes a Meta Quest 3 heritage app that won first place at the 3rd Korea Heritage Digital Contents Contest, a life-size AR app for iPhone and Apple Vision Pro, papers at IASDR and KSDS, a Blender add-on with more than 7,000 downloads, and work on Lemmy, a companion robot recognized with a CES 2025 Innovation Award. Danyal also holds a BSc in Industrial Design from NUST.</p>
       </div>
     </section>
 
@@ -101,61 +102,40 @@
     <section class="section" aria-labelledby="moments-title">
       <div class="container">
         <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="moments-title">Conferences and exhibitions</h2>
+          <h2 class="t-h2 shead__title" id="moments-title" data-i18n="about.moments.title">Conferences and exhibitions</h2>
         </div>
       </div>
       <div class="rail" data-reveal>
         <ul class="rail__track">
           <li class="rail__item">
-            <img src="/assets/img/news/iasdr-talk.jpg" width="1800" height="1350" alt="Danyal receiving a presenter certificate in front of a slide about component-based robot actions" loading="lazy">
-            <div class="rail__body"><span class="rail__date">IASDR 2025 · Taipei</span><h3 class="rail__title">Full paper presentation</h3></div>
+            <img src="/assets/img/news/iasdr-norman.jpg" width="1050" height="1400" alt="Four people in conversation at a conference poster session" data-i18n-attr="alt:about.moments.norman.alt" loading="lazy">
+            <div class="rail__body"><span class="rail__date" data-i18n="about.moments.iasdrTaipei">IASDR 2025 · Taipei</span><h3 class="rail__title" data-i18n="about.moments.norman.title">With Don Norman</h3></div>
           </li>
           <li class="rail__item">
-            <img src="/assets/img/news/iasdr-norman.jpg" width="1050" height="1400" alt="Four people in conversation at a conference poster session" loading="lazy">
-            <div class="rail__body"><span class="rail__date">IASDR 2025 · Taipei</span><h3 class="rail__title">With Don Norman</h3></div>
+            <img src="/assets/img/bangudae/stage.jpg" width="2000" height="1126" alt="Danyal presenting on stage at the heritage contest final" data-i18n-attr="alt:about.moments.contest.alt" loading="lazy">
+            <div class="rail__body"><span class="rail__date">2024</span><h3 class="rail__title" data-i18n="about.moments.contest.title">Korea Heritage Digital Contents Contest, final round</h3></div>
           </li>
           <li class="rail__item">
-            <img src="/assets/img/news/iasdr-pictorial.jpg" width="1050" height="1400" alt="Danyal and a colleague holding presentation certificates" loading="lazy">
-            <div class="rail__body"><span class="rail__date">IASDR 2025 · Taipei</span><h3 class="rail__title">Pictorial session</h3></div>
+            <img src="/assets/img/news/iasdr-pictorial.jpg" width="1050" height="1400" alt="Danyal and a colleague holding presentation certificates" data-i18n-attr="alt:about.moments.pictorial.alt" loading="lazy">
+            <div class="rail__body"><span class="rail__date" data-i18n="about.moments.iasdrTaipei">IASDR 2025 · Taipei</span><h3 class="rail__title" data-i18n="about.moments.pictorial.title">Pictorial session</h3></div>
           </li>
           <li class="rail__item">
-            <img src="/assets/img/news/gwangju.jpg" width="1600" height="1200" alt="Visitors at the Lemmy exhibit, one wearing a VR headset" loading="lazy">
-            <div class="rail__body"><span class="rail__date">2025 · Gwangju</span><h3 class="rail__title">Lemmy at the Gwangju Design Biennale</h3></div>
+            <img src="/assets/img/news/iasdr-talk.jpg" width="1800" height="1350" alt="Danyal receiving a presenter certificate in front of a slide about component-based robot actions" data-i18n-attr="alt:about.moments.talk.alt" loading="lazy">
+            <div class="rail__body"><span class="rail__date" data-i18n="about.moments.iasdrTaipei">IASDR 2025 · Taipei</span><h3 class="rail__title" data-i18n="about.moments.talk.title">Full paper presentation</h3></div>
           </li>
           <li class="rail__item">
-            <img src="/assets/img/news/graduation-field.jpg" width="1800" height="1350" alt="Graduates gathering on a sports field with UNIST lettering" loading="lazy">
-            <div class="rail__body"><span class="rail__date">February 2026 · Ulsan</span><h3 class="rail__title">MSc graduation, UNIST</h3></div>
+            <img src="/assets/img/news/graduation-field.jpg" width="1800" height="1350" alt="Graduates gathering on a sports field with UNIST lettering" data-i18n-attr="alt:about.moments.graduation.alt" loading="lazy">
+            <div class="rail__body"><span class="rail__date" data-i18n="about.moments.graduation.date">February 2026 · Ulsan</span><h3 class="rail__title" data-i18n="about.moments.graduation.title">MSc graduation, UNIST</h3></div>
           </li>
           <li class="rail__item">
-            <img src="/assets/img/bangudae/stage.jpg" width="2000" height="1126" alt="Danyal presenting on stage at the heritage contest final" loading="lazy">
-            <div class="rail__body"><span class="rail__date">2024</span><h3 class="rail__title">Korea Heritage Digital Contents Contest, final round</h3></div>
+            <img src="/assets/img/news/gwangju.jpg" width="1600" height="1200" alt="Visitors at the Lemmy exhibit, one wearing a VR headset" data-i18n-attr="alt:about.moments.gwangju.alt" loading="lazy">
+            <div class="rail__body"><span class="rail__date" data-i18n="about.moments.gwangju.date">2025 · Gwangju</span><h3 class="rail__title" data-i18n="about.moments.gwangju.title">Lemmy at the Gwangju Design Biennale</h3></div>
           </li>
         </ul>
         <div class="rail__controls">
-          <button class="paddle" type="button" data-rail-prev aria-label="Previous"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5"/></svg></button>
-          <button class="paddle" type="button" data-rail-next aria-label="Next"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="m5 2 5 5-5 5"/></svg></button>
+          <button class="paddle" type="button" data-rail-prev aria-label="Previous" data-i18n-attr="aria-label:rail.prev"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5"/></svg></button>
+          <button class="paddle" type="button" data-rail-next aria-label="Next" data-i18n-attr="aria-label:rail.next"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="m5 2 5 5-5 5"/></svg></button>
         </div>
-      </div>
-    </section>
-
-    <!-- Timeline -->
-    <section class="section section--alt" id="timeline" aria-labelledby="timeline-title">
-      <div class="container">
-        <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="timeline-title">Timeline</h2>
-        </div>
-        <ul class="rows" data-reveal>
-          <li class="row"><span class="row__when">Jun 2026</span><div><h3 class="row__title">Paper at KSDS 2026</h3><p class="row__text">Assessment of multi-view consistency in automated product form analysis.</p></div></li>
-          <li class="row"><span class="row__when">Feb 2026</span><div><h3 class="row__title">MSc in Engineering Design, UNIST</h3><p class="row__text">Thesis defended in December 2025.</p></div></li>
-          <li class="row"><span class="row__when">Dec 2025</span><div><h3 class="row__title">Two papers at IASDR 2025, Taipei</h3><p class="row__text">A full paper on component-based robot actions and a pictorial on the perception of AI-generated video.</p></div></li>
-          <li class="row"><span class="row__when">2025</span><div><h3 class="row__title">Lemmy at the Gwangju Design Biennale</h3><p class="row__text">Exhibited with a VR experience zone, with the IID Lab team.</p></div></li>
-          <li class="row"><span class="row__when">Sep 2025</span><div><h3 class="row__title">True RoboAnimator on Blender Extensions</h3><p class="row__text">Published following review by the Blender Foundation.</p></div></li>
-          <li class="row"><span class="row__when">Jun 2025</span><div><h3 class="row__title">Paper at KSDS 2025</h3><p class="row__text">A participatory action catalogue for an elderly care robot.</p></div></li>
-          <li class="row"><span class="row__when">Jan 2025</span><div><h3 class="row__title">CES 2025 Innovation Award</h3><p class="row__text">Awarded to Lemmy, an AI healthcare robot developed by the IID Lab team.</p></div></li>
-          <li class="row"><span class="row__when">Sep 2024</span><div><h3 class="row__title">First place, 3rd Korea Heritage Digital Contents Contest</h3><p class="row__text">A mixed-reality application for the Daegokcheon Stream.</p></div></li>
-          <li class="row"><span class="row__when">Feb 2024</span><div><h3 class="row__title">Joined IID Lab, UNIST</h3><p class="row__text">Funded by a master’s scholarship.</p></div></li>
-          <li class="row"><span class="row__when">Jun 2023</span><div><h3 class="row__title">BSc in Industrial Design, NUST</h3><p class="row__text">Thesis, Waveform, received the highest score in the cohort (91%).</p></div></li>
-        </ul>
       </div>
     </section>
 
@@ -163,40 +143,40 @@
     <section class="section" id="experience" aria-labelledby="exp-title">
       <div class="container">
         <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="exp-title">Experience</h2>
+          <h2 class="t-h2 shead__title" id="exp-title" data-i18n="about.exp.title">Experience</h2>
         </div>
         <ul class="rows" data-reveal>
           <li class="row">
-            <span class="row__when">Feb 2024 – present</span>
+            <span class="row__when" data-i18n="about.exp.iid.when">Feb 2024 – present</span>
             <div>
-              <h3 class="row__title">Researcher and Designer <span class="row__org">· IID Lab, UNIST</span></h3>
-              <p class="row__text">Research in spatial computing, human-centered AI and human–robot interaction across funded projects with Shinsung Delta Tech, LG Electronics, the Republic of Korea Army, Intensive and Korea University.</p>
+              <h3 class="row__title" data-i18n="about.exp.iid.role">Researcher and Designer <span class="row__org">· IID Lab, UNIST</span></h3>
+              <p class="row__text" data-i18n="about.exp.iid.text">Research in spatial computing, human-centered AI and human–robot interaction across funded projects with Shinsung Delta Tech, LG Electronics, the Republic of Korea Army, Intensive and Korea University.</p>
               <ul class="row__sub">
-                <li><h4>Teaching Assistant <span>DES232, 3D CAD and Prototyping</span></h4><p>Supported instruction in SolidWorks modeling and prototyping, and co-introduced a Blender and generative-AI visualization pipeline to the curriculum.</p></li>
+                <li><h4 data-i18n="about.exp.ta.role">Teaching Assistant <span>DES232, 3D CAD and Prototyping</span></h4><p data-i18n="about.exp.ta.text">Supported instruction in SolidWorks modeling and prototyping, and co-introduced a Blender and generative-AI visualization pipeline to the curriculum.</p></li>
               </ul>
             </div>
           </li>
           <li class="row">
-            <span class="row__when">Feb 2020 – Jan 2024</span>
+            <span class="row__when" data-i18n="about.exp.freelance.when">Feb 2020 – Jan 2024</span>
             <div>
-              <h3 class="row__title">3D Artist &amp; Designer <span class="row__org">· Freelance and studios</span></h3>
-              <p class="row__text">Top Rated Plus on Upwork (top 3% of freelancers), with more than 70 contracts and 1,200 hours for international clients.</p>
+              <h3 class="row__title" data-i18n="about.exp.freelance.role">3D Artist &amp; Designer <span class="row__org">· Freelance and studios</span></h3>
+              <p class="row__text" data-i18n="about.exp.freelance.text">Top Rated Plus on Upwork (top 3% of freelancers), with more than 70 contracts and 1,200 hours for international clients.</p>
               <ul class="row__sub">
-                <li><h4>3D Artist, full-time <span>Metablaze</span></h4><p>Game-ready assets and cinematic trailers, with a distributed team in the USA and Turkey.</p></li>
-                <li><h4>Advertisement design <span>Jackbots.io</span></h4><p>Campaign visuals displayed in Times Square, New York.</p></li>
-                <li><h4>AR projection artist and 3D generalist <span>Symspace Labs (formerly Waveworld)</span></h4><p>Mobile AR artwork projected onto clothing.</p></li>
+                <li><h4 data-i18n="about.exp.metablaze.role">3D Artist, full-time <span>Metablaze</span></h4><p data-i18n="about.exp.metablaze.text">Game-ready assets and cinematic trailers, with a distributed team in the USA and Turkey.</p></li>
+                <li><h4 data-i18n="about.exp.jackbots.role">Advertisement design <span>Jackbots.io</span></h4><p data-i18n="about.exp.jackbots.text">Campaign visuals displayed in Times Square, New York.</p></li>
+                <li><h4 data-i18n="about.exp.symspace.role">AR projection artist and 3D generalist <span>Symspace Labs (formerly Waveworld)</span></h4><p data-i18n="about.exp.symspace.text">Mobile AR artwork projected onto clothing.</p></li>
               </ul>
             </div>
           </li>
           <li class="row">
-            <span class="row__when">Feb 2019 – Jan 2023</span>
+            <span class="row__when" data-i18n="about.exp.nust.when">Feb 2019 – Jan 2023</span>
             <div>
-              <h3 class="row__title">Designer <span class="row__org">· NUST</span></h3>
-              <p class="row__text">Industry projects, internships and leadership roles during the BSc.</p>
+              <h3 class="row__title" data-i18n="about.exp.nust.role">Designer <span class="row__org">· NUST</span></h3>
+              <p class="row__text" data-i18n="about.exp.nust.text">Industry projects, internships and leadership roles during the BSc.</p>
               <ul class="row__sub">
-                <li><h4>Industrial Designer <span>Arçelik Global, with NUST</span></h4><p>Refrigerator-freezer component design in a two-person team; first prize among 15 teams.</p></li>
-                <li><h4>Vice-President, Media <span>NUST Fine Arts Club</span></h4><p>Led three teams covering graphics, photography and videography.</p></li>
-                <li><h4>Design Intern <span>Adidas / Forward Sports</span></h4><p>Redesigned an assembly-line workflow to increase output and reduce errors.</p></li>
+                <li><h4 data-i18n="about.exp.arcelik.role">Industrial Designer <span>Arçelik Global, with NUST</span></h4><p data-i18n="about.exp.arcelik.text">Refrigerator-freezer component design in a two-person team; first prize among 15 teams.</p></li>
+                <li><h4 data-i18n="about.exp.club.role">Vice-President, Media <span>NUST Fine Arts Club</span></h4><p data-i18n="about.exp.club.text">Led three teams covering graphics, photography and videography.</p></li>
+                <li><h4 data-i18n="about.exp.adidas.role">Design Intern <span>Adidas / Forward Sports</span></h4><p data-i18n="about.exp.adidas.text">Redesigned an assembly-line workflow to increase output and reduce errors.</p></li>
               </ul>
             </div>
           </li>
@@ -208,23 +188,23 @@
     <section class="section section--alt" id="education" aria-labelledby="edu-title">
       <div class="container">
         <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="edu-title">Education</h2>
+          <h2 class="t-h2 shead__title" id="edu-title" data-i18n="about.edu.title">Education</h2>
         </div>
         <div class="bento">
           <div class="tile tile--white span-3" data-reveal>
             <div class="tile__body">
-              <span class="tile__eyebrow">February 2026 · Ulsan, South Korea</span>
-              <h3 class="tile__title tile__title--sm">MSc in Engineering Design</h3>
-              <p class="tile__text">Ulsan National Institute of Science and Technology (UNIST), Department of Design. Research-based program in spatial computing, human–robot interaction and XR-enabled prototyping, funded by a master’s scholarship.</p>
-              <p class="tile__text"><strong>Courses:</strong> Spatial Computing, Advanced Human–Computer Interaction, Advanced Information Visualization, 3D CAD.</p>
+              <span class="tile__eyebrow" data-i18n="about.edu.msc.when">February 2026 · Ulsan, South Korea</span>
+              <h3 class="tile__title tile__title--sm" data-i18n="about.edu.msc.degree">MSc in Engineering Design</h3>
+              <p class="tile__text" data-i18n="about.edu.msc.text">Ulsan National Institute of Science and Technology (UNIST), Department of Design. Research-based program in spatial computing, human–robot interaction and XR-enabled prototyping, funded by a master’s scholarship.</p>
+              <p class="tile__text" data-i18n="about.edu.msc.courses"><strong>Courses:</strong> Spatial Computing, Advanced Human–Computer Interaction, Advanced Information Visualization, 3D CAD.</p>
             </div>
           </div>
           <div class="tile tile--white span-3" data-reveal>
             <div class="tile__body">
-              <span class="tile__eyebrow">June 2023 · Islamabad, Pakistan</span>
-              <h3 class="tile__title tile__title--sm">BSc in Industrial Design</h3>
-              <p class="tile__text">National University of Sciences and Technology (NUST), School of Art, Design and Architecture. Thesis, Waveform, received the highest score in the cohort (91%).</p>
-              <p class="tile__text"><strong>Courses:</strong> Industrial Design Studio, Design Research, Manufacturing Processes, Technical Drawing and Communication, Sustainable and Universal Design.</p>
+              <span class="tile__eyebrow" data-i18n="about.edu.bsc.when">June 2023 · Islamabad, Pakistan</span>
+              <h3 class="tile__title tile__title--sm" data-i18n="about.edu.bsc.degree">BSc in Industrial Design</h3>
+              <p class="tile__text" data-i18n="about.edu.bsc.text">National University of Sciences and Technology (NUST), School of Art, Design and Architecture. Thesis, Waveform, received the highest score in the cohort (91%).</p>
+              <p class="tile__text" data-i18n="about.edu.bsc.courses"><strong>Courses:</strong> Industrial Design Studio, Design Research, Manufacturing Processes, Technical Drawing and Communication, Sustainable and Universal Design.</p>
             </div>
           </div>
         </div>
@@ -235,35 +215,35 @@
     <section class="section" id="skills" aria-labelledby="skills-title">
       <div class="container">
         <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="skills-title">Skills and tools</h2>
+          <h2 class="t-h2 shead__title" id="skills-title" data-i18n="about.skills.title">Skills and tools</h2>
         </div>
         <div class="bento bento--thirds">
           <div class="tile span-2" data-reveal>
             <div class="tile__body">
-              <h3 class="tile__title tile__title--sm">Research</h3>
+              <h3 class="tile__title tile__title--sm" data-i18n="about.skills.research.title">Research</h3>
               <ul class="chips chips--line">
-                <li>Participatory design</li><li>Interviews</li><li>Thematic analysis</li><li>Paired-comparison studies</li><li>Perception experiments</li><li>Logistic regression</li><li>Usability testing</li><li>Research writing</li>
+                <li data-i18n="about.skills.research.participatory">Participatory design</li><li data-i18n="about.skills.research.interviews">Interviews</li><li data-i18n="about.skills.research.thematic">Thematic analysis</li><li data-i18n="about.skills.research.paired">Paired-comparison studies</li><li data-i18n="about.skills.research.perception">Perception experiments</li><li data-i18n="about.skills.research.regression">Logistic regression</li><li data-i18n="about.skills.research.usability">Usability testing</li><li data-i18n="about.skills.research.writing">Research writing</li>
               </ul>
             </div>
           </div>
           <div class="tile span-2" data-reveal>
             <div class="tile__body">
-              <h3 class="tile__title tile__title--sm">Design and 3D</h3>
+              <h3 class="tile__title tile__title--sm" data-i18n="about.skills.design.title">Design and 3D</h3>
               <ul class="chips chips--line">
-                <li>Blender</li><li>Unreal Engine 5</li><li>SolidWorks</li><li>Figma</li><li>Substance Painter</li><li>Gaea</li><li>EmberGen / LiquiGen</li><li>Photoshop</li><li>DaVinci Resolve</li><li>Premiere Pro</li><li>Photogrammetry</li>
+                <li translate="no">Blender</li><li translate="no">Unreal Engine 5</li><li translate="no">SolidWorks</li><li translate="no">Figma</li><li translate="no">Substance Painter</li><li translate="no">Gaea</li><li translate="no">EmberGen / LiquiGen</li><li translate="no">Photoshop</li><li translate="no">DaVinci Resolve</li><li translate="no">Premiere Pro</li><li data-i18n="about.skills.design.photogrammetry">Photogrammetry</li>
               </ul>
             </div>
           </div>
           <div class="tile span-2" data-reveal>
             <div class="tile__body">
-              <h3 class="tile__title tile__title--sm">Development and AI</h3>
+              <h3 class="tile__title tile__title--sm" data-i18n="about.skills.dev.title">Development and AI</h3>
               <ul class="chips chips--line">
-                <li>Swift and SwiftUI</li><li>ARKit</li><li>RealityKit</li><li>visionOS</li><li>Python</li><li>ComfyUI</li><li>OpenUSD</li><li>Model training</li><li>Prompt engineering</li>
+                <li data-i18n="about.skills.dev.swift">Swift and SwiftUI</li><li translate="no">ARKit</li><li translate="no">RealityKit</li><li translate="no">visionOS</li><li translate="no">Python</li><li translate="no">ComfyUI</li><li translate="no">OpenUSD</li><li data-i18n="about.skills.dev.training">Model training</li><li data-i18n="about.skills.dev.prompting">Prompt engineering</li>
               </ul>
             </div>
           </div>
         </div>
-        <p class="t-small t-muted" style="margin-top:20px" data-reveal>Currently developing skills in Houdini, NVIDIA Omniverse, Isaac Sim and Unity. Further interests include 3D reconstruction, novel rendering techniques and advanced animation. Member of ACM SIGCHI and ACM SIGGRAPH.</p>
+        <p class="t-small t-muted" style="margin-top:20px" data-reveal data-i18n="about.skills.note">Currently developing skills in Houdini, NVIDIA Omniverse, Isaac Sim and Unity. Further interests include 3D reconstruction, novel rendering techniques and advanced animation. Member of ACM SIGCHI and ACM SIGGRAPH.</p>
       </div>
     </section>
 
@@ -271,47 +251,51 @@
     <section class="section section--alt" id="recognition" aria-labelledby="rec-title">
       <div class="container">
         <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="rec-title">Awards and recognition</h2>
+          <h2 class="t-h2 shead__title" id="rec-title" data-i18n="about.rec.title">Awards and recognition</h2>
         </div>
         <ul class="rows" data-reveal>
-          <li class="row"><span class="row__when">Sep 2025</span><div><h3 class="row__title">True RoboAnimator published on Blender Extensions</h3><p class="row__text">Accepted following review by the Blender Foundation; more than 7,000 downloads.</p></div></li>
-          <li class="row"><span class="row__when">Jan 2025</span><div><h3 class="row__title">CES 2025 Innovation Award</h3><p class="row__text">Awarded to Lemmy, an AI healthcare robot developed by the IID Lab team, UNIST.</p></div></li>
-          <li class="row"><span class="row__when">Sep 2024</span><div><h3 class="row__title">First place, 3rd Korea Heritage Digital Contents Contest</h3><p class="row__text">XR category.</p></div></li>
-          <li class="row"><span class="row__when">Feb 2024</span><div><h3 class="row__title">Master’s scholarship, UNIST</h3></div></li>
-          <li class="row"><span class="row__when">Jun 2023</span><div><h3 class="row__title">Highest thesis score in cohort (91%)</h3><p class="row__text">BSc thesis, NUST.</p></div></li>
-          <li class="row"><span class="row__when">May 2021</span><div><h3 class="row__title">Arçelik Dawlance Excellence Certificate</h3><p class="row__text">Best design, first among 15 teams.</p></div></li>
-          <li class="row"><span class="row__when">2014 – 2021</span><div><h3 class="row__title">Earlier</h3><p class="row__text">Vice-President, Media, NUST Fine Arts Club (2021); IoT workshop, NUST SEECS, and stone carving workshop, Ivy Tech Community College, USA (2019); BURAQ Camp, top 40 O-level science students nationally (2014).</p></div></li>
+          <li class="row"><span class="row__when" data-i18n="about.rec.roboanimator.when">Sep 2025</span><div><h3 class="row__title" data-i18n="about.rec.roboanimator.title">True RoboAnimator published on Blender Extensions</h3><p class="row__text" data-i18n="about.rec.roboanimator.text">Accepted following review by the Blender Foundation; more than 7,000 downloads.</p></div></li>
+          <li class="row"><span class="row__when" data-i18n="about.rec.ces.when">Jan 2025</span><div><h3 class="row__title" data-i18n="about.rec.ces.title">CES 2025 Innovation Award</h3><p class="row__text" data-i18n="about.rec.ces.text">Awarded to Lemmy, an AI healthcare robot developed by the IID Lab team, UNIST.</p></div></li>
+          <li class="row"><span class="row__when" data-i18n="about.rec.heritage.when">Sep 2024</span><div><h3 class="row__title" data-i18n="about.rec.heritage.title">First place, 3rd Korea Heritage Digital Contents Contest</h3><p class="row__text" data-i18n="about.rec.heritage.text">XR category.</p></div></li>
+          <li class="row"><span class="row__when" data-i18n="about.rec.scholarship.when">Feb 2024</span><div><h3 class="row__title" data-i18n="about.rec.scholarship.title">Master’s scholarship, UNIST</h3></div></li>
+          <li class="row"><span class="row__when" data-i18n="about.rec.thesis.when">Jun 2023</span><div><h3 class="row__title" data-i18n="about.rec.thesis.title">Highest thesis score in cohort (91%)</h3><p class="row__text" data-i18n="about.rec.thesis.text">BSc thesis, NUST.</p></div></li>
+          <li class="row"><span class="row__when" data-i18n="about.rec.arcelik.when">May 2021</span><div><h3 class="row__title" data-i18n="about.rec.arcelik.title">Arçelik Dawlance Excellence Certificate</h3><p class="row__text" data-i18n="about.rec.arcelik.text">Best design, first among 15 teams.</p></div></li>
+          <li class="row"><span class="row__when">2014 – 2021</span><div><h3 class="row__title" data-i18n="about.rec.earlier.title">Earlier</h3><p class="row__text" data-i18n="about.rec.earlier.text">Vice-President, Media, NUST Fine Arts Club (2021); IoT workshop, NUST SEECS, and stone carving workshop, Ivy Tech Community College, USA (2019); BURAQ Camp, top 40 O-level science students nationally (2014).</p></div></li>
         </ul>
 
-        <h3 class="t-h3" style="margin-top: clamp(56px,7vw,96px)" data-reveal>Certifications</h3>
-        <ul class="rows" style="margin-top:20px" data-reveal>
-          <li class="row"><span class="row__when">2026</span><div><h4 class="row__title">XR in Healthcare Education and Clinical Practice</h4><p class="row__text">Imperial College London</p></div></li>
-          <li class="row"><span class="row__when">2025</span><div><h4 class="row__title">OpenUSD: Intro to Strength Ordering</h4><p class="row__text">NVIDIA</p></div></li>
-          <li class="row"><span class="row__when">2025</span><div><h4 class="row__title">Prompt Engineering with LLaMA-2</h4><p class="row__text">NVIDIA</p></div></li>
-          <li class="row"><span class="row__when">2025</span><div><h4 class="row__title">Synthetic Data Generation for Training Computer Vision Models</h4><p class="row__text">NVIDIA</p></div></li>
-          <li class="row"><span class="row__when">2024</span><div><h4 class="row__title">OpenUSD: Stages, Prims and Attributes</h4><p class="row__text">NVIDIA</p></div></li>
-          <li class="row"><span class="row__when">2024</span><div><h4 class="row__title">User Experience Design</h4><p class="row__text">Georgia Institute of Technology, Coursera</p></div></li>
-          <li class="row"><span class="row__when">2023</span><div><h4 class="row__title">Earlier coursework</h4><p class="row__text">Foundations of AR and AR in Marketing (Meta); Arduino Platform and C Programming (UC Irvine); Programming for Everybody (University of Michigan). All via Coursera.</p></div></li>
-        </ul>
+        <div class="item-actions" style="margin-top: clamp(32px,4vw,48px)" data-reveal>
+          <button class="expand" type="button" data-toggle aria-controls="certifications" data-i18n="about.certs.toggle">Certifications</button>
+        </div>
+        <div class="expand-panel" id="certifications" hidden>
+          <ul class="rows">
+          <li class="row"><span class="row__when">2026</span><div><h4 class="row__title" data-i18n="about.certs.xr.title">XR in Healthcare Education and Clinical Practice</h4><p class="row__text" data-i18n="about.certs.xr.issuer">Imperial College London</p></div></li>
+          <li class="row"><span class="row__when">2025</span><div><h4 class="row__title" data-i18n="about.certs.strength.title">OpenUSD: Intro to Strength Ordering</h4><p class="row__text" translate="no">NVIDIA</p></div></li>
+          <li class="row"><span class="row__when">2025</span><div><h4 class="row__title" data-i18n="about.certs.llama.title">Prompt Engineering with LLaMA-2</h4><p class="row__text" translate="no">NVIDIA</p></div></li>
+          <li class="row"><span class="row__when">2025</span><div><h4 class="row__title" data-i18n="about.certs.synthetic.title">Synthetic Data Generation for Training Computer Vision Models</h4><p class="row__text" translate="no">NVIDIA</p></div></li>
+          <li class="row"><span class="row__when">2024</span><div><h4 class="row__title" data-i18n="about.certs.stages.title">OpenUSD: Stages, Prims and Attributes</h4><p class="row__text" translate="no">NVIDIA</p></div></li>
+          <li class="row"><span class="row__when">2024</span><div><h4 class="row__title" data-i18n="about.certs.ux.title">User Experience Design</h4><p class="row__text" data-i18n="about.certs.ux.issuer">Georgia Institute of Technology, Coursera</p></div></li>
+          <li class="row"><span class="row__when">2023</span><div><h4 class="row__title" data-i18n="about.certs.earlier.title">Earlier coursework</h4><p class="row__text" data-i18n="about.certs.earlier.text">Foundations of AR and AR in Marketing (Meta); Arduino Platform and C Programming (UC Irvine); Programming for Everybody (University of Michigan). All via Coursera.</p></div></li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <!-- Contact -->
     <section class="section center" id="contact" aria-labelledby="contact-title">
       <div class="container-text">
-        <h2 class="t-h1" id="contact-title" data-reveal>Contact</h2>
-        <p class="t-lead t-muted" style="margin-top:18px" data-reveal>Open to HCI research positions, research collaborations and design roles. Based in Ulsan, South Korea; email is preferred.</p>
+        <h2 class="t-h1" id="contact-title" data-reveal data-i18n="about.contact.title">Contact</h2>
+        <p class="t-lead t-muted" style="margin-top:18px" data-reveal data-i18n="about.contact.text">Open to HCI research positions, research collaborations and design roles. Based in Ulsan, South Korea; email is preferred.</p>
         <div class="email-row" style="margin-top:32px" data-reveal>
-          <a class="email-link" href="mailto:danialsarfraz2000@gmail.com">danialsarfraz2000@gmail.com</a>
-          <button class="btn btn--md btn--secondary" type="button" data-copy="danialsarfraz2000@gmail.com"><span data-copy-label>Copy</span></button>
+          <a class="email-link" href="mailto:danialsarfraz2000@gmail.com" translate="no">danialsarfraz2000@gmail.com</a>
+          <button class="btn btn--md btn--secondary" type="button" data-copy="danialsarfraz2000@gmail.com"><span data-copy-label data-i18n="copy">Copy</span></button>
         </div>
         <div class="links-inline" style="justify-content:center; margin-top:28px" data-reveal>
-          <a class="link-ext" href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
-          <a class="link-ext" href="https://github.com/Danyals-code">GitHub</a>
-          <a class="link-ext" href="https://www.behance.net/designedbydanyal">Behance</a>
-          <a class="link-ext" href="https://www.youtube.com/@DanyalSarfrazAli">YouTube</a>
-          <a class="link-ext" href="https://www.instagram.com/dans_renders">Instagram</a>
-          <a class="link-ext" href="https://www.upwork.com/freelancers/~01842e91d809d3f2df/">Upwork</a>
+          <a class="link-ext" href="https://www.linkedin.com/in/designbydanyal/" translate="no">LinkedIn</a>
+          <a class="link-ext" href="https://github.com/Danyals-code" translate="no">GitHub</a>
+          <a class="link-ext" href="https://www.behance.net/designedbydanyal" translate="no">Behance</a>
+          <a class="link-ext" href="https://www.youtube.com/@DanyalSarfrazAli" translate="no">YouTube</a>
+          <a class="link-ext" href="https://www.instagram.com/dans_renders" translate="no">Instagram</a>
+          <a class="link-ext" href="https://www.upwork.com/freelancers/~01842e91d809d3f2df/" translate="no">Upwork</a>
         </div>
       </div>
     </section>
@@ -319,46 +303,46 @@
 
   <footer class="gfooter">
     <div class="gfooter__inner">
-      <nav class="gfooter__dir" aria-label="Site directory">
-        <div class="gfooter__col"><h3>Design</h3><ul>
-          <li><a href="/design/#lg">LG sensor module</a></li>
+      <nav class="gfooter__dir" aria-label="Site directory" data-i18n-attr="aria-label:footer.label">
+        <div class="gfooter__col"><h3 data-i18n="nav.design">Design</h3><ul>
+          <li><a href="/design/#cgi" data-i18n="footer.cgi">3D &amp; CGI</a></li>
           <li><a href="/design/#waveform">Waveform</a></li>
-          <li><a href="/design/#cgi">3D &amp; CGI</a></li>
+          <li><a href="/design/#viz" data-i18n="footer.viz">Product visualization</a></li>
+          <li><a href="/design/#freelance" data-i18n="footer.freelance">Freelance work</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>Research</h3><ul>
-          <li><a href="/research/bangudae-xr/">Bangudae XR</a></li>
-          <li><a href="/research/life-size-ar/">Life-size AR</a></li>
+        <div class="gfooter__col"><h3 data-i18n="footer.caseStudies">Case studies</h3><ul>
+          <li><a href="/research/bangudae-xr/" data-i18n="footer.bangudae">Bangudae XR</a></li>
+          <li><a href="/research/life-size-ar/" data-i18n="footer.lifeSize">Life-size AR</a></li>
           <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
-          <li><a href="/research/product-form/">Product form analysis</a></li>
-          <li><a href="/research/lemmy/">Robot motion</a></li>
-          <li><a href="/research/lemmy-framework/">MSc thesis framework</a></li>
+          <li><a href="/research/product-form/" data-i18n="footer.productForm">Product form analysis</a></li>
+          <li><a href="/research/lemmy/" data-i18n="footer.robotMotion">Robot motion</a></li>
+          <li><a href="/research/lemmy-framework/" data-i18n="footer.framework">MSc thesis framework</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>Publications</h3><ul>
-          <li><a href="/research/#publications">Papers</a></li>
-          <li><a href="/research/#thesis">MSc thesis</a></li>
-          <li><a href="/research/#talks">Talks</a></li>
-          <li><a href="/research/#experiments">Experiments</a></li>
+        <div class="gfooter__col"><h3 data-i18n="nav.research">Research</h3><ul>
+          <li><a href="/research/#publications" data-i18n="footer.publications">Publications</a></li>
+          <li><a href="/research/#thesis" data-i18n="footer.thesis">MSc thesis</a></li>
+          <li><a href="/research/#industry" data-i18n="footer.industry">Industry projects</a></li>
+          <li><a href="/research/#personal" data-i18n="footer.personal">Personal projects</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>Artifacts</h3><ul>
-          <li><a href="/tools/#lemmy-ar">Lemmy AR Experience</a></li>
+        <div class="gfooter__col"><h3 data-i18n="nav.tools">Artifacts</h3><ul>
           <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
           <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
-          <li><a href="/tools/#more">More artifacts</a></li>
+          <li><a href="/tools/#more" data-i18n="footer.moreTools">More artifacts</a></li>
         </ul></div>
-        <div class="gfooter__col"><h3>About</h3><ul>
-          <li><a href="/about/">Bio</a></li>
-          <li><a href="/about/#experience">Experience</a></li>
-          <li><a href="/about/#education">Education</a></li>
-          <li><a href="/about/#contact">Contact</a></li>
+        <div class="gfooter__col"><h3 data-i18n="nav.about">About</h3><ul>
+          <li><a href="/about/" data-i18n="footer.bio">Bio</a></li>
+          <li><a href="/about/#experience" data-i18n="footer.experience">Experience</a></li>
+          <li><a href="/about/#education" data-i18n="footer.education">Education</a></li>
+          <li><a href="/about/#contact" data-i18n="nav.contact">Contact</a></li>
         </ul></div>
       </nav>
       <div class="gfooter__legal">
-        <p>Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
-        <nav aria-label="Elsewhere">
+        <p data-i18n="footer.copyright">Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
+        <nav aria-label="Elsewhere" data-i18n-attr="aria-label:footer.elsewhere">
           <a href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
           <a href="https://github.com/Danyals-code">GitHub</a>
           <a href="https://www.behance.net/designedbydanyal">Behance</a>
-          <a href="mailto:danialsarfraz2000@gmail.com">Email</a>
+          <a href="mailto:danialsarfraz2000@gmail.com" data-i18n="footer.email">Email</a>
         </nav>
       </div>
     </div>
