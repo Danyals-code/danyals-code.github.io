@@ -601,7 +601,7 @@
     dialog.className = 'search';
     dialog.innerHTML = `
       <div class="search__bar">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
+        <svg aria-hidden="true"><use href="/assets/img/icons.svg?v=4#search"/></svg>
         <input class="search__input" type="search" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="search-results" aria-autocomplete="list">
         <kbd>esc</kbd>
       </div>
@@ -1199,6 +1199,280 @@
     });
   }
 
+  /* ------------------------------------------------------------------ curved panorama (Bangudae XR)
+     The Bangudae page opens on the cliff panorama bent into a curved cinema
+     screen. It is drawn on a canvas one thin column at a time, each column
+     squashed by its distance from the centre: the edges stay tallest, the
+     middle shortest, and the outline smooth.
+
+     A view of the picture is a scale (screen pixels per panorama pixel) and
+     the panorama point at the frame's centre. Following a Bangudae card
+     (Research, Home), the card's frame is handed over in sessionStorage, and
+     a canvas over the page starts exactly where the card was, zoomed in on
+     the carved panel. In one move it grows to full width, pulls back to the
+     whole cliff, squares its corners and bends, while the site's page
+     cross-fade swaps the pages around it. Opened any other way, the page
+     plays the same pull-back in place. While zoomed in, the panel is drawn
+     from its own full-resolution picture. */
+
+  const PANO_PATH = '/research/bangudae-xr/';
+  const PANO_KEY = 'pano-flight';
+  const PANO_CURVE = 0.16;
+  const PANO_TIME = 1600;
+  // The panel's picture, as fractions of the panorama: x, y, width, height.
+  const PANEL = [0.43003, 0.45947, 0.17394, 0.31899];
+  const PANEL_SRC = '/assets/img/bangudae/panel-2143.jpg';
+  const PANO_WIDTHS = [1600, 2400, 3600];
+  const PANO_W = 3600;
+  const PANO_H = 1107;
+
+  const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+  const clamp01 = (t) => Math.min(1, Math.max(0, t));
+  const lerp = (a, b, t) => a + (b - a) * t;
+
+  // The view that fits a part of the picture (rx, ry, rw, rh, in its pixels) over a w × h frame, as CSS cover does.
+  const coverView = (w, h, rx, ry, rw, rh, zoom = 1) => ({ s: Math.max(w / rw, h / rh) * zoom, cx: rx + rw / 2, cy: ry + rh / 2 });
+
+  // Keeps a view inside the picture and the frame filled.
+  function clampView(view, w, h, pw, ph) {
+    const s = Math.max(view.s, w / pw, h / ph);
+    const hx = w / 2 / s;
+    const hy = h / 2 / s;
+    return { s, cx: Math.min(Math.max(view.cx, hx), pw - hx), cy: Math.min(Math.max(view.cy, hy), ph - hy) };
+  }
+
+  // Draws the panorama over a frame (CSS pixels) from a view, bent by `curve`, with rounded corners.
+  // Views are in reference units, the 3600 × 1107 panorama's pixels, whichever size has loaded.
+  // Before the panorama arrives (`pano` null), only the panel is drawn, which is all a zoomed-in view shows.
+  function drawPano(ctx, dpr, pano, panel, frame, view, curve, radius) {
+    const pw = PANO_W;
+    const ph = PANO_H;
+    const pk = pano ? pano.naturalWidth / PANO_W : 0;
+    const s = view.s * dpr;
+    const left = Math.round(frame.x * dpr);
+    const right = Math.round((frame.x + frame.w) * dpr);
+    const height = frame.h * dpr;
+    const mid = (frame.y + frame.h / 2) * dpr;
+    const centre = (frame.x + frame.w / 2) * dpr;
+    const sy = view.cy - height / 2 / s;
+    const sh = height / s;
+    // The panel's picture only where the panorama would otherwise be enlarged.
+    const usePanel = panel && (!pano || s > 1.2 * pk);
+    const px = PANEL[0] * pw;
+    const py = PANEL[1] * ph;
+    const pxw = PANEL[2] * pw;
+    const pyh = PANEL[3] * ph;
+    const kx = usePanel ? panel.naturalWidth / pxw : 0;
+    const ky = usePanel ? panel.naturalHeight / pyh : 0;
+    const step = dpr > 1.5 ? 2 : 1;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.roundRect(frame.x * dpr, frame.y * dpr, frame.w * dpr, height, radius * dpr);
+    ctx.clip();
+    for (let dx = left; dx < right; dx += step) {
+      const cw = Math.min(step, right - dx);
+      const k = 1 - curve * Math.sin((Math.PI * (dx + cw / 2 - left)) / (right - left));
+      const dh = height * k;
+      const dy = mid - dh / 2;
+      const sx = view.cx + (dx - centre) / s;
+      const sw = cw / s;
+      if (pano) ctx.drawImage(pano, sx * pk, sy * pk, sw * pk, sh * pk, dx, dy, cw, dh);
+      if (usePanel && sx + sw > px && sx < px + pxw) {
+        const a = Math.max(sy, py);
+        const b = Math.min(sy + sh, py + pyh);
+        if (b > a) ctx.drawImage(panel, (sx - px) * kx, (a - py) * ky, sw * kx, (b - a) * ky, dx, dy + ((a - sy) / sh) * dh, cw, ((b - a) / sh) * dh);
+      }
+    }
+    ctx.restore();
+  }
+
+  const loadImage = (src) => new Promise((resolve, reject) => {
+    const img = new Image();
+    // Decoding first avoids a stutter on the first frame, but a hidden tab never finishes it, so it gets a moment, not a veto.
+    img.onload = () => Promise.race([img.decode ? img.decode().catch(() => {}) : null, new Promise((r) => setTimeout(r, 250))]).then(() => resolve(img));
+    img.onerror = reject;
+    img.src = src;
+  });
+
+  function initPano() {
+    // On the pages with a card: hand its frame to the next page, and fetch the panorama ahead of the click.
+    const card = document.querySelector('.pano-src');
+    if (card) {
+      let warmed = false;
+      const warm = (event) => {
+        if (warmed || !event.target.closest || !event.target.closest(`a[href="${PANO_PATH}"]`)) return;
+        warmed = true;
+        // A low-priority prefetch, so the hover itself never waits on a large download or decode.
+        const need = window.innerWidth * (window.devicePixelRatio || 1);
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.as = 'image';
+        link.href = `/assets/img/bangudae/panorama-${PANO_WIDTHS.find((w) => w >= need) || 3600}.jpg`;
+        document.head.append(link);
+      };
+      document.addEventListener('pointerover', warm);
+      document.addEventListener('focusin', warm);
+      document.addEventListener('click', (event) => {
+        if (reduceMotion.matches || !event.target.closest(`a[href="${PANO_PATH}"]`)) return;
+        const box = card.closest('.wcard, .promo__pano') || card;
+        const r = box.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > window.innerHeight) return;
+        const zoom = parseFloat(getComputedStyle(card).scale) || 1;
+        const radius = parseFloat(getComputedStyle(box).borderTopLeftRadius) || 0;
+        try {
+          sessionStorage.setItem(PANO_KEY, JSON.stringify({ x: r.left, y: r.top, w: r.width, h: r.height, zoom, radius, src: card.currentSrc, at: Date.now() }));
+        } catch (e) {}
+      });
+    }
+
+    const pano = document.querySelector('[data-pano]');
+    if (!pano) return;
+    const img = pano.querySelector('img');
+    let from = null;
+    try {
+      from = JSON.parse(sessionStorage.getItem(PANO_KEY));
+      sessionStorage.removeItem(PANO_KEY);
+    } catch (e) {}
+    if (from && Date.now() - from.at > 4000) from = null;
+
+    const canvas = document.createElement('canvas');
+    canvas.setAttribute('aria-hidden', 'true');
+    pano.append(canvas);
+    const ctx = canvas.getContext('2d');
+    if (!ctx || !ctx.roundRect) {
+      canvas.remove();
+      return;
+    }
+    // Hidden until drawn, so a half-loaded flat picture never shows before the move.
+    pano.classList.add('is-drawn');
+
+    // The moving canvas exists before the page's first paint, so the page
+    // transition captures it on its own, outside the cross-fade (see the CSS).
+    const flying = !reduceMotion.matches && !location.hash;
+    let flight = null;
+    if (flying) {
+      flight = document.createElement('canvas');
+      flight.className = 'pano-flight';
+      flight.setAttribute('aria-hidden', 'true');
+      document.body.append(flight);
+      pano.classList.add('is-flying');
+    }
+    const land = () => {
+      pano.classList.remove('is-flying');
+      if (flight) flight.remove();
+    };
+
+    const pictureReady = (img.complete && img.naturalWidth ? Promise.resolve() : new Promise((resolve, reject) => {
+      img.addEventListener('load', resolve, { once: true });
+      img.addEventListener('error', reject, { once: true });
+    })).then(() => loadImage(img.currentSrc || img.src));
+    // The panel as the card showed it (already in the cache), or its full-resolution picture.
+    const panelReady = loadImage((from && from.src) || PANEL_SRC).catch(() => null);
+    const pw = PANO_W;
+    const ph = PANO_H;
+
+    // The resting screen, drawn once the panorama has loaded and again on resize.
+    Promise.all([pictureReady, panelReady]).then(([picture, panelPicture]) => {
+      const drawStill = () => {
+        const dpr = window.devicePixelRatio || 1;
+        const w = pano.clientWidth;
+        const h = pano.clientHeight;
+        canvas.width = Math.round(w * dpr);
+        canvas.height = Math.round(h * dpr);
+        ctx.imageSmoothingQuality = 'high';
+        drawPano(ctx, dpr, picture, panelPicture, { x: 0, y: 0, w, h }, coverView(w, h, 0, 0, pw, ph), PANO_CURVE, 0);
+      };
+      drawStill();
+      new ResizeObserver(drawStill).observe(pano);
+    }).catch(() => {
+      // The panorama failed: show the flat <img> again.
+      land();
+      pano.classList.remove('is-drawn');
+      canvas.remove();
+    });
+
+    if (!flight) return;
+
+    // The move. Its first frame, the card's frame zoomed in on the panel, needs only the panel,
+    // which the card has already loaded, so it covers the card from the start; the camera begins
+    // to pull back once the panorama has arrived. The visible width of the cliff widens on a log
+    // scale, the steady pace of a camera pulling back.
+    Promise.all([panelReady, window.__panoArrival || Promise.resolve()]).then(([panelPicture]) => {
+      const start = pano.getBoundingClientRect();
+      if (start.bottom < 0 || start.top > window.innerHeight) {
+        land();
+        return;
+      }
+      const fctx = flight.getContext('2d');
+      const f0 = from ? { x: from.x, y: from.y, w: from.w, h: from.h } : { x: start.left, y: start.top, w: start.width, h: start.height };
+      const r0 = from ? from.radius : 0;
+      const v0 = coverView(f0.w, f0.h, PANEL[0] * pw, PANEL[1] * ph, PANEL[2] * pw, PANEL[3] * ph, from ? from.zoom : 1);
+      const span0 = Math.log(f0.w / v0.s);
+      const span1 = Math.log(pw);
+      let picture = null;
+      let t0 = 0;
+
+      const frame = (now) => {
+        if (!flight.isConnected) return;
+        if (picture && !t0) t0 = now;
+        const t = t0 ? clamp01((now - t0) / PANO_TIME) : 0;
+        const e = easeInOut(t);
+        const dpr = window.devicePixelRatio || 1;
+        const end = pano.getBoundingClientRect();
+        const f = { x: lerp(f0.x, end.left, e), y: lerp(f0.y, end.top, e), w: lerp(f0.w, end.width, e), h: lerp(f0.h, end.height, e) };
+        const view = clampView({
+          s: f.w / Math.exp(lerp(span0, span1, e)),
+          cx: lerp(v0.cx, pw / 2, e),
+          cy: lerp(v0.cy, ph / 2, e),
+        }, f.w, f.h, pw, ph);
+        const width = Math.round(window.innerWidth * dpr);
+        const height = Math.round(window.innerHeight * dpr);
+        if (flight.width !== width) flight.width = width;
+        if (flight.height !== height) flight.height = height;
+        fctx.clearRect(0, 0, width, height);
+        fctx.imageSmoothingQuality = 'high';
+        drawPano(fctx, dpr, picture, panelPicture, f, view, PANO_CURVE * easeInOut(clamp01((t - 0.06) / 0.94)), r0 * (1 - e));
+        if (t < 1) requestAnimationFrame(frame);
+        else land();
+      };
+      requestAnimationFrame(frame);
+      pictureReady.then((p) => {
+        picture = p;
+      }, land);
+    });
+  }
+
+  /* ------------------------------------------------------------------ paper reader
+     "Read paper" opens the PDF in a sheet, in the browser's own viewer. Phones
+     and browsers without an inline viewer keep the link's default: a new tab. */
+
+  function initReader() {
+    const reader = document.getElementById('paper-reader');
+    if (!reader || typeof reader.showModal !== 'function') return;
+    if (navigator.pdfViewerEnabled === false || !window.matchMedia('(hover: hover)').matches) return;
+    let frame = reader.querySelector('.reader__frame');
+    const title = reader.querySelector('.reader__title');
+    const download = reader.querySelector('.reader__dl');
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('a[data-reader]');
+      if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      const paper = link.closest('.paper');
+      const heading = paper && paper.querySelector('.paper__title');
+      title.textContent = heading ? heading.textContent : '';
+      download.href = link.getAttribute('href');
+      // A fresh frame per paper, so the last one never flashes before the next loads.
+      const fresh = frame.cloneNode(false);
+      fresh.src = `${link.getAttribute('href')}#view=FitH`;
+      frame.replaceWith(fresh);
+      frame = fresh;
+      reader.showModal();
+    });
+    // Unload the PDF on close.
+    reader.addEventListener('close', () => frame.removeAttribute('src'));
+  }
+
   /* ------------------------------------------------------------------ copy buttons */
 
   function initCopy() {
@@ -1244,6 +1518,20 @@
       });
       label.setAttribute('aria-live', 'polite');
     });
+  }
+
+  /* ------------------------------------------------------------------ external links
+     Links off the site open in a new tab. The HTML marks its own; this covers
+     links that arrive later inside translated strings. Internal links are
+     relative, so an absolute http(s) href means another site. */
+
+  function initExternalLinks() {
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest && event.target.closest('a[href^="http"]:not([target])');
+      if (!link) return;
+      link.target = '_blank';
+      link.rel = 'noopener';
+    }, true);
   }
 
   /* ------------------------------------------------------------------ disclosure toggles (summaries, BibTeX)
@@ -1804,7 +2092,10 @@
     initHighlights,
     initCloser,
     initSheets,
+    initPano,
+    initReader,
     initCopy,
+    initExternalLinks,
     initToggles,
     initSegmented,
     initQuiz,

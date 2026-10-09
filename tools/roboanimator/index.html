@@ -22,9 +22,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=31">
+  <link rel="stylesheet" href="/assets/css/site.css?v=39">
   <script src="/assets/js/i18n.js?v=4" defer></script>
-  <script src="/assets/js/site.js?v=20" defer></script>
+  <script src="/assets/js/site.js?v=28" defer></script>
 </head>
 <body class="has-lnav tinted" style="--tint-l: #d70015; --tint-d: #ff453a">
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -44,14 +44,14 @@
       </ul>
       <div class="gnav__tools">
         <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
+          <svg aria-hidden="true"><use href="/assets/img/icons.svg?v=4#search"/></svg>
         </button>
         <button class="gnav__icon" type="button" data-lang-open aria-haspopup="true" aria-expanded="false" aria-label="Language: English" title="Language">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.6 2.6 3.6 2.6 6S9.7 12.4 8 14M8 2C6.3 3.6 5.4 5.6 5.4 8s.9 4.4 2.6 6"/></svg>
+          <svg aria-hidden="true"><use href="/assets/img/icons.svg?v=4#globe"/></svg>
         </button>
         <button class="gnav__icon" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Switch to dark theme">
-          <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
-          <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
+          <svg class="theme-icon theme-icon--light" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#sun"/></svg>
+          <svg class="theme-icon theme-icon--dark" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#moon"/></svg>
         </button>
       </div>
       <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
@@ -70,7 +70,7 @@
         <li><a href="#workflow">Workflow</a></li>
         <li><a href="#specs">Specs</a></li>
       </ul>
-      <a class="btn btn--sm" href="https://extensions.blender.org/add-ons/true-roboanimator/">Get it</a>
+      <a class="btn btn--sm" href="https://extensions.blender.org/add-ons/true-roboanimator/" target="_blank" rel="noopener">Get it</a>
     </div>
   </nav>
 
@@ -82,8 +82,8 @@
         <h1 class="t-display phero__title">Animation that real robots can drive.</h1>
         <p class="t-lead phero__lead">A Blender add-on that turns keyframed chassis motion into engineering-accurate animation for wheeled robots: no sideways slip, wheel angles worked out frame by frame, and data that can drive hardware.</p>
         <div class="cta-row phero__cta">
-          <a class="btn" href="https://extensions.blender.org/add-ons/true-roboanimator/">Get it on Blender Extensions</a>
-          <a class="link-ext" href="https://github.com/Danyals-code/RoboAnimator---Blender-Addon" translate="no">GitHub</a>
+          <a class="btn" href="https://extensions.blender.org/add-ons/true-roboanimator/" target="_blank" rel="noopener">Get it on Blender Extensions</a>
+          <a class="link-ext" href="https://github.com/Danyals-code/RoboAnimator---Blender-Addon" target="_blank" rel="noopener" translate="no">GitHub</a>
         </div>
       </div>
       <div class="phero__media container-wide" data-reveal="scale">
@@ -115,15 +115,15 @@
         <ul class="hl__track">
         <li class="hl__slide">
           <p class="hl__cap"><strong>Chassis only.</strong> Keyframe the body and it glides along its path while the wheels stay still.</p>
-          <div class="hl__media"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Screen recording: a simple two-wheeled robot on a keyed path, chassis only, wheels still" data-ph="roboanimator-raw"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#video"/></svg><span class="ph__what">Screen recording: a simple two-wheeled robot on a keyed path, chassis only, wheels still</span><span class="ph__size">Screen recording · 1920 × 1200, 6 s loop</span></div></div></figure></div>
+          <div class="hl__media"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Screen recording: a simple two-wheeled robot on a keyed path, chassis only, wheels still" data-ph="roboanimator-raw"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#video"/></svg><span class="ph__what">Screen recording: a simple two-wheeled robot on a keyed path, chassis only, wheels still</span><span class="ph__size">Screen recording · 1920 × 1200, 6 s loop</span></div></div></figure></div>
         </li>
         <li class="hl__slide">
           <p class="hl__cap"><strong>Wheels keyed by hand.</strong> Close enough to look right, with nothing to guarantee the wheels match the motion.</p>
-          <div class="hl__media"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Screen recording: the same path with wheel rotation keyed by hand" data-ph="roboanimator-manual"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#video"/></svg><span class="ph__what">Screen recording: the same path with wheel rotation keyed by hand</span><span class="ph__size">Screen recording · 1920 × 1200, 6 s loop</span></div></div></figure></div>
+          <div class="hl__media"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Screen recording: the same path with wheel rotation keyed by hand" data-ph="roboanimator-manual"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#video"/></svg><span class="ph__what">Screen recording: the same path with wheel rotation keyed by hand</span><span class="ph__size">Screen recording · 1920 × 1200, 6 s loop</span></div></div></figure></div>
         </li>
         <li class="hl__slide">
           <p class="hl__cap"><strong>With True RoboAnimator.</strong> Wheel angles are worked out from the chassis motion itself, frame by frame.</p>
-          <div class="hl__media"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Screen recording: the same path with wheel angles from True RoboAnimator" data-ph="roboanimator-solved"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#video"/></svg><span class="ph__what">Screen recording: the same path with wheel angles from True RoboAnimator</span><span class="ph__size">Screen recording · 1920 × 1200, 6 s loop</span></div></div></figure></div>
+          <div class="hl__media"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Screen recording: the same path with wheel angles from True RoboAnimator" data-ph="roboanimator-solved"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#video"/></svg><span class="ph__what">Screen recording: the same path with wheel angles from True RoboAnimator</span><span class="ph__size">Screen recording · 1920 × 1200, 6 s loop</span></div></div></figure></div>
         </li>
         <li class="hl__slide">
           <p class="hl__cap"><strong>One panel, top to bottom.</strong> Rig setup, calibration, motion path and wheel drivers, then import and export.</p>
@@ -131,7 +131,7 @@
         </li>
         <li class="hl__slide">
           <p class="hl__cap"><strong>Paths you can see.</strong> The keyed path in orange and the corrected path in cyan, redrawn as you change settings.</p>
-          <div class="hl__media"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Viewport with the orange raw path and the cyan solution path over a robot" data-ph="roboanimator-overlay"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">Viewport with the orange raw path and the cyan solution path over a robot</span><span class="ph__size">Screenshot · 2560 × 1600</span></div></div></figure></div>
+          <div class="hl__media"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Viewport with the orange raw path and the cyan solution path over a robot" data-ph="roboanimator-overlay"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#photo"/></svg><span class="ph__what">Viewport with the orange raw path and the cyan solution path over a robot</span><span class="ph__size">Screenshot · 2560 × 1600</span></div></div></figure></div>
         </li>
         </ul>
         <div class="hl__nav">
@@ -150,15 +150,15 @@
           </div>
         </div>
         <ul class="fgrid" style="--cols:3" data-reveal>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#check-shield"/></svg><p><strong>Slip detection.</strong> Every frame of chassis motion is checked for sideways slip against a tolerance you set.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#curve"/></svg><p><strong>Two ways to fix a path.</strong> S-Ease smooths it into Bézier curves within the robot’s turning limit; Linear rotates in place, drives straight, then turns to the final heading.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#speed"/></svg><p><strong>Speed profiles.</strong> A trapezoid with acceleration ramps, one ease across the whole timeline, or an ease inside each segment.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#wheel-spokes"/></svg><p><strong>Angles for every frame.</strong> Left, right and caster angles, with RPM and angular acceleration, cached per frame.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#link"/></svg><p><strong>Automatic drivers.</strong> Rotation drivers on every wheel, in Euler or quaternion, each from its own rest orientation.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#table"/></svg><p><strong>CSV in and out.</strong> Export time, pose, wheel angles and rates for engineering, or import trajectories back.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#gauge"/></svg><p><strong>Safety limits.</strong> Caps on wheel speed in RPM and angular acceleration in RPM per second.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#eye"/></svg><p><strong>Viewport helpers.</strong> A forward arrow, color-coded wheel axes and both paths, drawn live through geometry.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#rotate"/></svg><p><strong>Blender 4.2 to 5.0.</strong> A compatibility layer for slotted actions keeps reading and writing animation safe across versions.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#check-shield"/></svg><p><strong>Slip detection.</strong> Every frame of chassis motion is checked for sideways slip against a tolerance you set.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#curve"/></svg><p><strong>Two ways to fix a path.</strong> S-Ease smooths it into Bézier curves within the robot’s turning limit; Linear rotates in place, drives straight, then turns to the final heading.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#speed"/></svg><p><strong>Speed profiles.</strong> A trapezoid with acceleration ramps, one ease across the whole timeline, or an ease inside each segment.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#wheel-spokes"/></svg><p><strong>Angles for every frame.</strong> Left, right and caster angles, with RPM and angular acceleration, cached per frame.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#link"/></svg><p><strong>Automatic drivers.</strong> Rotation drivers on every wheel, in Euler or quaternion, each from its own rest orientation.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#table"/></svg><p><strong>CSV in and out.</strong> Export time, pose, wheel angles and rates for engineering, or import trajectories back.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#gauge"/></svg><p><strong>Safety limits.</strong> Caps on wheel speed in RPM and angular acceleration in RPM per second.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#eye"/></svg><p><strong>Viewport helpers.</strong> A forward arrow, color-coded wheel axes and both paths, drawn live through geometry.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#rotate"/></svg><p><strong>Blender 4.2 to 5.0.</strong> A compatibility layer for slotted actions keeps reading and writing animation safe across versions.</p></li>
         </ul>
       </div>
     </section>
@@ -174,19 +174,19 @@
         <div class="closer" data-closer data-reveal>
           <div class="closer__list">
             <div class="closer__item">
-              <button class="closer__btn" type="button" aria-expanded="true" aria-controls="ra-closer-0"><span class="closer__plus"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>2 wheels</button>
+              <button class="closer__btn" type="button" aria-expanded="true" aria-controls="ra-closer-0"><span class="closer__plus"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#plus"/></svg></span>2 wheels</button>
               <div class="closer__text" id="ra-closer-0"><div><p>Two driven wheels; the robot turns through the difference in their speeds.</p></div></div>
             </div>
             <div class="closer__item">
-              <button class="closer__btn" type="button" aria-expanded="true" aria-controls="ra-closer-1"><span class="closer__plus"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>3 wheels</button>
+              <button class="closer__btn" type="button" aria-expanded="true" aria-controls="ra-closer-1"><span class="closer__plus"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#plus"/></svg></span>3 wheels</button>
               <div class="closer__text" id="ra-closer-1"><div><p>A passive caster pivots freely; its spin follows the forward travel of the chassis center.</p></div></div>
             </div>
             <div class="closer__item">
-              <button class="closer__btn" type="button" aria-expanded="true" aria-controls="ra-closer-2"><span class="closer__plus"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>4 wheels</button>
+              <button class="closer__btn" type="button" aria-expanded="true" aria-controls="ra-closer-2"><span class="closer__plus"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#plus"/></svg></span>4 wheels</button>
               <div class="closer__text" id="ra-closer-2"><div><p>Both wheels on a side share one angle.</p></div></div>
             </div>
             <div class="closer__item">
-              <button class="closer__btn" type="button" aria-expanded="true" aria-controls="ra-closer-3"><span class="closer__plus"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>6 wheels</button>
+              <button class="closer__btn" type="button" aria-expanded="true" aria-controls="ra-closer-3"><span class="closer__plus"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#plus"/></svg></span>6 wheels</button>
               <div class="closer__text" id="ra-closer-3"><div><p>Rocker-style skid-steer, with the same per-side sharing as four wheels.</p></div></div>
             </div>
           </div>
@@ -223,14 +223,14 @@ ds<sub>caster</sub> = dx</div>
           </div>
         </div>
         <ol class="flow" style="--cols:4" data-reveal>
-          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#robot"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Rig up</h3><p class="flow__text">Set the chassis and the wheel count, then assign each wheel slot.</p></li>
-          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#target"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Calibrate</h3><p class="flow__text">Track width, wheel radius or auto-detect, and the rotation axis.</p></li>
-          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#curve"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Animate the chassis</h3><p class="flow__text">Keyframe location and rotation where the path changes.</p></li>
-          <li class="flow__step is-row-end"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#check-shield"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Validate</h3><p class="flow__text">Confirm there is no sideways slip.</p></li>
-          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#rotate"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Autocorrect</h3><p class="flow__text">Pick a mode and a speed profile, bake, then validate again.</p></li>
-          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#wheel-spokes"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Build the cache</h3><p class="flow__text">Integrate per-frame angles for every wheel.</p></li>
-          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#link"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Drive or bake</h3><p class="flow__text">Drivers for live playback, or baked keys for other tools.</p></li>
-          <li class="flow__step is-row-end"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#export"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Export</h3><p class="flow__text">An engineering CSV or a keyframe snapshot for hardware.</p></li>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#robot"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Rig up</h3><p class="flow__text">Set the chassis and the wheel count, then assign each wheel slot.</p></li>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#target"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Calibrate</h3><p class="flow__text">Track width, wheel radius or auto-detect, and the rotation axis.</p></li>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#curve"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Animate the chassis</h3><p class="flow__text">Keyframe location and rotation where the path changes.</p></li>
+          <li class="flow__step is-row-end"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#check-shield"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Validate</h3><p class="flow__text">Confirm there is no sideways slip.</p></li>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#rotate"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Autocorrect</h3><p class="flow__text">Pick a mode and a speed profile, bake, then validate again.</p></li>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#wheel-spokes"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Build the cache</h3><p class="flow__text">Integrate per-frame angles for every wheel.</p></li>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#link"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Drive or bake</h3><p class="flow__text">Drivers for live playback, or baked keys for other tools.</p></li>
+          <li class="flow__step is-row-end"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#export"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Export</h3><p class="flow__text">An engineering CSV or a keyframe snapshot for hardware.</p></li>
         </ol>
       </div>
     </section>
@@ -247,16 +247,16 @@ ds<sub>caster</sub> = dx</div>
         <div class="bento">
           <a class="tile tile--white span-2" href="/research/lemmy-framework/#stage-2" data-reveal>
             <div class="tile__body">
-              <svg class="ico area-icon" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#users"/></svg>
+              <svg class="ico area-icon" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#users"/></svg>
               <span class="tile__eyebrow">Evaluation</span>
               <h3 class="tile__title tile__title--sm">Evaluated with Blender users</h3>
               <p class="tile__text">Think-aloud sessions rated it 8.6 of 10 for stability and 8.4 for workflow fit. It then passed Blender’s official extension review.</p>
               <span class="link-more">View the study</span>
             </div>
           </a>
-          <a class="tile tile--white span-2" id="plotter" href="https://danyals-code.github.io/Roboanimator-CSV-to-Browser-Based-Plots/" data-reveal>
+          <a class="tile tile--white span-2" id="plotter" href="https://danyals-code.github.io/Roboanimator-CSV-to-Browser-Based-Plots/" target="_blank" rel="noopener" data-reveal>
             <div class="tile__body">
-              <svg class="ico area-icon" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#chart"/></svg>
+              <svg class="ico area-icon" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#chart"/></svg>
               <span class="tile__eyebrow">Companion · Web</span>
               <h3 class="tile__title tile__title--sm" translate="no">RoboAnimator CSV Plotter</h3>
               <p class="tile__text">Plots the add-on’s CSV as a speed-coded path, a 3D path against speed and an animated timeline, all in the browser.</p>
@@ -265,7 +265,7 @@ ds<sub>caster</sub> = dx</div>
           </a>
           <div class="tile tile--white span-2" data-reveal>
             <div class="tile__body">
-              <svg class="ico area-icon" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#book"/></svg>
+              <svg class="ico area-icon" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#book"/></svg>
               <span class="tile__eyebrow">Cite it</span>
               <h3 class="tile__title tile__title--sm">In academic work</h3>
               <p class="tile__text" id="ra-cite">Sarfraz, D. (2025). <em>True RoboAnimator: Engineering-Accurate Wheeled-Robot Animation Toolkit for Blender.</em> Graduate thesis project, Ulsan National Institute of Science and Technology (UNIST).</p>
@@ -292,7 +292,7 @@ ds<sub>caster</sub> = dx</div>
           <div class="specs__row"><dt>Speed</dt><dd>Trapezoid with ramp frames, global ease, or per-key ease</dd></div>
           <div class="specs__row"><dt>Output</dt><dd>Engineering CSV at scene rate or a fixed rate in your units; keyframe CSV or JSON; baked wheel keys</dd></div>
           <div class="specs__row"><dt>License</dt><dd>GPL-3.0</dd></div>
-          <div class="specs__row"><dt>Get it</dt><dd><a href="https://extensions.blender.org/add-ons/true-roboanimator/">Blender Extensions</a> · <a href="https://github.com/Danyals-code/RoboAnimator---Blender-Addon">GitHub</a></dd></div>
+          <div class="specs__row"><dt>Get it</dt><dd><a href="https://extensions.blender.org/add-ons/true-roboanimator/" target="_blank" rel="noopener">Blender Extensions</a> · <a href="https://github.com/Danyals-code/RoboAnimator---Blender-Addon" target="_blank" rel="noopener">GitHub</a></dd></div>
         </dl>
       </div>
     </section>
@@ -319,7 +319,7 @@ ds<sub>caster</sub> = dx</div>
         <a class="next-card" href="/tools/amvr/" data-reveal>
           <span><img src="/assets/img/apps/amvr.svg" width="1024" height="1024" alt="" loading="lazy"></span>
           <span><span class="next-card__label">Next</span><span class="next-card__name" translate="no">AMVR</span><span class="t-muted">One CAD model in. Every view out.</span></span>
-          <span class="next-card__go"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#arrow-right"/></svg></span>
+          <span class="next-card__go"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#arrow-right"/></svg></span>
         </a>
       </div>
     </section>
@@ -364,9 +364,9 @@ ds<sub>caster</sub> = dx</div>
       <div class="gfooter__legal">
         <p data-i18n="footer.copyright">Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
         <nav aria-label="Elsewhere" data-i18n-attr="aria-label:footer.elsewhere">
-          <a href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
-          <a href="https://github.com/Danyals-code">GitHub</a>
-          <a href="https://www.behance.net/designedbydanyal">Behance</a>
+          <a href="https://www.linkedin.com/in/designbydanyal/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/Danyals-code" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.behance.net/designedbydanyal" target="_blank" rel="noopener">Behance</a>
           <a href="mailto:danialsarfraz2000@gmail.com" data-i18n="footer.email">Email</a>
         </nav>
       </div>

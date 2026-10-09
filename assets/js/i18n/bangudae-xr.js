@@ -73,7 +73,8 @@
     "bangudae-xr.next.eyebrow": "دراسة الحالة التالية",
     "bangudae-xr.next.title": "تقييم الواقع المعزز بالحجم الطبيعي بديلًا عن النماذج الأولية المادية",
     "bangudae-xr.next.text": "واقع معزز بالحجم الطبيعي على iPhone وApple Vision Pro، جرى تقييمه على أجهزة iPhone الخاصة بالمشاركين في منازلهم.",
-    "bangudae-xr.next.read": "اعرف المزيد"
+    "bangudae-xr.next.read": "اعرف المزيد",
+    "bangudae-xr.pano.alt": "منحدر بانغوداي الصخري فوق جدول ديغوكتشون، في صورة بانورامية"
   },
   "zh": {
     "bangudae-xr.title": "Bangudae XR：让盘龟台岩画通过混合现实走进室内 · Danyal Sarfraz",
@@ -147,6 +148,7 @@
     "bangudae-xr.next.eyebrow": "下一个案例研究",
     "bangudae-xr.next.title": "评估等比例 AR 替代实体原型的可行性",
     "bangudae-xr.next.text": "面向 iPhone 和 Apple Vision Pro 的等比例 AR，在参与者家中用他们自己的 iPhone 进行评估。",
-    "bangudae-xr.next.read": "了解更多"
+    "bangudae-xr.next.read": "了解更多",
+    "bangudae-xr.pano.alt": "大谷川溪流上方的盘龟台崖壁全景"
   }
 });

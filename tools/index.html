@@ -22,10 +22,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=31">
+  <link rel="stylesheet" href="/assets/css/site.css?v=39">
   <script src="/assets/js/i18n.js?v=4" defer></script>
   <script src="/assets/js/i18n/tools.js?v=7" defer></script>
-  <script src="/assets/js/site.js?v=20" defer></script>
+  <script src="/assets/js/site.js?v=28" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -45,14 +45,14 @@
       </ul>
       <div class="gnav__tools">
         <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
+          <svg aria-hidden="true"><use href="/assets/img/icons.svg?v=4#search"/></svg>
         </button>
         <button class="gnav__icon" type="button" data-lang-open aria-haspopup="true" aria-expanded="false" aria-label="Language: English" title="Language">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.6 2.6 3.6 2.6 6S9.7 12.4 8 14M8 2C6.3 3.6 5.4 5.6 5.4 8s.9 4.4 2.6 6"/></svg>
+          <svg aria-hidden="true"><use href="/assets/img/icons.svg?v=4#globe"/></svg>
         </button>
         <button class="gnav__icon" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Switch to dark theme">
-          <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
-          <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
+          <svg class="theme-icon theme-icon--light" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#sun"/></svg>
+          <svg class="theme-icon theme-icon--dark" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#moon"/></svg>
         </button>
       </div>
       <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
@@ -104,7 +104,7 @@
               <div class="lcard__top"><span class="lcard__icon"><img class="icon-light" src="/assets/img/apps/almanac-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/almanac-dark.png" width="256" height="256" alt="" loading="lazy"></span><span><span class="lcard__new" data-i18n="tools.bar.new">New</span><span class="lcard__kind" data-i18n="tools.kind.iphone">iPhone app</span></span></div>
               <h3 class="lcard__name" translate="no">Almanac</h3>
               <p class="lcard__tag" data-i18n="tools.lineup.almanac.tag">Every day, as the ancients counted it.</p>
-              <div class="lcard__actions"><a class="btn btn--md" href="/tools/almanac/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://danyals-code.github.io/almanac/" data-i18n="tools.lineup.site">Visit the site</a></div>
+              <div class="lcard__actions"><a class="btn btn--md" href="/tools/almanac/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://danyals-code.github.io/almanac/" target="_blank" rel="noopener" data-i18n="tools.lineup.site">Visit the site</a></div>
             </div>
           </li>
           <li class="rail__item lcard" id="viewar" data-group="apps" style="--card-tint: #2f8cff">
@@ -113,7 +113,7 @@
               <div class="lcard__top"><span class="lcard__icon"><img class="icon-light" src="/assets/img/apps/viewar-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/viewar-dark.png" width="256" height="256" alt="" loading="lazy"></span><span><span class="lcard__new" data-i18n="tools.bar.new">New</span><span class="lcard__kind" data-i18n="tools.kind.iphoneBlender">iPhone app · Blender add-on</span></span></div>
               <h3 class="lcard__name" translate="no">ViewAR</h3>
               <p class="lcard__tag" data-i18n="tools.lineup.viewar.tag">Your Blender scene, live in the room.</p>
-              <div class="lcard__actions"><a class="btn btn--md" href="/tools/viewar/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://github.com/Danyals-code/ViewAR---AR-VIew-for-Blender---Addon" translate="no">GitHub</a></div>
+              <div class="lcard__actions"><a class="btn btn--md" href="/tools/viewar/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://github.com/Danyals-code/ViewAR---AR-VIew-for-Blender---Addon" target="_blank" rel="noopener" translate="no">GitHub</a></div>
             </div>
           </li>
           <li class="rail__item lcard" id="lemmy-ar" data-group="apps" style="--card-tint: #3a7bd5">
@@ -122,7 +122,7 @@
               <div class="lcard__top"><span class="lcard__icon"><img class="icon-light" src="/assets/img/app/icon-light.png" width="512" height="512" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/app/icon-dark.png" width="512" height="512" alt="" loading="lazy"></span><span><span class="lcard__kind" data-i18n="tools.kind.iphoneVision">iPhone and Vision Pro app</span></span></div>
               <h3 class="lcard__name" translate="no">Lemmy AR Experience</h3>
               <p class="lcard__tag" data-i18n="tools.lineup.lemmyar.tag">A life-size robot, placed in your own room.</p>
-              <div class="lcard__actions"><a class="btn btn--md" href="/research/life-size-ar/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://github.com/Danyals-code/AR-Probe-for-Product-Action-Testing" translate="no">GitHub</a></div>
+              <div class="lcard__actions"><a class="btn btn--md" href="/research/life-size-ar/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://github.com/Danyals-code/AR-Probe-for-Product-Action-Testing" target="_blank" rel="noopener" translate="no">GitHub</a></div>
             </div>
           </li>
           <li class="rail__item lcard" id="roboanimator" data-group="addons" style="--card-tint: #ff3b30">
@@ -131,7 +131,7 @@
               <div class="lcard__top"><span class="lcard__icon"><img class="icon-light" src="/assets/img/apps/roboanimator-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/roboanimator-dark.png" width="256" height="256" alt="" loading="lazy"></span><span><span class="lcard__kind" data-i18n="tools.kind.blender">Blender add-on</span></span></div>
               <h3 class="lcard__name" translate="no">True RoboAnimator</h3>
               <p class="lcard__tag" data-i18n="tools.lineup.roboanimator.tag">Animation that real robots can drive.</p>
-              <div class="lcard__actions"><a class="btn btn--md" href="/tools/roboanimator/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://extensions.blender.org/add-ons/true-roboanimator/" data-i18n="tools.lineup.getIt">Get it</a></div>
+              <div class="lcard__actions"><a class="btn btn--md" href="/tools/roboanimator/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://extensions.blender.org/add-ons/true-roboanimator/" target="_blank" rel="noopener" data-i18n="tools.lineup.getIt">Get it</a></div>
             </div>
           </li>
           <li class="rail__item lcard" id="multiview" data-group="addons" style="--card-tint: #8a5cf6">
@@ -140,7 +140,7 @@
               <div class="lcard__top"><span class="lcard__icon"><img src="/assets/img/apps/amvr.svg" width="1024" height="1024" alt="" loading="lazy"></span><span><span class="lcard__kind" data-i18n="tools.kind.blender">Blender add-on</span></span></div>
               <h3 class="lcard__name" translate="no">AMVR</h3>
               <p class="lcard__tag" data-i18n="tools.lineup.multiview.tag">One CAD model in. Every view out.</p>
-              <div class="lcard__actions"><a class="btn btn--md" href="/tools/amvr/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://github.com/Danyals-code/Addon-for-MultiView-Rendering-AMVR" translate="no">GitHub</a></div>
+              <div class="lcard__actions"><a class="btn btn--md" href="/tools/amvr/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://github.com/Danyals-code/Addon-for-MultiView-Rendering-AMVR" target="_blank" rel="noopener" translate="no">GitHub</a></div>
             </div>
           </li>
           <li class="rail__item lcard" id="swift-studio" data-group="web" style="--card-tint: #30b0c7">
@@ -149,7 +149,7 @@
               <div class="lcard__top"><span class="lcard__icon"><img src="/assets/img/apps/swift-studio.svg" width="1024" height="1024" alt="" loading="lazy"></span><span><span class="lcard__kind" data-i18n="tools.kind.web">Web app</span></span></div>
               <h3 class="lcard__name" translate="no">Swift Web Studio</h3>
               <p class="lcard__tag" data-i18n="tools.lineup.swiftstudio.tag">Design SwiftUI in the browser. Keep the Swift.</p>
-              <div class="lcard__actions"><a class="btn btn--md" href="/tools/swift-studio/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://swift-cloud-simmulator-web.vercel.app" data-i18n="tools.liveDemo">Live demo</a></div>
+              <div class="lcard__actions"><a class="btn btn--md" href="/tools/swift-studio/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://swift-cloud-simmulator-web.vercel.app" target="_blank" rel="noopener" data-i18n="tools.liveDemo">Live demo</a></div>
             </div>
           </li>
           </ul>
@@ -172,16 +172,16 @@
       <div class="rail gtk" data-reveal>
         <ul class="rail__track">
           <li class="rail__item gtk__card gtk__card--icon">
-            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#users"/></svg><h3 class="gtk__title"><span data-i18n="tools.why.study.title">Made for a study.</span></h3><p class="gtk__body"><span data-i18n="tools.why.study.text">Wheel-accurate robot motion for an MSc thesis, identical product views for form analysis, and a life-size robot in participants’ homes.</span></p></div>
+            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#users"/></svg><h3 class="gtk__title"><span data-i18n="tools.why.study.title">Made for a study.</span></h3><p class="gtk__body"><span data-i18n="tools.why.study.text">Wheel-accurate robot motion for an MSc thesis, identical product views for form analysis, and a life-size robot in participants’ homes.</span></p></div>
           </li>
           <li class="rail__item gtk__card gtk__card--icon">
-            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#branch"/></svg><h3 class="gtk__title"><span data-i18n="tools.why.open.title">Open source.</span></h3><p class="gtk__body"><span data-i18n="tools.why.open.text">Source code is on GitHub. True RoboAnimator is GPL-3.0.</span></p></div>
+            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#branch"/></svg><h3 class="gtk__title"><span data-i18n="tools.why.open.title">Open source.</span></h3><p class="gtk__body"><span data-i18n="tools.why.open.text">Source code is on GitHub. True RoboAnimator is GPL-3.0.</span></p></div>
           </li>
           <li class="rail__item gtk__card gtk__card--icon">
-            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#download"/></svg><h3 class="gtk__title"><span data-i18n="tools.why.used.title">Used beyond the lab.</span></h3><p class="gtk__body"><span data-i18n="tools.why.used.text">True RoboAnimator has more than 7,000 downloads on Blender Extensions.</span></p></div>
+            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#download"/></svg><h3 class="gtk__title"><span data-i18n="tools.why.used.title">Used beyond the lab.</span></h3><p class="gtk__body"><span data-i18n="tools.why.used.text">True RoboAnimator has more than 7,000 downloads on Blender Extensions.</span></p></div>
           </li>
           <li class="rail__item gtk__card gtk__card--icon">
-            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#check-shield"/></svg><h3 class="gtk__title"><span data-i18n="tools.why.review.title">Reviewed.</span></h3><p class="gtk__body"><span data-i18n="tools.why.review.text">True RoboAnimator passed Blender’s extension review; the Lemmy AR Experience passed Apple’s review for TestFlight on iOS and visionOS.</span></p></div>
+            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#check-shield"/></svg><h3 class="gtk__title"><span data-i18n="tools.why.review.title">Reviewed.</span></h3><p class="gtk__body"><span data-i18n="tools.why.review.text">True RoboAnimator passed Blender’s extension review; the Lemmy AR Experience passed Apple’s review for TestFlight on iOS and visionOS.</span></p></div>
           </li>
         </ul>
         <div class="rail__controls">
@@ -231,9 +231,9 @@
       <div class="gfooter__legal">
         <p data-i18n="footer.copyright">Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
         <nav aria-label="Elsewhere" data-i18n-attr="aria-label:footer.elsewhere">
-          <a href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
-          <a href="https://github.com/Danyals-code">GitHub</a>
-          <a href="https://www.behance.net/designedbydanyal">Behance</a>
+          <a href="https://www.linkedin.com/in/designbydanyal/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/Danyals-code" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.behance.net/designedbydanyal" target="_blank" rel="noopener">Behance</a>
           <a href="mailto:danialsarfraz2000@gmail.com" data-i18n="footer.email">Email</a>
         </nav>
       </div>

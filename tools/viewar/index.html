@@ -22,9 +22,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=31">
+  <link rel="stylesheet" href="/assets/css/site.css?v=39">
   <script src="/assets/js/i18n.js?v=4" defer></script>
-  <script src="/assets/js/site.js?v=20" defer></script>
+  <script src="/assets/js/site.js?v=28" defer></script>
 </head>
 <body class="has-lnav tinted" style="--tint-l: #0a6cdc; --tint-d: #4ba8ff">
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -44,14 +44,14 @@
       </ul>
       <div class="gnav__tools">
         <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
+          <svg aria-hidden="true"><use href="/assets/img/icons.svg?v=4#search"/></svg>
         </button>
         <button class="gnav__icon" type="button" data-lang-open aria-haspopup="true" aria-expanded="false" aria-label="Language: English" title="Language">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.6 2.6 3.6 2.6 6S9.7 12.4 8 14M8 2C6.3 3.6 5.4 5.6 5.4 8s.9 4.4 2.6 6"/></svg>
+          <svg aria-hidden="true"><use href="/assets/img/icons.svg?v=4#globe"/></svg>
         </button>
         <button class="gnav__icon" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Switch to dark theme">
-          <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
-          <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
+          <svg class="theme-icon theme-icon--light" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#sun"/></svg>
+          <svg class="theme-icon theme-icon--dark" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#moon"/></svg>
         </button>
       </div>
       <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
@@ -70,7 +70,7 @@
         <li><a href="#how">How it works</a></li>
         <li><a href="#specs">Specs</a></li>
       </ul>
-      <a class="btn btn--sm" href="https://github.com/Danyals-code/ViewAR---AR-VIew-for-Blender---Addon">Get the add-on</a>
+      <a class="btn btn--sm" href="https://github.com/Danyals-code/ViewAR---AR-VIew-for-Blender---Addon" target="_blank" rel="noopener">Get the add-on</a>
     </div>
   </nav>
 
@@ -82,12 +82,12 @@
         <h1 class="t-display phero__title">Your Blender scene, live in the room.</h1>
         <p class="t-lead phero__lead">A Blender add-on and an iPhone app that stream the scene you have open into augmented reality over your local network. Move an object, add a modifier or change a material, and the AR view updates within a fraction of a second.</p>
         <div class="cta-row phero__cta">
-          <a class="btn" href="https://github.com/Danyals-code/ViewAR---AR-VIew-for-Blender---Addon">Get the add-on</a>
-          <a class="link-ext" href="https://github.com/Danyals-code/ViewAR---AR-VIew-for-Blender---Addon/blob/main/ViewAR-Blender-Addon.md">Read the specification</a>
+          <a class="btn" href="https://github.com/Danyals-code/ViewAR---AR-VIew-for-Blender---Addon" target="_blank" rel="noopener">Get the add-on</a>
+          <a class="link-ext" href="https://github.com/Danyals-code/ViewAR---AR-VIew-for-Blender---Addon/blob/main/ViewAR-Blender-Addon.md" target="_blank" rel="noopener">Read the specification</a>
         </div>
       </div>
       <div class="phero__media container-wide" data-reveal="scale">
-        <div class="duo"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Blender with the ViewAR panel open beside a scene" data-ph="viewar-blender"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">Blender with the ViewAR panel open beside a scene</span><span class="ph__size">Screenshot · 2560 × 1600</span></div></div></figure><figure class="device device--phone"><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: The same scene placed on a table in AR on iPhone" data-ph="viewar-iphone"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">The same scene placed on a table in AR on iPhone</span><span class="ph__size">Screenshot · 1290 × 2796</span></div></div></figure></div>
+        <div class="duo"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Blender with the ViewAR panel open beside a scene" data-ph="viewar-blender"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#photo"/></svg><span class="ph__what">Blender with the ViewAR panel open beside a scene</span><span class="ph__size">Screenshot · 2560 × 1600</span></div></div></figure><figure class="device device--phone"><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: The same scene placed on a table in AR on iPhone" data-ph="viewar-iphone"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#photo"/></svg><span class="ph__what">The same scene placed on a table in AR on iPhone</span><span class="ph__size">Screenshot · 1290 × 2796</span></div></div></figure></div>
       </div>
     </section>
 
@@ -115,27 +115,27 @@
         <ul class="hl__track">
         <li class="hl__slide">
           <p class="hl__cap"><strong>Live, as you work.</strong> Move, rotate or scale in Blender, and the object follows on the table.</p>
-          <div class="hl__media"><figure class="device device--phone"><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Screen recording: moving an object in Blender while the phone shows it move in AR" data-ph="viewar-live"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#video"/></svg><span class="ph__what">Screen recording: moving an object in Blender while the phone shows it move in AR</span><span class="ph__size">Screen recording · 1290 × 2796, 8 s</span></div></div></figure></div>
+          <div class="hl__media"><figure class="device device--phone"><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Screen recording: moving an object in Blender while the phone shows it move in AR" data-ph="viewar-live"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#video"/></svg><span class="ph__what">Screen recording: moving an object in Blender while the phone shows it move in AR</span><span class="ph__size">Screen recording · 1290 × 2796, 8 s</span></div></div></figure></div>
         </li>
         <li class="hl__slide">
           <p class="hl__cap"><strong>Modifiers applied.</strong> What the viewport shows, evaluated geometry included, is what lands in AR.</p>
-          <div class="hl__media"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Blender: adding a Subdivision or Array modifier, mirrored on the phone" data-ph="viewar-modifier"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">Blender: adding a Subdivision or Array modifier, mirrored on the phone</span><span class="ph__size">Screenshot · 2560 × 1600</span></div></div></figure></div>
+          <div class="hl__media"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Blender: adding a Subdivision or Array modifier, mirrored on the phone" data-ph="viewar-modifier"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#photo"/></svg><span class="ph__what">Blender: adding a Subdivision or Array modifier, mirrored on the phone</span><span class="ph__size">Screenshot · 2560 × 1600</span></div></div></figure></div>
         </li>
         <li class="hl__slide">
           <p class="hl__cap"><strong>Instances and scatters.</strong> Collection, particle and Geometry Nodes instances stream too, up to a limit you set.</p>
-          <div class="hl__media"><figure class="device device--phone"><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: A Geometry Nodes scatter, such as a small forest, placed in AR" data-ph="viewar-scatter"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">A Geometry Nodes scatter, such as a small forest, placed in AR</span><span class="ph__size">Screenshot · 1290 × 2796</span></div></div></figure></div>
+          <div class="hl__media"><figure class="device device--phone"><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: A Geometry Nodes scatter, such as a small forest, placed in AR" data-ph="viewar-scatter"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#photo"/></svg><span class="ph__what">A Geometry Nodes scatter, such as a small forest, placed in AR</span><span class="ph__size">Screenshot · 1290 × 2796</span></div></div></figure></div>
         </li>
         <li class="hl__slide hl__slide--fill">
           <p class="hl__cap"><strong>Several phones, one scene.</strong> Phones can join at any time; a late arrival receives the whole scene.</p>
-          <div class="hl__media hl__media--fill"><div class="ph" role="img" aria-label="Placeholder: Photo: two or three phones around one table, each showing the same scene" data-ph="viewar-devices"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">Photo: two or three phones around one table, each showing the same scene</span><span class="ph__size">Photo · 2400 × 1350</span></div></div>
+          <div class="hl__media hl__media--fill"><div class="ph" role="img" aria-label="Placeholder: Photo: two or three phones around one table, each showing the same scene" data-ph="viewar-devices"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#photo"/></svg><span class="ph__what">Photo: two or three phones around one table, each showing the same scene</span><span class="ph__size">Photo · 2400 × 1350</span></div></div>
         </li>
         <li class="hl__slide">
           <p class="hl__cap"><strong>Pick what to stream.</strong> Everything visible, only the selection, or one collection, with any object kept out of AR.</p>
-          <div class="hl__media"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: The Streaming sub-panel: Visible, Selected or Collection, AR Origin and Include Instances" data-ph="viewar-panel"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">The Streaming sub-panel: Visible, Selected or Collection, AR Origin and Include Instances</span><span class="ph__size">Screenshot · 2560 × 1600</span></div></div></figure></div>
+          <div class="hl__media"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: The Streaming sub-panel: Visible, Selected or Collection, AR Origin and Include Instances" data-ph="viewar-panel"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#photo"/></svg><span class="ph__what">The Streaming sub-panel: Visible, Selected or Collection, AR Origin and Include Instances</span><span class="ph__size">Screenshot · 2560 × 1600</span></div></div></figure></div>
         </li>
         <li class="hl__slide">
           <p class="hl__cap"><strong>Found on its own.</strong> Blender appears in the app under Nearby over Bonjour, and a manual IP works too.</p>
-          <div class="hl__media"><figure class="device device--phone"><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: The app’s Nearby list showing a Blender computer" data-ph="viewar-nearby"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">The app’s Nearby list showing a Blender computer</span><span class="ph__size">Screenshot · 1290 × 2796</span></div></div></figure></div>
+          <div class="hl__media"><figure class="device device--phone"><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: The app’s Nearby list showing a Blender computer" data-ph="viewar-nearby"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#photo"/></svg><span class="ph__what">The app’s Nearby list showing a Blender computer</span><span class="ph__size">Screenshot · 1290 × 2796</span></div></div></figure></div>
         </li>
         </ul>
         <div class="hl__nav">
@@ -154,18 +154,18 @@
           </div>
         </div>
         <ul class="fgrid" style="--cols:3" data-reveal>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#stream"/></svg><p><strong>Live streaming.</strong> Object transforms at up to 60 updates a second; meshes re-sent when geometry or materials change.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#delta"/></svg><p><strong>Only changes travel.</strong> A full scene goes out only when a device connects, a file opens, the unit scale changes, or you press Resync.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#wrench"/></svg><p><strong>Modifiers applied.</strong> Evaluated geometry, exactly as the viewport shows it.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#layers"/></svg><p><strong>Instances.</strong> Collection, particle and Geometry Nodes instances, up to a limit you set.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#eye"/></svg><p><strong>Choose what to stream.</strong> Everything visible, the selection or one collection; hide any object from AR.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#target"/></svg><p><strong>AR origin.</strong> The world origin or the 3D cursor lands where you tap, so far-off models are easy to place.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#pause-circle"/></svg><p><strong>Pause updates.</strong> Hold the stream during heavy edits; phones catch up when you resume.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#sphere"/></svg><p><strong>Basic materials.</strong> Base Color, Metallic, Roughness and Alpha from the Principled BSDF.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#radar"/></svg><p><strong>Automatic discovery.</strong> Bonjour on every network interface, or paste the IP by hand.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#phones"/></svg><p><strong>Multiple devices.</strong> Several phones at once, each with its own data count and a disconnect button.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#archive"/></svg><p><strong>Remembers your settings.</strong> Port, update rate and limits are kept, and the server can start with Blender.</p></li>
-          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#gauge"/></svg><p><strong>Protects slower phones.</strong> Triangle and instance budgets per object, and automatic resync for devices that fall behind.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#stream"/></svg><p><strong>Live streaming.</strong> Object transforms at up to 60 updates a second; meshes re-sent when geometry or materials change.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#delta"/></svg><p><strong>Only changes travel.</strong> A full scene goes out only when a device connects, a file opens, the unit scale changes, or you press Resync.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#wrench"/></svg><p><strong>Modifiers applied.</strong> Evaluated geometry, exactly as the viewport shows it.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#layers"/></svg><p><strong>Instances.</strong> Collection, particle and Geometry Nodes instances, up to a limit you set.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#eye"/></svg><p><strong>Choose what to stream.</strong> Everything visible, the selection or one collection; hide any object from AR.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#target"/></svg><p><strong>AR origin.</strong> The world origin or the 3D cursor lands where you tap, so far-off models are easy to place.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#pause-circle"/></svg><p><strong>Pause updates.</strong> Hold the stream during heavy edits; phones catch up when you resume.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#sphere"/></svg><p><strong>Basic materials.</strong> Base Color, Metallic, Roughness and Alpha from the Principled BSDF.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#radar"/></svg><p><strong>Automatic discovery.</strong> Bonjour on every network interface, or paste the IP by hand.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#phones"/></svg><p><strong>Multiple devices.</strong> Several phones at once, each with its own data count and a disconnect button.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#archive"/></svg><p><strong>Remembers your settings.</strong> Port, update rate and limits are kept, and the server can start with Blender.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#gauge"/></svg><p><strong>Protects slower phones.</strong> Triangle and instance budgets per object, and automatic resync for devices that fall behind.</p></li>
         </ul>
       </div>
     </section>
@@ -179,11 +179,11 @@
           </div>
         </div>
         <ol class="flow" style="--cols:5" data-reveal>
-          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#cube"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Watch the scene</h3><p class="flow__text">A depsgraph handler marks every object that changed.</p></li>
-          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#memory"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Build frames</h3><p class="flow__text">A timer on Blender’s main thread turns removals, meshes and transforms into byte frames.</p></li>
-          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#stream"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Send to each phone</h3><p class="flow__text">One sender thread per device carries the finished frames.</p></li>
-          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#radar"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Find each other</h3><p class="flow__text">Bonjour advertises the server as <code>_viewar._tcp</code>; manual IP works too.</p></li>
-          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#ar"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Place it</h3><p class="flow__text">Meshes arrive in RealityKit’s Y-up space; tap a surface to place the scene.</p></li>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#cube"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Watch the scene</h3><p class="flow__text">A depsgraph handler marks every object that changed.</p></li>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#memory"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Build frames</h3><p class="flow__text">A timer on Blender’s main thread turns removals, meshes and transforms into byte frames.</p></li>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#stream"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Send to each phone</h3><p class="flow__text">One sender thread per device carries the finished frames.</p></li>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#radar"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Find each other</h3><p class="flow__text">Bonjour advertises the server as <code>_viewar._tcp</code>; manual IP works too.</p></li>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#ar"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Place it</h3><p class="flow__text">Meshes arrive in RealityKit’s Y-up space; tap a surface to place the scene.</p></li>
         </ol>
         <div style="margin-top: clamp(56px,7vw,96px)" data-reveal>
           <h3 class="t-h4" style="margin-bottom:18px">One frame on the wire</h3>
@@ -235,19 +235,19 @@
       <div class="rail gtk" data-reveal>
         <ul class="rail__track">
           <li class="rail__item gtk__card gtk__card--icon">
-            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#check-shield"/></svg><h3 class="gtk__title">Windows</h3><p class="gtk__body">Allow Blender on private networks.</p></div><button class="gtk__more" type="button" data-sheet="viewar-connect-sheet-0" aria-label="More about Windows"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></button>
+            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#check-shield"/></svg><h3 class="gtk__title">Windows</h3><p class="gtk__body">Allow Blender on private networks.</p></div><button class="gtk__more" type="button" data-sheet="viewar-connect-sheet-0" aria-label="More about Windows"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#plus"/></svg></button>
           </li>
           <li class="rail__item gtk__card gtk__card--icon">
-            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#radar"/></svg><h3 class="gtk__title">macOS</h3><p class="gtk__body">Let Blender find devices on your network.</p></div><button class="gtk__more" type="button" data-sheet="viewar-connect-sheet-1" aria-label="More about macOS"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></button>
+            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#radar"/></svg><h3 class="gtk__title">macOS</h3><p class="gtk__body">Let Blender find devices on your network.</p></div><button class="gtk__more" type="button" data-sheet="viewar-connect-sheet-1" aria-label="More about macOS"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#plus"/></svg></button>
           </li>
           <li class="rail__item gtk__card gtk__card--icon">
-            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#code"/></svg><h3 class="gtk__title">Linux</h3><p class="gtk__body">Open two ports if you run a firewall.</p></div><button class="gtk__more" type="button" data-sheet="viewar-connect-sheet-2" aria-label="More about Linux"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></button>
+            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#code"/></svg><h3 class="gtk__title">Linux</h3><p class="gtk__body">Open two ports if you run a firewall.</p></div><button class="gtk__more" type="button" data-sheet="viewar-connect-sheet-2" aria-label="More about Linux"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#plus"/></svg></button>
           </li>
           <li class="rail__item gtk__card gtk__card--icon">
-            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#stream"/></svg><h3 class="gtk__title">Any network</h3><p class="gtk__body">A home router or a phone hotspot works best.</p></div><button class="gtk__more" type="button" data-sheet="viewar-connect-sheet-3" aria-label="More about Any network"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></button>
+            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#stream"/></svg><h3 class="gtk__title">Any network</h3><p class="gtk__body">A home router or a phone hotspot works best.</p></div><button class="gtk__more" type="button" data-sheet="viewar-connect-sheet-3" aria-label="More about Any network"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#plus"/></svg></button>
           </li>
           <li class="rail__item gtk__card gtk__card--icon">
-            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#wrench"/></svg><h3 class="gtk__title">Troubleshooting</h3><p class="gtk__body">Fixes for the usual snags.</p></div><button class="gtk__more" type="button" data-sheet="viewar-connect-sheet-4" aria-label="More about Troubleshooting"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></button>
+            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#wrench"/></svg><h3 class="gtk__title">Troubleshooting</h3><p class="gtk__body">Fixes for the usual snags.</p></div><button class="gtk__more" type="button" data-sheet="viewar-connect-sheet-4" aria-label="More about Troubleshooting"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#plus"/></svg></button>
           </li>
         </ul>
         <div class="rail__controls">
@@ -272,7 +272,7 @@
           <div class="specs__row"><dt>Materials</dt><dd>Base Color, Metallic, Roughness and Alpha from the Principled BSDF</dd></div>
           <div class="specs__row"><dt>Not yet</dt><dd>Lights, cameras and image textures</dd></div>
           <div class="specs__row"><dt>Privacy</dt><dd>The server starts only when you press Start Server, listens only on your local network, and never contacts the internet</dd></div>
-          <div class="specs__row"><dt>Source</dt><dd><a href="https://github.com/Danyals-code/ViewAR---AR-VIew-for-Blender---Addon">GitHub</a> · <a href="https://github.com/Danyals-code/ViewAR---AR-VIew-for-Blender---Addon/blob/main/ViewAR-Blender-Addon.md">Specification and wire protocol</a></dd></div>
+          <div class="specs__row"><dt>Source</dt><dd><a href="https://github.com/Danyals-code/ViewAR---AR-VIew-for-Blender---Addon" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/Danyals-code/ViewAR---AR-VIew-for-Blender---Addon/blob/main/ViewAR-Blender-Addon.md" target="_blank" rel="noopener">Specification and wire protocol</a></dd></div>
         </dl>
       </div>
     </section>
@@ -299,36 +299,36 @@
         <a class="next-card" href="/research/life-size-ar/" data-reveal>
           <span><img class="icon-light" src="/assets/img/app/icon-light.png" width="512" height="512" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/app/icon-dark.png" width="512" height="512" alt="" loading="lazy"></span>
           <span><span class="next-card__label">Next · case study</span><span class="next-card__name" translate="no">Lemmy AR Experience</span><span class="t-muted">A life-size robot, placed in your own room.</span></span>
-          <span class="next-card__go"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#arrow-right"/></svg></span>
+          <span class="next-card__go"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#arrow-right"/></svg></span>
         </a>
       </div>
     </section>
     <dialog class="sheet" id="viewar-connect-sheet-0" aria-label="Windows">
-      <button class="sheet__close" type="button" aria-label="Close"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></button>
+      <button class="sheet__close" type="button" aria-label="Close"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#plus"/></svg></button>
       <div class="sheet__inner">
         <h3 class="t-h3">Windows</h3><p>When Windows Defender Firewall asks, <strong>allow Blender on Private networks.</strong> If your Wi-Fi profile is set to Public, change it to Private.</p><p>There is no need to install Apple Bonjour; discovery is built in.</p>
       </div>
     </dialog>
     <dialog class="sheet" id="viewar-connect-sheet-1" aria-label="macOS">
-      <button class="sheet__close" type="button" aria-label="Close"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></button>
+      <button class="sheet__close" type="button" aria-label="Close"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#plus"/></svg></button>
       <div class="sheet__inner">
         <h3 class="t-h3">macOS</h3><p>Allow Blender to <strong>find devices on your local network</strong> when asked. You can change this later in System Settings › Privacy &amp; Security › Local Network.</p>
       </div>
     </dialog>
     <dialog class="sheet" id="viewar-connect-sheet-2" aria-label="Linux">
-      <button class="sheet__close" type="button" aria-label="Close"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></button>
+      <button class="sheet__close" type="button" aria-label="Close"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#plus"/></svg></button>
       <div class="sheet__inner">
         <h3 class="t-h3">Linux</h3><p>If you use a firewall such as <code>ufw</code>, <strong>open TCP 51515 and UDP 5353</strong> (mDNS).</p>
       </div>
     </dialog>
     <dialog class="sheet" id="viewar-connect-sheet-3" aria-label="Any network">
-      <button class="sheet__close" type="button" aria-label="Close"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></button>
+      <button class="sheet__close" type="button" aria-label="Close"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#plus"/></svg></button>
       <div class="sheet__inner">
         <h3 class="t-h3">Any network</h3><p>Guest networks and many office or university networks <strong>block device-to-device traffic.</strong> A home router or a phone hotspot works reliably.</p><p>If discovery fails, enter the computer’s IP address in the app; the panel lists every address it listens on.</p>
       </div>
     </dialog>
     <dialog class="sheet" id="viewar-connect-sheet-4" aria-label="Troubleshooting">
-      <button class="sheet__close" type="button" aria-label="Close"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></button>
+      <button class="sheet__close" type="button" aria-label="Close"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#plus"/></svg></button>
       <div class="sheet__inner">
         <h3 class="t-h3">Troubleshooting</h3><p><strong>Could not open port.</strong> Another program or a second Blender is using it. Choose a different port in Settings and enter it in the app.</p><p><strong>The app never finds the computer.</strong> Usually the firewall or the network. Try a manual IP first to tell discovery problems from connection problems.</p><p><strong>Connected, but nothing appears.</strong> Tap a surface to place the scene. Check that objects are visible in the view layer, that the stream isn’t limited to an empty selection, and that updates aren’t paused. Then press Resync.</p><p><strong>The model is far from where I tapped.</strong> It is far from the world origin. Set AR Origin to 3D Cursor and snap the cursor to the model.</p><p><strong>Wrong colors.</strong> Only unlinked Principled BSDF values are read; a textured Base Color uses the material’s viewport display color.</p>
       </div>
@@ -374,9 +374,9 @@
       <div class="gfooter__legal">
         <p data-i18n="footer.copyright">Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
         <nav aria-label="Elsewhere" data-i18n-attr="aria-label:footer.elsewhere">
-          <a href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
-          <a href="https://github.com/Danyals-code">GitHub</a>
-          <a href="https://www.behance.net/designedbydanyal">Behance</a>
+          <a href="https://www.linkedin.com/in/designbydanyal/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/Danyals-code" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.behance.net/designedbydanyal" target="_blank" rel="noopener">Behance</a>
           <a href="mailto:danialsarfraz2000@gmail.com" data-i18n="footer.email">Email</a>
         </nav>
       </div>

@@ -22,10 +22,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=31">
+  <!-- Must run before first paint: window.__panoArrival settles when the page is revealed, so the
+       panorama's opening move starts with the cross-fade from the previous page. -->
+  <script>window.__panoArrival=new Promise(function(r){if(!("onpagereveal"in window))return r();addEventListener("pagereveal",function(){r()},{once:true})})</script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=39">
   <script src="/assets/js/i18n.js?v=4" defer></script>
-  <script src="/assets/js/i18n/bangudae-xr.js?v=2" defer></script>
-  <script src="/assets/js/site.js?v=20" defer></script>
+  <script src="/assets/js/i18n/bangudae-xr.js?v=3" defer></script>
+  <script src="/assets/js/site.js?v=28" defer></script>
 </head>
 <body class="has-lnav">
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -49,14 +52,14 @@
       </ul>
       <div class="gnav__tools">
         <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
+          <svg aria-hidden="true"><use href="/assets/img/icons.svg?v=4#search"/></svg>
         </button>
         <button class="gnav__icon" type="button" data-lang-open aria-haspopup="true" aria-expanded="false" aria-label="Language: English" title="Language">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.6 2.6 3.6 2.6 6S9.7 12.4 8 14M8 2C6.3 3.6 5.4 5.6 5.4 8s.9 4.4 2.6 6"/></svg>
+          <svg aria-hidden="true"><use href="/assets/img/icons.svg?v=4#globe"/></svg>
         </button>
         <button class="gnav__icon" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Switch to dark theme">
-          <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
-          <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
+          <svg class="theme-icon theme-icon--light" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#sun"/></svg>
+          <svg class="theme-icon theme-icon--dark" aria-hidden="true"><use href="/assets/img/icons.svg?v=4#moon"/></svg>
         </button>
       </div>
       <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
@@ -79,6 +82,14 @@
   </nav>
 
   <main id="main">
+    <!-- The panorama, edge to edge in the middle of the first screen, like a cinema screen.
+         Arriving from a Bangudae card, the card flies here and bends into it (site.js). -->
+    <div class="pano-stage">
+      <div class="pano" data-pano>
+        <img src="/assets/img/bangudae/panorama-2400.jpg" srcset="/assets/img/bangudae/panorama-1600.jpg 1600w, /assets/img/bangudae/panorama-2400.jpg 2400w, /assets/img/bangudae/panorama-3600.jpg 3600w" sizes="100vw" width="3600" height="1107" alt="The Bangudae cliff above the Daegokcheon Stream, in a panorama" fetchpriority="high" data-i18n-attr="alt:bangudae-xr.pano.alt">
+      </div>
+    </div>
+
     <section class="hero" id="top">
       <div class="container">
         <p class="t-eyebrow hero__eyebrow" data-i18n="bangudae-xr.hero.eyebrow">Case study · Mixed reality · First place</p>
@@ -306,9 +317,9 @@
       <div class="gfooter__legal">
         <p data-i18n="footer.copyright">Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
         <nav aria-label="Elsewhere" data-i18n-attr="aria-label:footer.elsewhere">
-          <a href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
-          <a href="https://github.com/Danyals-code">GitHub</a>
-          <a href="https://www.behance.net/designedbydanyal">Behance</a>
+          <a href="https://www.linkedin.com/in/designbydanyal/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/Danyals-code" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.behance.net/designedbydanyal" target="_blank" rel="noopener">Behance</a>
           <a href="mailto:danialsarfraz2000@gmail.com" data-i18n="footer.email">Email</a>
         </nav>
       </div>
