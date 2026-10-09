@@ -3260,6 +3260,21 @@ a.tile:hover .link-more {
   object-fit: cover;
 }
 
+/* The picture on the slide in view drifts slowly closer while its dot
+   fills, and eases back once the slide moves on. */
+@media (prefers-reduced-motion: no-preference) {
+  .hl__media--fill > img,
+  .hl__media--fill > .loop video {
+    transition: scale 0.8s var(--ease);
+  }
+
+  .hl__slide[aria-hidden="false"] .hl__media--fill > img,
+  .hl__slide[aria-hidden="false"] .hl__media--fill > .loop video {
+    scale: 1.08;
+    transition: scale var(--hl-dur) linear;
+  }
+}
+
 .hl__media--fill ~ .hl__cap,
 .hl__slide--fill .hl__cap {
   color: rgb(255 255 255 / 0.72);
@@ -5088,6 +5103,88 @@ a.tile:hover .link-more {
 /* At the end of a section the section's own padding already gives the gap. */
 .section > .appbar:last-child {
   padding-bottom: 0;
+}
+
+/* The Artifacts page keeps its bar under the menu. Once stuck it shrinks to
+   a row of small icons on frosted glass; the shrink is a transform, so the
+   page below never jumps. */
+.appbar--sticky {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 40;
+  padding-block: 20px 22px;
+}
+
+.appbar--sticky::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: -1;
+  height: 70px;
+  border-bottom: 1px solid var(--line-soft);
+  background: var(--glass);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.appbar--sticky .appbar__track {
+  transform-origin: 50% 0;
+  transition: transform 0.45s var(--ease);
+}
+
+.appbar--sticky :is(.appbar__name, .appbar__new, .appbar__sep) {
+  transition: opacity 0.25s var(--ease);
+}
+
+.appbar--sticky.is-stuck {
+  pointer-events: none;
+}
+
+.appbar--sticky.is-stuck::before {
+  opacity: 1;
+}
+
+.appbar--sticky.is-stuck .appbar__track {
+  transform: translateY(-11px) scale(0.5);
+}
+
+.appbar--sticky.is-stuck :is(.appbar__name, .appbar__new, .appbar__sep, .appbar__paddle) {
+  opacity: 0;
+}
+
+.appbar--sticky.is-stuck .appbar__item {
+  pointer-events: auto;
+}
+
+/* Pointing at (or opening) one app turns the others transparent: their clear
+   icons fade in where the app has them, and the rest fade to grey. */
+.appbar__icon--img {
+  position: relative;
+}
+
+.appbar__icon--img > img {
+  transition: opacity 0.35s var(--ease), filter 0.35s var(--ease);
+}
+
+.appbar__icon > .appbar__clear {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.appbar:has(.appbar__item:hover, .appbar__item:focus-visible, .appbar__item[aria-current]) .appbar__item:not(:hover, :focus-visible, [aria-current]) .appbar__icon:has(.appbar__clear) > img:not(.appbar__clear) {
+  opacity: 0;
+}
+
+.appbar:has(.appbar__item:hover, .appbar__item:focus-visible, .appbar__item[aria-current]) .appbar__item:not(:hover, :focus-visible, [aria-current]) .appbar__clear {
+  opacity: 1;
+}
+
+.appbar:has(.appbar__item:hover, .appbar__item:focus-visible, .appbar__item[aria-current]) .appbar__item:not(:hover, :focus-visible, [aria-current]) .appbar__icon:not(:has(.appbar__clear)) > img {
+  opacity: 0.45;
+  filter: grayscale(1);
 }
 
 .appbar__track {
@@ -6952,4 +7049,183 @@ html:not(.js) .quiz__hint {
   .bar__fill {
     width: var(--v) !important;
   }
+}
+
+/* ---------------------------------------------------------------- publications as paper stacks (Research)
+   Each paper is a small stack of its pages. On hover the front page comes
+   forward and the two behind it fan out to either side. Papers without a PDF yet show a typeset
+   title page (.paper__cover) over blank sheets. */
+
+/* The papers sit in a rail that scrolls sideways. The track leaves room
+   above and to the sides for the hover fan. */
+.papers-rail .rail__track.papers {
+  grid-auto-columns: min(68vw, 300px);
+  gap: clamp(36px, 4.4vw, 60px);
+  padding-top: 36px;
+  padding-bottom: 12px;
+}
+
+.papers-rail {
+  margin-top: clamp(8px, 1.5vw, 16px);
+}
+
+/* The thesis, as one line under the papers. */
+.pubs-thesis {
+  margin-top: clamp(40px, 5vw, 64px);
+  padding-top: clamp(24px, 3vw, 32px);
+  border-top: 1px solid var(--line);
+  color: var(--fg-2);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.pubs-thesis__meta {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pubs-thesis__title {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.pubs-thesis b {
+  font-weight: inherit;
+}
+
+.pubs-thesis .link-more {
+  margin-inline-start: 6px;
+  white-space: nowrap;
+}
+
+.paper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.paper:hover,
+.paper:focus-within {
+  z-index: 1;
+}
+
+.paper__stack {
+  position: relative;
+  display: block;
+  aspect-ratio: 210 / 297;
+  margin: 6px 10px 32px;
+}
+
+.paper__page {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 0 0 0.5px rgb(0 0 0 / 0.12), 0 6px 20px rgb(0 0 0 / 0.14);
+  transition: transform 0.7s var(--ease-out), opacity 0.7s var(--ease-out);
+}
+
+/* Counted from the front, so a two-page paper (no third sheet) works too. */
+.paper__page:nth-last-child(2) {
+  transform: translate(4px, 3px) rotate(2.5deg);
+}
+
+.paper__page:nth-last-child(3) {
+  transform: translate(-5px, 5px) rotate(-4deg);
+}
+
+@media (hover: hover) {
+  .paper:hover .paper__page:last-child {
+    transform: translateY(-3%) scale(1.05);
+  }
+
+  .paper:hover .paper__page:nth-last-child(2) {
+    transform: translate(-11%, 2%) rotate(-5deg);
+  }
+
+  .paper:hover .paper__page:nth-last-child(3) {
+    transform: translate(11%, 2%) rotate(5deg);
+  }
+}
+
+/* A title page drawn in HTML, with grey bars standing in for the text. */
+.paper__cover {
+  display: flex;
+  flex-direction: column;
+  gap: 6%;
+  padding: 14% 11%;
+  color: #1d1d1f;
+  font-size: clamp(9px, 0.95vw, 12px);
+  line-height: 1.3;
+  text-align: center;
+}
+
+.paper__cover-venue {
+  color: #86868b;
+  font-weight: 600;
+}
+
+.paper__cover-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45em;
+  line-height: 1.2;
+}
+
+.paper__cover-text {
+  flex: 1;
+  margin-top: 4%;
+  background: repeating-linear-gradient(180deg, #e3e3e6 0 3px, transparent 3px 8px);
+}
+
+.paper__meta {
+  color: var(--fg-2);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.paper__title {
+  margin-top: 8px;
+  font-size: clamp(19px, 1.7vw, 22px);
+  line-height: 1.22;
+  font-weight: 600;
+  letter-spacing: -0.016em;
+}
+
+.paper__authors {
+  margin-top: 8px;
+  color: var(--fg-2);
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.paper__authors b {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.paper__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin-top: auto;
+  padding-top: 20px;
+  font-size: 15px;
+}
+
+.paper__dl {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.paper__dl .ico {
+  width: 17px;
+  height: 17px;
+  stroke-width: 1.8;
 }

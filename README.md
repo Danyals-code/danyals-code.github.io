@@ -15,7 +15,7 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies.
                                A 30-second subtitled reel is in the page but hidden; remove `hidden` from the
                                `.reel` figure to show it
 /research/                     Highlights (a carousel of the moments behind the papers), then publications as
-                               large picture rows, industry projects at IID Lab as icon cards, personal projects,
+                               paper stacks side by side (View summary, Download PDF; PDFs in assets/papers/), industry projects at IID Lab as icon cards, personal projects,
                                and the app bar. Each entry has a "Learn more" button to its own page
 /research/experiments/         Interaction experiments: Fitts' law pointing, window snapping, fish-tank VR
 /research/bangudae-xr/         Case study: mixed-reality heritage app for Meta Quest 3 (first place, 2024)
@@ -110,6 +110,10 @@ own page (copy one of the app pages). Icons live in `assets/img/apps/`: 256 px P
 placeholders until the real icon exists. An app with light and dark icons uses two `<img>` tags,
 `class="icon-light"` and `class="icon-dark"`, with `loading="lazy"`; the page shows the one that
 matches the current theme and never downloads the other.
+An app can also have transparent ("clear") versions, `clear=(light, dark)` in the generator's app list,
+shown as `.appbar__clear` images: when one app is pointed at or open, the others switch to them (apps
+without them fade to grey). On the Artifacts page the bar is sticky (`.appbar--sticky`) and shrinks
+to small icons once it reaches the menu.
 
 Software logos on the Design page are white PNGs in `assets/img/software/` (264 px), so they only
 work on dark backgrounds.

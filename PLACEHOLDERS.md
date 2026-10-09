@@ -15,7 +15,8 @@ and screen recordings, with a poster frame. Screen recordings and films are mute
 
 | What | Where | Notes |
 | --- | --- | --- |
-| App icons for ViewAR, True RoboAnimator, AMVR and Swift Web Studio | `assets/img/apps/<app>.svg` | Placeholder icons. Replace with 1024 × 1024 PNGs with transparent corners (or light and dark pairs, like Almanac) and update `icon` in each page. |
+| App icons for AMVR and Swift Web Studio | `assets/img/apps/<app>.svg` | Placeholder icons. Replace with 1024 × 1024 PNGs with transparent corners (or light and dark pairs, like Almanac) and update `icon` in each page. |
+| Transparent ("clear") app icons for Lemmy AR, AMVR and Swift Web Studio | `assets/img/apps/<app>-mono-light.png` and `-mono-dark.png` | Shown when another app is selected in the app bar. 256 × 256 PNGs, like Almanac's and ViewAR's; then add `clear=(…)` to the app in the generator. |
 | Project hero images | `assets/img/work/*.webp` | The Design project pages reuse the 808 px card images as heroes. Full-resolution renders (2400 × 1350) will look sharper. |
 | Tall project cards on `/design/` | `design/index.html`, the `.wcard` images | The CGI cards crop the 808 × 632 Behance covers to a tall frame, which looks soft on Retina screens. A portrait render per project (at least 744 × 1360, ideally 1116 × 2040) will make them sharp. Leave room at the top for the year and name. The demo reel card shows its whole cover on white; a portrait frame from the reel would let it fill the card too. |
 

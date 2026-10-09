@@ -22,10 +22,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=26">
+  <link rel="stylesheet" href="/assets/css/site.css?v=31">
   <script src="/assets/js/i18n.js?v=4" defer></script>
-  <script src="/assets/js/i18n/research.js?v=6" defer></script>
-  <script src="/assets/js/site.js?v=19" defer></script>
+  <script src="/assets/js/i18n/research.js?v=8" defer></script>
+  <script src="/assets/js/site.js?v=20" defer></script>
 </head>
 <body class="has-lnav">
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -89,7 +89,7 @@
           <h2 class="t-h2" id="hl-title" data-i18n="research.hl.title">Get the highlights.</h2>
         </div>
       </div>
-      <div class="hl" data-highlights data-reveal>
+      <div class="hl" data-highlights data-reveal style="--hl-dur: 4.8s">
         <ul class="hl__track">
           <li class="hl__slide hl__slide--fill">
             <p class="hl__cap" data-i18n="research.hl.graduation"><strong>MSc, UNIST, February 2026.</strong> Graduating in Engineering Design, two years after joining the IID Lab.</p>
@@ -124,75 +124,56 @@
       <div class="container">
         <div class="rhead" data-reveal>
           <h2 class="t-h2" id="papers-title" data-i18n="research.pubs.title">Publications</h2>
-          <p data-i18n="research.pubs.intro">Four peer-reviewed papers and an MSc thesis. A paper based on the thesis is in review at ACM CHI 2027.</p>
+          <p data-i18n="research.pubs.intro">Four peer-reviewed papers and an MSc thesis.</p>
         </div>
-        <ul class="rlist rlist--feature">
-
-          <li class="entry entry--thumb" id="ksds-2026" data-reveal>
-            <div class="entry__main">
-              <p class="entry__meta" data-i18n="research.form.meta">2026 · Conference paper · KSDS 2026</p>
-              <h3 class="entry__title" translate="no">Assessment of Multi-View Consistency in Automated Product Form Analysis</h3>
-              <p class="entry__authors" translate="no"><b>Danyal Sarfraz</b>, KwanMyung Kim</p>
-              <p class="entry__summary" data-i18n="research.form.summary">Can a small set of product images replace CAD for measuring form? For 20 of 23 form parameters, sixteen views matched a 180-view baseline at 90% consistency or better.</p>
-              <div class="item-actions">
-                <a class="btn btn--md" href="/research/product-form/" data-i18n="research.learnMore">Learn more</a>
+      </div>
+      <!-- Papers: a row of paper stacks that scrolls sideways -->
+      <div class="rail papers-rail" data-reveal>
+        <ul class="rail__track papers">
+            <li class="paper" id="ksds-2026">
+              <a class="paper__stack" href="/research/product-form/" tabindex="-1" aria-hidden="true"><img class="paper__page" src="/assets/img/papers/ksds-2026-form-p2.jpg" width="520" height="735" alt="" loading="lazy"><img class="paper__page" src="/assets/img/papers/ksds-2026-form-p1.jpg" width="520" height="735" alt="" loading="lazy"></a>
+              <p class="paper__meta" data-i18n="research.form.meta">2026 · Conference paper · KSDS 2026</p>
+              <h3 class="paper__title" translate="no">Assessment of Multi-View Consistency in Automated Product Form Analysis</h3>
+              <p class="paper__authors" translate="no"><b>Danyal Sarfraz</b>, KwanMyung Kim</p>
+              <div class="paper__actions">
+                <a class="btn btn--sm" href="/research/product-form/" data-i18n="research.pubs.view">View summary</a><a class="link-more paper__dl" href="/assets/papers/sarfraz-2026-multi-view-consistency-ksds.pdf" download><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#download"/></svg><span data-i18n="research.pubs.pdf">Download PDF</span></a>
               </div>
-            </div>
-            <div class="entry__thumb entry__thumb--white"><img src="/assets/img/thumbs/product-form.jpg" width="720" height="450" alt="" loading="lazy"></div>
-          </li>
-
-          <li class="entry entry--thumb" id="thesis" data-reveal>
-            <div class="entry__main">
-              <p class="entry__meta" data-i18n="research.thesis.meta">2026 · MSc thesis · UNIST</p>
-              <h3 class="entry__title" translate="no">A Framework for Designing Contextually Appropriate Physical Actions in Non-Humanoid Robots</h3>
-              <p class="entry__authors" data-i18n="research.thesis.authors"><b>Danyal Sarfraz</b> · advised by Prof. KwanMyung Kim</p>
-              <p class="entry__summary" data-i18n="research.thesis.summary">A three-stage framework for a robot’s physical actions: co-design them with users, make them physically feasible with a Blender add-on, then test them at life size in AR before the hardware exists.</p>
-              <div class="item-actions">
-                <a class="btn btn--md" href="/research/lemmy-framework/" data-i18n="research.learnMore">Learn more</a>
+            </li>
+            <li class="paper" id="iasdr-2025-actions">
+              <a class="paper__stack" href="/research/lemmy/" tabindex="-1" aria-hidden="true"><img class="paper__page" src="/assets/img/papers/iasdr-2025-actions-p4.jpg" width="520" height="735" alt="" loading="lazy"><img class="paper__page" src="/assets/img/papers/iasdr-2025-actions-p3.jpg" width="520" height="735" alt="" loading="lazy"><img class="paper__page" src="/assets/img/papers/iasdr-2025-actions-p2.jpg" width="520" height="735" alt="" loading="lazy"></a>
+              <p class="paper__meta" data-i18n="research.components.meta">2025 · Full paper · IASDR 2025, Taipei</p>
+              <h3 class="paper__title" translate="no">A Component-Based Approach for Developing Actions in Non-Humanoid Elderly Care Robots</h3>
+              <p class="paper__authors" translate="no"><b>Danyal Sarfraz</b>, Ulugbek Vahobjon Ugli Ismatullaev, KwanMyung Kim</p>
+              <div class="paper__actions">
+                <a class="btn btn--sm" href="/research/lemmy/" data-i18n="research.pubs.view">View summary</a><a class="link-more paper__dl" href="/assets/papers/sarfraz-2025-component-based-actions-iasdr.pdf" download><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#download"/></svg><span data-i18n="research.pubs.pdf">Download PDF</span></a>
               </div>
-            </div>
-            <div class="entry__thumb"><img src="/assets/img/thumbs/lemmy-framework.jpg" width="720" height="450" alt="" loading="lazy"></div>
-          </li>
-
-          <li class="entry entry--thumb" id="iasdr-2025-actions" data-reveal>
-            <div class="entry__main">
-              <p class="entry__meta" data-i18n="research.components.meta">2025 · Full paper · IASDR 2025, Taipei</p>
-              <h3 class="entry__title" translate="no">A Component-Based Approach for Developing Actions in Non-Humanoid Elderly Care Robots</h3>
-              <p class="entry__authors" translate="no"><b>Danyal Sarfraz</b>, Ulugbek Vahobjon Ugli Ismatullaev, KwanMyung Kim</p>
-              <p class="entry__summary" data-i18n="research.components.summary">Robot motion, broken into four components that older adults can judge: speed, path, posture and turn type. Actions assembled from their preferred components scored highest, 7.7 out of 10 against 5.3 for the opposite choices.</p>
-              <div class="item-actions">
-                <a class="btn btn--md" href="/research/lemmy/" data-i18n="research.learnMore">Learn more</a>
+            </li>
+            <li class="paper" id="iasdr-2025-synthetic">
+              <a class="paper__stack" href="/research/synthetic-realities/" tabindex="-1" aria-hidden="true"><img class="paper__page" src="/assets/img/papers/iasdr-2025-synthetic-p4.jpg" width="520" height="735" alt="" loading="lazy"><img class="paper__page" src="/assets/img/papers/iasdr-2025-synthetic-p3.jpg" width="520" height="735" alt="" loading="lazy"><img class="paper__page" src="/assets/img/papers/iasdr-2025-synthetic-p2.jpg" width="520" height="735" alt="" loading="lazy"></a>
+              <p class="paper__meta" data-i18n="research.synthetic.meta">2025 · Pictorial · IASDR 2025, Taipei</p>
+              <h3 class="paper__title" translate="no">Synthetic Realities: Evaluating Human Ability to Distinguish AI-Generated Videos from Real Footage</h3>
+              <p class="paper__authors" translate="no"><b>Danyal Sarfraz</b>, Raja Mubashar Karim, KwanMyung Kim</p>
+              <div class="paper__actions">
+                <a class="btn btn--sm" href="/research/synthetic-realities/" data-i18n="research.pubs.view">View summary</a><a class="link-more paper__dl" href="/assets/papers/sarfraz-2025-synthetic-realities-iasdr.pdf" download><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#download"/></svg><span data-i18n="research.pubs.pdf">Download PDF</span></a>
               </div>
-            </div>
-            <div class="entry__thumb entry__thumb--white"><img src="/assets/img/thumbs/components.jpg" width="720" height="450" alt="" loading="lazy"></div>
-          </li>
-
-          <li class="entry entry--thumb" id="iasdr-2025-synthetic" data-reveal>
-            <div class="entry__main">
-              <p class="entry__meta" data-i18n="research.synthetic.meta">2025 · Pictorial · IASDR 2025, Taipei</p>
-              <h3 class="entry__title" translate="no">Synthetic Realities: Evaluating Human Ability to Distinguish AI-Generated Videos from Real Footage</h3>
-              <p class="entry__authors" translate="no"><b>Danyal Sarfraz</b>, Raja Mubashar Karim, KwanMyung Kim</p>
-              <p class="entry__summary" data-i18n="research.synthetic.summary">87 people judged 36 clips as real or AI-generated and were right 60% of the time, against 50% for guessing. Text-to-video fooled them most, and real footage was often taken for AI.</p>
-              <div class="item-actions">
-                <a class="btn btn--md" href="/research/synthetic-realities/" data-i18n="research.learnMore">Learn more</a>
+            </li>
+            <li class="paper" id="ksds-2025">
+              <a class="paper__stack" href="/research/lemmy/#method" tabindex="-1" aria-hidden="true"><img class="paper__page" src="/assets/img/papers/ksds-2025-catalogue-p2.jpg" width="520" height="735" alt="" loading="lazy"><img class="paper__page" src="/assets/img/papers/ksds-2025-catalogue-p1.jpg" width="520" height="735" alt="" loading="lazy"></a>
+              <p class="paper__meta" data-i18n="research.catalogue.meta">2025 · Conference paper · KSDS 2025, Seoul</p>
+              <h3 class="paper__title" translate="no">Developing a Hierarchically Structured Action Catalogue for an Elderly Care Robot through Participatory Design</h3>
+              <p class="paper__authors" translate="no"><b>Danyal Sarfraz</b>, Ulugbek Ismatullaev, KwanMyung Kim</p>
+              <div class="paper__actions">
+                <a class="btn btn--sm" href="/research/lemmy/#method" data-i18n="research.pubs.view">View summary</a><a class="link-more paper__dl" href="/assets/papers/sarfraz-2025-action-catalogue-ksds.pdf" download><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#download"/></svg><span data-i18n="research.pubs.pdf">Download PDF</span></a>
               </div>
-            </div>
-            <div class="entry__thumb"><img src="/assets/img/thumbs/synthetic.jpg" width="720" height="450" alt="" loading="lazy"></div>
-          </li>
-
-          <li class="entry entry--thumb" id="ksds-2025" data-reveal>
-            <div class="entry__main">
-              <p class="entry__meta" data-i18n="research.catalogue.meta">2025 · Conference paper · KSDS 2025, Seoul</p>
-              <h3 class="entry__title" translate="no">Developing a Hierarchically Structured Action Catalogue for an Elderly Care Robot through Participatory Design</h3>
-              <p class="entry__authors" translate="no"><b>Danyal Sarfraz</b>, Ulugbek Ismatullaev, KwanMyung Kim</p>
-              <p class="entry__summary" data-i18n="research.catalogue.summary">A participatory workshop with six industrial-design researchers produced more than 40 action ideas for a care robot, organized into a hierarchical catalogue. All three teams favored social and emotional presence over pure efficiency.</p>
-              <div class="item-actions">
-                <a class="btn btn--md" href="/research/lemmy/#method" data-i18n="research.learnMore">Learn more</a>
-              </div>
-            </div>
-            <div class="entry__thumb entry__thumb--white"><img src="/assets/img/thumbs/workshop.jpg" width="720" height="450" alt="" loading="lazy"></div>
-          </li>
+            </li>
         </ul>
+        <div class="rail__controls">
+          <button class="paddle" type="button" data-rail-prev aria-label="Previous" data-i18n-attr="aria-label:rail.prev"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5"/></svg></button>
+          <button class="paddle" type="button" data-rail-next aria-label="Next" data-i18n-attr="aria-label:rail.next"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="m5 2 5 5-5 5"/></svg></button>
+        </div>
+      </div>
+      <div class="container">
+        <p class="pubs-thesis" id="thesis" data-reveal><span class="pubs-thesis__meta" data-i18n="research.thesis.meta">2026 · MSc thesis · UNIST</span> <span class="pubs-thesis__title" translate="no">A Framework for Designing Contextually Appropriate Physical Actions in Non-Humanoid Robots.</span> <span data-i18n="research.thesis.authors"><b>Danyal Sarfraz</b> · advised by Prof. KwanMyung Kim</span>. <span data-i18n="research.thesis.chi">A paper based on it is in review at ACM CHI 2027.</span> <a class="link-more" href="/research/lemmy-framework/" data-i18n="research.pubs.view">View summary</a></p>
       </div>
     </section>
 
@@ -283,11 +264,11 @@
       </div>
     <nav class="appbar" aria-label="Artifacts" data-i18n-attr="aria-label:nav.tools" data-appbar>
       <ul class="appbar__track">
-        <li><a class="appbar__item" href="/tools/almanac/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/almanac-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/almanac-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Almanac</span><span class="appbar__new" data-i18n="research.bar.new">New</span></a></li>
-        <li><a class="appbar__item" href="/tools/viewar/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/viewar.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">ViewAR</span><span class="appbar__new" data-i18n="research.bar.new">New</span></a></li>
+        <li><a class="appbar__item" href="/tools/almanac/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/almanac-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/almanac-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/almanac-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/almanac-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Almanac</span><span class="appbar__new" data-i18n="research.bar.new">New</span></a></li>
+        <li><a class="appbar__item" href="/tools/viewar/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/viewar-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/viewar-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/viewar-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/viewar-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">ViewAR</span><span class="appbar__new" data-i18n="research.bar.new">New</span></a></li>
         <li><a class="appbar__item" href="/research/life-size-ar/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/app/icon-light.png" width="512" height="512" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/app/icon-dark.png" width="512" height="512" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Lemmy AR</span></a></li>
         <li class="appbar__sep" aria-hidden="true"></li>
-        <li><a class="appbar__item" href="/tools/roboanimator/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/roboanimator.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">RoboAnimator</span></a></li>
+        <li><a class="appbar__item" href="/tools/roboanimator/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/roboanimator-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/roboanimator-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/roboanimator-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/roboanimator-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">RoboAnimator</span></a></li>
         <li><a class="appbar__item" href="/tools/amvr/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/amvr.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">AMVR</span></a></li>
         <li class="appbar__sep" aria-hidden="true"></li>
         <li><a class="appbar__item" href="/tools/swift-studio/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/swift-studio.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Swift Studio</span></a></li>

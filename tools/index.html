@@ -22,10 +22,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=26">
+  <link rel="stylesheet" href="/assets/css/site.css?v=31">
   <script src="/assets/js/i18n.js?v=4" defer></script>
   <script src="/assets/js/i18n/tools.js?v=7" defer></script>
-  <script src="/assets/js/site.js?v=19" defer></script>
+  <script src="/assets/js/site.js?v=20" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -72,13 +72,13 @@
 
     <!-- App bar: one icon per app, linking to its page. A hairline separates
          apps, Blender add-ons and web tools. -->
-    <nav class="appbar" aria-label="Artifacts" data-i18n-attr="aria-label:nav.tools" data-appbar>
+    <nav class="appbar appbar--sticky" aria-label="Artifacts" data-i18n-attr="aria-label:nav.tools" data-appbar>
       <ul class="appbar__track">
-        <li><a class="appbar__item" href="/tools/almanac/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/almanac-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/almanac-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Almanac</span><span class="appbar__new" data-i18n="tools.bar.new">New</span></a></li>
-        <li><a class="appbar__item" href="/tools/viewar/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/viewar.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">ViewAR</span><span class="appbar__new" data-i18n="tools.bar.new">New</span></a></li>
+        <li><a class="appbar__item" href="/tools/almanac/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/almanac-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/almanac-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/almanac-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/almanac-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Almanac</span><span class="appbar__new" data-i18n="tools.bar.new">New</span></a></li>
+        <li><a class="appbar__item" href="/tools/viewar/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/viewar-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/viewar-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/viewar-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/viewar-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">ViewAR</span><span class="appbar__new" data-i18n="tools.bar.new">New</span></a></li>
         <li><a class="appbar__item" href="/research/life-size-ar/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/app/icon-light.png" width="512" height="512" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/app/icon-dark.png" width="512" height="512" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Lemmy AR</span></a></li>
         <li class="appbar__sep" aria-hidden="true"></li>
-        <li><a class="appbar__item" href="/tools/roboanimator/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/roboanimator.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">RoboAnimator</span></a></li>
+        <li><a class="appbar__item" href="/tools/roboanimator/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/roboanimator-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/roboanimator-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/roboanimator-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/roboanimator-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">RoboAnimator</span></a></li>
         <li><a class="appbar__item" href="/tools/amvr/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/amvr.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">AMVR</span></a></li>
         <li class="appbar__sep" aria-hidden="true"></li>
         <li><a class="appbar__item" href="/tools/swift-studio/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/swift-studio.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Swift Studio</span></a></li>
@@ -108,9 +108,9 @@
             </div>
           </li>
           <li class="rail__item lcard" id="viewar" data-group="apps" style="--card-tint: #2f8cff">
-            <div class="lcard__media"><span class="lcard__bigicon"><img src="/assets/img/apps/viewar.svg" width="1024" height="1024" alt="ViewAR app icon" loading="lazy" data-i18n-attr="alt:tools.lineup.viewar.iconAlt"></span></div>
+            <div class="lcard__media"><span class="lcard__bigicon"><img class="icon-light" src="/assets/img/apps/viewar-light.png" width="256" height="256" alt="ViewAR app icon" loading="lazy" data-i18n-attr="alt:tools.lineup.viewar.iconAlt"><img class="icon-dark" src="/assets/img/apps/viewar-dark.png" width="256" height="256" alt="ViewAR app icon" loading="lazy" data-i18n-attr="alt:tools.lineup.viewar.iconAlt"></span></div>
             <div class="lcard__body">
-              <div class="lcard__top"><span class="lcard__icon"><img src="/assets/img/apps/viewar.svg" width="1024" height="1024" alt="" loading="lazy"></span><span><span class="lcard__new" data-i18n="tools.bar.new">New</span><span class="lcard__kind" data-i18n="tools.kind.iphoneBlender">iPhone app · Blender add-on</span></span></div>
+              <div class="lcard__top"><span class="lcard__icon"><img class="icon-light" src="/assets/img/apps/viewar-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/viewar-dark.png" width="256" height="256" alt="" loading="lazy"></span><span><span class="lcard__new" data-i18n="tools.bar.new">New</span><span class="lcard__kind" data-i18n="tools.kind.iphoneBlender">iPhone app · Blender add-on</span></span></div>
               <h3 class="lcard__name" translate="no">ViewAR</h3>
               <p class="lcard__tag" data-i18n="tools.lineup.viewar.tag">Your Blender scene, live in the room.</p>
               <div class="lcard__actions"><a class="btn btn--md" href="/tools/viewar/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://github.com/Danyals-code/ViewAR---AR-VIew-for-Blender---Addon" translate="no">GitHub</a></div>
@@ -125,10 +125,10 @@
               <div class="lcard__actions"><a class="btn btn--md" href="/research/life-size-ar/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://github.com/Danyals-code/AR-Probe-for-Product-Action-Testing" translate="no">GitHub</a></div>
             </div>
           </li>
-          <li class="rail__item lcard" id="roboanimator" data-group="addons" style="--card-tint: #34c759">
+          <li class="rail__item lcard" id="roboanimator" data-group="addons" style="--card-tint: #ff3b30">
             <div class="lcard__media"><img src="/assets/img/roboanimator/promo.jpg" width="2000" height="1333" alt="The True RoboAnimator panels" loading="lazy" class="lcard__photo" data-i18n-attr="alt:tools.lineup.roboanimator.shotAlt"></div>
             <div class="lcard__body">
-              <div class="lcard__top"><span class="lcard__icon"><img src="/assets/img/apps/roboanimator.svg" width="1024" height="1024" alt="" loading="lazy"></span><span><span class="lcard__kind" data-i18n="tools.kind.blender">Blender add-on</span></span></div>
+              <div class="lcard__top"><span class="lcard__icon"><img class="icon-light" src="/assets/img/apps/roboanimator-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/roboanimator-dark.png" width="256" height="256" alt="" loading="lazy"></span><span><span class="lcard__kind" data-i18n="tools.kind.blender">Blender add-on</span></span></div>
               <h3 class="lcard__name" translate="no">True RoboAnimator</h3>
               <p class="lcard__tag" data-i18n="tools.lineup.roboanimator.tag">Animation that real robots can drive.</p>
               <div class="lcard__actions"><a class="btn btn--md" href="/tools/roboanimator/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://extensions.blender.org/add-ons/true-roboanimator/" data-i18n="tools.lineup.getIt">Get it</a></div>

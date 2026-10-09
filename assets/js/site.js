@@ -1043,6 +1043,25 @@
       });
       center();
       update();
+      // A sticky bar shrinks once it reaches the menu.
+      if (bar.classList.contains('appbar--sticky')) {
+        let queued = false;
+        const stuck = () => {
+          queued = false;
+          const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 48;
+          bar.classList.toggle('is-stuck', window.scrollY > 0 && bar.getBoundingClientRect().top <= navH + 1);
+        };
+        window.addEventListener(
+          'scroll',
+          () => {
+            if (queued) return;
+            queued = true;
+            requestAnimationFrame(stuck);
+          },
+          { passive: true }
+        );
+        stuck();
+      }
     });
   }
 
