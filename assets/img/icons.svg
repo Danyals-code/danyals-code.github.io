@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!-- Line icons on a 24-unit grid, drawn in the manner of SF Symbols (Regular):
+       round caps and joins, soft corners, shapes that share one optical size.
+       Original drawings, not Apple's glyphs.
+       Use: <svg class="ico"><use href="/assets/img/icons.svg#compass"/></svg>
+       Stroke, width and caps come from .ico in site.css; filled details set their own fill. -->
+
+  <!-- General -->
+  <symbol id="arrow-right" viewBox="0 0 24 24"><path d="M4 12h15.5M13.5 5.8 19.7 12l-6.2 6.2"/></symbol>
+  <symbol id="plus" viewBox="0 0 24 24"><path d="M12 4.5v15M4.5 12h15"/></symbol>
+  <symbol id="download" viewBox="0 0 24 24"><path d="M12 3.5v12M6.8 10.5l5.2 5.2 5.2-5.2M5 20.5h14"/></symbol>
+  <symbol id="branch" viewBox="0 0 24 24"><circle cx="7" cy="5.5" r="2.3"/><circle cx="7" cy="18.5" r="2.3"/><circle cx="17" cy="7.5" r="2.3"/><path d="M7 7.8v8.4M17 9.8c0 3.8-2.6 4.6-5.2 5.2-1.9.4-3.6.8-4.6 1.4"/></symbol>
+  <symbol id="photo" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="3.2"/><circle cx="8.3" cy="9.4" r="1.7"/><path d="m3 17.2 4.6-4a1.2 1.2 0 0 1 1.6 0l2.9 2.6 2.6-2.3a1.2 1.2 0 0 1 1.6 0l4.6 4"/></symbol>
+  <symbol id="video" viewBox="0 0 24 24"><rect x="2.5" y="6" width="13.5" height="12" rx="3"/><path d="m16 10.4 4.4-2.6a.8.8 0 0 1 1.1.7v7a.8.8 0 0 1-1.1.7L16 13.6"/></symbol>
+  <symbol id="sketch" viewBox="0 0 24 24"><path d="M4 20l.9-4.1 10.8-10.8a2.2 2.2 0 0 1 3.1 0l.1.1a2.2 2.2 0 0 1 0 3.1L8.1 19.1z"/><path d="m14.2 6.6 3.2 3.2"/></symbol>
+  <symbol id="sparkle" viewBox="0 0 24 24"><path d="M10 5.5c.6 3.7 2.3 5.6 6.2 6.3-3.9.7-5.6 2.6-6.2 6.3-.6-3.7-2.3-5.6-6.2-6.3 3.9-.7 5.6-2.6 6.2-6.3z"/><path d="M18 2.8c.3 1.7 1 2.4 2.7 2.7-1.7.3-2.4 1-2.7 2.7-.3-1.7-1-2.4-2.7-2.7 1.7-.3 2.4-1 2.7-2.7zM18.3 16.3c.2 1.2.7 1.7 1.9 1.9-1.2.2-1.7.7-1.9 1.9-.2-1.2-.7-1.7-1.9-1.9 1.2-.2 1.7-.7 1.9-1.9z"/></symbol>
+  <symbol id="users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"/><path d="M3 19.4c0-3.4 2.7-5.9 6-5.9s6 2.5 6 5.9v.1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><circle cx="16.6" cy="8.6" r="2.6"/><path d="M16.4 13.6c2.7 0 4.6 2 4.6 4.8v.1a1 1 0 0 1-1 1h-2.6"/></symbol>
+  <symbol id="chart" viewBox="0 0 24 24"><rect x="3.5" y="12.5" width="4.2" height="8" rx="1.2"/><rect x="9.9" y="8" width="4.2" height="12.5" rx="1.2"/><rect x="16.3" y="3.5" width="4.2" height="17" rx="1.2"/></symbol>
+  <symbol id="book" viewBox="0 0 24 24"><path d="M12 6.4C10.2 4.9 7.7 4.3 4.6 4.5a1 1 0 0 0-.9 1v11.9a1 1 0 0 0 1 1c3-.1 5.4.5 7.3 2.1 1.9-1.6 4.3-2.2 7.3-2.1a1 1 0 0 0 1-1V5.5a1 1 0 0 0-.9-1c-3.1-.2-5.6.4-7.4 1.9z"/><path d="M12 6.4v13.9"/></symbol>
+  <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10.5" rx="2.6"/><path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9"/></symbol>
+  <symbol id="bolt" viewBox="0 0 24 24"><path d="M13.4 2.9 5.6 12.8a.7.7 0 0 0 .6 1.1h5.3l-1 7.2 7.9-9.9a.7.7 0 0 0-.6-1.1h-5.3z"/></symbol>
+  <symbol id="eye" viewBox="0 0 24 24"><path d="M2.2 12C4.6 7.7 8 5.6 12 5.6s7.4 2.1 9.8 6.4c-2.4 4.3-5.8 6.4-9.8 6.4s-7.4-2.1-9.8-6.4z"/><circle cx="12" cy="12" r="3.3"/></symbol>
+  <symbol id="layers" viewBox="0 0 24 24"><path d="m12.5 3.7 7.9 4a.6.6 0 0 1 0 1.1l-7.9 4a1.1 1.1 0 0 1-1 0l-7.9-4a.6.6 0 0 1 0-1.1l7.9-4a1.1 1.1 0 0 1 1 0z"/><path d="m3.5 12.6 8 4a1.1 1.1 0 0 0 1 0l8-4M3.5 16.5l8 4a1.1 1.1 0 0 0 1 0l8-4"/></symbol>
+  <symbol id="gauge" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M6.4 13.5h1.4M12 6.6V8M17.6 13.5h-1.4M8 8.4l1 1M12 13.5l3.6-4.4"/><circle cx="12" cy="13.5" r="1.4" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><path d="M12 2.5v4.2M12 17.3v4.2M2.5 12h4.2M17.3 12h4.2"/></symbol>
+  <symbol id="pause-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.8 8.8v6.4M14.2 8.8v6.4"/></symbol>
+  <symbol id="check-shield" viewBox="0 0 24 24"><path d="m12.4 2.9 6.4 2.5a1 1 0 0 1 .7.9v5.3c0 4.7-3.1 8.1-7.1 9.9a1 1 0 0 1-.8 0c-4-1.8-7.1-5.2-7.1-9.9V6.3a1 1 0 0 1 .7-.9l6.4-2.5a1.1 1.1 0 0 1 .8 0z"/><path d="m8.7 12.1 2.3 2.4 4.3-4.8"/></symbol>
+  <symbol id="table" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2.8"/><path d="M3 9.5h18M3 14.5h18M9 4.5v15M15 4.5v15"/></symbol>
+  <symbol id="link" viewBox="0 0 24 24"><path d="m10.6 7.1 1.6-1.6a4.4 4.4 0 0 1 6.3 6.3l-2.4 2.4a4.4 4.4 0 0 1-6.3 0"/><path d="m13.4 16.9-1.6 1.6a4.4 4.4 0 0 1-6.3-6.3l2.4-2.4a4.4 4.4 0 0 1 6.3 0"/></symbol>
+  <symbol id="rotate" viewBox="0 0 24 24"><path d="M19.5 12A7.5 7.5 0 1 1 12 4.5"/><path d="m9.6 2.1 2.6 2.4-2.6 2.4"/></symbol>
+  <symbol id="export" viewBox="0 0 24 24"><path d="M8.2 9.5H7a2.5 2.5 0 0 0-2.5 2.5v6.5A2.5 2.5 0 0 0 7 21h10a2.5 2.5 0 0 0 2.5-2.5V12A2.5 2.5 0 0 0 17 9.5h-1.2"/><path d="M12 14.5V3M8.6 6.3 12 2.9l3.4 3.4"/></symbol>
+  <symbol id="undo" viewBox="0 0 24 24"><path d="M8.8 4.3 4.3 8.8l4.5 4.5"/><path d="M4.6 8.8h9.9a5.5 5.5 0 0 1 0 11H11"/></symbol>
+  <symbol id="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="3.9" ry="9"/><path d="M3 12h18M4.9 7.4c4.4 1.2 9.8 1.2 14.2 0M4.9 16.6c4.4-1.2 9.8-1.2 14.2 0"/></symbol>
+
+  <!-- Almanac -->
+  <symbol id="wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2.4M12 18.6V21M3 12h2.4M18.6 12H21M5.6 5.6l1.7 1.7M16.7 16.7l1.7 1.7M5.6 18.4l1.7-1.7M16.7 7.3l1.7-1.7"/></symbol>
+  <symbol id="compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.8 8.2-2.4 5.2-5.2 2.4 2.4-5.2z"/><path d="m15.8 8.2-2.4 5.2-2.8-2.8z" fill="currentColor"/></symbol>
+  <symbol id="eclipse" viewBox="0 0 24 24"><circle cx="9.5" cy="12" r="6.5"/><path d="M13.6 7a6.5 6.5 0 0 1 0 10 6.5 6.5 0 1 0 0-10z" fill="currentColor" stroke="none" opacity=".35"/><path d="M13.6 7a6.5 6.5 0 1 1 0 10"/></symbol>
+  <symbol id="sunrise" viewBox="0 0 24 24"><path d="M2.8 17.5h18.4M7.4 17.5a4.6 4.6 0 0 1 9.2 0M7 20.5h10M12 3.2v5.3M9.6 5.6 12 3.2l2.4 2.4M4.5 12.4l1.4.8M19.5 12.4l-1.4.8"/></symbol>
+  <symbol id="stones" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="3.6" rx="1.1"/><rect x="5.2" y="9.1" width="3.8" height="11" rx="1"/><rect x="15" y="9.1" width="3.8" height="11" rx="1"/><path d="M2.8 20.6h18.4"/></symbol>
+  <symbol id="bell" viewBox="0 0 24 24"><path d="M12 3.3a5.6 5.6 0 0 0-5.6 5.6v4.2c0 .9-.4 1.8-1 2.5l-.6.7a.8.8 0 0 0 .6 1.4h13.2a.8.8 0 0 0 .6-1.4l-.6-.7c-.6-.7-1-1.6-1-2.5V8.9A5.6 5.6 0 0 0 12 3.3z"/><path d="M9.7 19.6a2.4 2.4 0 0 0 4.6 0"/></symbol>
+  <symbol id="widgets" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2.2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2.2"/><rect x="3.5" y="13" width="7.5" height="7.5" rx="2.2"/><circle cx="16.75" cy="16.75" r="3.75"/></symbol>
+  <symbol id="offline" viewBox="0 0 24 24"><path d="M9.2 7.6A5.8 5.8 0 0 1 17.6 11a3.8 3.8 0 0 1 2.5 6.1M16.2 18.5H7.3a4.3 4.3 0 0 1-.9-8.5"/><path d="m3.5 3.5 17 17"/></symbol>
+  <symbol id="gift" viewBox="0 0 24 24"><rect x="3" y="7.6" width="18" height="3.8" rx="1.2"/><path d="M4.4 11.4v7.4a1.8 1.8 0 0 0 1.8 1.8h11.6a1.8 1.8 0 0 0 1.8-1.8v-7.4M12 7.6v13"/><path d="M12 7.6c-1.3-2.6-4.4-3.4-4.4-1.4 0 1.3 2.3 1.4 4.4 1.4zm0 0c1.3-2.6 4.4-3.4 4.4-1.4 0 1.3-2.3 1.4-4.4 1.4z"/></symbol>
+  <symbol id="moon" viewBox="0 0 24 24"><path d="M19.8 14.7A8.6 8.6 0 1 1 9.3 4.2a.4.4 0 0 1 .5.5 7.1 7.1 0 0 0 9.5 9.5.4.4 0 0 1 .5.5z"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><circle cx="12" cy="7.4" r="3.9"/><path d="M12 11.3v6.8M8.3 16.6c-2 .4-3.3 1.1-3.3 1.9 0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5c0-.8-1.3-1.5-3.3-1.9"/></symbol>
+
+  <!-- ViewAR -->
+  <symbol id="ar" viewBox="0 0 24 24"><path d="M3.5 8V6.3a2.8 2.8 0 0 1 2.8-2.8H8M16 3.5h1.7a2.8 2.8 0 0 1 2.8 2.8V8M20.5 16v1.7a2.8 2.8 0 0 1-2.8 2.8H16M8 20.5H6.3a2.8 2.8 0 0 1-2.8-2.8V16"/><path d="m12.4 7.3 3.7 2.1a.8.8 0 0 1 .4.7v3.8a.8.8 0 0 1-.4.7l-3.7 2.1a.8.8 0 0 1-.8 0l-3.7-2.1a.8.8 0 0 1-.4-.7v-3.8a.8.8 0 0 1 .4-.7l3.7-2.1a.8.8 0 0 1 .8 0z"/><path d="m7.8 9.7 4.2 2.4 4.2-2.4M12 12.1v4.6"/></symbol>
+  <symbol id="stream" viewBox="0 0 24 24"><path d="M3.4 9.6a12.2 12.2 0 0 1 17.2 0M6.5 12.7a7.8 7.8 0 0 1 11 0M9.6 15.8a3.4 3.4 0 0 1 4.8 0"/><circle cx="12" cy="19" r="1.4" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="delta" viewBox="0 0 24 24"><path d="M10.7 4.8a1.5 1.5 0 0 1 2.6 0l7.6 13.1a1.5 1.5 0 0 1-1.3 2.3H4.4a1.5 1.5 0 0 1-1.3-2.3z"/></symbol>
+  <symbol id="wrench" viewBox="0 0 24 24"><path d="M14.4 9.6 4.9 19.1a1.7 1.7 0 0 0 0 2.4h0a1.7 1.7 0 0 0 2.4 0l9.5-9.5a4.7 4.7 0 0 0 5-6.3.3.3 0 0 0-.5-.1l-2.4 2.4a1.3 1.3 0 0 1-1.8 0l-.2-.2a1.3 1.3 0 0 1 0-1.8l2.4-2.4a.3.3 0 0 0-.1-.5 4.7 4.7 0 0 0-6.3 5z"/></symbol>
+  <symbol id="sphere" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12c0 1.9 4 3.4 9 3.4s9-1.5 9-3.4"/><path d="M3 12c0-1.9 4-3.4 9-3.4s9 1.5 9 3.4" opacity=".35"/></symbol>
+  <symbol id="phones" viewBox="0 0 24 24"><rect x="2.8" y="5.5" width="8.6" height="15" rx="2.4"/><rect x="12.6" y="3.5" width="8.6" height="15" rx="2.4"/><path d="M6.1 7.9h2M15.9 5.9h2"/></symbol>
+  <symbol id="radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.7" fill="currentColor" stroke="none"/><path d="M8.6 8.3a5.2 5.2 0 0 0 0 7.4M15.4 8.3a5.2 5.2 0 0 1 0 7.4M5.6 5.3a9.4 9.4 0 0 0 0 13.4M18.4 5.3a9.4 9.4 0 0 1 0 13.4"/></symbol>
+  <symbol id="memory" viewBox="0 0 24 24"><rect x="4.5" y="6" width="15" height="12" rx="2.6"/><rect x="8.5" y="9.5" width="7" height="5" rx="1"/><path d="M8 6V3.5M12 6V3.5M16 6V3.5M8 18v2.5M12 18v2.5M16 18v2.5"/></symbol>
+
+  <!-- True RoboAnimator -->
+  <symbol id="robot" viewBox="0 0 24 24"><rect x="4.5" y="3.8" width="15" height="10.4" rx="3.6"/><path d="M9.5 7.8v2.4M14.5 7.8v2.4"/><circle cx="8" cy="18" r="2.6"/><circle cx="16" cy="18" r="2.6"/></symbol>
+  <symbol id="curve" viewBox="0 0 24 24"><circle cx="5" cy="18.5" r="2.1"/><circle cx="19" cy="5.5" r="2.1"/><path d="M5 16.4c0-6 2.4-9.8 7-10.6 1.7-.3 3.5-.3 4.9-.3"/></symbol>
+  <symbol id="speed" viewBox="0 0 24 24"><path d="M3.5 17.5a8.5 8.5 0 1 1 17 0"/><path d="M6.1 12.3l1.1.6M12 8.5v1.3M17.9 12.3l-1.1.6M12 17.5l3.4-4.4M3.5 20.5h17"/><circle cx="12" cy="17.5" r="1.4" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="wheel-spokes" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.2"/><path d="M12 3v6.8M12 14.2V21M4.2 7.5l5.9 3.4M13.9 13.1l5.9 3.4M4.2 16.5l5.9-3.4M13.9 10.9l5.9-3.4"/></symbol>
+
+  <!-- AMVR -->
+  <symbol id="cube" viewBox="0 0 24 24"><path d="m12.5 2.9 7.3 4.1a1 1 0 0 1 .5.9v8.2a1 1 0 0 1-.5.9l-7.3 4.1a1 1 0 0 1-1 0L4.2 17a1 1 0 0 1-.5-.9V7.9a1 1 0 0 1 .5-.9l7.3-4.1a1 1 0 0 1 1 0z"/><path d="m4 7.4 8 4.6 8-4.6M12 12v9"/></symbol>
+  <symbol id="center" viewBox="0 0 24 24"><path d="M3.5 8V6.3a2.8 2.8 0 0 1 2.8-2.8H8M16 3.5h1.7a2.8 2.8 0 0 1 2.8 2.8V8M20.5 16v1.7a2.8 2.8 0 0 1-2.8 2.8H16M8 20.5H6.3a2.8 2.8 0 0 1-2.8-2.8V16"/><rect x="8.5" y="8.5" width="7" height="7" rx="1.6"/></symbol>
+  <symbol id="camera" viewBox="0 0 24 24"><path d="M5.2 7h2.3l1.3-2a1.4 1.4 0 0 1 1.2-.6h4a1.4 1.4 0 0 1 1.2.6l1.3 2h2.3a2.7 2.7 0 0 1 2.7 2.7v8.1a2.7 2.7 0 0 1-2.7 2.7H5.2a2.7 2.7 0 0 1-2.7-2.7V9.7A2.7 2.7 0 0 1 5.2 7z"/><circle cx="12" cy="13.4" r="3.6"/></symbol>
+  <symbol id="light" viewBox="0 0 24 24"><path d="M12 2.8a6.2 6.2 0 0 0-3.7 11.2c.7.5 1.1 1.3 1.1 2.1v.6h5.2v-.6c0-.8.4-1.6 1.1-2.1A6.2 6.2 0 0 0 12 2.8z"/><path d="M9.6 19.2h4.8M10.4 21.5h3.2"/></symbol>
+  <symbol id="stack" viewBox="0 0 24 24"><rect x="3.5" y="8.5" width="17" height="12.5" rx="2.8"/><path d="M5.8 5.7h12.4M8 3h8"/></symbol>
+  <symbol id="tag" viewBox="0 0 24 24"><path d="M3.5 5.5v5.2a2 2 0 0 0 .6 1.4l8.3 8.3a2 2 0 0 0 2.8 0l5.2-5.2a2 2 0 0 0 0-2.8l-8.3-8.3a2 2 0 0 0-1.4-.6H5.5a2 2 0 0 0-2 2z"/><circle cx="8.1" cy="8.1" r="1.5"/></symbol>
+  <symbol id="views" viewBox="0 0 24 24"><rect x="3" y="3" width="7.8" height="7.8" rx="2"/><rect x="13.2" y="3" width="7.8" height="7.8" rx="2"/><rect x="3" y="13.2" width="7.8" height="7.8" rx="2"/><path d="m17.5 13.4 3 1.7a.8.8 0 0 1 .4.7v3.4a.8.8 0 0 1-.4.7l-3 1.7a.8.8 0 0 1-.8 0l-3-1.7a.8.8 0 0 1-.4-.7v-3.4a.8.8 0 0 1 .4-.7l3-1.7a.8.8 0 0 1 .8 0z"/></symbol>
+
+  <!-- Swift Web Studio -->
+  <symbol id="code" viewBox="0 0 24 24"><path d="M7.6 7 2.6 12l5 5M16.4 7l5 5-5 5M13.9 4.6l-3.8 14.8"/></symbol>
+  <symbol id="components" viewBox="0 0 24 24"><rect x="3" y="3" width="7.8" height="7.8" rx="2"/><circle cx="17.1" cy="6.9" r="3.9"/><path d="M6.2 13.9a.8.8 0 0 1 1.4 0l3.3 5.8a.8.8 0 0 1-.7 1.2H3.6a.8.8 0 0 1-.7-1.2z"/><rect x="13.2" y="13.2" width="7.8" height="7.8" rx="2"/></symbol>
+  <symbol id="phone" viewBox="0 0 24 24"><rect x="6" y="2.3" width="12" height="19.4" rx="3.2"/><path d="M10.6 5.2h2.8"/></symbol>
+  <symbol id="contrast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="rows" viewBox="0 0 24 24"><rect x="3" y="3.5" width="18" height="4.6" rx="1.8"/><rect x="3" y="9.7" width="18" height="4.6" rx="1.8"/><rect x="3" y="15.9" width="18" height="4.6" rx="1.8" opacity=".5"/></symbol>
+  <symbol id="present" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2.6"/><path d="M12 16.5v3.8M8 20.5h8"/><path d="M10.6 7.8a.5.5 0 0 1 .8-.4l3.4 2.2a.5.5 0 0 1 0 .8l-3.4 2.2a.5.5 0 0 1-.8-.4z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="archive" viewBox="0 0 24 24"><rect x="3" y="3.5" width="18" height="5" rx="1.6"/><path d="M4.5 8.5v9.5a2.5 2.5 0 0 0 2.5 2.5h10a2.5 2.5 0 0 0 2.5-2.5V8.5M9.6 12.5h4.8"/></symbol>
+
+  <!-- Research projects -->
+  <symbol id="backpack" viewBox="0 0 24 24"><path d="M10 5.5h4a4.5 4.5 0 0 1 4.5 4.5v9a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2v-9A4.5 4.5 0 0 1 10 5.5z"/><path d="M9.6 5.6v-.8a1.8 1.8 0 0 1 1.8-1.8h1.2a1.8 1.8 0 0 1 1.8 1.8v.8"/><path d="M8.6 13.4h6.8v3.6a1.1 1.1 0 0 1-1.1 1.1H9.7a1.1 1.1 0 0 1-1.1-1.1zM9 10.3h6"/></symbol>
+  <symbol id="sensor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><path d="M6.4 6.2a8.2 8.2 0 0 0 0 11.6M17.6 6.2a8.2 8.2 0 0 1 0 11.6"/></symbol>
+</svg>

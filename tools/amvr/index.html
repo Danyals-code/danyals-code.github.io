@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en" data-langs="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}},1500)})})(document.documentElement)</script>
+  <title>AMVR · Danyal Sarfraz</title>
+  <meta name="description" content="AMVR is a Blender add-on that turns CAD products into consistent, batch-rendered image sets, with standardized scale, orthographic and perspective cameras, studio lighting and predictable file names.">
+  <link rel="canonical" href="https://danyals-code.github.io/tools/amvr/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Danyal Sarfraz">
+  <meta property="og:url" content="https://danyals-code.github.io/tools/amvr/">
+  <meta property="og:title" content="AMVR · Danyal Sarfraz">
+  <meta property="og:description" content="AMVR is a Blender add-on that turns CAD products into consistent, batch-rendered image sets, with standardized scale, orthographic and perspective cameras, studio lighting and predictable file names.">
+  <meta property="og:image" content="https://danyals-code.github.io/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="/assets/css/site.css?v=26">
+  <script src="/assets/js/i18n.js?v=4" defer></script>
+  <script src="/assets/js/site.js?v=19" defer></script>
+</head>
+<body class="has-lnav tinted" style="--tint-l: #6236e0; --tint-d: #b39bff">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="gnav">
+    <nav class="gnav__inner" aria-label="Global" data-i18n-attr="aria-label:nav.label">
+      <a class="gnav__logo" href="/">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
+        Danyal Sarfraz
+      </a>
+      <ul class="gnav__list" id="gnav-list">
+        <li><a href="/design/" data-i18n="nav.design">Design</a></li>
+        <li><a href="/research/" data-i18n="nav.research">Research</a></li>
+        <li><a href="/tools/" aria-current="page" data-i18n="nav.tools">Artifacts</a></li>
+        <li><a href="/about/" data-i18n="nav.about">About</a></li>
+        <li><a href="/about/#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="gnav__tools">
+        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-lang-open aria-haspopup="true" aria-expanded="false" aria-label="Language: English" title="Language">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.6 2.6 3.6 2.6 6S9.7 12.4 8 14M8 2C6.3 3.6 5.4 5.6 5.4 8s.9 4.4 2.6 6"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Switch to dark theme">
+          <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
+          <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
+        </button>
+      </div>
+      <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 18 18" aria-hidden="true"><path class="l1" d="M2 6h14"/><path class="l2" d="M2 12h14"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <nav class="lnav" aria-label="AMVR">
+    <div class="lnav__inner">
+      <a class="lnav__title" href="#top"><img src="/assets/img/apps/amvr.svg" width="1024" height="1024" alt="" loading="lazy"><span translate="no">AMVR</span></a>
+      <ul class="lnav__links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#highlights">Highlights</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#views">Views</a></li>
+        <li><a href="#specs">Specs</a></li>
+      </ul>
+      <a class="btn btn--sm" href="https://github.com/Danyals-code/Addon-for-MultiView-Rendering-AMVR">Get it</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="phero" id="top">
+      <div class="container">
+        <span class="phero__icon"><img src="/assets/img/apps/amvr.svg" width="1024" height="1024" alt="AMVR app icon" loading="lazy"></span>
+        <p class="phero__name" translate="no">AMVR</p>
+        <p class="t-muted" translate="no">Add-on for MultiView Rendering</p>
+        <h1 class="t-display phero__title">One CAD model in. Every view out.</h1>
+        <p class="t-lead phero__lead">A Blender add-on that turns CAD products into consistent, batch-rendered image sets: import STEP and STL, standardize each product at the origin, build orthographic and perspective cameras with studio lighting, and render every product from every view in one click.</p>
+        <div class="cta-row phero__cta">
+          <a class="btn" href="https://github.com/Danyals-code/Addon-for-MultiView-Rendering-AMVR">Get it on GitHub</a>
+          <a class="link-more" href="/research/product-form/">See it in research</a>
+        </div>
+      </div>
+      <div class="phero__media container-wide" data-reveal="scale">
+        <figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Blender with the MultiView sidebar and a product in the viewport" data-ph="amvr-hero"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">Blender with the MultiView sidebar and a product in the viewport</span><span class="ph__size">Screenshot · 2560 × 1600</span></div></div></figure>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="container">
+        <p class="t-two-tone lede" data-reveal>Comparing products by image only works when <strong>every image is taken the same way.</strong> AMVR keeps the camera, the light and the scale <strong>identical for every product,</strong> then names each file so a script can find it.</p>
+        <div style="margin-top: clamp(48px,6vw,80px)">
+        <div class="statband" style="--cols:4" data-reveal>
+          <div class="statband__item"><span class="statband__kicker">Up to</span><span class="statband__num">9</span><span class="statband__label">views per product: six orthographic, three perspective</span></div>
+          <div class="statband__item"><span class="statband__num">4</span><span class="statband__label">lighting presets, from soft to high key</span></div>
+          <div class="statband__item"><span class="statband__num">3</span><span class="statband__label">render modes: clay, full, or both</span></div>
+          <div class="statband__item"><span class="statband__num">1</span><span class="statband__label">click to render the whole batch</span></div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="highlights" aria-labelledby="hl-title">
+      <div class="container">
+        <div class="hl-head" data-reveal>
+          <h2 class="t-h2" id="hl-title">Get the highlights.</h2>
+        </div>
+      </div>
+      <div class="hl" data-highlights data-reveal>
+        <ul class="hl__track">
+        <li class="hl__slide">
+          <p class="hl__cap"><strong>STEP and STL in.</strong> Each file becomes its own product. STEP converts through FreeCAD or STEPper; STL comes straight in.</p>
+          <div class="hl__media"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: The Import Products list with several STEP and STL files, and the status bar showing progress" data-ph="amvr-import"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">The Import Products list with several STEP and STL files, and the status bar showing progress</span><span class="ph__size">Screenshot · 2560 × 1600</span></div></div></figure></div>
+        </li>
+        <li class="hl__slide">
+          <p class="hl__cap"><strong>Standardized.</strong> Every product centered and scaled to the same size, so a screw and a housing read alike.</p>
+          <div class="hl__media"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Products of very different sizes, each fitted to the same one-meter cube" data-ph="amvr-standardize"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">Products of very different sizes, each fitted to the same one-meter cube</span><span class="ph__size">Screenshot · 2560 × 1600</span></div></div></figure></div>
+        </li>
+        <li class="hl__slide">
+          <p class="hl__cap"><strong>A camera for every view.</strong> Six orthographic views and three perspectives, framed once for the whole batch.</p>
+          <div class="hl__media"><figure class="device device--window"><div class="device__bar">Blender</div><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: The camera rig around a product: six orthographic and three perspective cameras" data-ph="amvr-cameras"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">The camera rig around a product: six orthographic and three perspective cameras</span><span class="ph__size">Screenshot · 2560 × 1600</span></div></div></figure></div>
+        </li>
+        <li class="hl__slide hl__slide--fill">
+          <p class="hl__cap"><strong>Clay or full render.</strong> A fast clay pass with cavity shading, your own materials, or both side by side.</p>
+          <div class="hl__media hl__media--fill"><div class="ph" role="img" aria-label="Placeholder: One product as a clay render and as a full render, side by side" data-ph="amvr-clay-full"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">One product as a clay render and as a full render, side by side</span><span class="ph__size">Render · 2400 × 1350</span></div></div>
+        </li>
+        <li class="hl__slide">
+          <p class="hl__cap"><strong>Named to be found.</strong> One folder per product and one file per view, with the render mode in the name.</p>
+          <div class="hl__media"><div class="tree">renders/
+  <b>AA_01_Widget/</b>
+    AA_01_Widget_Front_clay.png
+    AA_01_Widget_Top_clay.png
+    AA_01_Widget_Right_clay.png
+  <b>AA_02_Housing/</b>
+    AA_02_Housing_Front_clay.png
+    …</div></div>
+        </li>
+        </ul>
+        <div class="hl__nav">
+          <div class="hl__dots"></div>
+          <button class="hl__play" type="button" aria-label="Pause" data-pause-label="Pause" data-play-label="Play"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1"/><rect x="9.5" y="2.5" width="3" height="11" rx="1"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 2.8v10.4L13.2 8z"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+          <h2 class="t-h2 shead__title" id="features-title">Built for datasets.</h2>
+          <p class="shead__text t-lead">Everything that makes one product comparable with the next.</p>
+          </div>
+        </div>
+        <ul class="fgrid" style="--cols:3" data-reveal>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#cube"/></svg><p><strong>STEP and STL.</strong> STEP through FreeCAD or the STEPper add-on; STL imported directly. Mix both in one list.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#center"/></svg><p><strong>Fit on import.</strong> Each product is scaled so its largest side matches a target size, and centered on the origin.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#sphere"/></svg><p><strong>Auto smooth.</strong> Clears the faceted look of tessellated CAD and re-derives hard edges from an angle.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#views"/></svg><p><strong>View sets.</strong> All nine views, the six orthographic ones, a standard four or a minimal three.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#target"/></svg><p><strong>Custom views.</strong> Add any direction as an orthographic or perspective camera.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#rotate"/></svg><p><strong>Orient by hand.</strong> Step through the batch and turn a product to face front, isolated from the rest.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#light"/></svg><p><strong>Studio lighting.</strong> Soft, hard, dramatic or high key, with intensity and background color.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#stack"/></svg><p><strong>Batch render.</strong> Each product isolated in turn, so nothing bleeds between shots.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#tag"/></svg><p><strong>Predictable names.</strong> One folder per product and one file per view, with the render mode as a suffix.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#gauge"/></svg><p><strong>Your settings stay yours.</strong> Engine, samples, resolution and format stay in Blender’s own settings.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#check-shield"/></svg><p><strong>Warns before you waste time.</strong> Objects outside the products, like the default cube, are flagged before a render.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#offline"/></svg><p><strong>Keeps going.</strong> Imports run in the background; a file that fails is skipped, not the whole batch.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="views" aria-labelledby="views-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+          <h2 class="t-h2 shead__title" id="views-title">Choose your views.</h2>
+          <p class="shead__text t-lead">All orthographic views share one framing and all perspectives another, so a product reads at the same scale across the whole sheet.</p>
+          </div>
+        </div>
+        <div class="segmedia" data-seg-media data-reveal>
+          <div class="segmedia__stage">
+            <div class="segmedia__item" data-item="all"><div class="views-grid" style="--n:9"><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="30" width="64" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="60" r="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="60" r="3" fill="currentColor"/></svg><figcaption>Front</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="30" width="64" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><rect x="48" y="74" width="24" height="8" rx="3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Back</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="38" width="64" height="44" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M36 60h48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Top</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="38" width="64" height="44" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="38" cy="47" r="4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="38" cy="73" r="4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="82" cy="47" r="4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="82" cy="73" r="4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Bottom</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="38" y="30" width="44" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M78 44v32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Right</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="38" y="30" width="44" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M42 44v32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Left</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><path d="M30 46 60 32l30 14v36L60 96 30 82z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M30 46 60 60l30-14M60 60v36" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="45.0" cy="72" rx="7" ry="9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Perspective 1</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><path d="M20 46 60 32l40 14v36L60 96 20 82z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M20 46 60 60l40-14M60 60v36" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="40.0" cy="72" rx="7" ry="9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Perspective 2</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><path d="M40 46 60 32l20 14v36L60 96 40 82z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 46 60 60l20-14M60 60v36" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="50.0" cy="72" rx="7" ry="9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Perspective 3</figcaption></figure></div></div>
+            <div class="segmedia__item" data-item="ortho"><div class="views-grid" style="--n:6"><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="30" width="64" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="60" r="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="60" r="3" fill="currentColor"/></svg><figcaption>Front</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="30" width="64" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><rect x="48" y="74" width="24" height="8" rx="3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Back</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="38" width="64" height="44" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M36 60h48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Top</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="38" width="64" height="44" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="38" cy="47" r="4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="38" cy="73" r="4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="82" cy="47" r="4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="82" cy="73" r="4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Bottom</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="38" y="30" width="44" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M78 44v32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Right</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="38" y="30" width="44" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M42 44v32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Left</figcaption></figure></div></div>
+            <div class="segmedia__item" data-item="standard"><div class="views-grid" style="--n:4"><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="30" width="64" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="60" r="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="60" r="3" fill="currentColor"/></svg><figcaption>Front</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="38" width="64" height="44" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M36 60h48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Top</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="38" y="30" width="44" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M78 44v32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Right</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><path d="M30 46 60 32l30 14v36L60 96 30 82z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M30 46 60 60l30-14M60 60v36" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="45.0" cy="72" rx="7" ry="9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Perspective</figcaption></figure></div></div>
+            <div class="segmedia__item" data-item="minimal"><div class="views-grid" style="--n:3"><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="30" width="64" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="60" r="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="60" r="3" fill="currentColor"/></svg><figcaption>Front</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="38" width="64" height="44" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M36 60h48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Top</figcaption></figure><figure class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="38" y="30" width="44" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M78 44v32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg><figcaption>Right</figcaption></figure></div></div>
+          </div>
+          <div class="seg" role="group" aria-label="View set"><button type="button" data-show="all" aria-pressed="false">All</button><button type="button" data-show="ortho" aria-pressed="false">Orthographic</button><button type="button" data-show="standard" aria-pressed="false">Standard</button><button type="button" data-show="minimal" aria-pressed="false">Minimal</button></div>
+          <p class="segmedia__cap" data-cap="all"><strong>All · 9 cameras.</strong> Front, back, top, bottom, right, left and three perspectives.</p>
+          <p class="segmedia__cap" data-cap="ortho"><strong>Orthographic · 6 cameras.</strong> Every side, without perspective, at one shared scale.</p>
+          <p class="segmedia__cap" data-cap="standard"><strong>Standard · 4 cameras.</strong> Front, top, right and one perspective.</p>
+          <p class="segmedia__cap" data-cap="minimal"><strong>Minimal · 3 cameras.</strong> Front, top and right.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow" aria-labelledby="workflow-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+          <h2 class="t-h2 shead__title" id="workflow-title">Five panels, in order.</h2>
+          <p class="shead__text t-lead">The sidebar is laid out in the order you use it.</p>
+          </div>
+        </div>
+        <ol class="flow" style="--cols:5" data-reveal>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#light"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Scene setup</h3><p class="flow__text">A lighting preset and a background; your own world is left intact.</p></li>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#cube"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Import products</h3><p class="flow__text">STEP, STP and STL files, each as its own product collection.</p></li>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#center"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Standardize</h3><p class="flow__text">Recenter, rescale to a target size, and fix faceted shading.</p></li>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#camera"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Cameras and views</h3><p class="flow__text">A view set, the front axis and framing padding.</p></li>
+          <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#stack"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Batch render</h3><p class="flow__text">Every product, every view, one click.</p></li>
+        </ol>
+        <div class="feature" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+          <div class="feature__text">
+            <h3 class="t-h3">Named to be found.</h3>
+            <p>Output is organized per product and named deterministically. Clay writes <code>_clay</code>, a full render writes no suffix, and Both writes <code>_render</code> and <code>_clay</code> side by side.</p>
+            <p>So a script, a spreadsheet or a training pipeline can find every view of every product without guessing.</p>
+          </div>
+          <div class="tree">renders/
+  <b>AA_01_Widget/</b>
+    AA_01_Widget_Front_clay.png
+    AA_01_Widget_Top_clay.png
+    AA_01_Widget_Right_clay.png
+  <b>AA_02_Housing/</b>
+    AA_02_Housing_Front_clay.png
+    …</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="lighting" aria-labelledby="lighting-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+          <h2 class="t-h2 shead__title" id="lighting-title">Four looks.</h2>
+          <p class="shead__text t-lead">Lighting presets build an <code>MV_Lighting</code> collection and their own world, without touching yours.</p>
+          </div>
+        </div>
+        <div class="segmedia" data-seg-media data-reveal>
+          <div class="segmedia__stage">
+            <div class="segmedia__item" data-item="soft"><div class="ph" role="img" aria-label="Placeholder: A product under Studio Soft lighting" data-ph="amvr-light-soft" style="aspect-ratio: 4 / 3"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">A product under Studio Soft lighting</span><span class="ph__size">Render · 1600 × 1200</span></div></div>
+            <div class="segmedia__item" data-item="hard"><div class="ph" role="img" aria-label="Placeholder: The same product under Studio Hard lighting" data-ph="amvr-light-hard" style="aspect-ratio: 4 / 3"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">The same product under Studio Hard lighting</span><span class="ph__size">Render · 1600 × 1200</span></div></div>
+            <div class="segmedia__item" data-item="dramatic"><div class="ph" role="img" aria-label="Placeholder: The same product under Dramatic lighting" data-ph="amvr-light-dramatic" style="aspect-ratio: 4 / 3"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">The same product under Dramatic lighting</span><span class="ph__size">Render · 1600 × 1200</span></div></div>
+            <div class="segmedia__item" data-item="highkey"><div class="ph" role="img" aria-label="Placeholder: The same product under High Key lighting" data-ph="amvr-light-highkey" style="aspect-ratio: 4 / 3"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">The same product under High Key lighting</span><span class="ph__size">Render · 1600 × 1200</span></div></div>
+          </div>
+          <div class="seg" role="group" aria-label="Lighting preset"><button type="button" data-show="soft" aria-pressed="false">Studio Soft</button><button type="button" data-show="hard" aria-pressed="false">Studio Hard</button><button type="button" data-show="dramatic" aria-pressed="false">Dramatic</button><button type="button" data-show="highkey" aria-pressed="false">High Key</button></div>
+          <p class="segmedia__cap" data-cap="soft"><strong>Studio Soft.</strong> Large soft area lights and even fill. The default.</p>
+          <p class="segmedia__cap" data-cap="hard"><strong>Studio Hard.</strong> Smaller lights, crisper shadows and highlights.</p>
+          <p class="segmedia__cap" data-cap="dramatic"><strong>Dramatic.</strong> A strong key, deep falloff and minimal fill.</p>
+          <p class="segmedia__cap" data-cap="highkey"><strong>High Key.</strong> Bright and nearly shadowless, white on white.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="specs" aria-labelledby="specs-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+          <h2 class="t-h2 shead__title" id="specs-title">Tech specs</h2>
+          </div>
+        </div>
+        <dl class="specs" data-reveal>
+          <div class="specs__row"><dt>Version</dt><dd>1.4.0</dd></div>
+          <div class="specs__row"><dt>Blender</dt><dd>4.0 and newer</dd></div>
+          <div class="specs__row"><dt>Panel</dt><dd>3D Viewport › Sidebar (N) › MultiView</dd></div>
+          <div class="specs__row"><dt>Input</dt><dd>STEP and STP through FreeCAD (<code>freecadcmd</code>) or the STEPper add-on; STL directly; or your own meshes in a product collection</dd></div>
+          <div class="specs__row"><dt>Views</dt><dd>All (9), Orthographic (6), Standard (4), Minimal (3), plus custom directions</dd></div>
+          <div class="specs__row"><dt>Lighting</dt><dd>Studio Soft, Studio Hard, Dramatic, High Key; transparent or colored background</dd></div>
+          <div class="specs__row"><dt>Render modes</dt><dd>Clay (Workbench, default), Full Render, or Both</dd></div>
+          <div class="specs__row"><dt>Naming</dt><dd><code>renders/&lt;product&gt;/&lt;product&gt;_&lt;View&gt;_&lt;mode&gt;.png</code></dd></div>
+          <div class="specs__row"><dt>Research</dt><dd>Used for AI training data and <a href="/research/product-form/">multi-view product form analysis</a></dd></div>
+          <div class="specs__row"><dt>Source</dt><dd><a href="https://github.com/Danyals-code/Addon-for-MultiView-Rendering-AMVR">GitHub</a></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="more" aria-labelledby="more-title">
+      <div class="container">
+        <h2 class="t-h3" id="more-title" style="margin-bottom: clamp(24px,3vw,36px)">More artifacts</h2>
+      </div>
+    <nav class="appbar" aria-label="Artifacts" data-appbar>
+      <ul class="appbar__track">
+        <li><a class="appbar__item" href="/tools/almanac/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/almanac-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/almanac-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Almanac</span><span class="appbar__new">New</span></a></li>
+        <li><a class="appbar__item" href="/tools/viewar/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/viewar.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">ViewAR</span><span class="appbar__new">New</span></a></li>
+        <li><a class="appbar__item" href="/research/life-size-ar/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/app/icon-light.png" width="512" height="512" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/app/icon-dark.png" width="512" height="512" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Lemmy AR</span></a></li>
+        <li class="appbar__sep" aria-hidden="true"></li>
+        <li><a class="appbar__item" href="/tools/roboanimator/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/roboanimator.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">RoboAnimator</span></a></li>
+        <li><a class="appbar__item" href="/tools/amvr/" aria-current="page"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/amvr.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">AMVR</span></a></li>
+        <li class="appbar__sep" aria-hidden="true"></li>
+        <li><a class="appbar__item" href="/tools/swift-studio/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/swift-studio.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Swift Studio</span></a></li>
+      </ul>
+      <button class="appbar__paddle appbar__paddle--prev" type="button" data-appbar-prev aria-label="Previous" data-i18n-attr="aria-label:rail.prev"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5"/></svg></button>
+      <button class="appbar__paddle appbar__paddle--next" type="button" data-appbar-next aria-label="Next" data-i18n-attr="aria-label:rail.next"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="m5 2 5 5-5 5"/></svg></button>
+    </nav>
+      <div class="container">
+        <a class="next-card" href="/tools/swift-studio/" data-reveal>
+          <span><img src="/assets/img/apps/swift-studio.svg" width="1024" height="1024" alt="" loading="lazy"></span>
+          <span><span class="next-card__label">Next</span><span class="next-card__name" translate="no">Swift Web Studio</span><span class="t-muted">Design SwiftUI in the browser. Keep the Swift.</span></span>
+          <span class="next-card__go"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#arrow-right"/></svg></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gfooter">
+    <div class="gfooter__inner">
+      <nav class="gfooter__dir" aria-label="Site directory" data-i18n-attr="aria-label:footer.label">
+        <div class="gfooter__col"><h3 data-i18n="nav.design">Design</h3><ul>
+          <li><a href="/design/#cgi" data-i18n="footer.cgi">3D &amp; CGI</a></li>
+          <li><a href="/design/waveform/" translate="no">Waveform</a></li>
+          <li><a href="/design/lemmy-visualization/" data-i18n="footer.viz">Product visualization</a></li>
+          <li><a href="/design/#freelance" data-i18n="footer.freelance">Freelance work</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="footer.caseStudies">Case studies</h3><ul>
+          <li><a href="/research/bangudae-xr/" data-i18n="footer.bangudae">Bangudae XR</a></li>
+          <li><a href="/research/life-size-ar/" data-i18n="footer.lifeSize">Life-size AR</a></li>
+          <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
+          <li><a href="/research/product-form/" data-i18n="footer.productForm">Product form analysis</a></li>
+          <li><a href="/research/lemmy/" data-i18n="footer.robotMotion">Robot motion</a></li>
+          <li><a href="/research/lemmy-framework/" data-i18n="footer.framework">MSc thesis framework</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="nav.research">Research</h3><ul>
+          <li><a href="/research/#publications" data-i18n="footer.publications">Publications</a></li>
+          <li><a href="/research/#thesis" data-i18n="footer.thesis">MSc thesis</a></li>
+          <li><a href="/research/#industry" data-i18n="footer.industry">Industry projects</a></li>
+          <li><a href="/research/#personal" data-i18n="footer.personal">Personal projects</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="nav.tools">Artifacts</h3><ul>
+          <li><a href="/tools/almanac/" translate="no">Almanac</a></li>
+          <li><a href="/tools/viewar/" translate="no">ViewAR</a></li>
+          <li><a href="/tools/roboanimator/" translate="no">True RoboAnimator</a></li>
+          <li><a href="/tools/" data-i18n="footer.moreTools">More artifacts</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="nav.about">About</h3><ul>
+          <li><a href="/about/" data-i18n="footer.bio">Bio</a></li>
+          <li><a href="/about/#experience" data-i18n="footer.experience">Experience</a></li>
+          <li><a href="/about/#education" data-i18n="footer.education">Education</a></li>
+          <li><a href="/about/#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul></div>
+      </nav>
+      <div class="gfooter__legal">
+        <p data-i18n="footer.copyright">Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
+        <nav aria-label="Elsewhere" data-i18n-attr="aria-label:footer.elsewhere">
+          <a href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
+          <a href="https://github.com/Danyals-code">GitHub</a>
+          <a href="https://www.behance.net/designedbydanyal">Behance</a>
+          <a href="mailto:danialsarfraz2000@gmail.com" data-i18n="footer.email">Email</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en" data-langs="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}},1500)})})(document.documentElement)</script>
+  <title>Almanac · Danyal Sarfraz</title>
+  <meta name="description" content="Almanac for iPhone names any day from 10,000 BC to AD 3000 in the Maya, Egyptian, Islamic and Chinese calendars, and shows when sixteen ancient sites line up with the sky.">
+  <link rel="canonical" href="https://danyals-code.github.io/tools/almanac/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Danyal Sarfraz">
+  <meta property="og:url" content="https://danyals-code.github.io/tools/almanac/">
+  <meta property="og:title" content="Almanac · Danyal Sarfraz">
+  <meta property="og:description" content="Almanac for iPhone names any day from 10,000 BC to AD 3000 in the Maya, Egyptian, Islamic and Chinese calendars, and shows when sixteen ancient sites line up with the sky.">
+  <meta property="og:image" content="https://danyals-code.github.io/assets/img/almanac/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="/assets/css/site.css?v=26">
+  <script src="/assets/js/i18n.js?v=4" defer></script>
+  <script src="/assets/js/site.js?v=19" defer></script>
+</head>
+<body class="has-lnav tinted" style="--tint-l: #7a5536; --tint-d: #e3d8c4">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="gnav">
+    <nav class="gnav__inner" aria-label="Global" data-i18n-attr="aria-label:nav.label">
+      <a class="gnav__logo" href="/">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
+        Danyal Sarfraz
+      </a>
+      <ul class="gnav__list" id="gnav-list">
+        <li><a href="/design/" data-i18n="nav.design">Design</a></li>
+        <li><a href="/research/" data-i18n="nav.research">Research</a></li>
+        <li><a href="/tools/" aria-current="page" data-i18n="nav.tools">Artifacts</a></li>
+        <li><a href="/about/" data-i18n="nav.about">About</a></li>
+        <li><a href="/about/#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="gnav__tools">
+        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-lang-open aria-haspopup="true" aria-expanded="false" aria-label="Language: English" title="Language">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.6 2.6 3.6 2.6 6S9.7 12.4 8 14M8 2C6.3 3.6 5.4 5.6 5.4 8s.9 4.4 2.6 6"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Switch to dark theme">
+          <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
+          <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
+        </button>
+      </div>
+      <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 18 18" aria-hidden="true"><path class="l1" d="M2 6h14"/><path class="l2" d="M2 12h14"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <nav class="lnav" aria-label="Almanac">
+    <div class="lnav__inner">
+      <a class="lnav__title" href="#top"><img class="icon-light" src="/assets/img/apps/almanac-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/almanac-dark.png" width="256" height="256" alt="" loading="lazy"><span translate="no">Almanac</span></a>
+      <ul class="lnav__links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#highlights">Highlights</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#specs">Specs</a></li>
+      </ul>
+      <a class="btn btn--sm" href="https://danyals-code.github.io/almanac/">Visit site</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="phero" id="top">
+      <div class="container">
+        <span class="phero__icon"><img class="icon-light" src="/assets/img/apps/almanac-light.png" width="256" height="256" alt="Almanac app icon" loading="lazy"><img class="icon-dark" src="/assets/img/apps/almanac-dark.png" width="256" height="256" alt="Almanac app icon" loading="lazy"></span>
+        <p class="phero__name" translate="no">Almanac</p>
+        <h1 class="t-display phero__title">Every day, as the ancients counted it.</h1>
+        <p class="t-lead phero__lead">An iPhone app that names any day from 10,000 BC to AD 3000 the way the Maya, the Egyptians and the astronomers of China and Islam counted it, and shows when sixteen ancient sites line up with the sun, the moon and the stars.</p>
+        <div class="cta-row phero__cta">
+          <a class="btn" href="https://danyals-code.github.io/almanac/">Visit the Almanac site</a>
+          <a class="link-more" href="#highlights">Get the highlights</a>
+        </div>
+        <p class="phero__note">Coming soon to the App Store.</p>
+      </div>
+      <div class="phero__media container-wide" data-reveal="scale">
+        <div class="phones"><figure class="device device--phone"><div class="device__screen"><img src="/assets/img/almanac/stonehenge-compass.jpg" width="460" height="1000" alt="Stonehenge’s plan on a compass with the sun’s path" loading="lazy"></div></figure><figure class="device device--phone"><div class="device__screen"><img src="/assets/img/almanac/home.jpg" width="460" height="1000" alt="The Today screen, naming the date in four calendars" loading="lazy"></div></figure><figure class="device device--phone"><div class="device__screen"><img src="/assets/img/almanac/maya-wheel.jpg" width="460" height="1000" alt="The Maya Tzolk’in and Haab’ wheels" loading="lazy"></div></figure></div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="container">
+        <p class="t-two-tone lede" data-reveal>Ancient calendars and <strong>the sky they were built to follow.</strong> Almanac names any day in four of them, <strong>calculated on the iPhone from published astronomy,</strong> and shows the moments when old stones still line up with the sun.</p>
+        <div style="margin-top: clamp(48px,6vw,80px)">
+        <div class="statband" style="--cols:4" data-reveal>
+          <div class="statband__item"><span class="statband__num"><span data-count="13000">13,000</span></span><span class="statband__label">years, from 10,000 BC to AD 3000</span></div>
+          <div class="statband__item"><span class="statband__num">4</span><span class="statband__label">calendars: Maya, Egyptian, Islamic and Chinese</span></div>
+          <div class="statband__item"><span class="statband__num">16</span><span class="statband__label">ancient sites, from Göbekli Tepe to Machu Picchu</span></div>
+          <div class="statband__item"><span class="statband__num">30</span><span class="statband__label">alignments with the sun, moon and stars</span></div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="highlights" aria-labelledby="hl-title">
+      <div class="container">
+        <div class="hl-head" data-reveal>
+          <h2 class="t-h2" id="hl-title">Get the highlights.</h2>
+        </div>
+      </div>
+      <div class="hl" data-highlights data-reveal>
+        <ul class="hl__track">
+        <li class="hl__slide">
+          <p class="hl__cap"><strong>Turn the wheels of time.</strong> Spin the Maya, Egyptian, Islamic and Chinese calendar wheels with a finger and watch the days go round.</p>
+          <div class="hl__media"><figure class="device device--phone"><div class="device__screen"><img src="/assets/img/almanac/maya-wheel.jpg" width="460" height="1000" alt="The Maya calendar wheels" loading="lazy"></div></figure></div>
+        </li>
+        <li class="hl__slide">
+          <p class="hl__cap"><strong>Where stone meets sky.</strong> Drag through the hours and watch the sun cross each plan into line, on a compass that turns with the iPhone.</p>
+          <div class="hl__media"><figure class="device device--phone"><div class="device__screen"><img src="/assets/img/almanac/stonehenge-compass.jpg" width="460" height="1000" alt="Stonehenge on a compass" loading="lazy"></div></figure></div>
+        </li>
+        <li class="hl__slide">
+          <p class="hl__cap"><strong>Every eclipse, on the moon wheel.</strong> Solar and lunar eclipses, with what you can see of each from where you are.</p>
+          <div class="hl__media"><figure class="device device--phone"><div class="device__screen"><img src="/assets/img/almanac/eclipse.jpg" width="460" height="1000" alt="Eclipses on the moon wheel" loading="lazy"></div></figure></div>
+        </li>
+        <li class="hl__slide">
+          <p class="hl__cap"><strong>Today, as the ancients counted it.</strong> One date, written the way four civilizations would have written it.</p>
+          <div class="hl__media"><figure class="device device--phone"><div class="device__screen"><img src="/assets/img/almanac/home.jpg" width="460" height="1000" alt="The Today screen" loading="lazy"></div></figure></div>
+        </li>
+        <li class="hl__slide">
+          <p class="hl__cap"><strong>Your birthday, anciently.</strong> Your Maya day sign, Egyptian season and Chinese animal, with Hijri, Hebrew and Indian dates, shared as a card.</p>
+          <div class="hl__media"><figure class="device device--phone"><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: The birthday card screen: day sign, season and animal" data-ph="almanac-birthday"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">The birthday card screen: day sign, season and animal</span><span class="ph__size">Screenshot · 1290 × 2796</span></div></div></figure></div>
+        </li>
+        <li class="hl__slide">
+          <p class="hl__cap"><strong>Reminders and widgets.</strong> Follow a site for a reminder before its next alignment, and keep a wheel, a site or a sky compass on the Home Screen.</p>
+          <div class="hl__media"><figure class="device device--phone"><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Home Screen with Almanac widgets: a calendar wheel, a site and a sky compass" data-ph="almanac-widgets"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">Home Screen with Almanac widgets: a calendar wheel, a site and a sky compass</span><span class="ph__size">Screenshot · 1290 × 2796</span></div></div></figure></div>
+        </li>
+        </ul>
+        <div class="hl__nav">
+          <div class="hl__dots"></div>
+          <button class="hl__play" type="button" aria-label="Pause" data-pause-label="Pause" data-play-label="Play"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1"/><rect x="9.5" y="2.5" width="3" height="11" rx="1"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 2.8v10.4L13.2 8z"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+          <h2 class="t-h2 shead__title" id="features-title">Made to be explored.</h2>
+          <p class="shead__text t-lead">Everything the app does, at a glance.</p>
+          </div>
+        </div>
+        <ul class="fgrid" style="--cols:3" data-reveal>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#wheel"/></svg><p><strong>Four calendars.</strong> Maya, Egyptian, Islamic and Chinese. Type a date into any of them, from 13.0.0.0.0 to 1 Thoth or 1 Muharram.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#stones"/></svg><p><strong>Sixteen ancient sites.</strong> Stonehenge, Newgrange, Giza, Chichén Itzá and more, from Göbekli Tepe to Machu Picchu.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#compass"/></svg><p><strong>A compass that turns with you.</strong> Each site’s plan sits on a compass that turns with the iPhone.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#sunrise"/></svg><p><strong>The sky above you.</strong> Where the sun rises and sets for you at the solstices and equinoxes.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#eclipse"/></svg><p><strong>Every eclipse.</strong> Solar and lunar, with what you can see of each from where you are.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#gift"/></svg><p><strong>Your birthday, anciently.</strong> Day sign, season and animal, plus Hijri, Hebrew and Indian dates, to share as a card.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#bell"/></svg><p><strong>Reminders.</strong> Follow a site to be reminded before its next alignment.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#widgets"/></svg><p><strong>Widgets.</strong> A calendar wheel, an ancient site or a sky compass on the Home Screen.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#book"/></svg><p><strong>Shown with its sources.</strong> Tap “Show the math” on any alignment to see where it comes from, starting with Jean Meeus’s <em>Astronomical Algorithms</em>.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#lock"/></svg><p><strong>Private by design.</strong> Everything is calculated on the iPhone and works offline. No account, ads, analytics or tracking.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#offline"/></svg><p><strong>Works offline.</strong> No connection needed to turn a wheel, find an eclipse or check an alignment.</p></li>
+          <li class="fgrid__item"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#globe"/></svg><p><strong>Thirteen thousand years.</strong> From 10,000 BC to AD 3000, in every calendar.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="design" aria-labelledby="design-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+          <h2 class="t-h2 shead__title" id="design-title">Take a closer look.</h2>
+          </div>
+        </div>
+        <div class="closer" data-closer data-reveal>
+          <div class="closer__list">
+            <div class="closer__item">
+              <button class="closer__btn" type="button" aria-expanded="true" aria-controls="almanac-closer-0"><span class="closer__plus"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>Paper and ink</button>
+              <div class="closer__text" id="almanac-closer-0"><div><p>A warm paper ground, dark ink and a single terracotta accent carry every screen.</p></div></div>
+            </div>
+            <div class="closer__item">
+              <button class="closer__btn" type="button" aria-expanded="true" aria-controls="almanac-closer-1"><span class="closer__plus"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>A classical serif</button>
+              <div class="closer__text" id="almanac-closer-1"><div><p>Names and dates are set in a serif; labels in spaced small capitals.</p></div></div>
+            </div>
+            <div class="closer__item">
+              <button class="closer__btn" type="button" aria-expanded="true" aria-controls="almanac-closer-2"><span class="closer__plus"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>Day signs</button>
+              <div class="closer__text" id="almanac-closer-2"><div><p>The twenty Maya day signs ring the Tzolk’in wheel and return on the birthday card.</p></div></div>
+            </div>
+            <div class="closer__item">
+              <button class="closer__btn" type="button" aria-expanded="true" aria-controls="almanac-closer-3"><span class="closer__plus"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>One icon, four looks</button>
+              <div class="closer__text" id="almanac-closer-3"><div><p>The calendar wheel icon in light and dark, and two monochrome versions for tinted Home Screens.</p></div></div>
+            </div>
+            <div class="closer__item">
+              <button class="closer__btn" type="button" aria-expanded="true" aria-controls="almanac-closer-4"><span class="closer__plus"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>Wheels that turn</button>
+              <div class="closer__text" id="almanac-closer-4"><div><p>Drag a wheel and the days go round under your finger.</p></div></div>
+            </div>
+          </div>
+          <div class="closer__stage">
+            <div class="closer__media"><figure class="device device--phone"><div class="device__screen"><img src="/assets/img/almanac/maya-wheel.jpg" width="460" height="1000" alt="The Maya wheel on a paper-colored ground" loading="lazy"></div></figure></div>
+            <div class="closer__media"><figure class="device device--phone"><div class="device__screen"><img src="/assets/img/almanac/stonehenge-compass.jpg" width="460" height="1000" alt="The Stonehenge screen with its serif title" loading="lazy"></div></figure></div>
+            <div class="closer__media"><div class="ph" role="img" aria-label="Placeholder: Sheet of the twenty Maya day signs as used in the app" data-ph="almanac-glyphs" style="aspect-ratio: 4 / 3"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#sketch"/></svg><span class="ph__what">Sheet of the twenty Maya day signs as used in the app</span><span class="ph__size">Drawing · 2400 × 1800</span></div></div>
+            <div class="closer__media"><div class="icon-quad"><img src="/assets/img/apps/almanac-light.png" width="256" height="256" alt="Almanac icon, light" loading="lazy"><img src="/assets/img/apps/almanac-dark.png" width="256" height="256" alt="Almanac icon, dark" loading="lazy"><img src="/assets/img/apps/almanac-mono-light.png" width="256" height="256" alt="Almanac icon, monochrome light" loading="lazy"><img src="/assets/img/apps/almanac-mono-dark.png" width="256" height="256" alt="Almanac icon, monochrome dark" loading="lazy"></div></div>
+            <div class="closer__media"><figure class="device device--phone"><div class="device__screen"><div class="ph" role="img" aria-label="Placeholder: Screen recording: spinning the Tzolk’in wheel until it settles on a day" data-ph="almanac-wheel-motion"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#video"/></svg><span class="ph__what">Screen recording: spinning the Tzolk’in wheel until it settles on a day</span><span class="ph__size">Screen recording · 1290 × 2796, 10 s loop</span></div></div></figure></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section theme-dark" id="sky" aria-labelledby="sky-title">
+      <div class="container">
+        <div class="lede lede--center" data-reveal>
+          <h2 class="t-h2" id="sky-title">Where stone meets sky.</h2>
+          <p class="t-two-tone">Stonehenge, Newgrange, Giza and Chichén Itzá were built to catch the sun. <strong>Drag through the hours and watch it cross each plan into line.</strong></p>
+        </div>
+      </div>
+      <div class="container-wide" style="margin-top: clamp(40px,5vw,64px)" data-reveal="scale">
+        <div class="fig__media" style="border-radius: var(--r-xl)"><div class="ph" role="img" aria-label="Placeholder: Photograph of an ancient site at an alignment, such as Stonehenge at a solstice sunrise (own or licensed)" data-ph="almanac-site-photo" style="aspect-ratio: 2 / 1"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#photo"/></svg><span class="ph__what">Photograph of an ancient site at an alignment, such as Stonehenge at a solstice sunrise (own or licensed)</span><span class="ph__size">Photo · 2400 × 1200</span></div></div>
+      </div>
+      <div class="container" style="margin-top: clamp(48px,6vw,80px)">
+        <div class="bigspecs" data-reveal>
+          <div class="bigspecs__nums">
+            <div><small>Ancient sites</small><b>16</b><span>from Göbekli Tepe to Machu Picchu</span></div>
+            <div><small>Alignments</small><b>30</b><span>with the sun, the moon and the stars</span></div>
+          </div>
+          <div class="bigspecs__list">
+            <h3>Sites</h3>
+            <p>Stonehenge, Newgrange, Giza, Chichén Itzá, Göbekli Tepe and Machu Picchu, among sixteen.</p>
+            <h3>On a compass</h3>
+            <p>Each plan turns with the iPhone, so the stones line up with the real horizon.</p>
+            <h3>Show the math</h3>
+            <p>Every alignment can show its working, from Jean Meeus’s <em>Astronomical Algorithms</em> onwards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+          <h2 class="t-h2 shead__title" id="process-title">From sketch to screen.</h2>
+          <p class="shead__text t-lead">The studies behind the app: sketches, wireframes, type, color and the icon.</p>
+          </div>
+        </div>
+        <div class="gallery" data-reveal>
+          <figure class="g-4"><div class="ph" role="img" aria-label="Placeholder: Early sketches of the calendar wheels" data-ph="almanac-sketches" style="aspect-ratio: 3 / 2"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#sketch"/></svg><span class="ph__what">Early sketches of the calendar wheels</span><span class="ph__size">Drawing · 2400 × 1600</span></div><figcaption>Early sketches of the calendar wheels.</figcaption></figure>
+          <figure class="g-2"><div class="ph" role="img" aria-label="Placeholder: Wireframes of the Today screen" data-ph="almanac-wireframes" style="aspect-ratio: 2 / 3"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#sketch"/></svg><span class="ph__what">Wireframes of the Today screen</span><span class="ph__size">Drawing · 1200 × 1800</span></div><figcaption>Wireframes of the Today screen.</figcaption></figure>
+          <figure class="g-3"><div class="ph" role="img" aria-label="Placeholder: Icon explorations, from the first wheel to the final mark" data-ph="almanac-icon-explorations" style="aspect-ratio: 3 / 2"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#sketch"/></svg><span class="ph__what">Icon explorations, from the first wheel to the final mark</span><span class="ph__size">Drawing · 1800 × 1200</span></div><figcaption>Icon explorations.</figcaption></figure>
+          <figure class="g-3"><div class="ph" role="img" aria-label="Placeholder: Type and color studies: serif, small capitals, paper and terracotta" data-ph="almanac-type-color" style="aspect-ratio: 3 / 2"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#sketch"/></svg><span class="ph__what">Type and color studies: serif, small capitals, paper and terracotta</span><span class="ph__size">Drawing · 1800 × 1200</span></div><figcaption>Type and color studies.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="specs" aria-labelledby="specs-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+          <h2 class="t-h2 shead__title" id="specs-title">Tech specs</h2>
+          </div>
+        </div>
+        <dl class="specs" data-reveal>
+          <div class="specs__row"><dt>Platform</dt><dd>iPhone</dd></div>
+          <div class="specs__row"><dt>Availability</dt><dd>Coming soon to the App Store</dd></div>
+          <div class="specs__row"><dt>Calendars</dt><dd>Maya (Long Count, Tzolk’in and Haab’), Egyptian civil, Islamic (Hijri) and Chinese lunisolar; Hebrew and Indian dates on birthday cards</dd></div>
+          <div class="specs__row"><dt>Range</dt><dd>10,000 BC to AD 3000</dd></div>
+          <div class="specs__row"><dt>Sites</dt><dd>Sixteen, from Göbekli Tepe to Machu Picchu, with thirty alignments</dd></div>
+          <div class="specs__row"><dt>Sky</dt><dd>Sunrise and sunset at the solstices and equinoxes; every solar and lunar eclipse</dd></div>
+          <div class="specs__row"><dt>Widgets</dt><dd>Calendar wheel, ancient site, sky compass</dd></div>
+          <div class="specs__row"><dt>Privacy</dt><dd>Calculated on the device and works offline. No account, ads, analytics or tracking; no personal data collected</dd></div>
+          <div class="specs__row"><dt>Sources</dt><dd>Published astronomy, from Jean Meeus’s <em>Astronomical Algorithms</em> onwards</dd></div>
+          <div class="specs__row"><dt>More</dt><dd><a href="https://danyals-code.github.io/almanac/support/">Support</a> · <a href="https://danyals-code.github.io/almanac/privacy/">Privacy policy</a> · <a href="https://danyals-code.github.io/almanac/licences/">Sources and licenses</a></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="more" aria-labelledby="more-title">
+      <div class="container">
+        <h2 class="t-h3" id="more-title" style="margin-bottom: clamp(24px,3vw,36px)">More artifacts</h2>
+      </div>
+    <nav class="appbar" aria-label="Artifacts" data-appbar>
+      <ul class="appbar__track">
+        <li><a class="appbar__item" href="/tools/almanac/" aria-current="page"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/almanac-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/almanac-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Almanac</span><span class="appbar__new">New</span></a></li>
+        <li><a class="appbar__item" href="/tools/viewar/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/viewar.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">ViewAR</span><span class="appbar__new">New</span></a></li>
+        <li><a class="appbar__item" href="/research/life-size-ar/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/app/icon-light.png" width="512" height="512" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/app/icon-dark.png" width="512" height="512" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Lemmy AR</span></a></li>
+        <li class="appbar__sep" aria-hidden="true"></li>
+        <li><a class="appbar__item" href="/tools/roboanimator/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/roboanimator.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">RoboAnimator</span></a></li>
+        <li><a class="appbar__item" href="/tools/amvr/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/amvr.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">AMVR</span></a></li>
+        <li class="appbar__sep" aria-hidden="true"></li>
+        <li><a class="appbar__item" href="/tools/swift-studio/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/swift-studio.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Swift Studio</span></a></li>
+      </ul>
+      <button class="appbar__paddle appbar__paddle--prev" type="button" data-appbar-prev aria-label="Previous" data-i18n-attr="aria-label:rail.prev"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5"/></svg></button>
+      <button class="appbar__paddle appbar__paddle--next" type="button" data-appbar-next aria-label="Next" data-i18n-attr="aria-label:rail.next"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="m5 2 5 5-5 5"/></svg></button>
+    </nav>
+      <div class="container">
+        <a class="next-card" href="/tools/viewar/" data-reveal>
+          <span><img src="/assets/img/apps/viewar.svg" width="1024" height="1024" alt="" loading="lazy"></span>
+          <span><span class="next-card__label">Next</span><span class="next-card__name" translate="no">ViewAR</span><span class="t-muted">Your Blender scene, live in the room.</span></span>
+          <span class="next-card__go"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#arrow-right"/></svg></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gfooter">
+    <div class="gfooter__inner">
+      <nav class="gfooter__dir" aria-label="Site directory" data-i18n-attr="aria-label:footer.label">
+        <div class="gfooter__col"><h3 data-i18n="nav.design">Design</h3><ul>
+          <li><a href="/design/#cgi" data-i18n="footer.cgi">3D &amp; CGI</a></li>
+          <li><a href="/design/waveform/" translate="no">Waveform</a></li>
+          <li><a href="/design/lemmy-visualization/" data-i18n="footer.viz">Product visualization</a></li>
+          <li><a href="/design/#freelance" data-i18n="footer.freelance">Freelance work</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="footer.caseStudies">Case studies</h3><ul>
+          <li><a href="/research/bangudae-xr/" data-i18n="footer.bangudae">Bangudae XR</a></li>
+          <li><a href="/research/life-size-ar/" data-i18n="footer.lifeSize">Life-size AR</a></li>
+          <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
+          <li><a href="/research/product-form/" data-i18n="footer.productForm">Product form analysis</a></li>
+          <li><a href="/research/lemmy/" data-i18n="footer.robotMotion">Robot motion</a></li>
+          <li><a href="/research/lemmy-framework/" data-i18n="footer.framework">MSc thesis framework</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="nav.research">Research</h3><ul>
+          <li><a href="/research/#publications" data-i18n="footer.publications">Publications</a></li>
+          <li><a href="/research/#thesis" data-i18n="footer.thesis">MSc thesis</a></li>
+          <li><a href="/research/#industry" data-i18n="footer.industry">Industry projects</a></li>
+          <li><a href="/research/#personal" data-i18n="footer.personal">Personal projects</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="nav.tools">Artifacts</h3><ul>
+          <li><a href="/tools/almanac/" translate="no">Almanac</a></li>
+          <li><a href="/tools/viewar/" translate="no">ViewAR</a></li>
+          <li><a href="/tools/roboanimator/" translate="no">True RoboAnimator</a></li>
+          <li><a href="/tools/" data-i18n="footer.moreTools">More artifacts</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="nav.about">About</h3><ul>
+          <li><a href="/about/" data-i18n="footer.bio">Bio</a></li>
+          <li><a href="/about/#experience" data-i18n="footer.experience">Experience</a></li>
+          <li><a href="/about/#education" data-i18n="footer.education">Education</a></li>
+          <li><a href="/about/#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul></div>
+      </nav>
+      <div class="gfooter__legal">
+        <p data-i18n="footer.copyright">Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
+        <nav aria-label="Elsewhere" data-i18n-attr="aria-label:footer.elsewhere">
+          <a href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
+          <a href="https://github.com/Danyals-code">GitHub</a>
+          <a href="https://www.behance.net/designedbydanyal">Behance</a>
+          <a href="mailto:danialsarfraz2000@gmail.com" data-i18n="footer.email">Email</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

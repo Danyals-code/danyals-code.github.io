@@ -60,7 +60,7 @@
     "life-size-ar.ground.pinch.text": "يُوقف ضمّ الإصبعين أي رسوم متحركة مؤقتًا، فيتمكّن الباحثون من تجميد الروبوت عند لحظة مفصلية من حركته لفحصه عن قرب.",
     "life-size-ar.pipeline.eyebrow": "مسار الإنتاج",
     "life-size-ar.pipeline.title": "مسار أصول واحد من نماذج CAD الهندسية إلى الواقع المعزز",
-    "life-size-ar.pipeline.text": "تنطلق كل حركة من نموذج CAD الهندسي للروبوت: يُحسَّن النموذج ويُحرَّك في Blender، ثم يُتحقَّق من الحركة بإضافة <a href=\"/tools/#roboanimator\">True RoboAnimator</a> التي طوّرتُها، وتُصدَّر بصيغة USDZ. وتُضبط الخامات في Reality Composer Pro قبل تضمين الأصول في التطبيق.",
+    "life-size-ar.pipeline.text": "تنطلق كل حركة من نموذج CAD الهندسي للروبوت: يُحسَّن النموذج ويُحرَّك في Blender، ثم يُتحقَّق من الحركة بإضافة <a href=\"/tools/roboanimator/\">True RoboAnimator</a> التي طوّرتُها، وتُصدَّر بصيغة USDZ. وتُضبط الخامات في Reality Composer Pro قبل تضمين الأصول في التطبيق.",
     "life-size-ar.pipeline.scale": "على Vision Pro، بلغ ارتفاع النموذج نحو نصف متر في مشهد غرفة معيشة، أي بمستوى الركبة إلى جانب الأثاث، مطابقًا للروبوت المزمع تصنيعه.",
     "life-size-ar.pipeline.alt": "مسار العمل من SolidWorks إلى ملف STL، ثم إلى Blender للتحسين والتحريك والتصحيح، ثم إلى USDZ وSwift",
     "life-size-ar.pipeline.cap": "من SolidWorks إلى STL، ثم Blender، ثم USDZ، وأخيرًا Swift.",
@@ -87,7 +87,7 @@
     "life-size-ar.findings.emotion.label": "العاطفة",
     "life-size-ar.findings.emotion.text": "<strong>لم تنقل الحركة وحدها العاطفة.</strong> فهم ستة مشاركين «السعادة» على أنها حماس أو حيوية، لكن «الخوف» فُهم غالبًا على أنه كفاءة أو حذر، وفُهمت الحركات السريعة على أنها يقظة. واستعان كثير من المشاركين بتشبيهات من عالم الحيوانات الأليفة، مثل «كلب متحمّس».",
     "life-size-ar.findings.preference.label": "التفضيل",
-    "life-size-ar.findings.preference.text": "<strong>فضّل المشاركون الأصغر سنًّا الحركة التي يسهل توقّعها.</strong> جمعت النسخة الأعلى تقييمًا بين وضعية ثابتة ومسار مستقيم وسرعة عادية (8.0 من 10). أما كبار السن في الدراسة السابقة فكانوا قد فضّلوا وضعية ديناميكية أكثر تعبيرًا.",
+    "life-size-ar.findings.preference.text": "<strong>في الواقع المعزز، فضّل المشاركون الأصغر سنًّا الحركة التي يسهل توقّعها.</strong> جمعت النسخة الأعلى تقييمًا بين وضعية ثابتة ومسار مستقيم وسرعة عادية (8.0 من 10). أما كبار السن في الدراسة السابقة فكانوا قد فضّلوا وضعية ديناميكية أكثر تعبيرًا.",
     "life-size-ar.experts.eyebrow": "تقييم الخبراء",
     "life-size-ar.experts.title": "أيّد الخبراء اختبار الواقع المعزز، مع بيان حدوده",
     "life-size-ar.experts.text": "راجع سبعة مصممين ومهندسين الإطار كاملًا، وقيّموا عبارة «اختبار الواقع المعزز يقدّم رؤى صالحة» بـ <strong>8.6 من 10</strong>، وهي العبارة الأعلى تقييمًا. كما حدّدوا ما لا يستطيع الواقع المعزز نقله: ضجيج المحركات ووزن الروبوت.",
@@ -104,7 +104,7 @@
     "life-size-ar.next.eyebrow": "دراسة الحالة التالية",
     "life-size-ar.next.title": "قدرة البشر على كشف الفيديو المولَّد بالذكاء الاصطناعي",
     "life-size-ar.next.text": "دراسة إدراكية للفيديو المولَّد بالذكاء الاصطناعي: 87 مشاركًا و3,132 حكمًا.",
-    "life-size-ar.next.read": "قراءة دراسة الحالة",
+    "life-size-ar.next.read": "اعرف المزيد",
     "life-size-ar.note.team": "Lemmy مشروع متعدد الفرق في UNIST بالتعاون مع شركة Shinsung Delta Tech. صمّمت الفرق الشريكة هيكل الروبوت وعتاده، أما تطبيق الواقع المعزز ودراسته فمن عملي."
   },
   "zh": {
@@ -166,7 +166,7 @@
     "life-size-ar.ground.pinch.text": "捏合手势可暂停任意动画，研究人员可以把机器人定格在动作的关键时刻，近距离观察。",
     "life-size-ar.pipeline.eyebrow": "制作流程",
     "life-size-ar.pipeline.title": "从工程 CAD 到 AR 的统一资产流程",
-    "life-size-ar.pipeline.text": "每段动画都源自机器人的工程 CAD 模型：先在 Blender 中优化并制作动画，再用我开发的 <a href=\"/tools/#roboanimator\">True RoboAnimator</a> 插件校验，最后导出为 USDZ。材质在 Reality Composer Pro 中调校，之后再把资产打包进应用。",
+    "life-size-ar.pipeline.text": "每段动画都源自机器人的工程 CAD 模型：先在 Blender 中优化并制作动画，再用我开发的 <a href=\"/tools/roboanimator/\">True RoboAnimator</a> 插件校验，最后导出为 USDZ。材质在 Reality Composer Pro 中调校，之后再把资产打包进应用。",
     "life-size-ar.pipeline.scale": "在 Vision Pro 上，模型在客厅场景中高约半米，在家具旁大约及膝，与计划中的实体硬件一致。",
     "life-size-ar.pipeline.alt": "制作流程：从 SolidWorks 到 STL 文件，进入 Blender 进行优化、动画制作和修正，再到 USDZ 和 Swift",
     "life-size-ar.pipeline.cap": "SolidWorks → STL → Blender → USDZ → Swift。",
@@ -193,7 +193,7 @@
     "life-size-ar.findings.emotion.label": "情绪",
     "life-size-ar.findings.emotion.text": "<strong>仅靠动作无法传达情绪。</strong>六位参与者把“开心”理解为兴奋或充满活力，但“害怕”常被理解为高效或戒备，快速动作则被理解为警觉。许多参与者用宠物来打比方，比如“兴奋的小狗”。",
     "life-size-ar.findings.preference.label": "偏好",
-    "life-size-ar.findings.preference.text": "<strong>年轻参与者更喜欢可预测的动作。</strong>得分最高的版本结合了静态姿态、直线路径和正常速度（得分 8.0，满分 10）。而在之前的研究中，老年人更偏好表现力更强的动态姿态。",
+    "life-size-ar.findings.preference.text": "<strong>在 AR 中，年轻参与者更喜欢可预测的动作。</strong>得分最高的版本结合了静态姿态、直线路径和正常速度（得分 8.0，满分 10）。而在之前的研究中，老年人更偏好表现力更强的动态姿态。",
     "life-size-ar.experts.eyebrow": "专家评估",
     "life-size-ar.experts.title": "专家认可 AR 测试，也指出了局限",
     "life-size-ar.experts.text": "七位设计师和工程师评审了完整的框架。他们对“AR 测试能提供有效洞见”这一表述的评分为 <strong>8.6（满分 10）</strong>，在所有表述中最高。他们也指出了 AR 无法传达的方面：电机噪声和机器人的重量。",
@@ -210,7 +210,7 @@
     "life-size-ar.next.eyebrow": "下一个案例研究",
     "life-size-ar.next.title": "人类对 AI 生成视频的识别",
     "life-size-ar.next.text": "一项关于 AI 生成视频的感知研究：87 名参与者，3,132 次判断。",
-    "life-size-ar.next.read": "阅读案例研究",
+    "life-size-ar.next.read": "了解更多",
     "life-size-ar.note.team": "Lemmy 是 UNIST 与 Shinsung Delta Tech 合作的多团队项目。合作团队设计了机器人的外形和硬件；AR 应用及其研究由我完成。"
   }
 });

@@ -53,7 +53,7 @@
     "product-form.next.eyebrow": "دراسة الحالة التالية",
     "product-form.next.title": "تصميم حركة روبوت الرعاية بالاعتماد على المكوّنات",
     "product-form.next.text": "منهجية قائمة على المكوّنات لتصميم حركة روبوت مرافق، جرى تقييمها مع 40 من كبار السن.",
-    "product-form.next.read": "قراءة دراسة الحالة",
+    "product-form.next.read": "اعرف المزيد",
     "product-form.note.funding": "بدعم من برنامج الابتكار التكنولوجي (RS-2025-04752997) التابع لوزارة التجارة والصناعة والطاقة الكورية (MOTIE)."
   },
   "zh": {
@@ -108,7 +108,7 @@
     "product-form.next.eyebrow": "下一个案例研究",
     "product-form.next.title": "基于组件的照护机器人动作设计",
     "product-form.next.text": "一种基于组件的陪伴机器人动作设计方法，邀请 40 位老年人参与评估。",
-    "product-form.next.read": "阅读案例研究",
+    "product-form.next.read": "了解更多",
     "product-form.note.funding": "本研究由韩国产业通商资源部（MOTIE）技术创新项目（RS-2025-04752997）资助。"
   }
 });

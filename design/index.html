@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}},1500)})})(document.documentElement)</script>
   <title data-i18n="design.title">Design &amp; 3D · Danyal Sarfraz</title>
-  <meta name="description" content="Industrial design and photoreal CGI by Danyal Sarfraz: a wearable sensor concept for LG Electronics, Lemmy visualization, the Waveform BSc thesis and cinematic 3D work." data-i18n-attr="content:design.description">
+  <meta name="description" content="Photoreal CGI and industrial design by Danyal Sarfraz: cinematic 3D work, the Waveform BSc thesis, product visualization and freelance projects." data-i18n-attr="content:design.description">
   <link rel="canonical" href="https://danyals-code.github.io/design/">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#000000">
@@ -23,10 +23,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=13">
-  <script src="/assets/js/i18n.js?v=2" defer></script>
-  <script src="/assets/js/i18n/design.js?v=1" defer></script>
-  <script src="/assets/js/site.js?v=14" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=26">
+  <script src="/assets/js/i18n.js?v=4" defer></script>
+  <script src="/assets/js/i18n/design.js?v=7" defer></script>
+  <script src="/assets/js/site.js?v=19" defer></script>
 </head>
 <body class="theme-dark">
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -71,92 +71,25 @@
       </div>
     </section>
 
-    <!-- CGI: the main piece -->
-    <section class="section section--tight" id="cgi" aria-labelledby="cgi-title" style="padding-top: clamp(32px,5vw,64px)">
+    <!-- Software: white line logos, so this page stays dark -->
+    <section class="toolkit" aria-labelledby="toolkit-title">
       <div class="container">
-        <div class="shead" data-reveal>
-          <div>
-            <p class="t-eyebrow" data-i18n="design.cgi.eyebrow">CGI · 2021–2024</p>
-            <h2 class="t-h2 shead__title" id="cgi-title" data-i18n="design.cgi.title">Photoreal CGI</h2>
-            <p class="shead__text t-lead" data-i18n="design.cgi.text">Self-directed studies and concepts in Blender, Substance Painter and Unreal Engine.</p>
-          </div>
-          <a class="link-ext shead__link" href="https://www.behance.net/designedbydanyal" data-i18n="design.cgi.behance">All projects on Behance</a>
-        </div>
-      </div>
-      <div class="container-wide">
-        <div class="bento">
-          <a class="tile span-3" href="https://www.behance.net/gallery/147920499/Thor-Mjoelnir-Realism-in-CGI" data-reveal>
-            <div class="tile__media" style="margin:0"><img src="/assets/img/work/thor-mjolnir.webp" width="808" height="632" alt="Thor’s hammer Mjölnir, engraved with a Celtic knot, resting on sand" loading="lazy" data-i18n-attr="alt:design.cgi.thorAlt"></div>
-            <div class="tile__body"><span class="tile__eyebrow" data-i18n="design.cgi.thorMeta">2022 · Hard-surface realism</span><h3 class="tile__title tile__title--sm" translate="no">Thor’s Mjölnir</h3></div>
-          </a>
-          <a class="tile span-3" href="https://www.behance.net/gallery/174976403/Hanzos-Den-Interior-Visualization" data-reveal>
-            <div class="tile__media" style="margin:0"><img src="/assets/img/work/hanzos-den.webp" width="808" height="632" alt="A crystal whisky decanter and glasses on a wooden table beside a leather lounge chair" loading="lazy" data-i18n-attr="alt:design.cgi.hanzoAlt"></div>
-            <div class="tile__body"><span class="tile__eyebrow" data-i18n="design.cgi.hanzoMeta">2023 · Interior visualization</span><h3 class="tile__title tile__title--sm" translate="no">Hanzo’s Den</h3></div>
-          </a>
-          <a class="tile span-2" href="https://www.behance.net/gallery/147394575/Omnitrix-Realistic-Texturing" data-reveal>
-            <div class="tile__media" style="margin:0"><img src="/assets/img/work/omnitrix.webp" width="808" height="632" alt="The Omnitrix wrist device with a glowing green dial" loading="lazy" data-i18n-attr="alt:design.cgi.omnitrixAlt"></div>
-            <div class="tile__body"><span class="tile__eyebrow" data-i18n="design.cgi.omnitrixMeta">2022 · Texturing</span><h3 class="tile__title tile__title--sm" translate="no">Omnitrix</h3></div>
-          </a>
-          <a class="tile span-2" href="https://www.behance.net/gallery/126246823/DMC-DeLorean-1985-Highpoly-Asset-Creation" data-reveal>
-            <div class="tile__media" style="margin:0"><img src="/assets/img/work/delorean.webp" width="808" height="632" alt="The DeLorean time machine’s cockpit with the flux capacitor glowing" loading="lazy" data-i18n-attr="alt:design.cgi.deloreanAlt"></div>
-            <div class="tile__body"><span class="tile__eyebrow" data-i18n="design.cgi.deloreanMeta">2021 · High-poly asset</span><h3 class="tile__title tile__title--sm" translate="no">DMC DeLorean</h3></div>
-          </a>
-          <a class="tile span-2" href="https://www.behance.net/gallery/190935665/3D-Demo-Reel-2024" data-reveal>
-            <div class="tile__media" style="margin:0"><img src="/assets/img/work/3d-demo-reel-2024.webp" width="808" height="632" alt="Cover of the 2024 3D demo reel" loading="lazy" data-i18n-attr="alt:design.cgi.reelAlt"></div>
-            <div class="tile__body"><span class="tile__eyebrow" data-i18n="design.cgi.reelMeta">2024 · Showreel</span><h3 class="tile__title tile__title--sm" data-i18n="design.cgi.reelTitle">3D Demo Reel</h3></div>
-          </a>
-          <a class="tile span-2" href="https://www.behance.net/gallery/149809611/Nike-SwooshBoard-3D-Ad-Design" data-reveal>
-            <div class="tile__media" style="margin:0"><img src="/assets/img/work/nike-swooshboard.webp" width="808" height="632" alt="A wooden skateboard deck with a dragon emblem against an orange backdrop" loading="lazy" data-i18n-attr="alt:design.cgi.swooshAlt"></div>
-            <div class="tile__body"><span class="tile__eyebrow" data-i18n="design.cgi.swooshMeta">2022 · Concept, not affiliated with Nike</span><h3 class="tile__title tile__title--sm" translate="no">SwooshBoard</h3></div>
-          </a>
-          <a class="tile span-2" href="https://www.behance.net/gallery/126193817/JF-17-Scene-Previsualization" data-reveal>
-            <div class="tile__media" style="margin:0"><img src="/assets/img/work/jf-17.webp" width="799" height="625" alt="Front view of a JF-17 Thunder fighter jet at dusk" loading="lazy" data-i18n-attr="alt:design.cgi.jf17Alt"></div>
-            <div class="tile__body"><span class="tile__eyebrow" data-i18n="design.cgi.jf17Meta">2021 · Scene previz</span><h3 class="tile__title tile__title--sm" translate="no">JF-17 Thunder</h3></div>
-          </a>
-          <a class="tile span-2" href="https://www.behance.net/gallery/126191513/Jurassic-Park-1993-Set-Recreation-VFX" data-reveal>
-            <div class="tile__media" style="margin:0"><img src="/assets/img/work/jurassic-park.webp" width="808" height="632" alt="A dinosaur fossil partly excavated from sandy ground" loading="lazy" data-i18n-attr="alt:design.cgi.jurassicAlt"></div>
-            <div class="tile__body"><span class="tile__eyebrow" data-i18n="design.cgi.jurassicMeta">2021 · Set recreation and VFX</span><h3 class="tile__title tile__title--sm" translate="no">Jurassic Park, 1993</h3></div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Waveform -->
-    <section class="section" id="waveform" aria-labelledby="wf-title">
-      <div class="container">
-        <div class="feature feature--flip" data-reveal>
-          <figure class="fig feature__media">
-            <div class="fig__media"><img src="/assets/img/work/waveform.webp" width="808" height="632" alt="Render of Waveform, a compact black cylindrical device mounted on top of a computer monitor" loading="lazy" data-i18n-attr="alt:design.waveform.alt"></div>
-          </figure>
-          <div class="feature__text">
-            <p class="t-eyebrow" data-i18n="design.waveform.eyebrow">BSc thesis · NUST · 2023</p>
-            <h2 class="t-h2" id="wf-title" translate="no">Waveform</h2>
-            <p data-i18n="design.waveform.text">A monitor-mounted device that prompts physical movement during prolonged screen use. Supervised by Dr. Raja Mubashar Karim, the thesis received the <strong>highest score in the cohort (91%)</strong>.</p>
-            <a class="link-ext" href="https://www.behance.net/gallery/176802621/Waveform-Industrial-Product-Design" data-i18n="design.waveform.link">Full project on Behance</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Lemmy renders -->
-    <section class="section" id="viz" style="background: var(--bg-2)" aria-labelledby="viz-title">
-      <div class="container">
-        <div class="shead" data-reveal>
-          <div>
-            <p class="t-eyebrow" data-i18n="design.viz.eyebrow">Product visualization</p>
-            <h2 class="t-h2 shead__title" id="viz-title" data-i18n="design.viz.title">Lemmy product visualization</h2>
-            <p class="shead__text t-lead" data-i18n="design.viz.text">Studio renders produced for research stimuli, publications and the AR application. Lemmy’s industrial design is by partner teams.</p>
-          </div>
-        </div>
-      </div>
-      <div class="container-wide">
-        <div class="fig-row fig-row--4" data-reveal>
-          <div class="fig__media fig__media--white"><img src="/assets/img/lemmy/front.jpg" width="1400" height="1400" alt="Lemmy from the front" loading="lazy" data-i18n-attr="alt:design.viz.frontAlt"></div>
-          <div class="fig__media fig__media--white"><img src="/assets/img/lemmy/persp.jpg" width="1600" height="1600" alt="Lemmy in three-quarter view" loading="lazy" data-i18n-attr="alt:design.viz.perspAlt"></div>
-          <div class="fig__media fig__media--white"><img src="/assets/img/lemmy/side.jpg" width="1400" height="1400" alt="Lemmy from the side" loading="lazy" data-i18n-attr="alt:design.viz.sideAlt"></div>
-          <div class="fig__media fig__media--white"><img src="/assets/img/lemmy/top.jpg" width="1400" height="1400" alt="Lemmy from above" loading="lazy" data-i18n-attr="alt:design.viz.topAlt"></div>
-        </div>
-        <div class="fig__media fig__media--white" style="margin-top:20px" data-reveal><img src="/assets/img/lemmy/face-banner.jpg" width="2400" height="600" alt="A close-up of Lemmy’s screen face with its two blue eyes" loading="lazy" data-i18n-attr="alt:design.viz.faceAlt"></div>
+        <h2 class="t-eyebrow toolkit__title" id="toolkit-title" data-i18n="design.toolkit.title">Software I work in</h2>
+        <ul class="toolkit__list" data-reveal>
+          <li><img src="/assets/img/software/blender.png" width="264" height="264" alt="" loading="lazy"><span translate="no">Blender</span></li>
+          <li><img src="/assets/img/software/houdini.png" width="264" height="264" alt="" loading="lazy"><span translate="no">Houdini</span></li>
+          <li><img src="/assets/img/software/unreal-engine.png" width="264" height="264" alt="" loading="lazy"><span translate="no">Unreal Engine</span></li>
+          <li><img src="/assets/img/software/substance-painter.png" width="264" height="264" alt="" loading="lazy"><span translate="no">Substance Painter</span></li>
+          <li><img src="/assets/img/software/davinci-resolve.png" width="264" height="264" alt="" loading="lazy"><span translate="no">DaVinci Resolve</span></li>
+          <li><img src="/assets/img/software/embergen.png" width="264" height="264" alt="" loading="lazy"><span translate="no">EmberGen</span></li>
+          <li><img src="/assets/img/software/omniverse.png" width="264" height="264" alt="" loading="lazy"><span translate="no">NVIDIA Omniverse</span></li>
+          <li><img src="/assets/img/software/comfyui.png" width="264" height="264" alt="" loading="lazy"><span translate="no">ComfyUI</span></li>
+          <li><img src="/assets/img/software/figma.png" width="264" height="264" alt="" loading="lazy"><span translate="no">Figma</span></li>
+          <li><img src="/assets/img/software/photoshop.png" width="264" height="264" alt="" loading="lazy"><span translate="no">Photoshop</span></li>
+          <li><img src="/assets/img/software/premiere-pro.png" width="264" height="264" alt="" loading="lazy"><span translate="no">Premiere Pro</span></li>
+          <li><img src="/assets/img/software/gaea.png" width="264" height="264" alt="" loading="lazy"><span translate="no">Gaea</span></li>
+          <li><img src="/assets/img/software/procreate.png" width="264" height="264" alt="" loading="lazy"><span translate="no">Procreate</span></li>
+        </ul>
       </div>
     </section>
 
@@ -191,18 +124,154 @@
         </div>
       </div>
     </section>
-    <!-- LG: a smaller project, kept short -->
-    <section class="section section--tight" id="lg" style="background: var(--bg-2)" aria-labelledby="lg-title">
+
+    <!-- Product design: tall cards in a rail, newest first; each opens its project page -->
+    <section class="section" id="products" aria-labelledby="products-title">
       <div class="container">
-        <div class="feature" data-reveal>
-          <div class="feature__text">
-            <p class="t-eyebrow t-eyebrow--muted" data-i18n="design.lg.eyebrow">Also · Industrial design · With LG Electronics · 2024</p>
-            <h2 class="t-h3" id="lg-title" data-i18n="design.lg.title">Wearable posture sensor module</h2>
-            <p data-i18n="design.lg.text">Concept design for a wearable module that monitors upper-body angle and speed, within an IID Lab R&amp;D project with LG Electronics. The scope covered product design, research and development, and the strap attachment system.</p>
+        <div class="shead" data-reveal>
+          <div>
+            <h2 class="t-h2 shead__title" id="products-title" data-i18n="design.product.title">Product design projects</h2>
+            <p class="shead__text t-lead" data-i18n="design.product.lead">Industrial design and product visualization, newest first.</p>
           </div>
-          <figure class="fig feature__media">
-            <div class="fig__media" style="background:#06101f"><img src="/assets/img/lg/exploded.jpg" width="1600" height="1600" alt="Exploded view of the sensor module: a blue ring-shaped top cover lifted above the base" loading="lazy" data-i18n-attr="alt:design.lg.alt" class="ratio-16-10"></div>
-          </figure>
+        </div>
+      </div>
+      <div class="rail works" data-reveal>
+        <ul class="rail__track">
+          <li class="rail__item wcard wcard--light wcard--inset" style="--wc-bg: #fff; --wc-w: 136%; --wc-b: 24px">
+            <a class="wcard__link" href="/design/lemmy-visualization/">
+              <img class="wcard__img" src="/assets/img/lemmy/persp-2.jpg" width="1600" height="1600" alt="" loading="lazy">
+              <div class="wcard__text">
+                <p class="wcard__eyebrow" data-i18n="design.cards.vizMeta">2024–2025 · Product visualization</p>
+                <h3 class="wcard__title" translate="no">Lemmy</h3>
+              </div>
+              <span class="wcard__plus" aria-hidden="true"><svg class="ico"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>
+            </a>
+          </li>
+          <li class="rail__item wcard">
+            <a class="wcard__link" href="/design/posture-sensor/">
+              <img class="wcard__img" src="/assets/img/lg/hero.jpg" width="1600" height="1600" alt="" loading="lazy">
+              <div class="wcard__text">
+                <p class="wcard__eyebrow" data-i18n="design.cards.lgMeta">2024 · Industrial design · With LG Electronics</p>
+                <h3 class="wcard__title" data-i18n="design.lg.title">Wearable posture sensor module</h3>
+              </div>
+              <span class="wcard__plus" aria-hidden="true"><svg class="ico"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>
+            </a>
+          </li>
+          <li class="rail__item wcard wcard--light" style="--wc-pos: 45% 50%">
+            <a class="wcard__link" href="/design/waveform/">
+              <img class="wcard__img" src="/assets/img/work/waveform.webp" width="808" height="632" alt="" loading="lazy">
+              <div class="wcard__text">
+                <p class="wcard__eyebrow" data-i18n="design.cards.waveformMeta">2023 · BSc thesis · NUST</p>
+                <h3 class="wcard__title" translate="no">Waveform</h3>
+              </div>
+              <span class="wcard__plus" aria-hidden="true"><svg class="ico"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>
+            </a>
+          </li>
+        </ul>
+        <div class="rail__controls">
+          <button class="paddle" type="button" data-rail-prev aria-label="Previous" data-i18n-attr="aria-label:rail.prev"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5"/></svg></button>
+          <button class="paddle" type="button" data-rail-next aria-label="Next" data-i18n-attr="aria-label:rail.next"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="m5 2 5 5-5 5"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D visualization: the same cards for the CGI projects, newest first -->
+    <section class="section" id="cgi" aria-labelledby="cgi-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+            <h2 class="t-h2 shead__title" id="cgi-title" data-i18n="design.viz3d.title">3D visualization projects</h2>
+            <p class="shead__text t-lead" data-i18n="design.viz3d.lead">Photoreal CGI, from personal studies to a showreel, newest first.</p>
+          </div>
+          <a class="link-ext shead__link" href="https://www.behance.net/designedbydanyal" data-i18n="design.cgi.behance">All projects on Behance</a>
+        </div>
+      </div>
+      <div class="rail works" data-reveal>
+        <ul class="rail__track">
+          <li class="rail__item wcard wcard--light wcard--inset" style="--wc-bg: #fff; --wc-b: 64px">
+            <a class="wcard__link" href="/design/demo-reel-2024/">
+              <img class="wcard__img" src="/assets/img/work/3d-demo-reel-2024.webp" width="808" height="632" alt="" loading="lazy">
+              <div class="wcard__text">
+                <p class="wcard__eyebrow" data-i18n="design.cgi.reelMeta">2024 · Showreel</p>
+                <h3 class="wcard__title" data-i18n="design.cgi.reelTitle">3D Demo Reel</h3>
+              </div>
+              <span class="wcard__plus" aria-hidden="true"><svg class="ico"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>
+            </a>
+          </li>
+          <li class="rail__item wcard" style="--wc-pos: 40% 50%">
+            <a class="wcard__link" href="/design/hanzos-den/">
+              <img class="wcard__img" src="/assets/img/work/hanzos-den.webp" width="808" height="632" alt="" loading="lazy">
+              <div class="wcard__text">
+                <p class="wcard__eyebrow" data-i18n="design.cgi.hanzoMeta">2023 · Interior visualization</p>
+                <h3 class="wcard__title" translate="no">Hanzo’s Den</h3>
+              </div>
+              <span class="wcard__plus" aria-hidden="true"><svg class="ico"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>
+            </a>
+          </li>
+          <li class="rail__item wcard" style="--wc-pos: 67% 50%">
+            <a class="wcard__link" href="/design/swooshboard/">
+              <img class="wcard__img" src="/assets/img/work/nike-swooshboard.webp" width="808" height="632" alt="" loading="lazy">
+              <div class="wcard__text">
+                <p class="wcard__eyebrow" data-i18n="design.cgi.swooshMeta">2022 · Concept, not affiliated with Nike</p>
+                <h3 class="wcard__title" translate="no">SwooshBoard</h3>
+              </div>
+              <span class="wcard__plus" aria-hidden="true"><svg class="ico"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>
+            </a>
+          </li>
+          <li class="rail__item wcard" style="--wc-pos: 30% 50%">
+            <a class="wcard__link" href="/design/thor-mjolnir/">
+              <img class="wcard__img" src="/assets/img/work/thor-mjolnir.webp" width="808" height="632" alt="" loading="lazy">
+              <div class="wcard__text">
+                <p class="wcard__eyebrow" data-i18n="design.cgi.thorMeta">2022 · Hard-surface realism</p>
+                <h3 class="wcard__title" translate="no">Thor’s Mjölnir</h3>
+              </div>
+              <span class="wcard__plus" aria-hidden="true"><svg class="ico"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>
+            </a>
+          </li>
+          <li class="rail__item wcard" style="--wc-pos: 41% 50%">
+            <a class="wcard__link" href="/design/omnitrix/">
+              <img class="wcard__img" src="/assets/img/work/omnitrix.webp" width="808" height="632" alt="" loading="lazy">
+              <div class="wcard__text">
+                <p class="wcard__eyebrow" data-i18n="design.cgi.omnitrixMeta">2022 · Texturing</p>
+                <h3 class="wcard__title" translate="no">Omnitrix</h3>
+              </div>
+              <span class="wcard__plus" aria-hidden="true"><svg class="ico"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>
+            </a>
+          </li>
+          <li class="rail__item wcard" style="--wc-pos: 75% 50%">
+            <a class="wcard__link" href="/design/delorean/">
+              <img class="wcard__img" src="/assets/img/work/delorean.webp" width="808" height="632" alt="" loading="lazy">
+              <div class="wcard__text">
+                <p class="wcard__eyebrow" data-i18n="design.cgi.deloreanMeta">2021 · High-poly asset</p>
+                <h3 class="wcard__title" translate="no">DMC DeLorean</h3>
+              </div>
+              <span class="wcard__plus" aria-hidden="true"><svg class="ico"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>
+            </a>
+          </li>
+          <li class="rail__item wcard">
+            <a class="wcard__link" href="/design/jf-17/">
+              <img class="wcard__img" src="/assets/img/work/jf-17.webp" width="799" height="625" alt="" loading="lazy">
+              <div class="wcard__text">
+                <p class="wcard__eyebrow" data-i18n="design.cgi.jf17Meta">2021 · Scene previz</p>
+                <h3 class="wcard__title" translate="no">JF-17 Thunder</h3>
+              </div>
+              <span class="wcard__plus" aria-hidden="true"><svg class="ico"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>
+            </a>
+          </li>
+          <li class="rail__item wcard">
+            <a class="wcard__link" href="/design/jurassic-park/">
+              <img class="wcard__img" src="/assets/img/work/jurassic-park.webp" width="808" height="632" alt="" loading="lazy">
+              <div class="wcard__text">
+                <p class="wcard__eyebrow" data-i18n="design.cgi.jurassicMeta">2021 · Set recreation and VFX</p>
+                <h3 class="wcard__title" translate="no">Jurassic Park, 1993</h3>
+              </div>
+              <span class="wcard__plus" aria-hidden="true"><svg class="ico"><use href="/assets/img/icons.svg?v=2#plus"/></svg></span>
+            </a>
+          </li>
+        </ul>
+        <div class="rail__controls">
+          <button class="paddle" type="button" data-rail-prev aria-label="Previous" data-i18n-attr="aria-label:rail.prev"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5"/></svg></button>
+          <button class="paddle" type="button" data-rail-next aria-label="Next" data-i18n-attr="aria-label:rail.next"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="m5 2 5 5-5 5"/></svg></button>
         </div>
       </div>
     </section>
@@ -213,8 +282,8 @@
       <nav class="gfooter__dir" aria-label="Site directory" data-i18n-attr="aria-label:footer.label">
         <div class="gfooter__col"><h3 data-i18n="nav.design">Design</h3><ul>
           <li><a href="/design/#cgi" data-i18n="footer.cgi">3D &amp; CGI</a></li>
-          <li><a href="/design/#waveform">Waveform</a></li>
-          <li><a href="/design/#viz" data-i18n="footer.viz">Product visualization</a></li>
+          <li><a href="/design/waveform/" translate="no">Waveform</a></li>
+          <li><a href="/design/lemmy-visualization/" data-i18n="footer.viz">Product visualization</a></li>
           <li><a href="/design/#freelance" data-i18n="footer.freelance">Freelance work</a></li>
         </ul></div>
         <div class="gfooter__col"><h3 data-i18n="footer.caseStudies">Case studies</h3><ul>
@@ -232,9 +301,10 @@
           <li><a href="/research/#personal" data-i18n="footer.personal">Personal projects</a></li>
         </ul></div>
         <div class="gfooter__col"><h3 data-i18n="nav.tools">Artifacts</h3><ul>
-          <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
-          <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
-          <li><a href="/tools/#more" data-i18n="footer.moreTools">More artifacts</a></li>
+          <li><a href="/tools/almanac/" translate="no">Almanac</a></li>
+          <li><a href="/tools/viewar/" translate="no">ViewAR</a></li>
+          <li><a href="/tools/roboanimator/" translate="no">True RoboAnimator</a></li>
+          <li><a href="/tools/" data-i18n="footer.moreTools">More artifacts</a></li>
         </ul></div>
         <div class="gfooter__col"><h3 data-i18n="nav.about">About</h3><ul>
           <li><a href="/about/" data-i18n="footer.bio">Bio</a></li>

@@ -24,9 +24,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=13">
-  <script src="/assets/js/i18n.js?v=2" defer></script>
-  <script src="/assets/js/site.js?v=14" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=26">
+  <script src="/assets/js/i18n.js?v=4" defer></script>
+  <script src="/assets/js/site.js?v=19" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -179,78 +179,85 @@
       </figure>
     </section>
 
-    <!-- Selected work -->
-    <section class="work" id="work" aria-labelledby="work-title">
-      <div class="container">
-        <h2 class="sect-title" id="work-title" data-reveal data-i18n="home.work.title">Selected work</h2>
+    <!-- Selected work, as promos in the manner of Apple's home page: a title,
+         one line, actions and a large picture; two full-width, then pairs. -->
+    <section class="promos" id="work" aria-labelledby="work-title">
+      <h2 class="visually-hidden" id="work-title" data-i18n="home.work.title">Selected work</h2>
 
-        <div class="work__grid">
-
-          <!-- 01 · Bangudae XR -->
-          <article class="card card--wide" data-reveal>
-            <div class="card__media" data-hover-play>
-              <video src="/assets/video/bangudae/mr-artifacts.mp4" poster="/assets/img/bangudae/mr-artifacts-poster.jpg" width="1280" height="624" muted loop playsinline preload="none" aria-hidden="true"></video>
-            </div>
-            <div class="card__body">
-              <div class="card__main">
-                <p class="card__meta"><span class="card__num">01</span><span data-i18n="home.w1.label">Mixed reality · Meta Quest 3</span><span class="card__year">2024</span></p>
-                <h3 class="card__title"><a class="card__link" href="/research/bangudae-xr/" data-i18n="footer.bangudae">Bangudae XR</a></h3>
-                <p class="card__text" data-i18n="home.w1.text">Visitors see Ulsan’s prehistoric rock carvings only from across a stream, often through a viewing scope. I scanned the site with photogrammetry and Gaussian splatting, and built a Meta Quest 3 app that brings it into any room.</p>
-                <span class="card__go link-more" aria-hidden="true" data-i18n="home.read">Read the case study</span>
-              </div>
-              <p class="award card__award">
-                <svg class="award__laurel" aria-hidden="true"><use href="#laurel"/></svg>
-                <span class="award__text"><span class="award__title" data-i18n="home.w1.award">First place</span><span class="award__sub" data-i18n="home.w1.awardSub">3rd Korea Heritage Digital Contents Contest, 2024</span></span>
-                <svg class="award__laurel award__laurel--r" aria-hidden="true"><use href="#laurel"/></svg>
-              </p>
-            </div>
-          </article>
-
-          <!-- 02 · Synthetic Realities -->
-          <article class="card" data-reveal>
-            <div class="card__media"><img src="/assets/img/synthetic/talk.jpg" width="1147" height="765" alt="An audience in a conference room watching a presentation of the study’s accuracy chart" loading="lazy" data-i18n-attr="alt:home.c3.alt"></div>
-            <div class="card__body">
-              <p class="card__meta"><span class="card__num">02</span><span data-i18n="home.w2.label">Human-centered AI · IASDR 2025</span></p>
-              <h3 class="card__title"><a class="card__link" href="/research/synthetic-realities/" translate="no">Synthetic Realities</a></h3>
-              <p class="card__text" data-i18n="home.c2.text">A controlled study of how well people tell AI-generated video from real footage, across three generation techniques.</p>
-              <span class="card__go link-more" aria-hidden="true" data-i18n="home.read">Read the case study</span>
-            </div>
-          </article>
-
-          <!-- 03 · True RoboAnimator -->
-          <article class="card" data-reveal>
-            <div class="card__media card__media--dark"><img src="/assets/img/roboanimator/promo.jpg" width="2000" height="1333" alt="Stylized render of the True RoboAnimator panels floating in dark space" loading="lazy" data-i18n-attr="alt:home.tool.alt"></div>
-            <div class="card__body">
-              <p class="card__meta"><span class="card__num">03</span><span data-i18n="home.tool.label">Open-source tool · Blender add-on</span></p>
-              <h3 class="card__title"><a class="card__link" href="/tools/#roboanimator" translate="no">True RoboAnimator</a></h3>
-              <p class="card__text" data-i18n="home.c3.text">Turns animation of a two-wheeled robot into motion the hardware can perform, and exports the wheel data engineers need.</p>
-              <span class="card__go link-more" aria-hidden="true" data-i18n="home.seeTool">See the tool</span>
-            </div>
-          </article>
-
-          <!-- 04 · AR/VR UI Designer -->
-          <article class="card" data-reveal>
-            <div class="card__media card__media--dark card__media--zoom"><img src="/assets/img/tools/ui-designer.jpg" width="1600" height="1000" alt="The AR/VR UI Designer start screen, offering a window or a volume and six window templates" loading="lazy" data-i18n-attr="alt:home.c4.alt"></div>
-            <div class="card__body">
-              <p class="card__meta"><span class="card__num">04</span><span data-i18n="home.c4.meta">Web app · React Three Fiber</span></p>
-              <h3 class="card__title"><a class="card__link" href="/tools/#ui-designer" translate="no">AR/VR UI Designer</a></h3>
-              <p class="card__text" data-i18n="home.c4.text">A drag-and-drop editor for visionOS-style interfaces, previewed in 3D in the browser, with no Mac or headset needed.</p>
-              <span class="card__go link-more" aria-hidden="true" data-i18n="home.seeTool">See the tool</span>
-            </div>
-          </article>
-
-          <!-- 05 · Waveform -->
-          <article class="card" data-reveal>
-            <div class="card__media"><img src="/assets/img/work/waveform.webp" width="808" height="632" alt="Render of Waveform, a compact black cylindrical device mounted on top of a computer monitor" loading="lazy" data-i18n-attr="alt:home.c5.alt"></div>
-            <div class="card__body">
-              <p class="card__meta"><span class="card__num">05</span><span data-i18n="home.c5.meta">Industrial design · BSc thesis, NUST</span><span class="card__year">2023</span></p>
-              <h3 class="card__title"><a class="card__link" href="/design/#waveform" translate="no">Waveform</a></h3>
-              <p class="card__text" data-i18n="home.c5.text">A monitor-mounted device that prompts physical movement during long hours of screen use.</p>
-              <span class="card__go link-more" aria-hidden="true" data-i18n="home.seeProject">See the project</span>
-            </div>
-          </article>
-
+      <!-- Bangudae XR -->
+      <article class="promo theme-dark" data-reveal>
+        <p class="award promo__award"><svg class="award__laurel" aria-hidden="true"><use href="#laurel"/></svg><span class="award__text"><span class="award__title" data-i18n="home.w1.award">First place</span><span class="award__sub" data-i18n="home.w1.awardSub">3rd Korea Heritage Digital Contents Contest, 2024</span></span><svg class="award__laurel award__laurel--r" aria-hidden="true"><use href="#laurel"/></svg></p>
+        <h3 class="promo__title" data-i18n="footer.bangudae">Bangudae XR</h3>
+        <p class="promo__sub" data-i18n="home.promo.bangudae">Ulsan’s prehistoric petroglyphs, brought indoors on Meta Quest 3.</p>
+        <div class="promo__cta">
+          <a class="btn btn--md" href="/research/bangudae-xr/" data-i18n="home.promo.learn">Learn more</a>
         </div>
+        <div class="promo__media">
+          <div class="promo__video loop"><video src="/assets/video/bangudae/mr-artifacts.mp4" poster="/assets/img/bangudae/mr-artifacts-poster.jpg" width="1280" height="624" muted loop playsinline preload="none" aria-hidden="true"></video><button class="loop__toggle" type="button" aria-label="Play or pause the video" data-i18n-attr="aria-label:video.toggle"><svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="3" y="2" width="3" height="10" rx="1"/><rect x="8" y="2" width="3" height="10" rx="1"/></svg><svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6L11.5 7z"/></svg></button></div>
+        </div>
+      </article>
+
+      <!-- Almanac -->
+      <article class="promo promo--paper" data-reveal>
+        <p class="promo__eyebrow promo__eyebrow--new" data-i18n="home.promo.new">New</p>
+        <h3 class="promo__title" translate="no">Almanac</h3>
+        <p class="promo__sub" data-i18n="home.promo.almanac">Every day, as the ancients counted it.</p>
+        <div class="promo__cta">
+          <a class="btn btn--md" href="/tools/almanac/" data-i18n="home.promo.learn">Learn more</a>
+          <a class="btn btn--md btn--secondary" href="https://danyals-code.github.io/almanac/" data-i18n="home.promo.site">Visit the site</a>
+        </div>
+        <div class="promo__media">
+          <div class="phones"><figure class="device device--phone"><div class="device__screen"><img src="/assets/img/almanac/stonehenge-compass.jpg" width="460" height="1000" alt="" loading="lazy"></div></figure><figure class="device device--phone"><div class="device__screen"><img src="/assets/img/almanac/home.jpg" width="460" height="1000" alt="" loading="lazy"></div></figure><figure class="device device--phone"><div class="device__screen"><img src="/assets/img/almanac/maya-wheel.jpg" width="460" height="1000" alt="" loading="lazy"></div></figure></div>
+        </div>
+      </article>
+
+      <div class="promo-pair">
+        <!-- Synthetic Realities -->
+        <article class="promo promo--half" data-reveal>
+          <p class="promo__eyebrow" translate="no">IASDR 2025</p>
+          <h3 class="promo__title" translate="no">Synthetic Realities</h3>
+          <p class="promo__sub" data-i18n="home.promo.synthetic">How well can people tell AI-generated video from real footage?</p>
+          <div class="promo__cta">
+            <a class="btn btn--md" href="/research/synthetic-realities/" data-i18n="home.promo.learn">Learn more</a>
+          </div>
+          <div class="promo__media promo__media--photo"><img src="/assets/img/synthetic/talk.jpg" width="1147" height="765" alt="An audience in a conference room watching a presentation of the study’s accuracy chart" loading="lazy" data-i18n-attr="alt:home.c3.alt"></div>
+        </article>
+
+        <!-- True RoboAnimator -->
+        <article class="promo promo--half theme-dark" data-reveal>
+          <p class="promo__eyebrow" data-i18n="home.tool.label">Open-source tool · Blender add-on</p>
+          <h3 class="promo__title" translate="no">True RoboAnimator</h3>
+          <p class="promo__sub" data-i18n="home.promo.robo">Animation that real robots can drive.</p>
+          <div class="promo__cta">
+            <a class="btn btn--md" href="/tools/roboanimator/" data-i18n="home.promo.learn">Learn more</a>
+            <a class="btn btn--md btn--secondary" href="https://extensions.blender.org/add-ons/true-roboanimator/" data-i18n="home.promo.get">Get it</a>
+          </div>
+          <div class="promo__media promo__media--photo"><img src="/assets/img/roboanimator/promo.jpg" width="2000" height="1333" alt="Stylized render of the True RoboAnimator panels floating in dark space" loading="lazy" data-i18n-attr="alt:home.tool.alt"></div>
+        </article>
+      </div>
+
+      <div class="promo-pair">
+        <!-- Product form analysis -->
+        <article class="promo promo--half" data-reveal>
+          <p class="promo__eyebrow" translate="no">KSDS 2026</p>
+          <h3 class="promo__title" data-i18n="footer.productForm">Product form analysis</h3>
+          <p class="promo__sub" data-i18n="home.promo.form">Reading a product’s form from a handful of images.</p>
+          <div class="promo__cta">
+            <a class="btn btn--md" href="/research/product-form/" data-i18n="home.promo.learn">Learn more</a>
+          </div>
+          <div class="promo__media"><div class="promo__views" aria-hidden="true"><span class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="30" width="64" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="60" r="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="60" r="3" fill="currentColor"/></svg></span><span class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="38" width="64" height="44" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M36 60h48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg></span><span class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="38" y="30" width="44" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M78 44v32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg></span><span class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><path d="M30 46 60 32l30 14v36L60 96 30 82z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M30 46 60 60l30-14M60 60v36" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="45.0" cy="72" rx="7" ry="9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg></span><span class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="30" width="64" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><rect x="48" y="74" width="24" height="8" rx="3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg></span><span class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="28" y="38" width="64" height="44" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="38" cy="47" r="4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="38" cy="73" r="4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="82" cy="47" r="4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="82" cy="73" r="4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg></span><span class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="38" y="30" width="44" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M42 44v32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg></span><span class="view-tile"><svg viewBox="0 0 120 120" aria-hidden="true"><path d="M20 46 60 32l40 14v36L60 96 20 82z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M20 46 60 60l40-14M60 60v36" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="40.0" cy="72" rx="7" ry="9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/></svg></span></div></div>
+        </article>
+
+        <!-- Waveform -->
+        <article class="promo promo--half theme-dark" data-reveal>
+          <p class="promo__eyebrow" data-i18n="home.c5.meta">Industrial design · BSc thesis, NUST</p>
+          <h3 class="promo__title" translate="no">Waveform</h3>
+          <p class="promo__sub" data-i18n="home.c5.text">A monitor-mounted device that prompts physical movement during long hours of screen use.</p>
+          <div class="promo__cta">
+            <a class="btn btn--md" href="/design/waveform/" data-i18n="home.seeProject">See the project</a>
+          </div>
+          <div class="promo__media promo__media--photo"><img src="/assets/img/work/waveform.webp" width="808" height="632" alt="Render of Waveform, a compact black cylindrical device mounted on top of a computer monitor" loading="lazy" data-i18n-attr="alt:home.c5.alt"></div>
+        </article>
       </div>
     </section>
 
@@ -260,21 +267,25 @@
         <h2 class="sect-title" id="skills-title" data-reveal data-i18n="home.what.title">What I do</h2>
         <ul class="skills__grid" data-reveal>
           <li class="skill">
+            <svg class="ico skill__ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#ar"/></svg>
             <h3 class="skill__title" data-i18n="home.what.xr.title">Mixed reality and spatial apps</h3>
             <p class="skill__text" data-i18n="home.what.xr.text">Apps for Meta Quest 3, Apple Vision Pro and iPhone, from 3D capture to the finished experience.</p>
             <p class="skill__tools" translate="no">Unreal Engine 5 · Swift · RealityKit · ARKit · visionOS · Photogrammetry</p>
           </li>
           <li class="skill">
+            <svg class="ico skill__ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#users"/></svg>
             <h3 class="skill__title" data-i18n="home.what.research.title">HCI research</h3>
             <p class="skill__text" data-i18n="home.what.research.text">Studies that put prototypes in front of the people they’re for, from workshops and interviews to controlled experiments.</p>
             <p class="skill__tools" data-i18n="home.what.research.tools">Participatory design · Interviews · Perception experiments · Usability testing · Statistics</p>
           </li>
           <li class="skill">
+            <svg class="ico skill__ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#sparkle"/></svg>
             <h3 class="skill__title" data-i18n="home.what.ai.title">Human-centered AI</h3>
             <p class="skill__text" data-i18n="home.what.ai.text">How people perceive generative AI, and AI tools that fit into design work.</p>
             <p class="skill__tools" data-i18n="home.what.ai.tools">ComfyUI · Python · Model training · Prompt engineering</p>
           </li>
           <li class="skill">
+            <svg class="ico skill__ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#cube"/></svg>
             <h3 class="skill__title" data-i18n="home.what.design.title">Industrial design and 3D</h3>
             <p class="skill__text" data-i18n="home.what.design.text">Products, photoreal CGI and visualization, from an industrial design degree and four years of client work.</p>
             <p class="skill__tools" translate="no">Blender · SolidWorks · Substance Painter · Figma · DaVinci Resolve</p>
@@ -308,7 +319,7 @@
           </li>
           <li class="pub">
             <p class="pub__meta"><span>2025</span><span translate="no">KSDS 2025</span><span data-i18n="home.pubs.paper">Conference paper</span></p>
-            <h3 class="pub__title" translate="no"><a href="/research/#publications">Developing a Hierarchically Structured Action Catalogue for an Elderly Care Robot through Participatory Design</a></h3>
+            <h3 class="pub__title" translate="no"><a href="/research/#ksds-2025">Developing a Hierarchically Structured Action Catalogue for an Elderly Care Robot through Participatory Design</a></h3>
             <p class="pub__authors" translate="no"><b>Danyal Sarfraz</b>, Ulugbek Ismatullaev, KwanMyung Kim</p>
           </li>
         </ol>
@@ -329,13 +340,13 @@
       </div>
       <div class="rail" data-reveal>
         <ul class="rail__track">
-          <li class="rail__item"><a class="rail__link" href="/design/#cgi"><img src="/assets/img/work/thor-mjolnir.webp" width="808" height="632" alt="" loading="lazy"><span class="rail__body"><span class="rail__date" data-i18n="home.craft.thorMeta">Hard-surface realism · 2022</span><span class="rail__title" translate="no">Thor’s Mjölnir</span></span></a></li>
-          <li class="rail__item"><a class="rail__link" href="/design/#cgi"><img src="/assets/img/work/hanzos-den.webp" width="808" height="632" alt="" loading="lazy"><span class="rail__body"><span class="rail__date" data-i18n="home.craft.hanzoMeta">Interior visualization · 2023</span><span class="rail__title" translate="no">Hanzo’s Den</span></span></a></li>
-          <li class="rail__item"><a class="rail__link" href="/design/#cgi"><img src="/assets/img/work/omnitrix.webp" width="808" height="632" alt="" loading="lazy"><span class="rail__body"><span class="rail__date" data-i18n="home.craft.omnitrixMeta">Texturing · 2022</span><span class="rail__title" translate="no">Omnitrix</span></span></a></li>
-          <li class="rail__item"><a class="rail__link" href="/design/#cgi"><img src="/assets/img/work/delorean.webp" width="808" height="632" alt="" loading="lazy"><span class="rail__body"><span class="rail__date" data-i18n="home.craft.deloreanMeta">High-poly asset · 2021</span><span class="rail__title" translate="no">DMC DeLorean</span></span></a></li>
-          <li class="rail__item"><a class="rail__link" href="/design/#cgi"><img src="/assets/img/work/nike-swooshboard.webp" width="808" height="632" alt="" loading="lazy"><span class="rail__body"><span class="rail__date" data-i18n="home.craft.nikeMeta">Concept, not affiliated with Nike · 2022</span><span class="rail__title" translate="no">SwooshBoard</span></span></a></li>
-          <li class="rail__item"><a class="rail__link" href="/design/#cgi"><img src="/assets/img/work/jf-17.webp" width="799" height="625" alt="" loading="lazy"><span class="rail__body"><span class="rail__date" data-i18n="home.craft.jfMeta">Scene previz · 2021</span><span class="rail__title" translate="no">JF-17 Thunder</span></span></a></li>
-          <li class="rail__item"><a class="rail__link" href="/design/#cgi"><img src="/assets/img/work/jurassic-park.webp" width="808" height="632" alt="" loading="lazy"><span class="rail__body"><span class="rail__date" data-i18n="home.craft.jurassicMeta">Set recreation and VFX · 2021</span><span class="rail__title" translate="no">Jurassic Park, 1993</span></span></a></li>
+          <li class="rail__item"><a class="rail__link" href="/design/thor-mjolnir/"><img src="/assets/img/work/thor-mjolnir.webp" width="808" height="632" alt="" loading="lazy"><span class="rail__body"><span class="rail__date" data-i18n="home.craft.thorMeta">Hard-surface realism · 2022</span><span class="rail__title" translate="no">Thor’s Mjölnir</span></span></a></li>
+          <li class="rail__item"><a class="rail__link" href="/design/hanzos-den/"><img src="/assets/img/work/hanzos-den.webp" width="808" height="632" alt="" loading="lazy"><span class="rail__body"><span class="rail__date" data-i18n="home.craft.hanzoMeta">Interior visualization · 2023</span><span class="rail__title" translate="no">Hanzo’s Den</span></span></a></li>
+          <li class="rail__item"><a class="rail__link" href="/design/omnitrix/"><img src="/assets/img/work/omnitrix.webp" width="808" height="632" alt="" loading="lazy"><span class="rail__body"><span class="rail__date" data-i18n="home.craft.omnitrixMeta">Texturing · 2022</span><span class="rail__title" translate="no">Omnitrix</span></span></a></li>
+          <li class="rail__item"><a class="rail__link" href="/design/delorean/"><img src="/assets/img/work/delorean.webp" width="808" height="632" alt="" loading="lazy"><span class="rail__body"><span class="rail__date" data-i18n="home.craft.deloreanMeta">High-poly asset · 2021</span><span class="rail__title" translate="no">DMC DeLorean</span></span></a></li>
+          <li class="rail__item"><a class="rail__link" href="/design/swooshboard/"><img src="/assets/img/work/nike-swooshboard.webp" width="808" height="632" alt="" loading="lazy"><span class="rail__body"><span class="rail__date" data-i18n="home.craft.nikeMeta">Concept, not affiliated with Nike · 2022</span><span class="rail__title" translate="no">SwooshBoard</span></span></a></li>
+          <li class="rail__item"><a class="rail__link" href="/design/jf-17/"><img src="/assets/img/work/jf-17.webp" width="799" height="625" alt="" loading="lazy"><span class="rail__body"><span class="rail__date" data-i18n="home.craft.jfMeta">Scene previz · 2021</span><span class="rail__title" translate="no">JF-17 Thunder</span></span></a></li>
+          <li class="rail__item"><a class="rail__link" href="/design/jurassic-park/"><img src="/assets/img/work/jurassic-park.webp" width="808" height="632" alt="" loading="lazy"><span class="rail__body"><span class="rail__date" data-i18n="home.craft.jurassicMeta">Set recreation and VFX · 2021</span><span class="rail__title" translate="no">Jurassic Park, 1993</span></span></a></li>
         </ul>
         <div class="rail__controls">
           <button class="paddle" type="button" data-rail-prev aria-label="Previous" data-i18n-attr="aria-label:rail.prev"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5"/></svg></button>
@@ -377,8 +388,8 @@
       <nav class="gfooter__dir" aria-label="Site directory" data-i18n-attr="aria-label:footer.label">
         <div class="gfooter__col"><h3 data-i18n="nav.design">Design</h3><ul>
           <li><a href="/design/#cgi" data-i18n="footer.cgi">3D &amp; CGI</a></li>
-          <li><a href="/design/#waveform">Waveform</a></li>
-          <li><a href="/design/#viz" data-i18n="footer.viz">Product visualization</a></li>
+          <li><a href="/design/waveform/" translate="no">Waveform</a></li>
+          <li><a href="/design/lemmy-visualization/" data-i18n="footer.viz">Product visualization</a></li>
           <li><a href="/design/#freelance" data-i18n="footer.freelance">Freelance work</a></li>
         </ul></div>
         <div class="gfooter__col"><h3 data-i18n="footer.caseStudies">Case studies</h3><ul>
@@ -396,9 +407,10 @@
           <li><a href="/research/#personal" data-i18n="footer.personal">Personal projects</a></li>
         </ul></div>
         <div class="gfooter__col"><h3 data-i18n="nav.tools">Artifacts</h3><ul>
-          <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
-          <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
-          <li><a href="/tools/#more" data-i18n="footer.moreTools">More artifacts</a></li>
+          <li><a href="/tools/almanac/" translate="no">Almanac</a></li>
+          <li><a href="/tools/viewar/" translate="no">ViewAR</a></li>
+          <li><a href="/tools/roboanimator/" translate="no">True RoboAnimator</a></li>
+          <li><a href="/tools/" data-i18n="footer.moreTools">More artifacts</a></li>
         </ul></div>
         <div class="gfooter__col"><h3 data-i18n="nav.about">About</h3><ul>
           <li><a href="/about/" data-i18n="footer.bio">Bio</a></li>

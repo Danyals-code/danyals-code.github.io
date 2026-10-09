@@ -87,12 +87,9 @@ window.SITE_I18N = {
     'video.toggle': 'تشغيل الفيديو أو إيقافه مؤقتًا',
     'video.toggleOnce': 'إيقاف الفيلم مؤقتًا أو تشغيله أو إعادة تشغيله',
 
-    'home.w1.label': 'الواقع المختلط · Meta Quest 3',
-    'home.w1.text': 'لا يرى الزوّار نقوش أولسان الصخرية التي تعود إلى ما قبل التاريخ إلا من الضفة المقابلة للجدول، وغالبًا عبر منظار مراقبة. مسحتُ الموقع بالتصوير الفوتوغرامتري وتقنية Gaussian splatting، وطوّرتُ تطبيقًا على Meta Quest 3 ينقله إلى أي غرفة.',
     'home.w1.award': 'المركز الأول',
     'home.w1.awardSub': 'المسابقة الثالثة للمحتوى الرقمي للتراث الكوري، 2024',
 
-    'home.w2.label': 'الذكاء الاصطناعي المتمحور حول الإنسان · IASDR 2025',
 
 
 
@@ -137,11 +134,6 @@ window.SITE_I18N = {
     'home.wins.papers.text': 'محكّمة، في IASDR 2025 وKSDS 2025 وKSDS 2026',
     'home.wins.downloads.text': 'تنزيل لإضافة True RoboAnimator، المنشورة على Blender Extensions بعد مراجعة مؤسسة Blender',
     'home.wins.thesis.text': 'أعلى درجة لمشروع تخرج البكالوريوس في الدفعة، التصميم الصناعي، NUST',
-    'home.c2.text': 'دراسة مضبوطة لمدى قدرة الناس على تمييز الفيديو المولَّد بالذكاء الاصطناعي من اللقطات الحقيقية، عبر ثلاث تقنيات للتوليد.',
-    'home.c3.text': 'تحوّل حركة روبوت بعجلتين في الرسوم المتحركة إلى حركة يستطيع العتاد تنفيذها، وتصدّر بيانات العجلات التي يحتاجها المهندسون.',
-    'home.c4.meta': 'تطبيق ويب · React Three Fiber',
-    'home.c4.alt': 'شاشة البدء في AR/VR UI Designer، وفيها خيارا النافذة والحجم وستة قوالب للنوافذ',
-    'home.c4.text': 'محرّر بالسحب والإفلات لواجهات على طراز visionOS، تُعاين ثلاثية الأبعاد في المتصفح دون الحاجة إلى جهاز Mac أو نظارة.',
     'home.c5.meta': 'التصميم الصناعي · مشروع تخرج البكالوريوس، NUST',
     'home.c5.alt': 'تصوير لجهاز Waveform، وهو جهاز أسطواني أسود صغير مثبّت أعلى شاشة الحاسوب',
     'home.c5.text': 'جهاز يُثبَّت على الشاشة ويحثّ على الحركة البدنية خلال ساعات الاستخدام الطويلة للشاشة.',
@@ -150,8 +142,6 @@ window.SITE_I18N = {
     'home.pubs.paper': 'ورقة مؤتمر',
     'home.pubs.full': 'ورقة كاملة',
     'home.pubs.pictorial': 'ورقة مصوّرة',
-    'home.read': 'قراءة دراسة الحالة',
-    'home.seeTool': 'عرض الأداة',
     'home.seeProject': 'عرض المشروع',
     // References under case studies
     'footer.references': 'المراجع',
@@ -168,6 +158,15 @@ window.SITE_I18N = {
     'home.reel.5': 'بحث في كيفية حكم الناس على الفيديو المولَّد بالذكاء الاصطناعي، نُشر في IASDR 2025.',
     'home.work.title': 'أعمال مختارة',
     'home.c3.alt': 'جمهور في قاعة مؤتمرات يتابع عرضًا لمخطط دقة الدراسة',
+    'home.promo.bangudae': 'نقوش أولسان الصخرية التي تعود إلى ما قبل التاريخ، في الداخل على Meta Quest 3.',
+    'home.promo.new': 'جديد',
+    'home.promo.almanac': 'كل يوم، كما كان يحسبه القدماء.',
+    'home.promo.learn': 'اعرف المزيد',
+    'home.promo.site': 'زيارة الموقع',
+    'home.promo.synthetic': 'إلى أي حد يستطيع الناس تمييز الفيديو المولَّد بالذكاء الاصطناعي من اللقطات الحقيقية؟',
+    'home.promo.robo': 'حركة تستطيع روبوتات حقيقية أن تنفّذها.',
+    'home.promo.get': 'احصل عليها',
+    'home.promo.form': 'قراءة شكل المنتج من بضع صور فقط.',
   },
 
   zh: {
@@ -245,12 +244,9 @@ window.SITE_I18N = {
     'video.toggle': '播放或暂停视频',
     'video.toggleOnce': '暂停、播放或重播影片',
 
-    'home.w1.label': '混合现实 · Meta Quest 3',
-    'home.w1.text': '游客只能隔着溪流、往往借助观景望远镜，远远看到蔚山这些史前岩刻。我用摄影测量和高斯泼溅（Gaussian splatting）扫描了遗址，并开发了一款 Meta Quest 3 应用，把它带进任何房间。',
     'home.w1.award': '第一名',
     'home.w1.awardSub': '第三届韩国文化遗产数字内容大赛，2024',
 
-    'home.w2.label': '以人为本的人工智能 · IASDR 2025',
 
 
 
@@ -295,11 +291,6 @@ window.SITE_I18N = {
     'home.wins.papers.text': '经同行评审，发表于 IASDR 2025、KSDS 2025 和 KSDS 2026',
     'home.wins.downloads.text': 'True RoboAnimator 的下载量；该插件经 Blender 基金会审核后发布于 Blender Extensions',
     'home.wins.thesis.text': '本科毕业设计获同届最高分，NUST 工业设计专业',
-    'home.c2.text': '一项对照研究：人们能在多大程度上区分三种技术生成的 AI 视频与真实影像。',
-    'home.c3.text': '把双轮机器人的动画转换为硬件可以执行的动作，并导出工程师所需的轮子数据。',
-    'home.c4.meta': '网页应用 · React Three Fiber',
-    'home.c4.alt': 'AR/VR UI Designer 的开始界面，可选择窗口或空间体积，并提供六种窗口模板',
-    'home.c4.text': '一款拖放式编辑器，用于设计 visionOS 风格的界面，可在浏览器中进行 3D 预览，无需 Mac 或头显。',
     'home.c5.meta': '工业设计 · 本科毕业设计，NUST',
     'home.c5.alt': 'Waveform 渲染图：一个安装在电脑显示器顶部的小型黑色圆柱形装置',
     'home.c5.text': '一款安装在显示器上的装置，在长时间使用屏幕时提醒人们活动身体。',
@@ -308,8 +299,6 @@ window.SITE_I18N = {
     'home.pubs.paper': '会议论文',
     'home.pubs.full': '完整论文',
     'home.pubs.pictorial': '图文论文',
-    'home.read': '阅读案例研究',
-    'home.seeTool': '查看工具',
     'home.seeProject': '查看项目',
     // References under case studies
     'footer.references': '参考文献',
@@ -326,5 +315,14 @@ window.SITE_I18N = {
     'home.reel.5': '关于人们如何判断 AI 生成视频的研究，发表于 IASDR 2025。',
     'home.work.title': '精选作品',
     'home.c3.alt': '会议室里的观众正在观看研究准确率图表的演讲',
+    'home.promo.bangudae': '蔚山的史前岩刻，借助 Meta Quest 3 搬进室内。',
+    'home.promo.new': '新',
+    'home.promo.almanac': '每一天，都按古人的方式计算。',
+    'home.promo.learn': '进一步了解',
+    'home.promo.site': '访问网站',
+    'home.promo.synthetic': '人们能多准确地区分 AI 生成的视频与真实影像？',
+    'home.promo.robo': '真实机器人也能执行的动画。',
+    'home.promo.get': '获取',
+    'home.promo.form': '只用几张图片，读出产品的形态。',
   },
 };

@@ -449,7 +449,7 @@
   function indexPage(path, doc) {
     const main = doc.querySelector('main');
     if (!main) return [];
-    main.querySelectorAll('pre, script, style, svg, button, video').forEach((el) => el.remove());
+    main.querySelectorAll('pre, script, style, svg, button, video, dialog').forEach((el) => el.remove());
     const title = clean(doc.title).split(' · ')[0].split(': ')[0];
     const page = path === '/' ? 'Home' : title;
     const description = doc.querySelector('meta[name="description"]');
@@ -481,17 +481,26 @@
       const { pathname } = new URL(a.href);
       if (pathname.endsWith('/') && pathname !== '/publications/') paths.add(pathname);
     });
-    const pages = await Promise.all(
-      Array.from(paths).map(async (path) => {
-        try {
-          const response = await fetch(path);
-          if (!response.ok) return [];
-          return indexPage(path, new DOMParser().parseFromString(await response.text(), 'text/html'));
-        } catch (e) {
-          return [];
-        }
-      })
-    );
+    // Pages one level down (an app's or a project's own page) are found
+    // through the pages that list them.
+    const fetchPage = async (path) => {
+      try {
+        const response = await fetch(path);
+        if (!response.ok) return { entries: [], links: [] };
+        const doc = new DOMParser().parseFromString(await response.text(), 'text/html');
+        const links = Array.from(doc.querySelectorAll('main a[href^="/"]'))
+          .map((a) => a.getAttribute('href').split('#')[0])
+          .filter((href) => /^\/(tools|design|research)\/[^/]+\/$/.test(href));
+        return { entries: indexPage(path, doc), links };
+      } catch (e) {
+        return { entries: [], links: [] };
+      }
+    };
+    const first = await Promise.all(Array.from(paths).map(fetchPage));
+    const deeper = new Set();
+    first.forEach((result) => result.links.forEach((href) => paths.has(href) || deeper.add(href)));
+    const second = await Promise.all(Array.from(deeper).map(fetchPage));
+    const pages = first.concat(second).map((result) => result.entries);
     const seen = new Set();
     return pages.flat().filter((entry) => {
       const key = `${entry.path}#${entry.id}|${entry.heading}`;
@@ -705,6 +714,8 @@
         setActive(active + (event.key === 'ArrowDown' ? 1 : -1));
       } else if (event.key === 'Enter') {
         event.preventDefault();
+        // With nothing typed or picked, Enter stays put.
+        if (active < 0 && !input.value.trim()) return;
         const entry = hits[Math.max(active, 0)];
         if (entry) go(entry);
       }
@@ -992,6 +1003,183 @@
     });
   }
 
+  /* ------------------------------------------------------------------ app bar (Artifacts)
+     A row of app icons linking to each app's page. Chevrons show at whichever
+     end of the row has more icons. */
+
+  function initAppbar() {
+    document.querySelectorAll('[data-appbar]').forEach((bar) => {
+      const track = bar.querySelector('.appbar__track');
+      const prev = bar.querySelector('[data-appbar-prev]');
+      const next = bar.querySelector('[data-appbar-next]');
+      if (!track || !prev || !next) return;
+      const forward = () => (getComputedStyle(track).direction === 'rtl' ? -1 : 1);
+      const update = () => {
+        const travelled = Math.abs(track.scrollLeft);
+        prev.disabled = travelled <= 4;
+        next.disabled = travelled + track.clientWidth >= track.scrollWidth - 4;
+      };
+      const page = (sign) =>
+        track.scrollBy({ left: sign * forward() * track.clientWidth * 0.7, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+      prev.addEventListener('click', () => page(-1));
+      next.addEventListener('click', () => page(1));
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      // Bring the current app's icon to the middle of the row (in either
+      // direction), or go back to the start of the row.
+      const current = track.querySelector('[aria-current="page"]');
+      const center = () => {
+        if (!current) {
+          track.scrollLeft = 0;
+          return;
+        }
+        const row = track.getBoundingClientRect();
+        const icon = current.getBoundingClientRect();
+        track.scrollLeft += icon.left + icon.width / 2 - (row.left + row.width / 2);
+      };
+      document.addEventListener('site:lang', () => {
+        center();
+        update();
+      });
+      center();
+      update();
+    });
+  }
+
+  /* ------------------------------------------------------------------ highlights (data-highlights)
+     Large slides that advance on their own while on screen. The current dot
+     fills over --hl-dur; when it is full the next slide comes in. The button
+     stops and restarts; reduced motion never autoplays. */
+
+  function initHighlights() {
+    document.querySelectorAll('[data-highlights]').forEach((hl) => {
+      const track = hl.querySelector('.hl__track');
+      const dotsBox = hl.querySelector('.hl__dots');
+      const toggle = hl.querySelector('.hl__play');
+      const slides = Array.from(track ? track.children : []);
+      if (!slides.length || !dotsBox) return;
+      let current = 0;
+      let stopped = reduceMotion.matches;
+      let visible = false;
+      const dots = slides.map((slide, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'hl__dot';
+        dot.setAttribute('aria-label', `${i + 1} / ${slides.length}`);
+        dot.addEventListener('click', () => go(i));
+        dot.addEventListener('animationend', () => {
+          if (!stopped && visible) go(current + 1);
+        });
+        dotsBox.append(dot);
+        return dot;
+      });
+      const state = () => {
+        hl.classList.toggle('is-stopped', stopped);
+        hl.classList.toggle('is-paused', stopped || !visible);
+        hl.classList.toggle('is-static', reduceMotion.matches);
+        if (toggle) toggle.setAttribute('aria-label', stopped ? toggle.dataset.playLabel || 'Play' : toggle.dataset.pauseLabel || 'Pause');
+      };
+      const mark = (index) => {
+        current = index;
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('is-current', i === index);
+          if (i === index) dot.setAttribute('aria-current', 'true');
+          else dot.removeAttribute('aria-current');
+        });
+        // Off-screen slides are hidden from screen readers and the Tab key.
+        slides.forEach((slide, i) => {
+          slide.setAttribute('aria-hidden', String(i !== index));
+          slide.inert = i !== index;
+        });
+      };
+      const go = (index) => {
+        const i = (index + slides.length) % slides.length;
+        const slide = slides[i];
+        // Restart the fill even when the same dot stays current.
+        dots[i].classList.remove('is-current');
+        void dots[i].offsetWidth;
+        mark(i);
+        track.scrollTo({ left: slide.offsetLeft - (track.clientWidth - slide.offsetWidth) / 2, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+      };
+      // Swiping or scrolling the track picks whichever slide is nearest the middle.
+      let ticking = false;
+      track.addEventListener(
+        'scroll',
+        () => {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(() => {
+            ticking = false;
+            const middle = track.scrollLeft + track.clientWidth / 2;
+            let best = 0;
+            slides.forEach((slide, i) => {
+              const d = Math.abs(slide.offsetLeft + slide.offsetWidth / 2 - middle);
+              if (d < Math.abs(slides[best].offsetLeft + slides[best].offsetWidth / 2 - middle)) best = i;
+            });
+            if (best !== current) mark(best);
+          });
+        },
+        { passive: true }
+      );
+      if (toggle)
+        toggle.addEventListener('click', () => {
+          stopped = !stopped;
+          if (!stopped) go(current);
+          state();
+        });
+      if (hasIO)
+        new IntersectionObserver(
+          (entries) => {
+            visible = entries[0].isIntersecting;
+            state();
+          },
+          { threshold: 0.5 }
+        ).observe(track);
+      document.addEventListener('site:lang', () => {
+        go(0);
+        state();
+      });
+      mark(0);
+      state();
+    });
+  }
+
+  /* ------------------------------------------------------------------ closer look (data-closer)
+     Pill buttons beside a stage: opening one shows its text and its media. */
+
+  function initCloser() {
+    document.querySelectorAll('[data-closer]').forEach((box) => {
+      const items = Array.from(box.querySelectorAll('.closer__item'));
+      const media = Array.from(box.querySelectorAll('.closer__media'));
+      const open = (index) => {
+        items.forEach((item, i) => {
+          item.classList.toggle('is-open', i === index);
+          item.querySelector('.closer__btn').setAttribute('aria-expanded', String(i === index));
+        });
+        media.forEach((m, i) => m.classList.toggle('is-on', i === index));
+      };
+      items.forEach((item, i) => item.querySelector('.closer__btn').addEventListener('click', () => open(i)));
+      open(0);
+    });
+  }
+
+  /* ------------------------------------------------------------------ detail sheets (data-sheet)
+     A + button opens the <dialog> it names; clicking outside or the close
+     button shuts it. */
+
+  function initSheets() {
+    document.querySelectorAll('[data-sheet]').forEach((button) => {
+      const sheet = document.getElementById(button.dataset.sheet);
+      if (!sheet || typeof sheet.showModal !== 'function') return;
+      button.addEventListener('click', () => sheet.showModal());
+    });
+    document.querySelectorAll('dialog.sheet').forEach((sheet) => {
+      sheet.addEventListener('click', (event) => {
+        if (event.target === sheet || event.target.closest('.sheet__close')) sheet.close();
+      });
+    });
+  }
+
   /* ------------------------------------------------------------------ copy buttons */
 
   function initCopy() {
@@ -1088,7 +1276,13 @@
       });
     });
     const openFromHash = () => {
-      const id = decodeURIComponent(location.hash.slice(1));
+      // A stray % in a pasted link must not stop the rest of the page.
+      let id = location.hash.slice(1);
+      try {
+        id = decodeURIComponent(id);
+      } catch (error) {
+        return;
+      }
       const target = id && document.getElementById(id);
       if (!target || !target.closest('[hidden]')) return;
       revealInPanels(target);
@@ -1101,6 +1295,26 @@
   /* ------------------------------------------------------------------ segmented charts (e.g. Fitts' law metrics)
      A thumb slides between options; bars ease to their new lengths. */
 
+  // A segmented control's sliding thumb. Returns a function that moves it to
+  // the pressed button; call it after every change.
+  function segThumb(seg, buttons) {
+    const thumb = document.createElement('span');
+    thumb.className = 'seg__thumb';
+    thumb.setAttribute('aria-hidden', 'true');
+    seg.prepend(thumb);
+    seg.classList.add('has-thumb');
+    const place = () => {
+      const button = buttons.find((b) => b.getAttribute('aria-pressed') === 'true') || buttons[0];
+      thumb.style.width = `${button.offsetWidth}px`;
+      thumb.style.height = `${button.offsetHeight}px`;
+      thumb.style.translate = `${button.offsetLeft}px ${button.offsetTop}px`;
+    };
+    requestAnimationFrame(() => seg.classList.add('is-ready'));
+    if ('ResizeObserver' in window) new ResizeObserver(place).observe(seg);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
+    return place;
+  }
+
   function initSegmented() {
     document.querySelectorAll('[data-seg-chart]').forEach((chart) => {
       const seg = chart.querySelector('.seg');
@@ -1108,18 +1322,8 @@
       const rows = Array.from(chart.querySelectorAll('[data-values]'));
       const caption = chart.querySelector('[data-seg-caption]');
       if (!seg || !buttons.length) return;
-      const thumb = document.createElement('span');
-      thumb.className = 'seg__thumb';
-      thumb.setAttribute('aria-hidden', 'true');
-      seg.prepend(thumb);
-      seg.classList.add('has-thumb');
+      const place = segThumb(seg, buttons);
       let active = 0;
-      const place = () => {
-        const button = buttons[active];
-        thumb.style.width = `${button.offsetWidth}px`;
-        thumb.style.height = `${button.offsetHeight}px`;
-        thumb.style.translate = `${button.offsetLeft}px ${button.offsetTop}px`;
-      };
       const select = (index) => {
         active = index;
         buttons.forEach((b, i) => b.setAttribute('aria-pressed', String(i === index)));
@@ -1137,11 +1341,51 @@
       // The caption comes from the pressed button, whose text changes with the language.
       document.addEventListener('site:lang', () => select(active));
       select(0);
-      requestAnimationFrame(() => seg.classList.add('is-ready'));
-      if ('ResizeObserver' in window) new ResizeObserver(place).observe(seg);
-      if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
+    });
+
+    // Filters: each button names a group (data-filter); items carry data-group.
+    // "all" shows everything. A rail scrolls back to its start after a change.
+    document.querySelectorAll('[data-seg-filter]').forEach((box) => {
+      const seg = box.querySelector('.seg');
+      const buttons = Array.from(box.querySelectorAll('[data-filter]'));
+      const items = Array.from(box.querySelectorAll('[data-group]'));
+      if (!seg || !buttons.length) return;
+      const place = segThumb(seg, buttons);
+      const select = (button) => {
+        const group = button.dataset.filter;
+        buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+        items.forEach((item) => (item.hidden = group !== 'all' && !item.dataset.group.split(' ').includes(group)));
+        const track = box.querySelector('.rail__track');
+        if (track) {
+          track.scrollLeft = 0;
+          track.dispatchEvent(new Event('scroll'));
+        }
+        place();
+      };
+      buttons.forEach((button) => button.addEventListener('click', () => select(button)));
+      select(buttons[0]);
+    });
+
+    // Media switches: buttons under a stage show one item at a time, with its caption.
+    document.querySelectorAll('[data-seg-media]').forEach((box) => {
+      const seg = box.querySelector('.seg');
+      const buttons = Array.from(box.querySelectorAll('[data-show]'));
+      const items = Array.from(box.querySelectorAll('.segmedia__item'));
+      const caps = Array.from(box.querySelectorAll('[data-cap]'));
+      if (!seg || !buttons.length) return;
+      const place = segThumb(seg, buttons);
+      const select = (button) => {
+        const id = button.dataset.show;
+        buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+        items.forEach((item) => item.classList.toggle('is-on', item.dataset.item === id));
+        caps.forEach((cap) => (cap.hidden = cap.dataset.cap !== id));
+        place();
+      };
+      buttons.forEach((button) => button.addEventListener('click', () => select(button)));
+      select(buttons[0]);
     });
   }
+
 
   /* ------------------------------------------------------------------ images fade in as they load */
 
@@ -1537,6 +1781,10 @@
     initCounters,
     initLoops,
     initRails,
+    initAppbar,
+    initHighlights,
+    initCloser,
+    initSheets,
     initCopy,
     initToggles,
     initSegmented,

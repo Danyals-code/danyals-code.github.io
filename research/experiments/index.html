@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" data-langs="en ar zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}},1500)})})(document.documentElement)</script>
+  <title data-i18n="research.xp.title">Interaction experiments · Danyal Sarfraz</title>
+  <meta name="description" data-i18n-attr="content:research.xp.description" content="Three focused studies of established HCI problems: Fitts’ law across three input devices, physics-based window snapping, and head-coupled perspective from a webcam.">
+  <link rel="canonical" href="https://danyals-code.github.io/research/experiments/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Danyal Sarfraz">
+  <meta property="og:url" content="https://danyals-code.github.io/research/experiments/">
+  <meta property="og:title" content="Interaction experiments · Danyal Sarfraz">
+  <meta property="og:description" content="Three focused studies of established HCI problems: Fitts’ law across three input devices, physics-based window snapping, and head-coupled perspective from a webcam.">
+  <meta property="og:image" content="https://danyals-code.github.io/assets/img/tools/head-tracked.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="/assets/css/site.css?v=26">
+  <script src="/assets/js/i18n.js?v=4" defer></script>
+  <script src="/assets/js/i18n/research.js?v=6" defer></script>
+  <script src="/assets/js/site.js?v=19" defer></script>
+</head>
+<body class="has-lnav">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="gnav">
+    <nav class="gnav__inner" aria-label="Global" data-i18n-attr="aria-label:nav.label">
+      <a class="gnav__logo" href="/">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
+        Danyal Sarfraz
+      </a>
+      <ul class="gnav__list" id="gnav-list">
+        <li><a href="/design/" data-i18n="nav.design">Design</a></li>
+        <li><a href="/research/" aria-current="page" data-i18n="nav.research">Research</a></li>
+        <li><a href="/tools/" data-i18n="nav.tools">Artifacts</a></li>
+        <li><a href="/about/" data-i18n="nav.about">About</a></li>
+        <li><a href="/about/#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="gnav__tools">
+        <button class="gnav__icon" type="button" data-search-open aria-label="Search the site" title="Search">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="m10.4 10.4 3.4 3.4"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-lang-open aria-haspopup="true" aria-expanded="false" aria-label="Language: English" title="Language">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.6 2.6 3.6 2.6 6S9.7 12.4 8 14M8 2C6.3 3.6 5.4 5.6 5.4 8s.9 4.4 2.6 6"/></svg>
+        </button>
+        <button class="gnav__icon" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark theme" title="Switch to dark theme">
+          <svg class="theme-icon theme-icon--light" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></svg>
+          <svg class="theme-icon theme-icon--dark" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.4 9.6A5.6 5.6 0 1 1 6.4 2.6a4.5 4.5 0 0 0 7 7z"/></svg>
+        </button>
+      </div>
+      <button class="gnav__menu" type="button" data-menu aria-controls="gnav-list" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 18 18" aria-hidden="true"><path class="l1" d="M2 6h14"/><path class="l2" d="M2 12h14"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <nav class="lnav" aria-label="Interaction experiments" data-i18n-attr="aria-label:research.xp.nav.label">
+    <div class="lnav__inner">
+      <a class="lnav__title" href="#top" data-i18n="research.xp.nav.title">Interaction experiments</a>
+      <ul class="lnav__links">
+        <li><a href="#pointing" data-i18n="research.xp.nav.pointing">Pointing</a></li>
+        <li><a href="#snapping" data-i18n="research.xp.nav.snapping">Window snapping</a></li>
+        <li><a href="#perspective" data-i18n="research.xp.nav.perspective">Fish-tank VR</a></li>
+      </ul>
+      <a class="btn btn--sm" href="/research/" data-i18n="research.xp.nav.all">All research</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="t-eyebrow hero__eyebrow" data-i18n="research.experiments.meta">2025 · Interaction experiments</p>
+        <h1 class="t-display hero__title" data-i18n="research.experiments.title">Pointing, window snapping and fish-tank VR</h1>
+        <p class="t-lead hero__lead" data-i18n="research.experiments.summary">Three focused studies of established HCI problems: Fitts’ law across three input devices, physics-based window snapping, and head-coupled perspective from a webcam.</p>
+        <p class="t-small t-muted" style="margin-top:16px" data-i18n="research.experiments.intro">The first two began in UNIST’s Advanced Human–Computer Interaction course in 2025.</p>
+      </div>
+      <div class="container-wide" style="margin-top: clamp(32px,5vw,64px)">
+        <div class="fig-row fig-row--3 xp-trio" data-reveal>
+          <a class="fig" href="#pointing"><div class="fig__media"><img src="/assets/img/coursework/fitts-setup.jpg" width="1050" height="1400" alt="A Wacom Cintiq Pro showing WebFitts, with its stylus beside it" data-i18n-attr="alt:research.xp.fittsAlt" loading="lazy"></div><p class="fig__cap" data-i18n="research.xp.nav.pointing">Pointing</p></a>
+          <a class="fig" href="#snapping"><div class="fig__media"><img src="/assets/img/coursework/sliding-poster.jpg" width="1280" height="720" alt="Windows sliding toward the screen edges in the snapping prototype" data-i18n-attr="alt:research.xp.snapAlt" loading="lazy"></div><p class="fig__cap" data-i18n="research.xp.nav.snapping">Window snapping</p></a>
+          <a class="fig" href="#perspective"><div class="fig__media"><img src="/assets/img/tools/head-tracked.jpg" width="1600" height="1000" alt="The start card of the head-tracked perspective demo, a window into your monitor that follows your head" data-i18n-attr="alt:research.xp.headAlt" loading="lazy"></div><p class="fig__cap" data-i18n="research.xp.nav.perspective">Fish-tank VR</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pointing" aria-labelledby="pointing-title">
+      <div class="container">
+        <h2 class="t-h2 xp-title" id="pointing-title" data-i18n="research.fitts.title"><span class="study__num">Pointing</span> Fitts’ law, three ways</h2>
+        <div class="feature xp-feature" data-reveal>
+          <div class="feature__text">
+            <p class="study__how" data-i18n="research.fitts.how">A mouse, a Wacom Cintiq Pro stylus and an iPad operated with a mouse, on WebFitts tasks at three amplitudes (200, 400 and 800 px) and three widths (40, 80 and 160 px), 11 targets per condition, one session per device.</p>
+            <div class="chart" data-seg-chart>
+                    <p class="chart__sub" data-seg-caption data-i18n="research.fitts.capTp">Throughput in bits per second. Higher is better.</p>
+                    <div class="seg" role="group" aria-label="Metric" data-i18n-attr="aria-label:research.fitts.metric">
+                      <button type="button" data-seg="tp" data-caption="Throughput in bits per second. Higher is better." aria-pressed="true" data-i18n="research.fitts.tp" data-i18n-attr="data-caption:research.fitts.capTp">Throughput</button>
+                      <button type="button" data-seg="err" data-caption="Share of clicks that missed the target. Lower is better." aria-pressed="false" data-i18n="research.fitts.err" data-i18n-attr="data-caption:research.fitts.capErr">Error rate</button>
+                      <button type="button" data-seg="mt" data-caption="Mean completion time per target in milliseconds. Lower is better. The Cintiq mean includes one setup delay." aria-pressed="false" data-i18n="research.fitts.time" data-i18n-attr="data-caption:research.fitts.capTime">Time</button>
+                    </div>
+                    <ul class="bars">
+                      <li class="bar" data-values='[{"value":5.64,"label":"5.6"},{"value":1.01,"label":"1%"},{"value":601,"label":"601"}]'>
+                        <span class="bar__label" data-i18n="research.fitts.mouse">Mouse</span><span class="bar__track"><span class="bar__fill" style="--v:100%"></span></span><span class="bar__value">5.6</span>
+                      </li>
+                      <li class="bar" data-values='[{"value":3.99,"label":"4.0"},{"value":10.1,"label":"10%"},{"value":1132,"label":"1,132"}]'>
+                        <span class="bar__label" data-i18n="research.fitts.cintiq">Wacom Cintiq Pro<small>stylus</small></span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:71%"></span></span><span class="bar__value">4.0</span>
+                      </li>
+                      <li class="bar" data-values='[{"value":2.23,"label":"2.2"},{"value":10.1,"label":"10%"},{"value":1091,"label":"1,091"}]'>
+                        <span class="bar__label" data-i18n="research.fitts.ipad">iPad with mouse</span><span class="bar__track"><span class="bar__fill bar__fill--blue" style="--v:40%"></span></span><span class="bar__value">2.2</span>
+                      </li>
+                    </ul>
+                  </div>
+          </div>
+          <figure class="fig feature__media">
+            <div class="fig__media"><img src="/assets/img/coursework/fitts-setup.jpg" width="1050" height="1400" alt="A Wacom Cintiq Pro showing WebFitts, with its stylus beside it" data-i18n-attr="alt:research.xp.fittsAlt" loading="lazy"></div>
+          </figure>
+        </div>
+        <p class="t-two-tone xp-result" data-reveal data-i18n="research.fitts.result"><strong>The mouse was fastest and most accurate.</strong> The stylus was held back by misclicks and calibration offsets, and the iPad had the lowest throughput, with limited pointer control within apps. Both missed about one target in ten.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="snapping" aria-labelledby="snapping-title">
+      <div class="container">
+        <h2 class="t-h2 xp-title" id="snapping-title" data-i18n="research.snap.title"><span class="study__num">Technique</span> Physics-based window snapping</h2>
+        <div class="xp-lead" data-reveal><p class="study__how" data-i18n="research.snap.how">A window-management prototype in Unreal Engine Blueprints. Windows move with velocity and a speed limit, check for collisions, and snap to screen edges and corners, with tunable snap strength and distances.</p></div>
+      </div>
+      <div class="container-wide" data-reveal="scale">
+        <div class="fig__media loop panel-video" data-manual>
+                    <video src="/assets/video/coursework/sliding-windows.mp4" data-i18n-attr="aria-label:research.snap.videoAlt" aria-label="Window-snapping prototype in Unreal Engine: windows slide with momentum and snap to screen edges and corners" poster="/assets/img/coursework/sliding-poster.jpg" width="1280" height="720" muted loop playsinline preload="none"></video>
+                    <button class="loop__toggle" type="button" aria-label="Play or pause the video" data-i18n-attr="aria-label:video.toggle">
+                      <svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="3" y="2" width="3" height="10" rx="1"/><rect x="8" y="2" width="3" height="10" rx="1"/></svg>
+                      <svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6L11.5 7z"/></svg>
+                    </button>
+                  </div>
+      </div>
+    </section>
+
+    <section class="section" id="perspective" aria-labelledby="perspective-title">
+      <div class="container">
+        <h2 class="t-h2 xp-title" id="perspective-title" data-i18n="research.fishtank.title"><span class="study__num">Perspective</span> Fish-tank VR with webcam head tracking</h2>
+        <div class="feature xp-feature" data-reveal>
+          <div class="feature__text">
+            <p class="study__how" data-i18n="research.fishtank.how">In the browser, webcam face tracking drives an off-axis projection, so the monitor behaves as a window onto a 3D scene that responds to head movement. Builds on work by Ware, Arthur and Booth, and by Deering. All video is processed on-device.</p>
+            <div class="cta-row cta-row--start">
+              <a class="btn btn--md" href="https://danyals-code.github.io/head-tracked-perspective/" data-i18n="research.fishtank.demo">Try the live demo</a>
+              <a class="link-ext" href="https://github.com/Danyals-code/head-tracked-perspective" translate="no">GitHub</a>
+            </div>
+          </div>
+          <figure class="fig feature__media">
+            <div class="fig__media"><img src="/assets/img/tools/head-tracked.jpg" width="1600" height="1000" alt="The start card of the head-tracked perspective demo, a window into your monitor that follows your head" data-i18n-attr="alt:research.xp.headAlt" loading="lazy"></div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="more" aria-label="More research" data-i18n-attr="aria-label:research.xp.more">
+      <div class="container">
+        <a class="next-card" href="/research/" data-reveal>
+          <span class="next-card__go next-card__go--back"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#arrow-right"/></svg></span>
+          <span><span class="next-card__label" data-i18n="research.xp.backLabel">Back to</span><span class="next-card__name" data-i18n="research.lnav.title">Research</span><span class="t-muted" data-i18n="research.xp.backText">Publications, industry projects and personal projects.</span></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gfooter">
+    <div class="gfooter__inner">
+      <nav class="gfooter__dir" aria-label="Site directory" data-i18n-attr="aria-label:footer.label">
+        <div class="gfooter__col"><h3 data-i18n="nav.design">Design</h3><ul>
+          <li><a href="/design/#cgi" data-i18n="footer.cgi">3D &amp; CGI</a></li>
+          <li><a href="/design/waveform/" translate="no">Waveform</a></li>
+          <li><a href="/design/lemmy-visualization/" data-i18n="footer.viz">Product visualization</a></li>
+          <li><a href="/design/#freelance" data-i18n="footer.freelance">Freelance work</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="footer.caseStudies">Case studies</h3><ul>
+          <li><a href="/research/bangudae-xr/" data-i18n="footer.bangudae">Bangudae XR</a></li>
+          <li><a href="/research/life-size-ar/" data-i18n="footer.lifeSize">Life-size AR</a></li>
+          <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
+          <li><a href="/research/product-form/" data-i18n="footer.productForm">Product form analysis</a></li>
+          <li><a href="/research/lemmy/" data-i18n="footer.robotMotion">Robot motion</a></li>
+          <li><a href="/research/lemmy-framework/" data-i18n="footer.framework">MSc thesis framework</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="nav.research">Research</h3><ul>
+          <li><a href="/research/#publications" data-i18n="footer.publications">Publications</a></li>
+          <li><a href="/research/#thesis" data-i18n="footer.thesis">MSc thesis</a></li>
+          <li><a href="/research/#industry" data-i18n="footer.industry">Industry projects</a></li>
+          <li><a href="/research/#personal" data-i18n="footer.personal">Personal projects</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="nav.tools">Artifacts</h3><ul>
+          <li><a href="/tools/almanac/" translate="no">Almanac</a></li>
+          <li><a href="/tools/viewar/" translate="no">ViewAR</a></li>
+          <li><a href="/tools/roboanimator/" translate="no">True RoboAnimator</a></li>
+          <li><a href="/tools/" data-i18n="footer.moreTools">More artifacts</a></li>
+        </ul></div>
+        <div class="gfooter__col"><h3 data-i18n="nav.about">About</h3><ul>
+          <li><a href="/about/" data-i18n="footer.bio">Bio</a></li>
+          <li><a href="/about/#experience" data-i18n="footer.experience">Experience</a></li>
+          <li><a href="/about/#education" data-i18n="footer.education">Education</a></li>
+          <li><a href="/about/#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul></div>
+      </nav>
+      <div class="gfooter__legal">
+        <p data-i18n="footer.copyright">Copyright © <span data-year>2026</span> Danyal Sarfraz. All rights reserved.</p>
+        <nav aria-label="Elsewhere" data-i18n-attr="aria-label:footer.elsewhere">
+          <a href="https://www.linkedin.com/in/designbydanyal/">LinkedIn</a>
+          <a href="https://github.com/Danyals-code">GitHub</a>
+          <a href="https://www.behance.net/designedbydanyal">Behance</a>
+          <a href="mailto:danialsarfraz2000@gmail.com" data-i18n="footer.email">Email</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

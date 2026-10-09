@@ -2,11 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Publications · Danyal Sarfraz</title>
   <meta name="robots" content="noindex">
   <link rel="canonical" href="https://danyals-code.github.io/research/#publications">
   <meta http-equiv="refresh" content="0; url=/research/#publications">
-  <script>location.replace('/research/' + (location.hash || '#publications'));</script>
+  <script>
+    // Keep ?lang= and send the old page's anchors to their new places.
+    (function () {
+      var id = location.hash.slice(1);
+      var paper = { ksds26: 'ksds-2026', 'iasdr-a': 'iasdr-2025-actions', 'iasdr-s': 'iasdr-2025-synthetic', ksds25: 'ksds-2025', thesis: 'thesis' };
+      var moved = { papers: 'publications', talks: 'publications', 'talks-title': 'publications', 'thesis-title': 'thesis' };
+      var key = id.replace(/^(sum|bib|bibtex)-/, '');
+      var target = moved[id] || (key !== id && paper[key]) || id || 'publications';
+      location.replace('/research/' + location.search + '#' + target);
+    })();
+  </script>
 </head>
 <body>
   <p>Publications now live on the <a href="/research/#publications">Research</a> page.</p>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}},1500)})})(document.documentElement)</script>
   <title data-i18n="tools.title">Artifacts · Danyal Sarfraz</title>
-  <meta name="description" content="Artifacts by Danyal Sarfraz: True RoboAnimator for Blender, the AR/VR UI Designer for visionOS, a life-size AR app for iPhone and Apple Vision Pro, Swift Web Studio and more." data-i18n-attr="content:tools.description">
+  <meta name="description" content="Artifacts by Danyal Sarfraz: Almanac and ViewAR for iPhone, the Lemmy AR Experience for iPhone and Apple Vision Pro, the True RoboAnimator and AMVR add-ons for Blender, and Swift Web Studio." data-i18n-attr="content:tools.description">
   <link rel="canonical" href="https://danyals-code.github.io/tools/">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -14,7 +14,7 @@
   <meta property="og:site_name" content="Danyal Sarfraz">
   <meta property="og:url" content="https://danyals-code.github.io/tools/">
   <meta property="og:title" content="Artifacts · Danyal Sarfraz">
-  <meta property="og:description" content="Native AR and visionOS apps, spatial UI tools, Blender add-ons and web prototypes.">
+  <meta property="og:description" content="iPhone, AR and visionOS apps, spatial UI tools, Blender add-ons and web prototypes.">
   <meta property="og:image" content="https://danyals-code.github.io/assets/img/roboanimator/promo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -22,10 +22,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=13">
-  <script src="/assets/js/i18n.js?v=2" defer></script>
-  <script src="/assets/js/i18n/tools.js?v=1" defer></script>
-  <script src="/assets/js/site.js?v=14" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=26">
+  <script src="/assets/js/i18n.js?v=4" defer></script>
+  <script src="/assets/js/i18n/tools.js?v=7" defer></script>
+  <script src="/assets/js/site.js?v=19" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -70,157 +70,123 @@
       </div>
     </section>
 
-    <!-- RoboAnimator -->
-    <section class="section section--tight" id="roboanimator" aria-labelledby="ra-title" style="padding-top:0">
-      <div class="container-wide">
-        <div class="tile theme-dark" data-reveal>
-          <div class="feature feature--wide-media" style="padding: clamp(26px,3.4vw,48px)">
-            <div class="feature__media fig__media" style="background:#000"><img src="/assets/img/roboanimator/promo.jpg" width="2000" height="1333" alt="Stylized render of the True RoboAnimator panels floating in dark space" data-i18n-attr="alt:tools.roboanimator.alt" loading="lazy"></div>
-            <div class="feature__text">
-              <span class="tile__eyebrow" data-i18n="tools.roboanimator.eyebrow">Blender add-on · Python · GPL-3.0</span>
-              <h2 class="t-h2" id="ra-title" translate="no">True RoboAnimator</h2>
-              <p data-i18n="tools.roboanimator.text">Converts keyframed chassis animation into physically plausible motion for two-wheeled robots. The add-on detects lateral slip, corrects infeasible paths, computes wheel angles and RPM within speed limits, and exports CSV or JSON for engineering and AR use.</p>
-              <ul class="chips">
-                <li data-i18n="tools.roboanimator.downloads">7,000+ downloads</li>
-                <li data-i18n="tools.roboanimator.version">Blender 4.2+</li>
-                <li data-i18n="tools.roboanimator.official">Official Blender Extensions</li>
-              </ul>
-              <div class="cta-row cta-row--start" style="margin-top:24px">
-                <a class="btn" href="https://extensions.blender.org/add-ons/true-roboanimator/" data-i18n="tools.roboanimator.get">Get it on Blender Extensions</a>
-                <a class="link-ext" href="https://github.com/Danyals-code/RoboAnimator---Blender-Addon" translate="no">GitHub</a>
-              </div>
-            </div>
+    <!-- App bar: one icon per app, linking to its page. A hairline separates
+         apps, Blender add-ons and web tools. -->
+    <nav class="appbar" aria-label="Artifacts" data-i18n-attr="aria-label:nav.tools" data-appbar>
+      <ul class="appbar__track">
+        <li><a class="appbar__item" href="/tools/almanac/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/almanac-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/almanac-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Almanac</span><span class="appbar__new" data-i18n="tools.bar.new">New</span></a></li>
+        <li><a class="appbar__item" href="/tools/viewar/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/viewar.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">ViewAR</span><span class="appbar__new" data-i18n="tools.bar.new">New</span></a></li>
+        <li><a class="appbar__item" href="/research/life-size-ar/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/app/icon-light.png" width="512" height="512" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/app/icon-dark.png" width="512" height="512" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Lemmy AR</span></a></li>
+        <li class="appbar__sep" aria-hidden="true"></li>
+        <li><a class="appbar__item" href="/tools/roboanimator/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/roboanimator.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">RoboAnimator</span></a></li>
+        <li><a class="appbar__item" href="/tools/amvr/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/amvr.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">AMVR</span></a></li>
+        <li class="appbar__sep" aria-hidden="true"></li>
+        <li><a class="appbar__item" href="/tools/swift-studio/"><span class="appbar__icon appbar__icon--img"><img src="/assets/img/apps/swift-studio.svg" width="1024" height="1024" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Swift Studio</span></a></li>
+      </ul>
+      <button class="appbar__paddle appbar__paddle--prev" type="button" data-appbar-prev aria-label="Previous" data-i18n-attr="aria-label:rail.prev"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5"/></svg></button>
+      <button class="appbar__paddle appbar__paddle--next" type="button" data-appbar-next aria-label="Next" data-i18n-attr="aria-label:rail.next"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="m5 2 5 5-5 5"/></svg></button>
+    </nav>
+
+    <!-- Lineup: every artifact as a card, filtered by kind -->
+    <section class="section section--alt" id="lineup" aria-labelledby="lineup-title">
+      <div data-seg-filter>
+        <div class="container">
+          <div class="lineup-head" data-reveal>
+            <h2 class="t-h2" id="lineup-title" data-i18n="tools.lineup.title">Explore the lineup.</h2>
+            <div class="seg" role="group" aria-label="Show" data-i18n-attr="aria-label:tools.lineup.filter"><button type="button" data-filter="all" aria-pressed="true" data-i18n="tools.lineup.all">All</button><button type="button" data-filter="apps" aria-pressed="false" data-i18n="tools.lineup.apps">Apps</button><button type="button" data-filter="addons" aria-pressed="false" data-i18n="tools.lineup.addons">Blender add-ons</button><button type="button" data-filter="web" aria-pressed="false" data-i18n="tools.lineup.web">Web tools</button></div>
           </div>
         </div>
-        <div class="bento" style="margin-top:20px">
-          <a class="tile span-3" href="https://danyals-code.github.io/Roboanimator-CSV-to-Browser-Based-Plots/" data-reveal>
-            <div class="tile__body">
-              <span class="tile__eyebrow" data-i18n="tools.plotter.eyebrow">Companion · Web</span>
-              <h3 class="tile__title tile__title--sm" translate="no">RoboAnimator CSV Plotter</h3>
-              <p class="tile__text" data-i18n="tools.plotter.text">Visualizes the add-on’s CSV output as a speed-coded XY path, a 3D path against speed, and an animated timeline. All processing runs locally in the browser.</p>
-              <span class="link-ext" data-i18n="tools.plotter.open">Open the plotter</span>
+        <div class="rail lineup" data-reveal>
+          <ul class="rail__track">
+          <li class="rail__item lcard" id="almanac" data-group="apps" style="--card-tint: #9a7556">
+            <div class="lcard__media"><figure class="device device--phone"><div class="device__screen"><img src="/assets/img/almanac/home.jpg" width="460" height="1000" alt="Almanac’s Today screen" loading="lazy" data-i18n-attr="alt:tools.lineup.almanac.shotAlt"></div></figure></div>
+            <div class="lcard__body">
+              <div class="lcard__top"><span class="lcard__icon"><img class="icon-light" src="/assets/img/apps/almanac-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/almanac-dark.png" width="256" height="256" alt="" loading="lazy"></span><span><span class="lcard__new" data-i18n="tools.bar.new">New</span><span class="lcard__kind" data-i18n="tools.kind.iphone">iPhone app</span></span></div>
+              <h3 class="lcard__name" translate="no">Almanac</h3>
+              <p class="lcard__tag" data-i18n="tools.lineup.almanac.tag">Every day, as the ancients counted it.</p>
+              <div class="lcard__actions"><a class="btn btn--md" href="/tools/almanac/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://danyals-code.github.io/almanac/" data-i18n="tools.lineup.site">Visit the site</a></div>
             </div>
-          </a>
-          <a class="tile span-3" href="/research/lemmy-framework/#stage-2" data-reveal>
-            <div class="tile__body">
-              <span class="tile__eyebrow" data-i18n="tools.evaluation.eyebrow">Evaluation</span>
-              <h3 class="tile__title tile__title--sm" data-i18n="tools.evaluation.title">Evaluated with Blender users</h3>
-              <p class="tile__text" data-i18n="tools.evaluation.text">Think-aloud sessions rated it 8.6 of 10 for stability and 8.4 for workflow fit. It subsequently passed Blender’s official extension review.</p>
-              <span class="link-more" data-i18n="tools.evaluation.link">View the study</span>
+          </li>
+          <li class="rail__item lcard" id="viewar" data-group="apps" style="--card-tint: #2f8cff">
+            <div class="lcard__media"><span class="lcard__bigicon"><img src="/assets/img/apps/viewar.svg" width="1024" height="1024" alt="ViewAR app icon" loading="lazy" data-i18n-attr="alt:tools.lineup.viewar.iconAlt"></span></div>
+            <div class="lcard__body">
+              <div class="lcard__top"><span class="lcard__icon"><img src="/assets/img/apps/viewar.svg" width="1024" height="1024" alt="" loading="lazy"></span><span><span class="lcard__new" data-i18n="tools.bar.new">New</span><span class="lcard__kind" data-i18n="tools.kind.iphoneBlender">iPhone app · Blender add-on</span></span></div>
+              <h3 class="lcard__name" translate="no">ViewAR</h3>
+              <p class="lcard__tag" data-i18n="tools.lineup.viewar.tag">Your Blender scene, live in the room.</p>
+              <div class="lcard__actions"><a class="btn btn--md" href="/tools/viewar/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://github.com/Danyals-code/ViewAR---AR-VIew-for-Blender---Addon" translate="no">GitHub</a></div>
             </div>
-          </a>
+          </li>
+          <li class="rail__item lcard" id="lemmy-ar" data-group="apps" style="--card-tint: #3a7bd5">
+            <div class="lcard__media"><span class="lcard__bigicon"><img class="icon-light" src="/assets/img/app/icon-light.png" width="512" height="512" alt="Lemmy AR Experience app icon" loading="lazy" data-i18n-attr="alt:tools.lineup.lemmyar.iconAlt"><img class="icon-dark" src="/assets/img/app/icon-dark.png" width="512" height="512" alt="Lemmy AR Experience app icon" loading="lazy" data-i18n-attr="alt:tools.lineup.lemmyar.iconAlt"></span></div>
+            <div class="lcard__body">
+              <div class="lcard__top"><span class="lcard__icon"><img class="icon-light" src="/assets/img/app/icon-light.png" width="512" height="512" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/app/icon-dark.png" width="512" height="512" alt="" loading="lazy"></span><span><span class="lcard__kind" data-i18n="tools.kind.iphoneVision">iPhone and Vision Pro app</span></span></div>
+              <h3 class="lcard__name" translate="no">Lemmy AR Experience</h3>
+              <p class="lcard__tag" data-i18n="tools.lineup.lemmyar.tag">A life-size robot, placed in your own room.</p>
+              <div class="lcard__actions"><a class="btn btn--md" href="/research/life-size-ar/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://github.com/Danyals-code/AR-Probe-for-Product-Action-Testing" translate="no">GitHub</a></div>
+            </div>
+          </li>
+          <li class="rail__item lcard" id="roboanimator" data-group="addons" style="--card-tint: #34c759">
+            <div class="lcard__media"><img src="/assets/img/roboanimator/promo.jpg" width="2000" height="1333" alt="The True RoboAnimator panels" loading="lazy" class="lcard__photo" data-i18n-attr="alt:tools.lineup.roboanimator.shotAlt"></div>
+            <div class="lcard__body">
+              <div class="lcard__top"><span class="lcard__icon"><img src="/assets/img/apps/roboanimator.svg" width="1024" height="1024" alt="" loading="lazy"></span><span><span class="lcard__kind" data-i18n="tools.kind.blender">Blender add-on</span></span></div>
+              <h3 class="lcard__name" translate="no">True RoboAnimator</h3>
+              <p class="lcard__tag" data-i18n="tools.lineup.roboanimator.tag">Animation that real robots can drive.</p>
+              <div class="lcard__actions"><a class="btn btn--md" href="/tools/roboanimator/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://extensions.blender.org/add-ons/true-roboanimator/" data-i18n="tools.lineup.getIt">Get it</a></div>
+            </div>
+          </li>
+          <li class="rail__item lcard" id="multiview" data-group="addons" style="--card-tint: #8a5cf6">
+            <div class="lcard__media"><span class="lcard__bigicon"><img src="/assets/img/apps/amvr.svg" width="1024" height="1024" alt="AMVR app icon" loading="lazy" data-i18n-attr="alt:tools.lineup.multiview.iconAlt"></span></div>
+            <div class="lcard__body">
+              <div class="lcard__top"><span class="lcard__icon"><img src="/assets/img/apps/amvr.svg" width="1024" height="1024" alt="" loading="lazy"></span><span><span class="lcard__kind" data-i18n="tools.kind.blender">Blender add-on</span></span></div>
+              <h3 class="lcard__name" translate="no">AMVR</h3>
+              <p class="lcard__tag" data-i18n="tools.lineup.multiview.tag">One CAD model in. Every view out.</p>
+              <div class="lcard__actions"><a class="btn btn--md" href="/tools/amvr/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://github.com/Danyals-code/Addon-for-MultiView-Rendering-AMVR" translate="no">GitHub</a></div>
+            </div>
+          </li>
+          <li class="rail__item lcard" id="swift-studio" data-group="web" style="--card-tint: #30b0c7">
+            <div class="lcard__media"><span class="lcard__bigicon"><img src="/assets/img/apps/swift-studio.svg" width="1024" height="1024" alt="Swift Web Studio app icon" loading="lazy" data-i18n-attr="alt:tools.lineup.swiftstudio.iconAlt"></span></div>
+            <div class="lcard__body">
+              <div class="lcard__top"><span class="lcard__icon"><img src="/assets/img/apps/swift-studio.svg" width="1024" height="1024" alt="" loading="lazy"></span><span><span class="lcard__kind" data-i18n="tools.kind.web">Web app</span></span></div>
+              <h3 class="lcard__name" translate="no">Swift Web Studio</h3>
+              <p class="lcard__tag" data-i18n="tools.lineup.swiftstudio.tag">Design SwiftUI in the browser. Keep the Swift.</p>
+              <div class="lcard__actions"><a class="btn btn--md" href="/tools/swift-studio/" data-i18n="tools.lineup.learn">Learn more</a><a class="link-ext" href="https://swift-cloud-simmulator-web.vercel.app" data-i18n="tools.liveDemo">Live demo</a></div>
+            </div>
+          </li>
+          </ul>
+          <div class="rail__controls">
+            <button class="paddle" type="button" data-rail-prev aria-label="Previous" data-i18n-attr="aria-label:rail.prev"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5"/></svg></button>
+            <button class="paddle" type="button" data-rail-next aria-label="Next" data-i18n-attr="aria-label:rail.next"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="m5 2 5 5-5 5"/></svg></button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- UI Designer -->
-    <section class="section section--alt" id="ui-designer" aria-labelledby="uid-title">
+    <!-- Why the tools exist -->
+    <section class="section" id="why" aria-labelledby="why-title">
       <div class="container">
-        <div class="feature feature--wide-media" data-reveal>
-          <figure class="fig feature__media">
-            <div class="fig__media"><img src="/assets/img/tools/ui-designer.jpg" width="1600" height="1000" alt="The AR/VR UI Designer start screen, offering a window or volume scene and templates like Welcome, Browse, Player, Profile, Article and Settings" data-i18n-attr="alt:tools.uiDesigner.alt" loading="lazy"></div>
-          </figure>
-          <div class="feature__text">
-            <p class="t-eyebrow" data-i18n="tools.uiDesigner.eyebrow">Web app · React Three Fiber</p>
-            <h2 class="t-h2" id="uid-title" translate="no">AR/VR UI Designer</h2>
-            <p data-i18n="tools.uiDesigner.text">A drag-and-drop editor for visionOS-style interfaces. Windows, panels and controls are arranged on a 3D canvas and previewed at eye level with HDRI lighting and realistic glass blur. Volumes with 3D content are supported, with no requirement for Xcode, a Mac or a headset.</p>
-            <div class="links-inline">
-              <a class="link-ext" href="https://ui-design-for-avp.vercel.app" data-i18n="tools.liveDemo">Live demo</a>
-              <a class="link-ext" href="https://github.com/Danyals-code/UI-Design-for-AVP" translate="no">GitHub</a>
-            </div>
-          </div>
+        <div class="lede" style="margin-bottom: clamp(32px,4vw,56px)" data-reveal>
+          <h2 class="t-h2" id="why-title" data-i18n="tools.why.title">Why these exist.</h2>
+          <p class="t-two-tone" data-i18n="tools.why.text">Three began inside research projects at UNIST. <strong>All are built to be picked up and used by someone else.</strong></p>
         </div>
       </div>
-    </section>
-
-    <!-- Lemmy AR -->
-    <section class="section" id="lemmy-ar" aria-labelledby="ar-title">
-      <div class="container">
-        <div class="shead" data-reveal>
-          <div style="display:flex; gap:20px; align-items:center">
-            <picture>
-              <source srcset="/assets/img/app/icon-dark.png" media="(prefers-color-scheme: dark)">
-              <img class="tool__icon" src="/assets/img/app/icon-light.png" width="512" height="512" alt="The Lemmy AR Experience app icon: a robot face with two blue eyes" data-i18n-attr="alt:tools.lemmyAr.iconAlt" style="width:80px; height:80px; border-radius:18px">
-            </picture>
-            <div>
-              <p class="t-eyebrow" translate="no">iOS · visionOS · Swift</p>
-              <h2 class="t-h2" id="ar-title" translate="no">Lemmy AR Experience</h2>
-            </div>
-          </div>
-        </div>
-        <div class="feature" data-reveal>
-          <div class="feature__text">
-            <p data-i18n="tools.lemmyAr.text">A native application that anchors a life-size, animated robot to the floor, allowing its motion to be evaluated in the user’s own environment. Developed for the AR stage of the MSc thesis and distributed to study participants via TestFlight.</p>
-            <p data-i18n="tools.lemmyAr.text2">Built in <strong>Swift with SwiftUI, ARKit and RealityKit</strong>. Features include 20 animations categorized as base, functional and expressive; plane detection and placement; pinch-to-pause; and interface-free screen capture. Accessibility settings cover high contrast, text size, haptics and sound.</p>
-            <div class="links-inline">
-              <a class="link-more" href="/research/life-size-ar/" data-i18n="tools.lemmyAr.caseStudy">Read the case study</a>
-              <a class="link-ext" href="https://github.com/Danyals-code/AR-Probe-for-Product-Action-Testing" data-i18n="tools.lemmyAr.source">Source on GitHub</a>
-            </div>
-          </div>
-          <figure class="fig feature__media">
-            <div class="fig__media"><img src="/assets/img/app/in-room.jpg" width="2400" height="729" alt="An iPhone on a tripod showing Lemmy in AR in a real room" data-i18n-attr="alt:tools.lemmyAr.roomAlt" loading="lazy" class="ratio-4-3"></div>
-          </figure>
-        </div>
-        <figure class="fig" style="margin-top: clamp(40px,5vw,64px)" data-reveal>
-          <div class="fig__media fig__media--white fig__media--pad"><img class="blend-white" src="/assets/img/app/testflight.jpg" width="2400" height="1440" alt="Screens of the Lemmy AR Experience app and its TestFlight page" data-i18n-attr="alt:tools.lemmyAr.testflightAlt" loading="lazy"></div>
-        </figure>
-        <div class="fig-row fig-row--2" style="margin-top:20px" data-reveal>
-          <figure class="fig">
-            <div class="fig__media"><img src="/assets/img/app/visionos-menu.jpg" width="2000" height="1125" alt="The Lemmy AR Experience menu window, with base movements and action variants, floating in a virtual gallery on visionOS" data-i18n-attr="alt:tools.lemmyAr.menuAlt" loading="lazy"></div>
-            <figcaption class="fig__cap" data-i18n="tools.lemmyAr.menuCap">The visionOS version: a menu window in an immersive space.</figcaption>
-          </figure>
-          <figure class="fig">
-            <div class="fig__media"><img src="/assets/img/app/visionos-room.jpg" width="2000" height="1125" alt="A living-room environment in the visionOS simulator with floating controls" data-i18n-attr="alt:tools.lemmyAr.simAlt" loading="lazy"></div>
-            <figcaption class="fig__cap" data-i18n="tools.lemmyAr.simCap">Running in the Apple Vision Pro simulator.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- More -->
-    <section class="section section--alt" id="more" aria-labelledby="more-title">
-      <div class="container">
-        <div class="shead" data-reveal>
-          <h2 class="t-h2 shead__title" id="more-title" data-i18n="tools.more.title">Additional tools and experiments</h2>
-        </div>
-      </div>
-      <div class="container-wide">
-        <div class="bento">
-          <div class="tile tile--white span-2" id="swift-studio" data-reveal>
-            <div class="tile__body">
-              <svg class="area-icon" viewBox="0 0 32 32" aria-hidden="true"><rect x="3.5" y="6.5" width="25" height="19" rx="3"/><path d="M3.5 11h25"/><path d="m11 15-3 3 3 3M17 15l3 3-3 3"/><rect x="22" y="13.5" width="4" height="8" rx="1"/></svg>
-              <span class="tile__eyebrow" data-i18n="tools.swift.eyebrow">Web app · TypeScript</span>
-              <h3 class="tile__title tile__title--sm" translate="no">Swift Web Studio</h3>
-              <p class="tile__text" data-i18n="tools.swift.text">A browser-based SwiftUI editor that preserves the Swift source. It combines visual editing, a code editor with diagnostics and a live device preview, with export to Xcode, Swift Playgrounds or a Swift package.</p>
-              <div class="links-inline">
-                <a class="link-ext" href="https://swift-cloud-simmulator-web.vercel.app" data-i18n="tools.liveDemo">Live demo</a>
-                <a class="link-ext" href="https://github.com/Danyals-code/Swift-Cloud-Simmulator" translate="no">GitHub</a>
-              </div>
-            </div>
-          </div>
-          <div class="tile tile--white span-2" data-reveal>
-            <div class="tile__media" style="margin:0"><img src="/assets/img/tools/head-tracked.jpg" width="1600" height="1000" alt="The start card of the head-tracked perspective demo, a window into your monitor that follows your head" data-i18n-attr="alt:tools.headTracked.alt" loading="lazy" class="ratio-16-10"></div>
-            <div class="tile__body">
-              <span class="tile__eyebrow" data-i18n="tools.headTracked.eyebrow">Web experiment · JavaScript</span>
-              <h3 class="tile__title tile__title--sm" data-i18n="tools.headTracked.title">Head-tracked perspective</h3>
-              <p class="tile__text" data-i18n="tools.headTracked.text">Browser-based fish-tank VR. Webcam face tracking drives an off-axis projection, turning the monitor into a window onto a 3D scene. Builds on work by Ware, Arthur and Booth, and by Deering. All video is processed on-device.</p>
-              <div class="links-inline">
-                <a class="link-ext" href="https://danyals-code.github.io/head-tracked-perspective/" data-i18n="tools.liveDemo">Live demo</a>
-                <a class="link-ext" href="https://github.com/Danyals-code/head-tracked-perspective" translate="no">GitHub</a>
-              </div>
-            </div>
-          </div>
-          <div class="tile tile--white span-2" id="multiview" data-reveal>
-            <div class="tile__body">
-              <svg class="area-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 9.5 22 13v7l-6 3.5-6-3.5v-7z"/><path d="M10 13l6 3.5 6-3.5M16 16.5v7"/><rect x="3" y="3" width="5" height="4" rx="1"/><rect x="24" y="3" width="5" height="4" rx="1"/><rect x="3" y="25" width="5" height="4" rx="1"/><rect x="24" y="25" width="5" height="4" rx="1"/></svg>
-              <span class="tile__eyebrow" data-i18n="tools.multiview.eyebrow">Blender add-on · Python</span>
-              <h3 class="tile__title tile__title--sm" translate="no">MultiView Product Renderer</h3>
-              <p class="tile__text" data-i18n="tools.multiview.text">Generates consistent image sets from CAD models (STEP or STL). It centers each model, configures orthographic and perspective cameras with three-point lighting, and batch-renders every view with systematic file naming. Used for AI training data and <a href="/research/product-form/">product form analysis</a>.</p>
-              <div class="links-inline">
-                <a class="link-ext" href="https://github.com/Danyals-code/Addon-for-MultiView-Rendering-AMVR" translate="no">GitHub</a>
-              </div>
-            </div>
-          </div>
+      <div class="rail gtk" data-reveal>
+        <ul class="rail__track">
+          <li class="rail__item gtk__card gtk__card--icon">
+            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#users"/></svg><h3 class="gtk__title"><span data-i18n="tools.why.study.title">Made for a study.</span></h3><p class="gtk__body"><span data-i18n="tools.why.study.text">Wheel-accurate robot motion for an MSc thesis, identical product views for form analysis, and a life-size robot in participants’ homes.</span></p></div>
+          </li>
+          <li class="rail__item gtk__card gtk__card--icon">
+            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#branch"/></svg><h3 class="gtk__title"><span data-i18n="tools.why.open.title">Open source.</span></h3><p class="gtk__body"><span data-i18n="tools.why.open.text">Source code is on GitHub. True RoboAnimator is GPL-3.0.</span></p></div>
+          </li>
+          <li class="rail__item gtk__card gtk__card--icon">
+            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#download"/></svg><h3 class="gtk__title"><span data-i18n="tools.why.used.title">Used beyond the lab.</span></h3><p class="gtk__body"><span data-i18n="tools.why.used.text">True RoboAnimator has more than 7,000 downloads on Blender Extensions.</span></p></div>
+          </li>
+          <li class="rail__item gtk__card gtk__card--icon">
+            <div class="gtk__text"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=2#check-shield"/></svg><h3 class="gtk__title"><span data-i18n="tools.why.review.title">Reviewed.</span></h3><p class="gtk__body"><span data-i18n="tools.why.review.text">True RoboAnimator passed Blender’s extension review; the Lemmy AR Experience passed Apple’s review for TestFlight on iOS and visionOS.</span></p></div>
+          </li>
+        </ul>
+        <div class="rail__controls">
+          <button class="paddle" type="button" data-rail-prev aria-label="Previous" data-i18n-attr="aria-label:rail.prev"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5"/></svg></button>
+          <button class="paddle" type="button" data-rail-next aria-label="Next" data-i18n-attr="aria-label:rail.next"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="m5 2 5 5-5 5"/></svg></button>
         </div>
       </div>
     </section>
@@ -231,8 +197,8 @@
       <nav class="gfooter__dir" aria-label="Site directory" data-i18n-attr="aria-label:footer.label">
         <div class="gfooter__col"><h3 data-i18n="nav.design">Design</h3><ul>
           <li><a href="/design/#cgi" data-i18n="footer.cgi">3D &amp; CGI</a></li>
-          <li><a href="/design/#waveform">Waveform</a></li>
-          <li><a href="/design/#viz" data-i18n="footer.viz">Product visualization</a></li>
+          <li><a href="/design/waveform/" translate="no">Waveform</a></li>
+          <li><a href="/design/lemmy-visualization/" data-i18n="footer.viz">Product visualization</a></li>
           <li><a href="/design/#freelance" data-i18n="footer.freelance">Freelance work</a></li>
         </ul></div>
         <div class="gfooter__col"><h3 data-i18n="footer.caseStudies">Case studies</h3><ul>
@@ -250,9 +216,10 @@
           <li><a href="/research/#personal" data-i18n="footer.personal">Personal projects</a></li>
         </ul></div>
         <div class="gfooter__col"><h3 data-i18n="nav.tools">Artifacts</h3><ul>
-          <li><a href="/tools/#ui-designer">AR/VR UI Designer</a></li>
-          <li><a href="/tools/#roboanimator">True RoboAnimator</a></li>
-          <li><a href="/tools/#more" data-i18n="footer.moreTools">More artifacts</a></li>
+          <li><a href="/tools/almanac/" translate="no">Almanac</a></li>
+          <li><a href="/tools/viewar/" translate="no">ViewAR</a></li>
+          <li><a href="/tools/roboanimator/" translate="no">True RoboAnimator</a></li>
+          <li><a href="/tools/" data-i18n="footer.moreTools">More artifacts</a></li>
         </ul></div>
         <div class="gfooter__col"><h3 data-i18n="nav.about">About</h3><ul>
           <li><a href="/about/" data-i18n="footer.bio">Bio</a></li>
