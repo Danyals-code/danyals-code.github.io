@@ -1,7 +1,7 @@
 # danyals-code.github.io
 
 Portfolio of Danyal Sarfraz, HCI researcher and designer (mixed reality, spatial computing, human-centered AI, human–robot interaction).
-Live at <https://danyalportfolio.com/> (`danyals-code.github.io` redirects there).
+Live at <https://danyals-code.github.io/>; <https://danyalportfolio.com/> forwards there (see Domain).
 
 Plain HTML, CSS and JavaScript. No build step, no dependencies.
 
@@ -193,15 +193,18 @@ Push to `main`, then check **Settings → Pages** once to confirm the source is 
 
 ### Domain
 
-The site lives at `danyalportfolio.com` (the `CNAME` file); GitHub redirects `danyals-code.github.io`,
-and the other project sites (`/almanac/` and so on), to it. Pages state their own address as
-`https://danyalportfolio.com/…` in canonical links, Open Graph tags and structured data.
-DNS is managed at Hostinger:
+For now `danyals-code.github.io` is the main address and `danyalportfolio.com` forwards to it, set
+up as a redirect in Hostinger (Domains → danyalportfolio.com → Redirect). There is no `CNAME` file,
+so GitHub serves the site at github.io directly, and it stays up even if the domain breaks.
+
+To make `danyalportfolio.com` the main address later: in Hostinger, remove the redirect and set
+these DNS records, then add the domain in Settings → Pages (GitHub creates the `CNAME` file), tick
+**Enforce HTTPS** once the certificate is ready, and replace `https://danyals-code.github.io` with
+`https://danyalportfolio.com` across the pages (canonical links, Open Graph, structured data).
+Change the DNS first: with the domain set on GitHub, github.io redirects to it whether it works or not.
 
 | Type | Name | Value |
 | --- | --- | --- |
 | A | `@` | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
 | AAAA | `@` | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
 | CNAME | `www` | `danyals-code.github.io` |
-
-Keep **Enforce HTTPS** ticked in Settings → Pages.
