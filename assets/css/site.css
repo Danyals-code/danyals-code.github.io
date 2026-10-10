@@ -45,6 +45,7 @@
   --r-sm: 12px;
   --nav-h: 48px;
   --lnav-h: 52px;
+  --appbar-h: 70px;
   --ease: cubic-bezier(0.28, 0.11, 0.32, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
@@ -137,6 +138,11 @@ html:has(body.has-lnav) {
   scroll-padding-top: calc(var(--nav-h) + var(--lnav-h) + 16px);
 }
 
+/* App pages also keep the shrunken app bar above the local nav. */
+html:has(body.has-lnav .appbar--sticky) {
+  scroll-padding-top: calc(var(--nav-h) + var(--appbar-h) + var(--lnav-h) + 16px);
+}
+
 body {
   margin: 0;
   background: var(--bg);
@@ -163,6 +169,16 @@ canvas {
 img,
 video {
   height: auto;
+}
+
+/* Pictures and films can't be dragged out, selected, or saved from the
+   long-press menu on iPhone (see also initNoSaving in site.js). */
+img,
+video,
+canvas {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 h1,
@@ -5336,6 +5352,9 @@ a.tile:hover .link-more {
 .appbar {
   position: relative;
   padding-bottom: clamp(48px, 6vw, 80px);
+  /* The shrunken row is laid out twice as wide (see .is-stuck); clipping
+     sideways keeps that from widening the page. */
+  overflow-x: clip;
 }
 
 /* At the end of a section the section's own padding already gives the gap. */
@@ -5358,7 +5377,7 @@ a.tile:hover .link-more {
   position: absolute;
   inset: 0 0 auto;
   z-index: -1;
-  height: 70px;
+  height: var(--appbar-h);
   border-bottom: 1px solid var(--line-soft);
   background: var(--glass);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -5367,12 +5386,29 @@ a.tile:hover .link-more {
   transition: opacity 0.3s var(--ease);
 }
 
+/* On an app page the bar comes before the local nav: once shrunk it stays
+   under the menu and the local nav sticks beneath it. Both move with the
+   global nav when it tucks away, using the same timing (see .has-lnav .lnav). */
+.has-lnav:has(.appbar--sticky) .lnav {
+  top: calc(var(--nav-h) + var(--appbar-h));
+}
+
+.has-lnav .appbar--sticky {
+  z-index: 80;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.gnav-hidden:not(.nav-open) .appbar--sticky {
+  transition: transform 0.45s var(--ease);
+  transform: translateY(calc(-1 * var(--nav-h)));
+}
+
 .appbar--sticky .appbar__track {
   transform-origin: 50% 0;
   transition: transform 0.45s var(--ease);
 }
 
-.appbar--sticky :is(.appbar__name, .appbar__new, .appbar__sep) {
+.appbar--sticky .appbar__name {
   transition: opacity 0.25s var(--ease);
 }
 
@@ -5384,16 +5420,45 @@ a.tile:hover .link-more {
   opacity: 1;
 }
 
+/* Twice as wide before halving, so the small row fits every icon even where
+   the full-size row has to scroll (phones). */
 .appbar--sticky.is-stuck .appbar__track {
+  width: 200%;
+  margin-inline: -50%;
+  overflow: hidden;
   transform: translateY(-11px) scale(0.5);
 }
 
-.appbar--sticky.is-stuck :is(.appbar__name, .appbar__new, .appbar__sep, .appbar__paddle) {
+.appbar--sticky.is-stuck :is(.appbar__name, .appbar__kind, .appbar__paddle) {
   opacity: 0;
 }
 
 .appbar--sticky.is-stuck .appbar__item {
   pointer-events: auto;
+}
+
+/* Above a local nav (app pages) the shrink follows the scroll instead of
+   snapping: the icons scale down and the glass behind them shortens at the
+   rate the page moves, so the bar's lower edge stays on the local nav until
+   both stick. site.js sets --shrink (0 to 1) and --strip (the glass height). */
+.appbar--linked {
+  pointer-events: none;
+}
+
+.appbar--linked :is(.appbar__item, .appbar__paddle) {
+  pointer-events: auto;
+}
+
+.appbar--sticky.appbar--linked::before {
+  height: var(--strip, var(--appbar-h));
+}
+
+.appbar--sticky.appbar--linked .appbar__track {
+  --s: calc(1 - var(--shrink, 0) / 2);
+  width: calc(100% / var(--s));
+  margin-inline: calc(50% - 50% / var(--s));
+  transform: translateY(calc(var(--shrink, 0) * -11px)) scale(var(--s));
+  transition: none;
 }
 
 /* Pointing at (or opening) one app turns the others transparent: their clear
@@ -5445,13 +5510,14 @@ a.tile:hover .link-more {
   scroll-snap-align: start;
 }
 
-/* A hairline between groups: apps, Blender add-ons, web tools. */
-.appbar__sep {
-  align-self: flex-start;
-  width: 1px;
-  height: 80px;
-  margin-inline: clamp(4px, 1vw, 12px);
-  background: var(--line);
+/* Centred while the icons fit; once they overflow, the auto margins collapse
+   and the row scrolls from its start as usual. */
+.appbar__track > li:first-child {
+  margin-inline-start: auto;
+}
+
+.appbar__track > li:last-child {
+  margin-inline-end: auto;
 }
 
 .appbar__item {
@@ -5547,12 +5613,23 @@ a.tile:hover .link-more {
   transform: scaleX(1);
 }
 
-.appbar__new {
-  margin-top: 9px;
-  color: var(--accent-text);
+/* What kind of artifact it is (iOS app, add-on, web), shown while pointed at.
+   Its line is always reserved, so nothing below moves. */
+.appbar__kind {
+  margin-top: 12px;
+  color: var(--fg-3);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.2;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-3px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.appbar:not(.is-stuck) .appbar__item:is(:hover, :focus-visible) .appbar__kind {
+  opacity: 1;
+  transform: none;
 }
 
 .appbar__paddle {
@@ -5613,10 +5690,6 @@ a.tile:hover .link-more {
 
   .appbar__icon {
     width: 64px;
-    height: 64px;
-  }
-
-  .appbar__sep {
     height: 64px;
   }
 
@@ -7275,6 +7348,14 @@ html:not(.js) .quiz__hint {
   .loop__toggle,
   .rail__controls {
     display: none !important;
+  }
+
+  /* Printing (or "Save as PDF") leaves the pictures and films out. */
+  img,
+  video,
+  canvas,
+  picture {
+    visibility: hidden !important;
   }
 
   [data-reveal],

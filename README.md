@@ -1,7 +1,7 @@
 # danyals-code.github.io
 
 Portfolio of Danyal Sarfraz, HCI researcher and designer (mixed reality, spatial computing, human-centered AI, human–robot interaction).
-Live at <https://danyals-code.github.io/>.
+Live at <https://danyalportfolio.com/> (`danyals-code.github.io` redirects there).
 
 Plain HTML, CSS and JavaScript. No build step, no dependencies.
 
@@ -104,16 +104,16 @@ now (`data-langs="en"`); add Arabic and Chinese once their content is final.
 
 ## App icons
 
-The Artifacts page opens with a row of app icons (`.appbar`), and every app page repeats it under
-"More artifacts". To add an app, add an `<li>` to each bar, a card to the lineup on `/tools/`, and its
-own page (copy one of the app pages). Icons live in `assets/img/apps/`: 256 px PNGs, or 1024 px SVG
-placeholders until the real icon exists. An app with light and dark icons uses two `<img>` tags,
+The Artifacts page opens with a row of app icons (`.appbar`), and every app page (and the Life-size AR
+page, for Lemmy AR) repeats it above its local nav, with its own app selected. To add an app, add an `<li>` to each bar (with an `.appbar__kind` label such as "iOS App" or "Web App", shown on hover), a card to the lineup on `/tools/`, and its
+own page (copy one of the app pages). Icons live in `assets/img/apps/`: 256 px PNGs. An app with light and dark icons uses two `<img>` tags,
 `class="icon-light"` and `class="icon-dark"`, with `loading="lazy"`; the page shows the one that
 matches the current theme and never downloads the other.
-An app can also have transparent ("clear") versions, `clear=(light, dark)` in the generator's app list,
+Each app also has transparent ("clear") versions (`<app>-mono-light.png`, `-mono-dark.png`),
 shown as `.appbar__clear` images: when one app is pointed at or open, the others switch to them (apps
-without them fade to grey). On the Artifacts page the bar is sticky (`.appbar--sticky`) and shrinks
-to small icons once it reaches the menu.
+without them fade to grey). The bar is sticky (`.appbar--sticky`) and shrinks
+to small icons once it reaches the menu; on app pages the local nav then sticks beneath it. The row is
+centred while it fits.
 
 Software logos on the Design page are white PNGs in `assets/img/software/` (264 px), so they only
 work on dark backgrounds.
@@ -190,3 +190,18 @@ Then open <http://localhost:4173>.
 
 GitHub Pages serves this repository from the `main` branch root.
 Push to `main`, then check **Settings → Pages** once to confirm the source is "Deploy from a branch", `main`, `/ (root)`.
+
+### Domain
+
+The site lives at `danyalportfolio.com` (the `CNAME` file); GitHub redirects `danyals-code.github.io`,
+and the other project sites (`/almanac/` and so on), to it. Pages state their own address as
+`https://danyalportfolio.com/…` in canonical links, Open Graph tags and structured data.
+DNS is managed at Hostinger:
+
+| Type | Name | Value |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
+| AAAA | `@` | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
+| CNAME | `www` | `danyals-code.github.io` |
+
+Keep **Enforce HTTPS** ticked in Settings → Pages.

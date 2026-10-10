@@ -1043,14 +1043,44 @@
       });
       center();
       update();
-      // A sticky bar shrinks once it reaches the menu.
+      // A sticky bar shrinks once it reaches the menu. Above a local nav (app
+      // pages) the shrink follows the scroll instead, so the bar's lower edge
+      // rises with the local nav and no gap opens between them.
       if (bar.classList.contains('appbar--sticky')) {
+        const lnav = bar.nextElementSibling;
+        const main = document.getElementById('main');
+        const linked = !!(lnav && lnav.classList.contains('lnav') && main);
+        bar.classList.toggle('appbar--linked', linked);
         let queued = false;
+        let start = 0;
+        let range = 1;
+        // Where the bar sticks (as a scroll offset) and how far it shrinks.
+        // Measured from <main>, which never moves with the sticky bars.
+        const measure = () => {
+          if (!linked) return;
+          const height = bar.offsetHeight;
+          const strip = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--appbar-h')) || 70;
+          const top = parseFloat(getComputedStyle(bar).top) || 0;
+          start = Math.round(main.getBoundingClientRect().top + window.scrollY - lnav.offsetHeight - height - top);
+          range = Math.max(1, height - strip);
+        };
         const stuck = () => {
           queued = false;
-          const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 48;
-          bar.classList.toggle('is-stuck', window.scrollY > 0 && bar.getBoundingClientRect().top <= navH + 1);
+          if (linked) {
+            const travelled = Math.min(range, Math.max(0, window.scrollY - start));
+            bar.style.setProperty('--shrink', (travelled / range).toFixed(4));
+            bar.style.setProperty('--strip', `${bar.offsetHeight - travelled}px`);
+            bar.classList.toggle('is-stuck', travelled > 0);
+            return;
+          }
+          const top = parseFloat(getComputedStyle(bar).top) || 0;
+          bar.classList.toggle('is-stuck', window.scrollY > 0 && bar.getBoundingClientRect().top <= top + 1);
         };
+        window.addEventListener('resize', () => {
+          measure();
+          stuck();
+        });
+        measure();
         window.addEventListener(
           'scroll',
           () => {
@@ -1244,7 +1274,9 @@
   // Draws the panorama over a frame (CSS pixels) from a view, bent by `curve`, with rounded corners.
   // Views are in reference units, the 3600 × 1107 panorama's pixels, whichever size has loaded.
   // Before the panorama arrives (`pano` null), only the panel is drawn, which is all a zoomed-in view shows.
-  function drawPano(ctx, dpr, pano, panel, frame, view, curve, radius) {
+  // `step` is the column width in device pixels: the bend changes by well under a pixel per column,
+  // so the moving canvas can take wider ones (fewer draws per frame) without a visible stair.
+  function drawPano(ctx, dpr, pano, panel, frame, view, curve, radius, step = dpr > 1.5 ? 2 : 1) {
     const pw = PANO_W;
     const ph = PANO_H;
     const pk = pano ? pano.naturalWidth / PANO_W : 0;
@@ -1264,12 +1296,30 @@
     const pyh = PANEL[3] * ph;
     const kx = usePanel ? panel.naturalWidth / pxw : 0;
     const ky = usePanel ? panel.naturalHeight / pyh : 0;
-    const step = dpr > 1.5 ? 2 : 1;
 
     ctx.save();
     ctx.beginPath();
     ctx.roundRect(frame.x * dpr, frame.y * dpr, frame.w * dpr, height, radius * dpr);
     ctx.clip();
+    // Not bent yet (the start of the move): the whole frame in one draw per picture, not one per column.
+    if (curve < 0.0005) {
+      const top = mid - height / 2;
+      const sx = view.cx + (left - centre) / s;
+      const sw = (right - left) / s;
+      if (pano) ctx.drawImage(pano, sx * pk, sy * pk, sw * pk, sh * pk, left, top, right - left, height);
+      if (usePanel) {
+        const x0 = Math.max(sx, px);
+        const x1 = Math.min(sx + sw, px + pxw);
+        const y0 = Math.max(sy, py);
+        const y1 = Math.min(sy + sh, py + pyh);
+        if (x1 > x0 && y1 > y0) {
+          ctx.drawImage(panel, (x0 - px) * kx, (y0 - py) * ky, (x1 - x0) * kx, (y1 - y0) * ky,
+            left + (x0 - sx) * s, top + (y0 - sy) * s, (x1 - x0) * s, (y1 - y0) * s);
+        }
+      }
+      ctx.restore();
+      return;
+    }
     for (let dx = left; dx < right; dx += step) {
       const cw = Math.min(step, right - dx);
       const k = 1 - curve * Math.sin((Math.PI * (dx + cw / 2 - left)) / (right - left));
@@ -1358,9 +1408,15 @@
       document.body.append(flight);
       pano.classList.add('is-flying');
     }
-    const land = () => {
+    // At the end of the move the resting canvas takes over under the moving one, which then fades
+    // out: the two can differ by a fraction of a pixel, which a hard swap would show as a jump.
+    const land = (fade) => {
       pano.classList.remove('is-flying');
-      if (flight) flight.remove();
+      if (!flight) return;
+      const done = flight;
+      flight = null;
+      if (fade && done.animate) done.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 260, easing: 'ease-out' }).finished.then(() => done.remove(), () => done.remove());
+      else done.remove();
     };
 
     const pictureReady = (img.complete && img.naturalWidth ? Promise.resolve() : new Promise((resolve, reject) => {
@@ -1372,12 +1428,17 @@
     const pw = PANO_W;
     const ph = PANO_H;
 
-    // The resting screen, drawn once the panorama has loaded and again on resize.
-    Promise.all([pictureReady, panelReady]).then(([picture, panelPicture]) => {
+    // The resting screen, drawn once the panorama has loaded and again on resize, at its exact,
+    // fractional size so it matches the move's last frame. The observer's first call finds the
+    // size unchanged and skips, so the screen is drawn once, not twice. That first draw is also
+    // what puts the panorama on the graphics card, before the move starts (see the move below).
+    const stillReady = Promise.all([pictureReady, panelReady]).then(([picture, panelPicture]) => {
+      let size = '';
       const drawStill = () => {
         const dpr = window.devicePixelRatio || 1;
-        const w = pano.clientWidth;
-        const h = pano.clientHeight;
+        const { width: w, height: h } = pano.getBoundingClientRect();
+        if (`${w}x${h}@${dpr}` === size) return;
+        size = `${w}x${h}@${dpr}`;
         canvas.width = Math.round(w * dpr);
         canvas.height = Math.round(h * dpr);
         ctx.imageSmoothingQuality = 'high';
@@ -1385,9 +1446,11 @@
       };
       drawStill();
       new ResizeObserver(drawStill).observe(pano);
-    }).catch(() => {
+      return picture;
+    });
+    stillReady.catch(() => {
       // The panorama failed: show the flat <img> again.
-      land();
+      land(false);
       pano.classList.remove('is-drawn');
       canvas.remove();
     });
@@ -1401,21 +1464,28 @@
     Promise.all([panelReady, window.__panoArrival || Promise.resolve()]).then(([panelPicture]) => {
       const start = pano.getBoundingClientRect();
       if (start.bottom < 0 || start.top > window.innerHeight) {
-        land();
+        land(false);
         return;
       }
-      const fctx = flight.getContext('2d');
+      const moving = flight;
+      const fctx = moving.getContext('2d');
       const f0 = from ? { x: from.x, y: from.y, w: from.w, h: from.h } : { x: start.left, y: start.top, w: start.width, h: start.height };
       const r0 = from ? from.radius : 0;
       const v0 = coverView(f0.w, f0.h, PANEL[0] * pw, PANEL[1] * ph, PANEL[2] * pw, PANEL[3] * ph, from ? from.zoom : 1);
       const span0 = Math.log(f0.w / v0.s);
       const span1 = Math.log(pw);
       let picture = null;
+      let primed = false;
       let t0 = 0;
 
+      // The clock starts a frame after the panorama is first drawn here, so the cost of that first
+      // draw is spent at the start position rather than skipping part of the move.
       const frame = (now) => {
-        if (!flight.isConnected) return;
-        if (picture && !t0) t0 = now;
+        if (flight !== moving) return;
+        if (picture && !t0) {
+          if (primed) t0 = now;
+          else primed = true;
+        }
         const t = t0 ? clamp01((now - t0) / PANO_TIME) : 0;
         const e = easeInOut(t);
         const dpr = window.devicePixelRatio || 1;
@@ -1428,18 +1498,19 @@
         }, f.w, f.h, pw, ph);
         const width = Math.round(window.innerWidth * dpr);
         const height = Math.round(window.innerHeight * dpr);
-        if (flight.width !== width) flight.width = width;
-        if (flight.height !== height) flight.height = height;
+        if (moving.width !== width) moving.width = width;
+        if (moving.height !== height) moving.height = height;
         fctx.clearRect(0, 0, width, height);
         fctx.imageSmoothingQuality = 'high';
-        drawPano(fctx, dpr, picture, panelPicture, f, view, PANO_CURVE * easeInOut(clamp01((t - 0.06) / 0.94)), r0 * (1 - e));
+        drawPano(fctx, dpr, picture, panelPicture, f, view, PANO_CURVE * easeInOut(clamp01((t - 0.06) / 0.94)), r0 * (1 - e), dpr > 1.5 ? 4 : 2);
         if (t < 1) requestAnimationFrame(frame);
-        else land();
+        else land(true);
       };
       requestAnimationFrame(frame);
-      pictureReady.then((p) => {
+      // The move waits for the resting screen's first draw (see stillReady).
+      stillReady.then((p) => {
         picture = p;
-      }, land);
+      }, () => land(false));
     });
   }
 
@@ -1471,6 +1542,26 @@
     });
     // Unload the PDF on close.
     reader.addEventListener('close', () => frame.removeAttribute('src'));
+  }
+
+  /* ------------------------------------------------------------------ saving pictures
+     Makes casual saving harder; it can't stop screenshots or a determined
+     visitor. The browser's context menu is off across the site, except in
+     text fields (search), where it is how many people paste. Pictures and
+     films can't be dragged out (with the CSS), and Cmd/Ctrl + S doesn't save
+     the page. Printing leaves the pictures out (see @media print). */
+
+  function initNoSaving() {
+    const field = (el) => el.closest && el.closest('input, textarea, [contenteditable="true"]');
+    document.addEventListener('contextmenu', (event) => {
+      if (!field(event.target)) event.preventDefault();
+    });
+    document.addEventListener('dragstart', (event) => {
+      if (event.target.closest && event.target.closest('img, video, canvas, picture')) event.preventDefault();
+    });
+    document.addEventListener('keydown', (event) => {
+      if ((event.metaKey || event.ctrlKey) && !event.altKey && (event.key === 's' || event.key === 'S')) event.preventDefault();
+    });
   }
 
   /* ------------------------------------------------------------------ copy buttons */
@@ -2095,6 +2186,7 @@
     initPano,
     initReader,
     initCopy,
+    initNoSaving,
     initExternalLinks,
     initToggles,
     initSegmented,

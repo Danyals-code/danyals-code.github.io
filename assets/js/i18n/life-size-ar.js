@@ -2,6 +2,11 @@
    Strict JSON inside the push() call. English lives in the page's HTML. */
 (window.SITE_I18N_PAGES = window.SITE_I18N_PAGES || []).push({
   "ar": {
+    "life-size-ar.bar.kind.ios": "تطبيق iOS",
+    "life-size-ar.bar.kind.iosAddon": "تطبيق iOS · إضافة",
+    "life-size-ar.bar.kind.iosVision": "iOS وvisionOS",
+    "life-size-ar.bar.kind.addon": "إضافة لـ Blender",
+    "life-size-ar.bar.kind.web": "تطبيق ويب",
     "life-size-ar.title": "الواقع المعزز بالحجم الطبيعي: تقييمه بديلًا عن النماذج الأولية المادية · Danyal Sarfraz",
     "life-size-ar.description": "تطبيق أصلي لـ iPhone وApple Vision Pro يضع تصميمًا مفاهيميًا لروبوت بالحجم الطبيعي في منازل المشاركين، ودراسة منزلية تختبر ما إذا كان الواقع المعزز يدعم الأحكام التصميمية. Swift وARKit وRealityKit وvisionOS.",
     "life-size-ar.lnav.label": "دراسة الحالة",
@@ -108,6 +113,11 @@
     "life-size-ar.note.team": "Lemmy مشروع متعدد الفرق في UNIST بالتعاون مع شركة Shinsung Delta Tech. صمّمت الفرق الشريكة هيكل الروبوت وعتاده، أما تطبيق الواقع المعزز ودراسته فمن عملي."
   },
   "zh": {
+    "life-size-ar.bar.kind.ios": "iOS 应用",
+    "life-size-ar.bar.kind.iosAddon": "iOS 应用 · 插件",
+    "life-size-ar.bar.kind.iosVision": "iOS · visionOS",
+    "life-size-ar.bar.kind.addon": "Blender 插件",
+    "life-size-ar.bar.kind.web": "网页应用",
     "life-size-ar.title": "等比例 AR：评估 AR 能否替代实体原型 · Danyal Sarfraz",
     "life-size-ar.description": "一款原生 iPhone 与 Apple Vision Pro 应用，把等比例的概念机器人放进参与者家中；配套的居家研究检验了 AR 能否支撑设计判断。Swift、ARKit、RealityKit、visionOS。",
     "life-size-ar.lnav.label": "案例研究",
