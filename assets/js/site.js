@@ -601,7 +601,7 @@
     dialog.className = 'search';
     dialog.innerHTML = `
       <div class="search__bar">
-        <svg aria-hidden="true"><use href="/assets/img/icons.svg?v=4#search"/></svg>
+        <svg aria-hidden="true"><use href="/assets/img/icons.svg?v=5#search"/></svg>
         <input class="search__input" type="search" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="search-results" aria-autocomplete="list">
         <kbd>esc</kbd>
       </div>

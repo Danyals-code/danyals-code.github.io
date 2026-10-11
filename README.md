@@ -15,7 +15,7 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies.
                                A 30-second subtitled reel is in the page but hidden; remove `hidden` from the
                                `.reel` figure to show it
 /research/                     Highlights (a carousel of the moments behind the papers), then publications as
-                               paper stacks side by side (View summary, Download PDF; PDFs in assets/papers/), industry projects at IID Lab as icon cards, personal projects,
+                               paper stacks side by side (View details, Read paper, Cite; PDFs in assets/papers/), industry projects at IID Lab as icon cards, personal projects,
                                and the app bar. Each entry has a "Learn more" button to its own page
 /research/experiments/         Interaction experiments: Fitts' law pointing, window snapping, fish-tank VR
 /research/bangudae-xr/         Case study: mixed-reality heritage app for Meta Quest 3 (first place, 2024)
@@ -101,6 +101,20 @@ style="--tint-l: …; --tint-d: …">` (light and dark values).
 **Placeholders** (`.ph`) stand in for images and films still to come; each says what belongs there
 and at what size. `PLACEHOLDERS.md` lists all of them. App and project pages are English only for
 now (`data-langs="en"`); add Arabic and Chinese once their content is final.
+
+## Device frames
+
+Apple's product bezels (from Apple Design Resources) live in `assets/img/frames/`, 2000 px on the
+long side, with transparent screens. `frames.json` gives each one's screen opening as
+`[x, y, width, height]` in its pixels, for compositing screenshots.
+
+| Frames | Use |
+| --- | --- |
+| `iphone-pro-silver`, `iphone-pro-black` (and `-landscape`) | `.device--phone` uses them as a bezel over the screen: silver in light mode, black in dark. The opening is 460 × 1000, so iPhone 17 Pro screenshots (1206 × 2622) fit exactly. |
+| `ipad-pro-13-silver`, `ipad-pro-13-space-black` (and `-landscape`) | `.device--tablet` (landscape; add `.device--portrait` to stand it up), same markup as the phone. Not on a page yet. The opening is 4:3, so 13-inch iPad Pro screenshots (2752 × 2064) fit exactly. |
+| `macbook-pro-14-*`, `macbook-pro-16-*` | Not used yet. Screens 3024 × 1964 and 3456 × 2234. |
+| `studio-display-*` | Not used yet. 16:9 screen. |
+| `iphone-duo-*` (open, closed, outside; dark and light) | `.device--duo` (open) and `.device--duo.device--closed`, on the Almanac page's iPhone Duo section: light frames in light mode, dark in dark. The screens aren't plain rounded rectangles, so the `<img>` inside is the screenshot pre-cut to the frame's opening at the frame's size (`assets/img/almanac/duo-*.webp`). Duo screenshots: 2000 × 1407 open, 1375 × 2000 closed. |
 
 ## App icons
 

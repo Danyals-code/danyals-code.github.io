@@ -2,6 +2,7 @@
    Strict JSON inside the push() call. English lives in the page's HTML. */
 (window.SITE_I18N_PAGES = window.SITE_I18N_PAGES || []).push({
   "ar": {
+    "synthetic-realities.nav.cite": "الاستشهاد",
     "synthetic-realities.title": "Synthetic Realities: قدرة الإنسان على اكتشاف الفيديو المولَّد بالذكاء الاصطناعي · Danyal Sarfraz",
     "synthetic-realities.description": "دراسة مضبوطة عبر الإنترنت تقيس دقة 87 مشاهدًا بلا تدريب مسبق في التمييز بين الفيديو المولَّد بالذكاء الاصطناعي واللقطات الحقيقية، عبر ثلاث تقنيات توليد وثلاثة موضوعات. ورقة مصوَّرة منشورة في IASDR 2025.",
     "synthetic-realities.nav.label": "دراسة الحالة",
@@ -94,6 +95,7 @@
     "synthetic-realities.note.funding": "بدعم من برنامج الابتكار التكنولوجي (RS-2025-04752997) التابع لوزارة التجارة والصناعة والطاقة الكورية (MOTIE)."
   },
   "zh": {
+    "synthetic-realities.nav.cite": "引用",
     "synthetic-realities.title": "Synthetic Realities：人类能否识别 AI 生成的视频 · Danyal Sarfraz",
     "synthetic-realities.description": "一项在线受控实验，测量 87 名未经训练的观众在三种生成技术、三个主题下区分 AI 生成视频与真实影像的准确率。发表于 IASDR 2025 的图文论文。",
     "synthetic-realities.nav.label": "案例研究",

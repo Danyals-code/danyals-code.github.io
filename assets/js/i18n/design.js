@@ -2,6 +2,11 @@
    Strict JSON inside the push() call. English lives in the page's HTML. */
 (window.SITE_I18N_PAGES = window.SITE_I18N_PAGES || []).push({
   "ar": {
+    "design.lnav.label": "التصميم والأبعاد الثلاثية",
+    "design.lnav.title": "التصميم والأبعاد الثلاثية",
+    "design.lnav.highlights": "أبرز الأعمال",
+    "design.lnav.products": "تصميم المنتجات",
+    "design.lnav.viz": "التصوير ثلاثي الأبعاد",
     "design.title": "التصميم والأبعاد الثلاثية · Danyal Sarfraz",
     "design.description": "الرسوم الحاسوبية فائقة الواقعية والتصميم الصناعي من أعمال Danyal Sarfraz: أعمال سينمائية ثلاثية الأبعاد، ومشروع تخرج البكالوريوس Waveform، وتصوير المنتجات، ومشاريع العمل الحر.",
     "design.hero.eyebrow": "التصميم والأبعاد الثلاثية",
@@ -36,6 +41,11 @@
     "design.viz3d.lead": "رسوم حاسوبية فائقة الواقعية، من الدراسات الشخصية إلى شريط الأعمال، من الأحدث إلى الأقدم."
   },
   "zh": {
+    "design.lnav.label": "设计与 3D",
+    "design.lnav.title": "设计与 3D",
+    "design.lnav.highlights": "精选经历",
+    "design.lnav.products": "产品设计",
+    "design.lnav.viz": "3D 可视化",
     "design.title": "设计与 3D · Danyal Sarfraz",
     "design.description": "Danyal Sarfraz 的照片级写实 CGI 与工业设计作品：电影级 3D 作品、本科毕业设计 Waveform、产品可视化以及自由职业项目。",
     "design.hero.eyebrow": "设计与 3D",

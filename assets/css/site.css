@@ -2894,24 +2894,28 @@ a.tile:hover .link-more {
   margin: 0;
 }
 
-/* A phone: dark titanium edge, screen, Dynamic Island. Put an <img> (or .ph)
-   inside .device__screen; the screen keeps a 460 × 1000 ratio. */
+/* A phone: Apple's iPhone Pro bezel (assets/img/frames, 978 × 2000), silver
+   in light mode and black in dark, laid over the screen. Put an <img> (or
+   .ph) inside .device__screen; the screen is the bezel's opening, 874 × 1900
+   at (52, 50), which is a 460 × 1000 ratio, so iPhone 17 Pro screenshots
+   (1206 × 2622) fit exactly. The corners clip a little inside the opening's
+   (15.6% / 7.2%), so no sliver of page shows past the bezel. */
 .device--phone {
+  --phone-frame: url("/assets/img/frames/iphone-pro-silver.webp");
   width: 100%;
-  padding: 3%;
-  border-radius: 16% / 7.4%;
-  background: linear-gradient(150deg, #4a4a4e, #161618 45%, #2c2c2e);
-  box-shadow:
-    inset 0 0 0 1px rgb(255 255 255 / 0.14),
-    0 0 0 1px rgb(0 0 0 / 0.5),
-    0 40px 70px -30px rgb(0 0 0 / 0.55);
+  aspect-ratio: 978 / 2000;
+  filter: drop-shadow(0 28px 30px rgb(0 0 0 / 0.26));
+}
+
+[data-theme-now="dark"] .device--phone {
+  --phone-frame: url("/assets/img/frames/iphone-pro-black.webp");
 }
 
 .device--phone .device__screen {
-  position: relative;
+  position: absolute;
+  inset: 2.5% 5.317%;
   overflow: hidden;
-  aspect-ratio: 460 / 1000;
-  border-radius: 13% / 6%;
+  border-radius: 14.5% / 6.67%;
   background: #000;
 }
 
@@ -2922,16 +2926,141 @@ a.tile:hover .link-more {
   object-fit: cover;
 }
 
+/* The bezel, with its Dynamic Island, over the screen. */
 .device--phone::after {
   content: "";
   position: absolute;
-  top: 5.2%;
-  left: 50%;
-  width: 29%;
-  height: 3.3%;
-  border-radius: 999px;
+  inset: 0;
+  background: var(--phone-frame) center / 100% 100% no-repeat;
+  pointer-events: none;
+}
+
+/* iPhone Duo, open (2000 × 1453) or .device--closed (1435 × 2000): silver
+   in light mode and dark blue in dark, like the phone. The <img> inside is
+   the screenshot already cut to the bezel's opening at the frame's own size
+   (the screens are not plain rounded rectangles: the cover screen has a
+   camera hole and larger corners on the hinge side), with the bezel on top. */
+.device--duo {
+  --duo-frame: url("/assets/img/frames/iphone-duo-light-open.webp");
+  aspect-ratio: 2000 / 1453;
+  filter: drop-shadow(0 28px 30px rgb(0 0 0 / 0.26));
+}
+
+.device--duo.device--closed {
+  --duo-frame: url("/assets/img/frames/iphone-duo-light-closed.webp");
+  aspect-ratio: 1435 / 2000;
+}
+
+[data-theme-now="dark"] .device--duo {
+  --duo-frame: url("/assets/img/frames/iphone-duo-dark-open.webp");
+}
+
+[data-theme-now="dark"] .device--duo.device--closed {
+  --duo-frame: url("/assets/img/frames/iphone-duo-dark-closed.webp");
+}
+
+.device--duo > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.device--duo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--duo-frame) center / 100% 100% no-repeat;
+  pointer-events: none;
+}
+
+/* Rows of Duos at one height: each grows in proportion to its width over
+   height. On phones the open ones take a row each and the closed ones pair up. */
+.duo-gallery {
+  display: grid;
+  gap: clamp(24px, 3.4vw, 48px);
+}
+
+.duo-gallery__row {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(16px, 2.6vw, 36px);
+}
+
+.duo-gallery__row > .device--duo {
+  flex: 1.3765 1 0;
+  min-width: 0;
+}
+
+.duo-gallery__row > .device--duo.device--closed {
+  flex-grow: 0.7175;
+}
+
+@media (max-width: 733px) {
+  .duo-gallery__row {
+    flex-wrap: wrap;
+  }
+
+  .duo-gallery__row > .device--duo:not(.device--closed) {
+    flex-basis: 100%;
+    order: 1;
+  }
+
+  .duo-gallery__row > .device--duo.device--closed {
+    flex: 1 1 0;
+  }
+}
+
+/* A tablet: Apple's 13-inch iPad Pro bezel (2000 × 1533), silver in light
+   mode and space black in dark, landscape unless .device--portrait. Same
+   markup as the phone. The opening is 1834 × 1375 at (83, 79), a 4:3 ratio,
+   so 13-inch iPad Pro screenshots (2752 × 2064) fit exactly. */
+.device--tablet {
+  --tablet-frame: url("/assets/img/frames/ipad-pro-13-silver-landscape.webp");
+  width: 100%;
+  aspect-ratio: 2000 / 1533;
+  filter: drop-shadow(0 28px 30px rgb(0 0 0 / 0.26));
+}
+
+[data-theme-now="dark"] .device--tablet {
+  --tablet-frame: url("/assets/img/frames/ipad-pro-13-space-black-landscape.webp");
+}
+
+.device--tablet.device--portrait {
+  --tablet-frame: url("/assets/img/frames/ipad-pro-13-silver.webp");
+  aspect-ratio: 1533 / 2000;
+}
+
+[data-theme-now="dark"] .device--tablet.device--portrait {
+  --tablet-frame: url("/assets/img/frames/ipad-pro-13-space-black.webp");
+}
+
+.device--tablet .device__screen {
+  position: absolute;
+  inset: 5.153% 4.15%;
+  overflow: hidden;
+  border-radius: 2.1% / 2.8%;
   background: #000;
-  translate: -50% 0;
+}
+
+.device--tablet.device--portrait .device__screen {
+  inset: 4.15% 5.153%;
+  border-radius: 2.8% / 2.1%;
+}
+
+.device--tablet .device__screen > img,
+.device--tablet .device__screen > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.device--tablet::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--tablet-frame) center / 100% 100% no-repeat;
+  pointer-events: none;
 }
 
 /* A desktop window with traffic lights, for Blender add-ons and web tools. */
@@ -3231,7 +3360,6 @@ a.tile:hover .link-more {
 .hl__media > .device--phone {
   width: auto;
   height: 100%;
-  aspect-ratio: 0.473;
 }
 
 .hl__media > .device--window {
@@ -3247,7 +3375,12 @@ a.tile:hover .link-more {
   aspect-ratio: auto;
 }
 
+/* A full-bleed picture: its box covers the whole slide, so the picture is
+   placed the same whether or not the box has a filter (a filter makes the
+   box the picture's frame of reference; see .hl--mono-sides). */
 .hl__media--fill {
+  position: absolute;
+  inset: 0;
   padding: 0;
 }
 
@@ -3274,6 +3407,16 @@ a.tile:hover .link-more {
     scale: 1.08;
     transition: scale var(--hl-dur) linear;
   }
+}
+
+/* .hl--mono-sides (Research): the slides either side of the one in view
+   are in black and white, and a slide eases into color as it arrives. */
+.hl--mono-sides .hl__media {
+  transition: filter 0.6s var(--ease);
+}
+
+.hl--mono-sides .hl__slide[aria-hidden="true"] .hl__media {
+  filter: grayscale(1);
 }
 
 .hl__media--fill ~ .hl__cap,
@@ -7405,6 +7548,7 @@ html:not(.js) .quiz__hint {
 }
 
 .pubs-thesis__title {
+  display: block;
   color: var(--fg);
   font-weight: 600;
 }
@@ -7545,4 +7689,18 @@ html:not(.js) .quiz__hint {
 .paper__dl .ico {
   width: 17px;
   height: 17px;
+}
+
+/* Cite copies the paper's BibTeX (hidden <pre> beside it); a button that
+   looks like the links next to it. */
+.paper__cite {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.paper__cite.is-copied {
+  color: var(--fg-2);
 }

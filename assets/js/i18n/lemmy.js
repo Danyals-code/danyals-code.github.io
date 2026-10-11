@@ -2,6 +2,7 @@
    Strict JSON inside the push() call. English lives in the page's HTML. */
 (window.SITE_I18N_PAGES = window.SITE_I18N_PAGES || []).push({
   "ar": {
+    "lemmy.lnav.cite": "الاستشهاد",
     "lemmy.title": "Lemmy: تصميم حركة روبوت رعاية بمنهج قائم على المكوّنات · Danyal Sarfraz",
     "lemmy.description": "منهج قائم على المكوّنات لتصميم حركة Lemmy، وهو روبوت مرافق غير شبيه بالبشر مخصّص لكبار السن: ورشة عمل مع مصممين، ومقابلات مع خبراء، ودراسة تفضيلات مع 25 من كبار السن، ودراسة تحقّق مع 15 غيرهم.",
     "lemmy.lnav.label": "دراسة الحالة",
@@ -114,6 +115,7 @@
     "lemmy.note.funding": "بدعم من وزارة التجارة والصناعة والطاقة الكورية (MOTIE) والمعهد الكوري لتقييم التكنولوجيا الصناعية (KEIT)، المنحة رقم 20015056."
   },
   "zh": {
+    "lemmy.lnav.cite": "引用",
     "lemmy.title": "Lemmy：基于组件的照护机器人动作设计 · Danyal Sarfraz",
     "lemmy.description": "为面向老年人的非人形陪伴机器人 Lemmy 设计动作的一种基于组件的方法：设计师工作坊、专家访谈、25 位老年人参与的偏好研究，以及另外 15 位老年人参与的验证研究。",
     "lemmy.lnav.label": "案例研究",

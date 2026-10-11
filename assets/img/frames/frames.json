@@ -1,0 +1,288 @@
+{
+ "ipad-pro-13-silver": {
+  "size": [
+   1533,
+   2000
+  ],
+  "screen": [
+   79,
+   83,
+   1375,
+   1834
+  ],
+  "fits": "2752 \u00d7 2064 (13-inch iPad Pro) screenshot"
+ },
+ "ipad-pro-13-silver-landscape": {
+  "size": [
+   2000,
+   1533
+  ],
+  "screen": [
+   83,
+   79,
+   1834,
+   1375
+  ],
+  "fits": "2752 \u00d7 2064 (13-inch iPad Pro) screenshot"
+ },
+ "ipad-pro-13-space-black": {
+  "size": [
+   1533,
+   2000
+  ],
+  "screen": [
+   79,
+   83,
+   1375,
+   1834
+  ],
+  "fits": "2752 \u00d7 2064 (13-inch iPad Pro) screenshot"
+ },
+ "ipad-pro-13-space-black-landscape": {
+  "size": [
+   2000,
+   1533
+  ],
+  "screen": [
+   83,
+   79,
+   1834,
+   1375
+  ],
+  "fits": "2752 \u00d7 2064 (13-inch iPad Pro) screenshot"
+ },
+ "iphone-duo-dark-closed": {
+  "size": [
+   1435,
+   2000
+  ],
+  "screen": [
+   81,
+   73,
+   1273,
+   1854
+  ],
+  "fits": "measure from the frame"
+ },
+ "iphone-duo-dark-open": {
+  "size": [
+   2000,
+   1453
+  ],
+  "screen": [
+   78,
+   78,
+   1844,
+   1297
+  ],
+  "fits": "measure from the frame"
+ },
+ "iphone-duo-dark-outside": {
+  "size": [
+   2000,
+   1436
+  ],
+  "screen": [
+   1028,
+   53,
+   914,
+   1330
+  ],
+  "fits": "measure from the frame"
+ },
+ "iphone-duo-light-closed": {
+  "size": [
+   1435,
+   2000
+  ],
+  "screen": [
+   81,
+   73,
+   1273,
+   1854
+  ],
+  "fits": "measure from the frame"
+ },
+ "iphone-duo-light-open": {
+  "size": [
+   2000,
+   1453
+  ],
+  "screen": [
+   78,
+   78,
+   1844,
+   1297
+  ],
+  "fits": "measure from the frame"
+ },
+ "iphone-duo-light-outside": {
+  "size": [
+   2000,
+   1436
+  ],
+  "screen": [
+   1028,
+   53,
+   914,
+   1330
+  ],
+  "fits": "measure from the frame"
+ },
+ "iphone-pro-black": {
+  "size": [
+   978,
+   2000
+  ],
+  "screen": [
+   52,
+   50,
+   874,
+   1900
+  ],
+  "fits": "1206 \u00d7 2622 (iPhone 17 Pro) screenshot"
+ },
+ "iphone-pro-black-landscape": {
+  "size": [
+   2000,
+   978
+  ],
+  "screen": [
+   50,
+   52,
+   1900,
+   874
+  ],
+  "fits": "1206 \u00d7 2622 (iPhone 17 Pro) screenshot"
+ },
+ "iphone-pro-silver": {
+  "size": [
+   978,
+   2000
+  ],
+  "screen": [
+   52,
+   50,
+   874,
+   1900
+  ],
+  "fits": "1206 \u00d7 2622 (iPhone 17 Pro) screenshot"
+ },
+ "iphone-pro-silver-landscape": {
+  "size": [
+   2000,
+   978
+  ],
+  "screen": [
+   50,
+   52,
+   1900,
+   874
+  ],
+  "fits": "1206 \u00d7 2622 (iPhone 17 Pro) screenshot"
+ },
+ "macbook-pro-14-silver": {
+  "size": [
+   2000,
+   1316
+  ],
+  "screen": [
+   217,
+   150,
+   1566,
+   1016
+  ],
+  "fits": "3024 \u00d7 1964 screenshot"
+ },
+ "macbook-pro-14-space-black": {
+  "size": [
+   2000,
+   1316
+  ],
+  "screen": [
+   217,
+   150,
+   1566,
+   1016
+  ],
+  "fits": "3024 \u00d7 1964 screenshot"
+ },
+ "macbook-pro-16-silver": {
+  "size": [
+   2000,
+   1333
+  ],
+  "screen": [
+   189,
+   143,
+   1622,
+   1047
+  ],
+  "fits": "3456 \u00d7 2234 screenshot"
+ },
+ "macbook-pro-16-space-black": {
+  "size": [
+   2000,
+   1333
+  ],
+  "screen": [
+   189,
+   143,
+   1622,
+   1047
+  ],
+  "fits": "3456 \u00d7 2234 screenshot"
+ },
+ "studio-display-dark": {
+  "size": [
+   2000,
+   1541
+  ],
+  "screen": [
+   52,
+   52,
+   1896,
+   1066
+  ],
+  "fits": "5120 \u00d7 2880 or any 16:9"
+ },
+ "studio-display-dark-cutout": {
+  "size": [
+   2000,
+   1541
+  ],
+  "screen": [
+   52,
+   52,
+   1896,
+   1066
+  ],
+  "fits": "5120 \u00d7 2880 or any 16:9"
+ },
+ "studio-display-silver": {
+  "size": [
+   2000,
+   1541
+  ],
+  "screen": [
+   52,
+   52,
+   1896,
+   1066
+  ],
+  "fits": "5120 \u00d7 2880 or any 16:9"
+ },
+ "studio-display-silver-cutout": {
+  "size": [
+   2000,
+   1541
+  ],
+  "screen": [
+   52,
+   52,
+   1896,
+   1066
+  ],
+  "fits": "5120 \u00d7 2880 or any 16:9"
+ }
+}
