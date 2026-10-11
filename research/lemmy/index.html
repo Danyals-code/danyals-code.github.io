@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}},1500)})})(document.documentElement)</script>
+  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("DOMContentLoaded",function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}})})(document.documentElement)</script>
   <title data-i18n="lemmy.title">Lemmy: Component-based motion design for a care robot · Danyal Sarfraz</title>
   <meta name="description" content="A component-based method for designing the motion of Lemmy, a non-humanoid companion robot for older adults: a designer workshop, expert interviews, a preference study with 25 older adults and a validation study with 15." data-i18n-attr="content:lemmy.description">
   <link rel="canonical" href="https://danyalportfolio.com/research/lemmy/">
@@ -22,17 +22,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=48">
-  <script src="/assets/js/i18n.js?v=4" defer></script>
-  <script src="/assets/js/i18n/lemmy.js?v=3" defer></script>
-  <script src="/assets/js/site.js?v=34" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=49">
+  <script src="/assets/js/i18n.js?v=5" defer></script>
+  <script src="/assets/js/i18n/lemmy.js?v=4" defer></script>
+  <script src="/assets/js/site.js?v=35" defer></script>
 </head>
 <body class="has-lnav">
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
   <header class="gnav">
     <nav class="gnav__inner" aria-label="Global" data-i18n-attr="aria-label:nav.label">
-      <a class="gnav__logo" href="/">
+      <a class="gnav__logo" href="/" translate="no">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
         Danyal Sarfraz
       </a>
@@ -71,7 +71,7 @@
         <li><a href="#takeaways" data-i18n="lemmy.lnav.takeaways">Takeaways</a></li>
       </ul>
       <a class="btn btn--sm" href="https://doi.org/10.21606/iasdr.2025.1139" target="_blank" rel="noopener" data-i18n="lemmy.lnav.paper">Read the paper</a>
-      <button class="btn btn--sm" type="button" data-copy-target="bibtex-iasdr-a" title="Copy the BibTeX citation"><span data-copy-label data-i18n="lemmy.lnav.cite">Cite</span></button>
+      <button class="btn btn--sm" type="button" data-copy-target="bibtex-iasdr-a" title="Copy the BibTeX citation" data-i18n-attr="title:copy.cite"><span data-copy-label data-i18n="lemmy.lnav.cite">Cite</span></button>
       <pre id="bibtex-iasdr-a" hidden>@inproceedings{sarfraz2025component,
   author    = {Sarfraz, Danyal and Ismatullaev, Ulugbek Vahobjon Ugli and Kim, KwanMyung},
   title     = {A Component-Based Approach for Developing Actions in Non-Humanoid Elderly Care Robots},
@@ -91,9 +91,9 @@
         <h1 class="t-display hero__title" data-i18n="lemmy.hero.title">Component-based motion design for a care robot</h1>
         <p class="t-lead hero__lead" data-i18n="lemmy.hero.lead">Lemmy is a two-wheeled companion robot for older adults. Without human-like gestures, its motion carries much of what it communicates. This research asks how that motion should be designed, and who should inform it.</p>
       </div>
-      <figure class="fig fig--center" style="margin-top: clamp(28px,5vw,56px)">
+      <figure class="fig fig--center hero__media">
         <div class="container-wide">
-          <div class="fig__media fig__media--white" style="border-radius: var(--r-xl)">
+          <div class="fig__media fig__media--white fig__media--xl">
             <img src="/assets/img/lemmy/persp-3.jpg" width="1600" height="1600" alt="Lemmy in three-quarter view: a white, rounded body on two large wheels with a dark screen face" style="max-height: 640px; width: auto; margin-inline: auto" fetchpriority="high" data-i18n-attr="alt:lemmy.hero.alt">
           </div>
         </div>
@@ -114,7 +114,7 @@
           <div><span class="fact__label" data-i18n="lemmy.facts.outputs.label">Outputs</span><p class="fact__value" data-i18n="lemmy.facts.outputs"><a href="/research/#ksds-2025">KSDS 2025</a>, <a href="https://doi.org/10.21606/iasdr.2025.1139" target="_blank" rel="noopener">IASDR 2025</a>, and a CES 2025 Innovation Award with the Lemmy team</p></div>
         </div>
 
-        <p class="t-two-tone" style="margin-top: clamp(64px,8vw,112px)" data-reveal data-i18n="lemmy.intro">Co-design with older adults is valuable, but long sessions are tiring and difficult to repeat. Robot motion is typically settled late, by intuition, once hardware exists. <strong>This work instead elicits preferences once for a small set of motion components, and composes new actions from them.</strong></p>
+        <p class="t-two-tone mt-7" data-reveal data-i18n="lemmy.intro">Co-design with older adults is valuable, but long sessions are tiring and difficult to repeat. Robot motion is typically settled late, by intuition, once hardware exists. <strong>This work instead elicits preferences once for a small set of motion components, and composes new actions from them.</strong></p>
       </div>
     </section>
 
@@ -167,7 +167,7 @@
           </div>
         </div>
 
-        <div class="feature feature--flip" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+        <div class="feature feature--flip mt-6" data-reveal>
           <figure class="fig feature__media">
             <div class="fig__media fig__media--white"><img class="blend-white" src="/assets/img/lemmy/dof.jpg" width="1800" height="1350" alt="Diagram of Lemmy’s movements: pitching forward and back, yawing in place and driving forward or backward" loading="lazy" data-i18n-attr="alt:lemmy.components.alt"></div>
             <figcaption class="fig__cap" data-i18n="lemmy.components.cap">Lemmy balances on two wheels. It can drive, turn in place and lean its body forward or back.</figcaption>
@@ -186,7 +186,7 @@
           </div>
         </div>
 
-        <div class="feature" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+        <div class="feature mt-6" data-reveal>
           <figure class="fig feature__media">
             <div class="fig__media fig__media--white"><img class="blend-white" src="/assets/img/lemmy/components-sketch.jpg" width="1200" height="1600" alt="Sketches of an older adult seated beside Lemmy as it follows straight and curved paths, holds different postures and turns sharply or smoothly" loading="lazy" style="max-height: 620px; width: auto; margin-inline: auto" data-i18n-attr="alt:lemmy.prefs.alt"></div>
             <figcaption class="fig__cap" data-i18n="lemmy.prefs.cap">Each component had two variants, so each trial was a binary choice.</figcaption>
@@ -195,7 +195,7 @@
             <p class="t-eyebrow" data-i18n="lemmy.prefs.label">Step 3 · Preferences</p>
             <h3 class="t-h3" data-i18n="lemmy.prefs.title">Paired-comparison preferences from 25 older adults</h3>
             <p data-i18n="lemmy.prefs.text"><strong>Twenty-five adults aged 65 and over</strong>, all in Pakistan, viewed pairs of 3D animations that differed in a single component and selected the one they preferred. Trial order was randomized.</p>
-            <ul class="prose" style="padding-left:1.2em">
+            <ul class="prose">
               <li data-i18n="lemmy.prefs.speed"><strong>Speed:</strong> normal (about 0.5–0.7 m/s, a small pet’s walking pace) or fast (over 0.7 m/s)</li>
               <li data-i18n="lemmy.prefs.path"><strong>Path:</strong> straight or gently curved</li>
               <li data-i18n="lemmy.prefs.posture"><strong>Posture:</strong> upright and static, or leaning with the action</li>
@@ -204,7 +204,7 @@
           </div>
         </div>
 
-        <div class="feature feature--flip" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+        <div class="feature feature--flip mt-6" data-reveal>
           <figure class="fig feature__media">
             <div class="fig__media"><img src="/assets/img/lemmy/survey-sheets.jpg" width="1200" height="1600" alt="Printed rating sheets for the study, spread out on a desk" loading="lazy" class="ratio-4-3" data-i18n-attr="alt:lemmy.validation.alt"></div>
             <figcaption class="fig__cap" data-i18n="lemmy.validation.cap">Printed response sheets from the thesis studies.</figcaption>
@@ -213,7 +213,7 @@
             <p class="t-eyebrow" data-i18n="lemmy.validation.label">Step 4 · Validation</p>
             <h3 class="t-h3" data-i18n="lemmy.validation.title">Validating preference-based actions with a new sample</h3>
             <p data-i18n="lemmy.validation.text">Three actions (approach the user, return to dock and a dance) were each built in four variants:</p>
-            <ul class="prose" style="padding-left:1.2em">
+            <ul class="prose">
               <li data-i18n="lemmy.validation.v1"><strong>V1</strong> from the preferred components</li>
               <li data-i18n="lemmy.validation.v2"><strong>V2</strong> from the non-preferred ones</li>
               <li data-i18n="lemmy.validation.random"><strong>V3 and V4</strong> from random mixes</li>
@@ -240,10 +240,10 @@
             <li class="bar"><span class="bar__label" data-i18n="lemmy.prefsChart.posture">Dynamic posture<small>vs static</small></span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:64%"></span></span><span class="bar__value">64%</span></li>
             <li class="bar"><span class="bar__label" data-i18n="lemmy.prefsChart.turn">Smooth arc turn<small>vs sharp pivot</small></span><span class="bar__track"><span class="bar__fill bar__fill--accent" style="--v:64%"></span></span><span class="bar__value">64%</span></li>
           </ul>
-          <p class="t-small t-muted" style="margin-top:22px" data-i18n="lemmy.prefsChart.note">Posture, path and turn-type preferences did not reach statistical significance in this sample and should be treated as directional. Together they define a default motion profile for Lemmy: moderate pace, straight paths, smooth turns and a body that leans into the action.</p>
+          <p class="t-small t-muted mt-2" data-i18n="lemmy.prefsChart.note">Posture, path and turn-type preferences did not reach statistical significance in this sample and should be treated as directional. Together they define a default motion profile for Lemmy: moderate pace, straight paths, smooth turns and a body that leans into the action.</p>
         </div>
 
-        <div class="chart" style="margin-top:20px" data-reveal>
+        <div class="chart mt-2" data-reveal>
           <h3 class="chart__title" data-i18n="lemmy.ratings.title">Ratings of complete actions</h3>
           <p class="chart__sub" data-i18n="lemmy.ratings.sub">Mean score out of 10 from 15 new participants</p>
           <div class="legend" aria-hidden="true">
@@ -292,7 +292,7 @@
           </div>
         </div>
 
-        <div class="findings" style="margin-top:20px">
+        <div class="findings mt-2">
           <div class="finding" data-reveal>
             <span class="finding__num t-grad" data-i18n="lemmy.findings.overall.num">7.7 vs 5.3</span>
             <p class="finding__text" data-i18n="lemmy.findings.overall"><strong>Preferred components scored highest overall.</strong> Across all actions, V1 received the highest mean rating with the narrowest spread (95% CI 7.24–8.10). Non-preferred assemblies scored lowest for every action.</p>
@@ -336,25 +336,19 @@
           </div>
         </div>
 
-        <div class="callout-note" style="margin-top: clamp(40px,5vw,64px)" data-reveal>
+        <div class="callout-note mt-4" data-reveal>
           <p data-i18n="lemmy.limitations"><strong>Limitations.</strong> Each component had only two variants to keep the tests tractable, so finer distinctions were not captured. Animation cannot reproduce live timing, personal space or real reactions. Samples were small and drawn from a single country; embodied testing is the next step. Two of these limitations shaped the subsequent work: a tool that keeps animations physically feasible, and AR studies that place the robot at life size in real rooms.</p>
         </div>
       </div>
     </section>
 
     <!-- Next -->
-    <section class="section section--alt" aria-labelledby="next-title">
+    <section class="section section--alt" id="next" aria-label="Next case study" data-i18n-attr="aria-label:lemmy.next.label">
       <div class="container">
-        <a class="tile tile--white" href="/research/lemmy-framework/" data-reveal>
-          <div class="feature" style="padding: clamp(26px,3.4vw,44px)">
-            <div class="feature__text">
-              <p class="t-eyebrow" data-i18n="lemmy.next.label">Next case study</p>
-              <h2 class="t-h2" id="next-title" data-i18n="lemmy.next.title">A design-to-engineering framework for non-humanoid robot actions</h2>
-              <p data-i18n="lemmy.next.text">My MSc thesis extends this method into a framework, with a Blender add-on for engineers and an AR app for life-size testing.</p>
-              <span class="link-more" data-i18n="lemmy.next.read">Learn more</span>
-            </div>
-            <div class="feature__media fig__media"><img src="/assets/img/app/in-room.jpg" width="2400" height="729" alt="An iPhone on a tripod showing Lemmy in AR in a real room" loading="lazy" class="ratio-16-10" data-i18n-attr="alt:lemmy.next.alt"></div>
-          </div>
+        <a class="next-card" href="/research/lemmy-framework/" data-reveal>
+          <span class="next-card__thumb"><img src="/assets/img/thumbs/lemmy-framework.jpg" width="720" height="450" alt="" loading="lazy"></span>
+          <span><span class="next-card__label" data-i18n="lemmy.next.label">Next case study</span><span class="next-card__name" data-i18n="footer.framework">MSc thesis framework</span><span class="t-muted" data-i18n="lemmy.next.text">My MSc thesis extends this method into a framework, with a Blender add-on for engineers and an AR app for life-size testing.</span></span>
+          <span class="next-card__go"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#arrow-right"/></svg></span>
         </a>
       </div>
     </section>
@@ -380,7 +374,7 @@
         <div class="gfooter__col"><h3 data-i18n="footer.caseStudies">Case studies</h3><ul>
           <li><a href="/research/bangudae-xr/" data-i18n="footer.bangudae">Bangudae XR</a></li>
           <li><a href="/research/life-size-ar/" data-i18n="footer.lifeSize">Life-size AR</a></li>
-          <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
+          <li><a href="/research/synthetic-realities/" translate="no">Synthetic Realities</a></li>
           <li><a href="/research/product-form/" data-i18n="footer.productForm">Product form analysis</a></li>
           <li><a href="/research/lemmy/" data-i18n="footer.robotMotion">Robot motion</a></li>
           <li><a href="/research/lemmy-framework/" data-i18n="footer.framework">MSc thesis framework</a></li>

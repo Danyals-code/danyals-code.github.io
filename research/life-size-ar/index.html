@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}},1500)})})(document.documentElement)</script>
+  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("DOMContentLoaded",function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}})})(document.documentElement)</script>
   <title data-i18n="life-size-ar.title">Life-size AR: Evaluating AR as a stand-in for physical prototypes · Danyal Sarfraz</title>
   <meta name="description" content="A native iPhone and Apple Vision Pro application that places a life-size robot concept in participants’ homes, and an at-home study of whether AR supports design judgments. Swift, ARKit, RealityKit, visionOS." data-i18n-attr="content:life-size-ar.description">
   <link rel="canonical" href="https://danyalportfolio.com/research/life-size-ar/">
@@ -22,17 +22,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=48">
-  <script src="/assets/js/i18n.js?v=4" defer></script>
-  <script src="/assets/js/i18n/life-size-ar.js?v=4" defer></script>
-  <script src="/assets/js/site.js?v=34" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=49">
+  <script src="/assets/js/i18n.js?v=5" defer></script>
+  <script src="/assets/js/i18n/life-size-ar.js?v=5" defer></script>
+  <script src="/assets/js/site.js?v=35" defer></script>
 </head>
 <body class="has-lnav">
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
   <header class="gnav">
     <nav class="gnav__inner" aria-label="Global" data-i18n-attr="aria-label:nav.label">
-      <a class="gnav__logo" href="/">
+      <a class="gnav__logo" href="/" translate="no">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
         Danyal Sarfraz
       </a>
@@ -65,12 +65,12 @@
        shrinks to small icons under the menu; the local nav then sticks below it. -->
   <nav class="appbar appbar--sticky" aria-label="Artifacts" data-i18n-attr="aria-label:nav.tools" data-appbar>
     <ul class="appbar__track">
-      <li><a class="appbar__item" href="/tools/almanac/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/almanac-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/almanac-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/almanac-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/almanac-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Almanac</span><span class="appbar__kind" data-i18n="life-size-ar.bar.kind.ios">iOS App</span></a></li>
-      <li><a class="appbar__item" href="/tools/viewar/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/viewar-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/viewar-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/viewar-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/viewar-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">ViewAR</span><span class="appbar__kind" data-i18n="life-size-ar.bar.kind.iosAddon">iOS App · Add-on</span></a></li>
+      <li><a class="appbar__item" href="/tools/almanac/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/almanac-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/almanac-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/almanac-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/almanac-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Almanac</span><span class="appbar__kind" data-i18n="life-size-ar.bar.kind.ios">iOS app</span></a></li>
+      <li><a class="appbar__item" href="/tools/viewar/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/viewar-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/viewar-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/viewar-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/viewar-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">ViewAR</span><span class="appbar__kind" data-i18n="life-size-ar.bar.kind.iosAddon">iOS app · add-on</span></a></li>
       <li><a class="appbar__item" href="/research/life-size-ar/" aria-current="page"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/lemmy-ar-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/lemmy-ar-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/lemmy-ar-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/lemmy-ar-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Lemmy AR</span><span class="appbar__kind" data-i18n="life-size-ar.bar.kind.iosVision">iOS · visionOS</span></a></li>
-      <li><a class="appbar__item" href="/tools/roboanimator/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/roboanimator-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/roboanimator-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/roboanimator-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/roboanimator-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">RoboAnimator</span><span class="appbar__kind" data-i18n="life-size-ar.bar.kind.addon">Blender Add-on</span></a></li>
-      <li><a class="appbar__item" href="/tools/amvr/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/amvr-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/amvr-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/amvr-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/amvr-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">AMVR</span><span class="appbar__kind" data-i18n="life-size-ar.bar.kind.addon">Blender Add-on</span></a></li>
-      <li><a class="appbar__item" href="/tools/swift-studio/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/swift-studio-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/swift-studio-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/swift-studio-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/swift-studio-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Swift Studio</span><span class="appbar__kind" data-i18n="life-size-ar.bar.kind.web">Web App</span></a></li>
+      <li><a class="appbar__item" href="/tools/roboanimator/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/roboanimator-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/roboanimator-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/roboanimator-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/roboanimator-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">RoboAnimator</span><span class="appbar__kind" data-i18n="life-size-ar.bar.kind.addon">Blender add-on</span></a></li>
+      <li><a class="appbar__item" href="/tools/amvr/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/amvr-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/amvr-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/amvr-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/amvr-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">AMVR</span><span class="appbar__kind" data-i18n="life-size-ar.bar.kind.addon">Blender add-on</span></a></li>
+      <li><a class="appbar__item" href="/tools/swift-studio/"><span class="appbar__icon appbar__icon--img"><img class="icon-light" src="/assets/img/apps/swift-studio-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/swift-studio-dark.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-light" src="/assets/img/apps/swift-studio-mono-light.png" width="256" height="256" alt="" loading="lazy"><img class="appbar__clear icon-dark" src="/assets/img/apps/swift-studio-mono-dark.png" width="256" height="256" alt="" loading="lazy"></span><span class="appbar__name" translate="no">Swift Studio</span><span class="appbar__kind" data-i18n="life-size-ar.bar.kind.web">Web app</span></a></li>
     </ul>
     <button class="appbar__paddle appbar__paddle--prev" type="button" data-appbar-prev aria-label="Previous" data-i18n-attr="aria-label:rail.prev"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5"/></svg></button>
     <button class="appbar__paddle appbar__paddle--next" type="button" data-appbar-next aria-label="Next" data-i18n-attr="aria-label:rail.next"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="m5 2 5 5-5 5"/></svg></button>
@@ -96,9 +96,9 @@
         <h1 class="t-display hero__title" data-i18n="life-size-ar.hero.title">Evaluating life-size AR as a stand-in for physical prototypes</h1>
         <p class="t-lead hero__lead" data-i18n="life-size-ar.hero.lead">Physical prototypes are slow to produce, and screens reduce objects in scale and flatten their motion. This native iPhone and Apple Vision Pro application places a life-size robot concept in participants’ own homes; an at-home study then tested whether AR was sufficient to evaluate it.</p>
       </div>
-      <figure class="fig" style="margin-top: clamp(28px,5vw,56px)">
+      <figure class="fig hero__media">
         <div class="container-wide">
-          <div class="fig__media" style="border-radius: var(--r-xl)">
+          <div class="fig__media fig__media--xl">
             <img src="/assets/img/app/in-room.jpg" width="2400" height="729" alt="An iPhone on a tripod showing a life-size robot placed on the floor of a real room through augmented reality" fetchpriority="high" data-i18n-attr="alt:life-size-ar.hero.alt">
           </div>
         </div>
@@ -119,7 +119,7 @@
           <div><span class="fact__label" data-i18n="life-size-ar.facts.expertsLabel">Expert review</span><p class="fact__value" data-i18n="life-size-ar.facts.experts">Seven designers and engineers, including XR practitioners</p></div>
         </div>
 
-        <p class="t-two-tone" style="margin-top: clamp(64px,8vw,112px)" data-reveal data-i18n="life-size-ar.overview.problem">Most products are designed long before a working prototype exists. <strong>A screen render cannot convey how large an object feels in a hallway,</strong> or how its motion reads from a sofa. AR can place a digital twin in its intended environment. <strong>The research question is whether people can judge it well enough to inform design decisions.</strong></p>
+        <p class="t-two-tone mt-7" data-reveal data-i18n="life-size-ar.overview.problem">Most products are designed long before a working prototype exists. <strong>A screen render cannot convey how large an object feels in a hallway,</strong> or how its motion reads from a sofa. AR can place a digital twin in its intended environment. <strong>The research question is whether people can judge it well enough to inform design decisions.</strong></p>
       </div>
     </section>
 
@@ -139,7 +139,7 @@
               <h3 class="tile__title tile__title--sm" data-i18n="life-size-ar.devices.iphone.title">iPhone as a handheld AR viewport</h3>
               <p class="tile__text" data-i18n="life-size-ar.devices.iphone.text">LiDAR on recent iPhones detects the floor quickly and estimates scale well, and phones reach a far wider pool of participants than headsets. The trade-off: the robot is viewed through a small screen held at arm’s length, which reduces presence and causes arm fatigue.</p>
             </div>
-            <div class="tile__media">
+            <div class="tile__media tile__media--inset">
               <img src="/assets/img/app/testflight.jpg" width="2400" height="1440" alt="Screens of the iPhone app: a home screen, an actions screen with a 3D render, the AR view and settings, beside its TestFlight page" loading="lazy" data-i18n-attr="alt:life-size-ar.devices.iphone.alt">
             </div>
           </div>
@@ -184,7 +184,7 @@
           </li>
         </ol>
       </div>
-      <figure class="fig" style="margin-top: clamp(48px,6vw,80px)" data-reveal>
+      <figure class="fig mt-5" data-reveal>
         <div class="container-wide">
           <div class="fig__media parallax"><img src="/assets/img/app/visionos-menu.jpg" width="2000" height="1125" alt="The Lemmy AR Experience menu window, with base movements and action variants, floating in a virtual gallery on visionOS" loading="lazy" data-i18n-attr="alt:life-size-ar.ui.menu.alt"></div>
         </div>
@@ -215,7 +215,7 @@
             <p data-i18n="life-size-ar.ground.pinch.text">A pinch pauses any animation, allowing a researcher to freeze the robot at a key point in its motion for close inspection.</p>
           </div>
         </div>
-        <div class="feature" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+        <div class="feature mt-6" data-reveal>
           <div class="feature__text">
             <p class="t-eyebrow" data-i18n="life-size-ar.pipeline.eyebrow">Pipeline</p>
             <h3 class="t-h3" data-i18n="life-size-ar.pipeline.title">One asset pipeline from engineering CAD to AR</h3>
@@ -282,7 +282,7 @@
           </ul>
         </div>
 
-        <div class="findings" style="margin-top: 20px">
+        <div class="findings mt-2">
           <div class="finding" data-reveal>
             <span class="finding__num" data-i18n="life-size-ar.findings.scale.label">Scale</span>
             <p class="finding__text" data-i18n="life-size-ar.findings.scale.text"><strong>Scale, orientation and path were legible.</strong> Participants could judge the robot’s size, the direction it faced and where it was heading, relative to their own furniture.</p>
@@ -297,7 +297,7 @@
           </div>
         </div>
 
-        <div class="feature" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+        <div class="feature mt-6" data-reveal>
           <div class="feature__text">
             <p class="t-eyebrow" data-i18n="life-size-ar.experts.eyebrow">Expert check</p>
             <h3 class="t-h3" data-i18n="life-size-ar.experts.title">Experts endorsed AR testing, with stated limits</h3>
@@ -319,39 +319,36 @@
           <h2 class="t-h2 shead__title" id="take-title" data-i18n="life-size-ar.take.title">Implications for XR design practice</h2>
         </div>
         <div class="bento bento--thirds">
-          <div class="tile tile--white span-2" data-reveal style="background:var(--bg-2)">
+          <div class="tile span-2" data-reveal>
             <div class="tile__body">
               <h3 class="tile__title tile__title--sm" data-i18n="life-size-ar.take.context.title">Test in the deployment context</h3>
               <p class="tile__text" data-i18n="life-size-ar.take.context.text">A living room answers questions about scale and paths that no render can, and AR allows that test before the hardware exists.</p>
             </div>
           </div>
-          <div class="tile tile--white span-2" data-reveal style="background:var(--bg-2)">
+          <div class="tile span-2" data-reveal>
             <div class="tile__body">
               <h3 class="tile__title tile__title--sm" data-i18n="life-size-ar.take.expression.title">Motion alone is insufficient for expression</h3>
               <p class="tile__text" data-i18n="life-size-ar.take.expression.text">Spatial presence was conveyed; subtle emotion was not. Expression needs sound, a face and timing, not movement alone.</p>
             </div>
           </div>
-          <div class="tile tile--white span-2" data-reveal style="background:var(--bg-2)">
+          <div class="tile span-2" data-reveal>
             <div class="tile__body">
               <h3 class="tile__title tile__title--sm" data-i18n="life-size-ar.take.device.title">Match the device to the research question</h3>
               <p class="tile__text" data-i18n="life-size-ar.take.device.text">Phones for reach and quantitative data, headsets for fine motion and presence. A single native build can support both.</p>
             </div>
           </div>
         </div>
-        <p class="callout-note" style="margin-top: clamp(40px,5vw,64px)" data-reveal data-i18n="life-size-ar.take.limits"><strong>Limitations.</strong> The study was small and exploratory, and all participants were young. It ran on iPhone; Vision Pro was used to develop and validate the experience, not for the study. Future work will move the earlier preference studies into AR and compare AR directly with screen-based testing.</p>
+        <p class="callout-note mt-4" data-reveal data-i18n="life-size-ar.take.limits"><strong>Limitations.</strong> The study was small and exploratory, and all participants were young. It ran on iPhone; Vision Pro was used to develop and validate the experience, not for the study. Future work will move the earlier preference studies into AR and compare AR directly with screen-based testing.</p>
       </div>
     </section>
 
     <!-- Next -->
-    <section class="section section--alt" aria-labelledby="next-title">
+    <section class="section section--alt" id="next" aria-label="Next case study" data-i18n-attr="aria-label:life-size-ar.next.eyebrow">
       <div class="container">
-        <a class="tile tile--white" href="/research/synthetic-realities/" data-reveal>
-          <div class="tile__body">
-            <p class="t-eyebrow" data-i18n="life-size-ar.next.eyebrow">Next case study</p>
-            <h2 class="t-h2" id="next-title" data-i18n="life-size-ar.next.title">Human detection of AI-generated video</h2>
-            <p class="tile__text" data-i18n="life-size-ar.next.text">A perception study of AI-generated video: 87 participants, 3,132 judgments.</p>
-            <span class="link-more" data-i18n="life-size-ar.next.read">Learn more</span>
-          </div>
+        <a class="next-card" href="/research/synthetic-realities/" data-reveal>
+          <span class="next-card__thumb"><img src="/assets/img/thumbs/synthetic.jpg" width="720" height="450" alt="" loading="lazy"></span>
+          <span><span class="next-card__label" data-i18n="life-size-ar.next.eyebrow">Next case study</span><span class="next-card__name" translate="no">Synthetic Realities</span><span class="t-muted" data-i18n="life-size-ar.next.text">A perception study of AI-generated video: 87 participants, 3,132 judgments.</span></span>
+          <span class="next-card__go"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#arrow-right"/></svg></span>
         </a>
       </div>
     </section>
@@ -375,7 +372,7 @@
         <div class="gfooter__col"><h3 data-i18n="footer.caseStudies">Case studies</h3><ul>
           <li><a href="/research/bangudae-xr/" data-i18n="footer.bangudae">Bangudae XR</a></li>
           <li><a href="/research/life-size-ar/" data-i18n="footer.lifeSize">Life-size AR</a></li>
-          <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
+          <li><a href="/research/synthetic-realities/" translate="no">Synthetic Realities</a></li>
           <li><a href="/research/product-form/" data-i18n="footer.productForm">Product form analysis</a></li>
           <li><a href="/research/lemmy/" data-i18n="footer.robotMotion">Robot motion</a></li>
           <li><a href="/research/lemmy-framework/" data-i18n="footer.framework">MSc thesis framework</a></li>

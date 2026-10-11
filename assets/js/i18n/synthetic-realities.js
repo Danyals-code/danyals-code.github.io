@@ -88,10 +88,7 @@
     "synthetic-realities.implications.training.text": "ينبغي لبرامج الدراية الإعلامية وأدوات الاكتشاف أن تغطي المؤشرات السياقية إلى جانب التشوّهات الخاصة بكل نموذج؛ فالحدس وحده لا يكفي.",
     "synthetic-realities.limitations": "<strong>القيود والخطوات التالية.</strong> تحدّ المقاطع القصيرة الصامتة المعروضة عبر الإنترنت من الصدق البيئي للنتائج. وينبغي للأعمال المستقبلية أن تشمل تقنيات مثل الملء الداخلي وControlNet والفيديو المُدرِك للعمق، وأن تجمع تقديرات الثقة، وتوسّع التنوع الديموغرافي للعينة، وتختبر ما إذا كان التدريب يحسّن الاكتشاف بمرور الوقت.",
     "synthetic-realities.next.eyebrow": "دراسة الحالة التالية",
-    "synthetic-realities.next.title": "الاتساق بين زوايا الرؤية المتعددة في التحليل الآلي لشكل المنتج",
     "synthetic-realities.next.text": "مسار معالجة بالرؤية الحاسوبية يضم 23 معاملًا، ويستخلص معاملات الشكل من صور التصيير القياسية للمنتجات.",
-    "synthetic-realities.next.cta": "اعرف المزيد",
-    "synthetic-realities.next.alt": "مخطط أعمدة يبيّن اتساق كل معامل بين تحليلات 16 زاوية و180 زاوية؛ ومعظم الأعمدة فوق 90 بالمئة",
     "synthetic-realities.note.funding": "بدعم من برنامج الابتكار التكنولوجي (RS-2025-04752997) التابع لوزارة التجارة والصناعة والطاقة الكورية (MOTIE)."
   },
   "zh": {
@@ -181,10 +178,7 @@
     "synthetic-realities.implications.training.text": "媒介素养项目和检测工具应同时涵盖语境线索与特定模型的伪影；仅凭直觉并不足够。",
     "synthetic-realities.limitations": "<strong>局限与后续工作。</strong>在线观看的无声短视频限制了生态效度。后续研究应纳入局部重绘、ControlNet 和深度感知视频等技术，收集置信度评分，扩大样本的人口学多样性，并检验训练能否随时间提升识别能力。",
     "synthetic-realities.next.eyebrow": "下一个案例研究",
-    "synthetic-realities.next.title": "产品形态自动分析中的多视角一致性",
     "synthetic-realities.next.text": "一套包含 23 个参数的计算机视觉流程，可从标准产品渲染图中推导形态参数。",
-    "synthetic-realities.next.cta": "了解更多",
-    "synthetic-realities.next.alt": "柱状图：16 视角与 180 视角分析在各参数上的一致性，大多数柱形高于 90%",
     "synthetic-realities.note.funding": "本研究由韩国产业通商资源部（MOTIE）技术创新项目（RS-2025-04752997）资助。"
   }
 });

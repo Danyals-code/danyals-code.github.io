@@ -5,6 +5,9 @@ Live at <https://danyalportfolio.com/> (`danyals-code.github.io` redirects there
 
 Plain HTML, CSS and JavaScript. No build step, no dependencies.
 
+**Design rules** (colours, type, spacing, components, wording, accessibility) are in
+[DESIGN.md](DESIGN.md). Before pushing, run `python3 scripts/check.py`; it must report 0 errors.
+
 ## Pages
 
 ```
@@ -27,7 +30,7 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies.
 /tools/                        Artifacts: a bar of app icons, then "Explore the lineup", a rail of cards filtered by
                                kind (apps, Blender add-ons, web tools), then why the tools exist
 /tools/almanac/                App pages, one per artifact, built like Apple product pages: hero, highlights,
-/tools/viewar/                 features, a closer look, how it works, tech specs, and the app bar again at the
+/tools/viewar/                 features, a closer look, how it works, tech specs, and "More artifacts" at the
 /tools/roboanimator/           end. Lemmy AR has no page of its own; its card links to /research/life-size-ar/
 /tools/amvr/
 /tools/swift-studio/
@@ -60,6 +63,8 @@ assets/img/thumbs/    Home page card images (720 × 450) and the small avatar
 assets/video/<topic>/ Short muted H.264 clips, each with a poster image
 assets/img/og.png     Link-preview image (1200 × 630)
 favicon.svg
+DESIGN.md             The design rules
+scripts/check.py      Checks every page against them
 ```
 
 ## Editing
@@ -70,7 +75,8 @@ favicon.svg
 - **New case study:** copy a case study folder (for example `research/product-form/`), edit it,
   then add a card to `/research/` and, if it's a highlight, to the home page. Keep the
   "Next case study" links in a loop.
-- **Colors:** change the tokens at the top of `site.css`. Dark values appear twice: once under
+- **Colors and type sizes:** change the tokens at the top of `site.css` (`--fs-*` is the type scale;
+  every font size uses one). Dark values appear twice: once under
   `prefers-color-scheme: dark`, once under `.theme-dark` (pages and bands that are always dark).
 - **Paths** are root-absolute (`/assets/...`). They work on GitHub Pages and a local server,
   but not when you open a file directly from disk.
@@ -92,7 +98,7 @@ App pages (`/tools/<app>/`) and project pages (`/design/<project>/`) share a set
 picture a card shows, `.wcard--light` sets dark text on a light picture, and `.wcard--inset` (with `--wc-bg`,
 `--wc-w` and `--wc-b`) shows a product shot whole on a plain background. The home page's promos are `.promos`, `.promo`
 (`.promo--half`, `.promo--paper`, or `.theme-dark` for a black tile) and `.promo-pair`; the research
-lists use `.rlist--feature` (picture rows, sides alternating) and `.rlist--cards` (icon tiles). An app page sets its accent on `<body class="tinted"
+page shows papers as `.paper` stacks in a rail and industry projects as `.wcard` cards. An app page sets its accent on `<body class="tinted"
 style="--tint-l: …; --tint-d: …">` (light and dark values).
 
 **Icons** are line drawings on a 24-unit grid in one sprite, `assets/img/icons.svg`:
@@ -142,7 +148,9 @@ work on dark backgrounds.
   browser's preferred languages. Visitors whose time zone points to an Arabic- or
   Chinese-speaking region, but whose browser is in English, are offered that language in a
   slim bar; it never switches on its own.
-- **What is translated:** every page, in full. Search results stay in English, because
+- **What is translated:** Home, Research and its case studies, Artifacts, Design, About and the
+  404 page, in full. App pages (/tools/<app>/) and project pages (/design/<project>/) are English only
+  for now; on them the header, footer and controls still switch, and a slim bar says so. Search results stay in English, because
   pages are indexed from their HTML. References (citations) stay in English, marked
   `lang="en" dir="ltr"`.
 - **Translating text:** add `data-i18n="key"` to the element (its inner HTML is replaced) or
@@ -173,12 +181,12 @@ Entrances decelerate slowly (`--ease-out`, about a second); hover and state chan
 | Attribute | Effect |
 | --- | --- |
 | `data-reveal` | Fades and rises into view; `="fade"` fades only, `="scale"` also grows slightly |
-| `data-count="25"` (+ `data-prefix`, `data-suffix`) | Counts up to the number when visible |
+| `data-count="25"` (+ `data-prefix`, `data-suffix`) | Counts up to the number when visible; screen readers read the final number |
 | `.loop` around a `<video>` | Plays muted while visible; `data-manual` waits for a click; `data-once` plays once, then offers a replay |
 | `.parallax` on a media box | Its image drifts slightly slower than the page |
 | `.rail` with `data-rail-prev` / `data-rail-next` | Horizontal scroller with paddles |
 | `data-appbar` with `data-appbar-prev` / `data-appbar-next` | The Artifacts app bar: icons linking to each app's page; scrolls sideways with chevrons when it doesn't fit, and centres the current app (`aria-current="page"`) |
-| `data-highlights` around `.hl__track` | "Get the highlights": large slides that advance while on screen; the current dot fills over `--hl-dur`; a button stops and starts it; reduced motion never autoplays |
+| `data-highlights` around `.hl__track` | "Get the highlights": large slides that advance while on screen; the current dot fills over `--hl-dur`; a button stops and starts it; it holds still while a keyboard user is inside it; reduced motion never autoplays |
 | `data-closer` | "Take a closer look": pill buttons (`.closer__item`) beside a stage; opening one shows its text and its `.closer__media` |
 | `data-sheet="<dialog id>"` on a button | Opens a `<dialog class="sheet">` with more detail (the + on "Get to know" cards); click outside or the close button to shut it |
 | `data-seg-filter` with `data-filter` buttons and `data-group` items | A segmented control that filters a list or rail ("all" shows everything) |
@@ -187,10 +195,25 @@ Entrances decelerate slowly (`--ease-out`, about a second); hover and state chan
 | `data-toggle` + `aria-controls` | Opens and closes a panel with a height-and-fade animation; a link or search result pointing inside a closed panel opens it |
 | `data-seg-chart`, `data-seg`, `data-values` | Segmented control with a sliding thumb that switches a bar chart |
 | `data-year` | Filled with the current year |
-| `data-quiz` with `data-answer` buttons and `data-verdict` texts | Guess first: picking an answer fills in the chart and shows the matching explanation |
-| `data-clips` with `data-src` / `data-poster` buttons | Switches which clip a `.loop` video plays; `data-alt` (with `{name}`) labels it |
 | `data-reel` with a `.reel__shots` list | The home reel: plays each `<li>` in turn (`data-video` + `data-in`/`data-out`, or `data-img` + `data-dur`, or `data-end` for the title card) with its line as the subtitle; pauses off screen |
-| `data-hover-play` around a `<video>` | Plays while the pointer is on its card (touch screens: while mostly on screen) |
+| `a[data-reader]` (with `#paper-reader` on the page) | "Read paper" opens the PDF in a sheet; phones and browsers without a PDF viewer open it in a new tab |
+| `data-pano` around the Bangudae panorama | The panorama bends into a curved screen; arriving from a Bangudae card, the card flies into it |
+| `.lnav__links` | The local nav marks the section on screen; on pages with a local nav the header hides while scrolling down |
+| `data-copy-label` inside a copy button | The part of the label that says "Copied" for a moment |
+
+The site also opens external links in a new tab, and blocks the context menu, image dragging and
+Cmd/Ctrl + S (see `initNoSaving` in `site.js`).
+
+## Check
+
+```bash
+python3 scripts/check.py
+```
+
+It fails on broken links and anchors, missing files and icons, duplicate or dangling ids, images
+without size or alt, heading jumps, missing Arabic or Chinese strings, links labelled "case study",
+a changed CSS/JS/SVG file whose `?v=` was not bumped, header or footer drift between pages, new inline
+styles, and placeholders out of step with PLACEHOLDERS.md.
 
 ## Preview locally
 

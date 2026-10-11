@@ -46,7 +46,7 @@
     "lemmy-framework.framework.cap": "تؤجّل مسارات العمل التقليدية اختبار المستخدمين حتى يتوفر نموذج أولي مادي. أما هذا الإطار فيقدّمه إلى مرحلة أبكر، في الواقع المعزز.",
     "lemmy-framework.stage1.eyebrow": "المرحلة 1 · تصميم حركات الروبوت",
     "lemmy-framework.stage1.heading": "تصميم الحركات القائم على المكوّنات والمستند إلى تفضيلات المستخدمين",
-    "lemmy-framework.stage1.method": "تطبّق هذه المرحلة المنهج المتّبع في <a href=\"/research/lemmy/\">دراسة حالة Lemmy</a>. فقد أنتجت ورشة عمل للمصممين <strong>فهرسًا من 22 حركة</strong>، وحدّدت المقابلات أربعة مكوّنات للحركة، وقاست المقارنات الزوجية التفضيلات.",
+    "lemmy-framework.stage1.method": "تطبّق هذه المرحلة المنهج المتّبع في <a href=\"/research/lemmy/\">دراسة Lemmy</a>. فقد أنتجت ورشة عمل للمصممين <strong>فهرسًا من 22 حركة</strong>، وحدّدت المقابلات أربعة مكوّنات للحركة، وقاست المقارنات الزوجية التفضيلات.",
     "lemmy-framework.stage1.result": "في جولة مبكرة، فضّل <strong>36 مشاركًا أصغر سنًا من جنسيات متعددة</strong> المسارات المنحنية، في حين فضّل كبار السن المسارات المستقيمة، ما يشير إلى أن تفضيلات الحركة تختلف باختلاف فئة المستخدمين. وفي دراسة التحقق، حصلت الحركات المبنية من المكوّنات التي يفضّلها كبار السن على <strong>7.7 من 10، مقابل 5.3</strong> للحركات المبنية من مكوّنات غير مفضّلة.",
     "lemmy-framework.read": "اعرف المزيد",
     "lemmy-framework.stage1.cameraAlt": "ست صور مُصيَّرة لـ Lemmy في غرفة معيشة خافتة الإضاءة، ملتقطة بثلاثة أطوال بؤرية، كلٌّ منها مع عمق الميدان وبدونه",
@@ -128,9 +128,7 @@
     "lemmy-framework.eval.presentAlt": "يعرض Danyal شريحة عن صفحة الواقع المعزز في تطبيق Lemmy على ثلاثة مقيّمين جالسين",
     "lemmy-framework.eval.presentCap": "عرض تطبيق الواقع المعزز في UNIST.",
     "lemmy-framework.next.eyebrow": "دراسة الحالة التالية",
-    "lemmy-framework.next.title": "نقل نقوش بانغوداي الصخرية إلى داخل الغرف عبر الواقع المختلط",
     "lemmy-framework.next.text": "تطبيق للواقع المختلط حاز المركز الأول، يتناول مواقع التراث على جدول دايغوكتشون في أولسان، وقد طُوّر لجهاز Meta Quest 3.",
-    "lemmy-framework.next.alt": "عرض بتقنية الرؤية العابرة على Meta Quest 3: لوح نقوش صخرية ممسوح على منصة عائمة، مع أزرار السابق والرئيسية والتالي",
     "lemmy-framework.note.chi": "ورقة بحثية مبنية على هذه الرسالة قيد المراجعة في مؤتمر ACM CHI 2027."
   },
   "zh": {
@@ -178,7 +176,7 @@
     "lemmy-framework.framework.cap": "传统流程要等到有了实体原型才开始用户测试。本框架把这一步提前到 AR 中进行。",
     "lemmy-framework.stage1.eyebrow": "第 1 阶段 · 设计机器人动作",
     "lemmy-framework.stage1.heading": "基于组件、以用户偏好为依据的动作设计",
-    "lemmy-framework.stage1.method": "这一阶段沿用了 <a href=\"/research/lemmy/\">Lemmy 案例研究</a>中的方法：设计师工作坊产出了<strong>包含 22 个动作的目录</strong>，访谈确定了四个动作组件，成对比较则测量了用户偏好。",
+    "lemmy-framework.stage1.method": "这一阶段沿用了 <a href=\"/research/lemmy/\">Lemmy 研究</a>中的方法：设计师工作坊产出了<strong>包含 22 个动作的目录</strong>，访谈确定了四个动作组件，成对比较则测量了用户偏好。",
     "lemmy-framework.stage1.result": "在早期一轮测试中，<strong>36 位来自多个国家的年轻参与者</strong>偏好曲线路径，而老年人更喜欢直线路径，可见动作偏好因用户群体而异。在验证研究中，用老年人偏好的组件构建的动作得分为 <strong>7.7（满分 10），非偏好组件仅为 5.3</strong>。",
     "lemmy-framework.read": "了解更多",
     "lemmy-framework.stage1.cameraAlt": "Lemmy 在昏暗客厅中的六张渲染图，分别采用三种焦距，每种焦距都有带景深和不带景深两个版本",
@@ -260,9 +258,7 @@
     "lemmy-framework.eval.presentAlt": "Danyal 向三位就座的评审展示一张介绍 Lemmy 应用 AR 页面的幻灯片",
     "lemmy-framework.eval.presentCap": "在 UNIST 展示 AR 应用。",
     "lemmy-framework.next.eyebrow": "下一个案例研究",
-    "lemmy-framework.next.title": "借助混合现实，把盘龟台岩画带进室内",
     "lemmy-framework.next.text": "一款荣获第一名的混合现实应用，面向蔚山大谷川沿岸的文化遗产地，为 Meta Quest 3 打造。",
-    "lemmy-framework.next.alt": "Meta Quest 3 透视视图：悬浮展台上的一块扫描岩画面板，配有“上一个”“主页”“下一个”按钮",
     "lemmy-framework.note.chi": "基于本论文的一篇论文正在 ACM CHI 2027 审稿中。"
   }
 });

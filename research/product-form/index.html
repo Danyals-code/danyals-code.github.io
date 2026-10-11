@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}},1500)})})(document.documentElement)</script>
+  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("DOMContentLoaded",function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}})})(document.documentElement)</script>
   <title data-i18n="product-form.title">Multi-view consistency in automated product form analysis · Danyal Sarfraz</title>
   <meta name="description" content="A 23-parameter pipeline built on silhouette masks and monocular depth. Across seven products, 16 views matched 180 views at 90% consistency or higher for 20 of 23 parameters. KSDS 2026." data-i18n-attr="content:product-form.description">
   <link rel="canonical" href="https://danyalportfolio.com/research/product-form/">
@@ -22,17 +22,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=48">
-  <script src="/assets/js/i18n.js?v=4" defer></script>
-  <script src="/assets/js/i18n/product-form.js?v=2" defer></script>
-  <script src="/assets/js/site.js?v=34" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=49">
+  <script src="/assets/js/i18n.js?v=5" defer></script>
+  <script src="/assets/js/i18n/product-form.js?v=3" defer></script>
+  <script src="/assets/js/site.js?v=35" defer></script>
 </head>
 <body class="has-lnav">
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
   <header class="gnav">
     <nav class="gnav__inner" aria-label="Global" data-i18n-attr="aria-label:nav.label">
-      <a class="gnav__logo" href="/">
+      <a class="gnav__logo" href="/" translate="no">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
         Danyal Sarfraz
       </a>
@@ -63,13 +63,13 @@
 
   <nav class="lnav" aria-label="Case study" data-i18n-attr="aria-label:product-form.nav.label">
     <div class="lnav__inner">
-      <a class="lnav__title" href="#top" data-i18n="product-form.nav.title">Product Form</a>
+      <a class="lnav__title" href="#top" data-i18n="product-form.nav.title">Product form</a>
       <ul class="lnav__links">
         <li><a href="#why" data-i18n="product-form.nav.why">Why</a></li>
         <li><a href="#pipeline" data-i18n="product-form.nav.pipeline">Pipeline</a></li>
         <li><a href="#results" data-i18n="product-form.nav.results">Results</a></li>
       </ul>
-      <button class="btn btn--sm" type="button" data-copy-target="bibtex-ksds26" title="Copy the BibTeX citation"><span data-copy-label data-i18n="product-form.nav.cite">Cite</span></button>
+      <button class="btn btn--sm" type="button" data-copy-target="bibtex-ksds26" title="Copy the BibTeX citation" data-i18n-attr="title:copy.cite"><span data-copy-label data-i18n="product-form.nav.cite">Cite</span></button>
       <pre id="bibtex-ksds26" hidden>@inproceedings{sarfraz2026multiview,
   author       = {Sarfraz, Danyal and Kim, KwanMyung},
   title        = {Assessment of Multi-View Consistency in Automated Product Form Analysis},
@@ -87,14 +87,14 @@
         <h1 class="t-display hero__title hero__title--wide" data-i18n="product-form.hero.title">Multi-view consistency in automated product form analysis</h1>
         <p class="t-lead hero__lead" data-i18n="product-form.hero.lead">Data-driven design requires quantitative descriptors of product shape. This study tests whether sixteen standard renders can substitute for 3D CAD, which is proprietary and rarely available, as the input.</p>
       </div>
-      <div class="container-wide" style="margin-top: clamp(28px,5vw,56px)">
+      <div class="container-wide hero__media">
         <div class="fig-row fig-row--4 white-stage" style="border-radius: var(--r-xl); padding: clamp(12px,2vw,24px)">
           <img class="blend-white" src="/assets/img/lemmy/front.jpg" width="1400" height="1400" alt="Lemmy seen from the front" fetchpriority="high" data-i18n-attr="alt:product-form.hero.frontAlt">
           <img class="blend-white" src="/assets/img/lemmy/persp.jpg" width="1600" height="1600" alt="Lemmy seen from a three-quarter angle" data-i18n-attr="alt:product-form.hero.perspAlt">
           <img class="blend-white" src="/assets/img/lemmy/side.jpg" width="1400" height="1400" alt="Lemmy seen from the side" data-i18n-attr="alt:product-form.hero.sideAlt">
           <img class="blend-white" src="/assets/img/lemmy/persp-2.jpg" width="1600" height="1600" alt="Lemmy seen from another three-quarter angle" data-i18n-attr="alt:product-form.hero.persp2Alt">
         </div>
-        <p class="fig__cap container" style="margin-top:14px" data-i18n="product-form.hero.cap">One of the seven products analyzed, each rendered on a full 360° turntable.</p>
+        <p class="fig__cap container" data-i18n="product-form.hero.cap">One of the seven products analyzed, each rendered on a full 360° turntable.</p>
       </div>
     </section>
 
@@ -141,7 +141,7 @@
             <p class="step__text" data-i18n="product-form.step.params.text">Symmetry, proportion, curvature, visual complexity, convexity, balance and primitive fit. Fifteen use the mask alone; eight also incorporate depth.</p>
           </li>
         </ol>
-        <div class="callout-note" style="margin-top:20px" data-reveal>
+        <div class="callout-note mt-2" data-reveal>
           <p data-i18n="product-form.protocol"><strong>Evaluation protocol.</strong> Seven products were each rendered on a full 360° turntable at two set sizes, 16 views (every 22.5°) and 180 views (every 2°): Lemmy, a Sony PSP-1000, a Teenage Engineering TP-7, a game controller, a Nokia handset, a Marshall speaker and a Canon lens. For each parameter, consistency = 1 − |v₁₆ − v₁₈₀| / |v₁₈₀|, averaged across products.</p>
         </div>
       </div>
@@ -166,11 +166,11 @@
             <p class="finding__text" data-i18n="product-form.results.lower"><strong>Lower (under 80%).</strong> Concavity part count (76.3%) is threshold-sensitive and degrades on products with minimal concavity.</p>
           </div>
         </div>
-        <figure class="fig" style="margin-top:20px" data-reveal>
+        <figure class="fig mt-2" data-reveal>
           <div class="fig__media fig__media--white fig__media--pad"><img class="blend-white" src="/assets/img/product-form/consistency.png" width="2180" height="1576" alt="Horizontal bar chart of the 23 parameters’ consistency between 16-view and 180-view aggregates, with 20 bars above 90 percent" loading="lazy" data-i18n-attr="alt:product-form.results.chartAlt"></div>
           <figcaption class="fig__cap" data-i18n="product-form.results.chartCap">Per-parameter consistency, averaged across the seven products.</figcaption>
         </figure>
-        <div class="feature" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+        <div class="feature mt-6" data-reveal>
           <div class="feature__text">
             <h3 class="t-h3" data-i18n="product-form.throughput.title">Throughput enables dataset-scale form analysis</h3>
             <p data-i18n="product-form.throughput.text">A 23-parameter profile is computed in seconds from sixteen renders, which product catalogs often already contain. Across hundreds or thousands of products, this allows form parameters to be paired with expert evaluations to build the datasets that learning models require.</p>
@@ -183,26 +183,19 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="related-title">
+    <!-- Next -->
+    <section class="section section--alt" id="next" aria-label="Next case study" data-i18n-attr="aria-label:product-form.next.eyebrow">
       <div class="container">
-        <div class="bento">
-        <a class="tile span-3" href="/tools/amvr/" data-reveal>
-          <div class="tile__body">
-            <p class="t-eyebrow" data-i18n="product-form.related.eyebrow">Related tool</p>
-            <h2 class="t-h3" id="related-title" translate="no">AMVR</h2>
-            <p class="tile__text" data-i18n="product-form.related.text">A Blender add-on that generates consistent, batch-rendered multi-view image sets from CAD models.</p>
-            <span class="link-more" data-i18n="product-form.related.link">View project</span>
-          </div>
+        <a class="next-card" href="/tools/amvr/" data-reveal>
+          <span><img class="icon-light" src="/assets/img/apps/amvr-light.png" width="256" height="256" alt="" loading="lazy"><img class="icon-dark" src="/assets/img/apps/amvr-dark.png" width="256" height="256" alt="" loading="lazy"></span>
+          <span><span class="next-card__label" data-i18n="product-form.related.eyebrow">Related tool</span><span class="next-card__name" translate="no">AMVR</span><span class="t-muted" data-i18n="product-form.related.text">A Blender add-on that generates consistent, batch-rendered multi-view image sets from CAD models.</span></span>
+          <span class="next-card__go"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#arrow-right"/></svg></span>
         </a>
-          <a class="tile tile--white span-3" href="/research/lemmy/" data-reveal style="background:var(--bg-2)">
-            <div class="tile__body">
-              <p class="t-eyebrow" data-i18n="product-form.next.eyebrow">Next case study</p>
-              <h2 class="t-h3" data-i18n="product-form.next.title">Component-based motion design for a care robot</h2>
-              <p class="tile__text" data-i18n="product-form.next.text">A component-based method for designing a companion robot’s motion, evaluated with 40 older adults.</p>
-              <span class="link-more" data-i18n="product-form.next.read">Learn more</span>
-            </div>
-          </a>
-        </div>
+        <a class="next-card mt-2" href="/research/lemmy/" data-reveal>
+          <span class="next-card__thumb"><img src="/assets/img/thumbs/components.jpg" width="720" height="450" alt="" loading="lazy"></span>
+          <span><span class="next-card__label" data-i18n="product-form.next.eyebrow">Next case study</span><span class="next-card__name" data-i18n="footer.robotMotion">Robot motion</span><span class="t-muted" data-i18n="product-form.next.text">A component-based method for designing a companion robot’s motion, evaluated with 40 older adults.</span></span>
+          <span class="next-card__go"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#arrow-right"/></svg></span>
+        </a>
       </div>
     </section>
   </main>
@@ -225,7 +218,7 @@
         <div class="gfooter__col"><h3 data-i18n="footer.caseStudies">Case studies</h3><ul>
           <li><a href="/research/bangudae-xr/" data-i18n="footer.bangudae">Bangudae XR</a></li>
           <li><a href="/research/life-size-ar/" data-i18n="footer.lifeSize">Life-size AR</a></li>
-          <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
+          <li><a href="/research/synthetic-realities/" translate="no">Synthetic Realities</a></li>
           <li><a href="/research/product-form/" data-i18n="footer.productForm">Product form analysis</a></li>
           <li><a href="/research/lemmy/" data-i18n="footer.robotMotion">Robot motion</a></li>
           <li><a href="/research/lemmy-framework/" data-i18n="footer.framework">MSc thesis framework</a></li>

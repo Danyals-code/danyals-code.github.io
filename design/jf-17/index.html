@@ -3,13 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}},1500)})})(document.documentElement)</script>
+  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("DOMContentLoaded",function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}})})(document.documentElement)</script>
   <title>JF-17 Thunder · Danyal Sarfraz</title>
   <meta name="description" content="JF-17 Thunder: A hard-surface replica of the PAC JF-17 Thunder, with animations made to show off the modeling rather than the motion.">
   <link rel="canonical" href="https://danyalportfolio.com/design/jf-17/">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#000000">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Danyal Sarfraz">
   <meta property="og:url" content="https://danyalportfolio.com/design/jf-17/">
@@ -22,16 +21,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=48">
-  <script src="/assets/js/i18n.js?v=4" defer></script>
-  <script src="/assets/js/site.js?v=34" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=49">
+  <script src="/assets/js/i18n.js?v=5" defer></script>
+  <script src="/assets/js/site.js?v=35" defer></script>
 </head>
 <body class="theme-dark has-lnav">
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
   <header class="gnav">
     <nav class="gnav__inner" aria-label="Global" data-i18n-attr="aria-label:nav.label">
-      <a class="gnav__logo" href="/">
+      <a class="gnav__logo" href="/" translate="no">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
         Danyal Sarfraz
       </a>
@@ -77,18 +76,18 @@
     <section class="project-hero" id="top">
       <div class="container">
         <p class="t-eyebrow">Scene previz · 2021</p>
-        <h1 class="t-display" style="margin-top:8px">JF-17 Thunder</h1>
-        <p class="t-lead t-muted" style="max-width:32em; margin-top:18px">A hard-surface replica of the PAC JF-17 Thunder, with animations made to show off the modeling rather than the motion.</p>
+        <h1 class="t-display">JF-17 Thunder</h1>
+        <p class="t-lead t-muted">A hard-surface replica of the PAC JF-17 Thunder, with animations made to show off the modeling rather than the motion.</p>
       </div>
       <div class="container project-hero__media" data-reveal="scale">
-        <img src="/assets/img/work/jf-17.webp" width="799" height="625" alt="Front view of a JF-17 Thunder fighter jet at dusk" loading="lazy" fetchpriority="high">
+        <img src="/assets/img/work/jf-17.webp" width="799" height="625" alt="Front view of a JF-17 Thunder fighter jet at dusk" fetchpriority="high">
       </div>
     </section>
 
     <section class="section" id="overview">
       <div class="container">
         <div class="facts" data-reveal><div><span class="fact__label">Year</span><p class="fact__value">2021</p></div><div><span class="fact__label">Type</span><p class="fact__value">Personal project</p></div><div><span class="fact__label">Output</span><p class="fact__value">Animations at 1920 × 1080, 30 fps</p></div><div><span class="fact__label">Tools</span><ul class="tools-used"><li><img src="/assets/img/software/blender.png" width="264" height="264" alt="" loading="lazy"><span translate="no">Blender</span></li></ul></div></div>
-        <p class="t-two-tone" style="margin-top: clamp(56px,7vw,96px)" data-reveal>Every detail on the surface <strong>was hard-modeled by hand.</strong></p>
+        <p class="t-two-tone mt-6" data-reveal>Every detail on the surface <strong>was hard-modeled by hand.</strong></p>
       </div>
     </section>
 
@@ -133,7 +132,7 @@
         </div>
       </div>
       <div class="container-wide">
-        <div class="fig__media" style="border-radius: var(--r-xl)" data-reveal="scale"><div class="ph" role="img" aria-label="Placeholder: One of the animations of the model" data-ph="jf17-film" style="aspect-ratio: 16 / 9"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#video"/></svg><span class="ph__what">One of the animations of the model</span><span class="ph__size">Film · 1920 × 1080</span></div></div>
+        <div class="fig__media fig__media--xl" data-reveal="scale"><div class="ph" role="img" aria-label="Placeholder: One of the animations of the model" data-ph="jf17-film" style="aspect-ratio: 16 / 9"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#video"/></svg><span class="ph__what">One of the animations of the model</span><span class="ph__size">Film · 1920 × 1080</span></div></div>
       </div>
     </section>
 
@@ -154,7 +153,7 @@
 
     <section class="section section--alt" id="next" aria-label="Next project">
       <div class="container">
-        <a class="next-card next-card--project" href="/design/jurassic-park/" data-reveal>
+        <a class="next-card" href="/design/jurassic-park/" data-reveal>
           <span class="next-card__thumb"><img src="/assets/img/work/jurassic-park.webp" width="808" height="632" alt="A dinosaur fossil partly excavated from sandy ground" loading="lazy"></span>
           <span><span class="next-card__label">Next project</span><span class="next-card__name">Jurassic Park, 1993</span><span class="t-muted">Set recreation and VFX · 2021</span></span>
           <span class="next-card__go"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#arrow-right"/></svg></span>
@@ -175,7 +174,7 @@
         <div class="gfooter__col"><h3 data-i18n="footer.caseStudies">Case studies</h3><ul>
           <li><a href="/research/bangudae-xr/" data-i18n="footer.bangudae">Bangudae XR</a></li>
           <li><a href="/research/life-size-ar/" data-i18n="footer.lifeSize">Life-size AR</a></li>
-          <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
+          <li><a href="/research/synthetic-realities/" translate="no">Synthetic Realities</a></li>
           <li><a href="/research/product-form/" data-i18n="footer.productForm">Product form analysis</a></li>
           <li><a href="/research/lemmy/" data-i18n="footer.robotMotion">Robot motion</a></li>
           <li><a href="/research/lemmy-framework/" data-i18n="footer.framework">MSc thesis framework</a></li>

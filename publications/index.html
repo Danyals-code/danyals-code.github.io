@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Publications · Danyal Sarfraz</title>
   <meta name="robots" content="noindex">
-  <link rel="canonical" href="https://danyalportfolio.com/research/#publications">
+  <link rel="canonical" href="https://danyalportfolio.com/research/">
   <meta http-equiv="refresh" content="0; url=/research/#publications">
   <script>
     // Keep ?lang= and send the old page's anchors to their new places.
     (function () {
       var id = location.hash.slice(1);
       var paper = { ksds26: 'ksds-2026', 'iasdr-a': 'iasdr-2025-actions', 'iasdr-s': 'iasdr-2025-synthetic', ksds25: 'ksds-2025', thesis: 'thesis' };
-      var moved = { papers: 'publications', talks: 'publications', 'talks-title': 'publications', 'thesis-title': 'thesis' };
+      var moved = { papers: 'publications', 'papers-title': 'publications', talks: 'publications', 'talks-title': 'publications', 'thesis-title': 'thesis' };
       var key = id.replace(/^(sum|bib|bibtex)-/, '');
       var target = moved[id] || (key !== id && paper[key]) || id || 'publications';
       location.replace('/research/' + location.search + '#' + target);

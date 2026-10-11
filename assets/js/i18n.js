@@ -48,6 +48,8 @@ window.SITE_I18N = {
     'copy': 'نسخ',
     'copy.done': 'تم النسخ',
     'copy.failed': 'تعذّر النسخ',
+    'copy.cite': 'نسخ الاقتباس بصيغة BibTeX',
+    'hl.slide': 'الشريحة {n} من {total}',
     'footer.label': 'دليل الموقع',
     'footer.cgi': 'الأعمال ثلاثية الأبعاد',
     'footer.caseStudies': 'دراسات الحالة',
@@ -142,7 +144,6 @@ window.SITE_I18N = {
     'home.pubs.paper': 'ورقة مؤتمر',
     'home.pubs.full': 'ورقة كاملة',
     'home.pubs.pictorial': 'ورقة مصوّرة',
-    'home.seeProject': 'عرض المشروع',
     // References under case studies
     'footer.references': 'المراجع',
 
@@ -205,6 +206,8 @@ window.SITE_I18N = {
     'copy': '复制',
     'copy.done': '已复制',
     'copy.failed': '复制失败',
+    'copy.cite': '复制 BibTeX 引用',
+    'hl.slide': '第 {n} 张，共 {total} 张',
     'footer.label': '网站导航',
     'footer.cgi': '3D 与 CGI',
     'footer.caseStudies': '案例研究',
@@ -299,7 +302,6 @@ window.SITE_I18N = {
     'home.pubs.paper': '会议论文',
     'home.pubs.full': '完整论文',
     'home.pubs.pictorial': '图文论文',
-    'home.seeProject': '查看项目',
     // References under case studies
     'footer.references': '参考文献',
 

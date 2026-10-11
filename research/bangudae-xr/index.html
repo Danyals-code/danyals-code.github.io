@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("load",function(){setTimeout(function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}},1500)})})(document.documentElement)</script>
+  <script>(function(d){var s,t,l,q,a=["en","ar","zh"],w=window;try{s=localStorage}catch(e){}try{t=s.getItem("theme")}catch(e){}if(t==="light"||t==="dark")d.setAttribute("data-theme",t);else t=w.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.setAttribute("data-theme-now",t);try{q=new URLSearchParams(location.search).get("lang")}catch(e){}if(a.indexOf(q)>=0){l=q;try{s.setItem("lang",q)}catch(e){}}else try{l=s.getItem("lang")}catch(e){}if(a.indexOf(l)<0){l="en";(navigator.languages||[navigator.language||""]).some(function(x){x=String(x).slice(0,2).toLowerCase();return a.indexOf(x)>=0&&(l=x)})}d.setAttribute("data-ui-lang",l);if(l!=="en"){d.classList.add("i18n-wait");if((" "+d.getAttribute("data-langs")+" ").indexOf(" "+l+" ")>=0){d.lang=l==="zh"?"zh-CN":l;d.dir=l==="ar"?"rtl":"ltr"}}d.classList.add("js");addEventListener("DOMContentLoaded",function(){d.classList.remove("i18n-wait");if(!w.__site){d.classList.remove("js");d.lang="en";d.dir="ltr"}})})(document.documentElement)</script>
   <title data-i18n="bangudae-xr.title">Bangudae XR: Bringing the Bangudae petroglyphs indoors through mixed reality · Danyal Sarfraz</title>
   <meta name="description" content="A Meta Quest 3 mixed-reality application presenting the heritage of Ulsan’s Daegokcheon Stream, built with photogrammetry, Gaussian splatting and Unreal Engine 5. First place, 3rd Korea Heritage Digital Contents Contest (2024)." data-i18n-attr="content:bangudae-xr.description">
   <link rel="canonical" href="https://danyalportfolio.com/research/bangudae-xr/">
@@ -27,10 +27,10 @@
   <script>window.__panoArrival=new Promise(function(r){if(!("onpagereveal"in window))return r();addEventListener("pagereveal",function(){r()},{once:true})})</script>
   <!-- The panorama, fetched from the first line: the opening move waits for it. Same choice as its <img>. -->
   <link rel="preload" as="image" href="/assets/img/bangudae/panorama-2400.jpg" imagesrcset="/assets/img/bangudae/panorama-1600.jpg 1600w, /assets/img/bangudae/panorama-2400.jpg 2400w, /assets/img/bangudae/panorama-3600.jpg 3600w" imagesizes="100vw" fetchpriority="high">
-  <link rel="stylesheet" href="/assets/css/site.css?v=48">
-  <script src="/assets/js/i18n.js?v=4" defer></script>
-  <script src="/assets/js/i18n/bangudae-xr.js?v=3" defer></script>
-  <script src="/assets/js/site.js?v=34" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=49">
+  <script src="/assets/js/i18n.js?v=5" defer></script>
+  <script src="/assets/js/i18n/bangudae-xr.js?v=4" defer></script>
+  <script src="/assets/js/site.js?v=35" defer></script>
 </head>
 <body class="has-lnav">
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -41,7 +41,7 @@
 
   <header class="gnav">
     <nav class="gnav__inner" aria-label="Global" data-i18n-attr="aria-label:nav.label">
-      <a class="gnav__logo" href="/">
+      <a class="gnav__logo" href="/" translate="no">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19.6 7.6v8.8L12 20.8l-7.6-4.4V7.6z"/><path d="M4.4 7.6 12 12l7.6-4.4M12 12v8.8"/></svg>
         Danyal Sarfraz
       </a>
@@ -103,10 +103,10 @@
           <svg class="award__laurel award__laurel--r" aria-hidden="true"><use href="#laurel"/></svg>
         </a>
       </div>
-      <figure class="fig" style="margin-top: clamp(28px,5vw,56px)">
+      <figure class="fig hero__media">
         <div class="container-wide">
           <div class="fig__media fig__media--film loop" data-once>
-            <video src="/assets/video/bangudae/cliff-film.mp4" poster="/assets/img/bangudae/cliff-film-poster.jpg" muted playsinline preload="auto" aria-label="A slow camera move toward the carved panel of the Bangudae petroglyphs, reconstructed in 3D from photographs" data-i18n-attr="aria-label:bangudae-xr.film.alt"></video>
+            <video src="/assets/video/bangudae/cliff-film.mp4" poster="/assets/img/bangudae/cliff-film-poster.jpg" muted playsinline preload="none" aria-label="A slow camera move toward the carved panel of the Bangudae petroglyphs, reconstructed in 3D from photographs" data-i18n-attr="aria-label:bangudae-xr.film.alt"></video>
             <button class="loop__toggle" type="button" aria-label="Pause, play or replay the film" data-i18n-attr="aria-label:video.toggleOnce">
               <svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="3" y="2" width="3" height="10" rx="1"/><rect x="8" y="2" width="3" height="10" rx="1"/></svg>
               <svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6L11.5 7z"/></svg>
@@ -129,7 +129,7 @@
           <div><span class="fact__label" data-i18n="bangudae-xr.facts.organizersLabel">Organizers</span><p class="fact__value" data-i18n="bangudae-xr.facts.organizers">Korea Heritage Service and Korea National University of Heritage</p></div>
           <div><span class="fact__label" data-i18n="bangudae-xr.facts.categoryLabel">Category</span><p class="fact__value" data-i18n="bangudae-xr.facts.category">Development of digital heritage content through XR</p></div>
         </div>
-        <p class="t-two-tone" style="margin-top: clamp(64px,8vw,112px)" data-reveal data-i18n="bangudae-xr.access">On site, visitors view the carvings from across the stream, often through a viewing scope. <strong>The heritage is visible but physically inaccessible.</strong> The project uses mixed reality to <strong>bring it within arm’s reach.</strong></p>
+        <p class="t-two-tone mt-7" data-reveal data-i18n="bangudae-xr.access">On site, visitors view the carvings from across the stream, often through a viewing scope. <strong>The heritage is visible but physically inaccessible.</strong> The project uses mixed reality to <strong>bring it within arm’s reach.</strong></p>
       </div>
     </section>
 
@@ -172,7 +172,7 @@
           <div class="fig__media"><img src="/assets/img/bangudae/scan-01.jpg" width="2000" height="1125" alt="A photogrammetry reconstruction of a rock face shown three ways: a source photo, the textured model and the untextured mesh" loading="lazy" data-i18n-attr="alt:bangudae-xr.capture.rockAlt"></div>
           <figcaption class="fig__cap" data-i18n="bangudae-xr.capture.rockCap">A rock surface reconstructed with photogrammetry: source photo, textured model and mesh.</figcaption>
         </figure>
-        <div class="fig-row fig-row--2" style="margin-top:20px" data-reveal>
+        <div class="fig-row fig-row--2 mt-2" data-reveal>
           <figure class="fig">
             <div class="fig__media"><img src="/assets/img/bangudae/scan-02.jpg" width="2000" height="1125" alt="A second reconstruction of a carved panel with highlighted figures, shown textured and as a mesh" loading="lazy" data-i18n-attr="alt:bangudae-xr.capture.panelAlt"></div>
             <figcaption class="fig__cap" data-i18n="bangudae-xr.capture.panelCap">A carved panel, with figures highlighted, as texture and mesh.</figcaption>
@@ -196,7 +196,7 @@
         </div>
       </div>
       <div class="container-wide">
-        <figure class="window window--flow" data-reveal="scale">
+        <figure class="window" data-reveal="scale">
           <div class="window__media window__media--wide loop">
             <video src="/assets/video/bangudae/mr-artifacts.mp4" poster="/assets/img/bangudae/mr-artifacts-poster.jpg" muted loop playsinline preload="none" aria-label="Passthrough view on Meta Quest 3: scanned artifacts on floating pedestals, browsed with Previous, Home and Next buttons" data-i18n-attr="aria-label:bangudae-xr.experience.videoAlt"></video>
             <button class="loop__toggle" type="button" aria-label="Play or pause the video" data-i18n-attr="aria-label:video.toggle">
@@ -208,7 +208,7 @@
           <figcaption class="fig__cap container" data-i18n="bangudae-xr.experience.videoCap">Captured in passthrough on Meta Quest 3: browsing the scanned artifacts with Previous, Home and Next.</figcaption>
         </figure>
       </div>
-      <div class="container" style="margin-top: clamp(48px,6vw,80px)">
+      <div class="container mt-5">
         <div class="principles" data-reveal>
           <div>
             <h3 data-i18n="bangudae-xr.principle.grounding.title">Spatial grounding through passthrough</h3>
@@ -224,7 +224,7 @@
           </div>
         </div>
       </div>
-      <div class="container" style="margin-top: clamp(56px,7vw,96px)">
+      <div class="container mt-6">
         <div class="feature" data-reveal>
           <figure class="fig feature__media">
             <div class="fig__media"><img src="/assets/img/bangudae/mr-menu.jpg" width="1600" height="790" alt="A floating main menu with 3D Artifacts, 3D Environments, Panoramas, Gallery and Quit App buttons, over the passthrough view of an office" loading="lazy" data-i18n-attr="alt:bangudae-xr.menu.alt"></div>
@@ -235,7 +235,7 @@
             <p data-i18n="bangudae-xr.menu.text">3D artifacts, 3D environments, panoramas and a photo gallery are accessed from a menu displayed over the room. The layout is extensible, so new sections and scans can be added as they become available.</p>
           </div>
         </div>
-        <div class="feature feature--flip" style="margin-top: clamp(56px,7vw,96px)" data-reveal>
+        <div class="feature feature--flip mt-6" data-reveal>
           <figure class="fig feature__media">
             <div class="fig__media"><img src="/assets/img/bangudae/mr-splat-house.jpg" width="1600" height="790" alt="A Gaussian-splat reconstruction of a traditional Korean gate and wall" loading="lazy" data-i18n-attr="alt:bangudae-xr.decisions.alt"></div>
           </figure>
@@ -266,15 +266,12 @@
     </section>
 
     <!-- Next -->
-    <section class="section section--alt" aria-labelledby="next-title">
+    <section class="section section--alt" id="next" aria-label="Next case study" data-i18n-attr="aria-label:bangudae-xr.next.eyebrow">
       <div class="container">
-        <a class="tile tile--white" href="/research/life-size-ar/" data-reveal>
-          <div class="tile__body">
-            <p class="t-eyebrow" data-i18n="bangudae-xr.next.eyebrow">Next case study</p>
-            <h2 class="t-h2" id="next-title" data-i18n="bangudae-xr.next.title">Evaluating life-size AR as a stand-in for physical prototypes</h2>
-            <p class="tile__text" data-i18n="bangudae-xr.next.text">Life-size AR for iPhone and Apple Vision Pro, evaluated on participants’ own iPhones at home.</p>
-            <span class="link-more" data-i18n="bangudae-xr.next.read">Learn more</span>
-          </div>
+        <a class="next-card" href="/research/life-size-ar/" data-reveal>
+          <span class="next-card__thumb"><img src="/assets/img/thumbs/life-size-ar.jpg" width="720" height="450" alt="" loading="lazy"></span>
+          <span><span class="next-card__label" data-i18n="bangudae-xr.next.eyebrow">Next case study</span><span class="next-card__name" data-i18n="footer.lifeSize">Life-size AR</span><span class="t-muted" data-i18n="bangudae-xr.next.text">Life-size AR for iPhone and Apple Vision Pro, evaluated on participants’ own iPhones at home.</span></span>
+          <span class="next-card__go"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#arrow-right"/></svg></span>
         </a>
       </div>
     </section>
@@ -292,7 +289,7 @@
         <div class="gfooter__col"><h3 data-i18n="footer.caseStudies">Case studies</h3><ul>
           <li><a href="/research/bangudae-xr/" data-i18n="footer.bangudae">Bangudae XR</a></li>
           <li><a href="/research/life-size-ar/" data-i18n="footer.lifeSize">Life-size AR</a></li>
-          <li><a href="/research/synthetic-realities/">Synthetic Realities</a></li>
+          <li><a href="/research/synthetic-realities/" translate="no">Synthetic Realities</a></li>
           <li><a href="/research/product-form/" data-i18n="footer.productForm">Product form analysis</a></li>
           <li><a href="/research/lemmy/" data-i18n="footer.robotMotion">Robot motion</a></li>
           <li><a href="/research/lemmy-framework/" data-i18n="footer.framework">MSc thesis framework</a></li>

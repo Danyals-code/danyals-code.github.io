@@ -216,6 +216,15 @@
     });
     document.addEventListener('site:lang', label);
     label();
+    // A page restored by Back, or another tab's choice, follows the saved language.
+    const follow = () => {
+      const chosen = saved('lang');
+      if (!LANGS[chosen] || chosen === lang) return;
+      lang = chosen;
+      applyLanguage();
+    };
+    window.addEventListener('pageshow', (event) => event.persisted && follow());
+    window.addEventListener('storage', (event) => event.key === 'lang' && follow());
   }
 
   /* A slim bar under the header. On a translated page, visitors whose time zone
@@ -299,10 +308,21 @@
       const open = document.body.classList.contains('nav-open');
       button.setAttribute('aria-label', open ? tr('menu.close', 'Close menu') : tr('menu.open', 'Menu'));
     };
+    const header = button.closest('.gnav');
     const setOpen = (open) => {
+      if (open === document.body.classList.contains('nav-open')) return;
       document.body.classList.toggle('nav-open', open);
       button.setAttribute('aria-expanded', String(open));
       label();
+      // The open menu covers the page: everything behind it leaves the Tab
+      // order, and focus starts on the first link.
+      Array.from(document.body.children).forEach((el) => {
+        if (el !== header && !el.contains(header)) el.inert = open;
+      });
+      if (open && list) {
+        const first = list.querySelector('a');
+        if (first) first.focus({ preventScroll: true });
+      }
     };
     label();
     document.addEventListener('site:lang', label);
@@ -360,11 +380,13 @@
     if (!body.classList.contains('has-lnav')) return;
     const gnav = document.querySelector('.gnav');
     let lastY = window.scrollY;
+    let navHeight = gnav.offsetHeight;
+    window.addEventListener('resize', () => (navHeight = gnav.offsetHeight));
     // Runs on every scroll event (it only toggles a class), so the bar
     // reacts to the very first upward movement.
     const update = () => {
       const y = Math.max(0, window.scrollY);
-      if (y <= gnav.offsetHeight) {
+      if (y <= navHeight) {
         body.classList.remove('gnav-hidden');
         lastY = y;
         return;
@@ -419,6 +441,16 @@
       swap(apply);
     });
     document.addEventListener('site:lang', apply);
+    // A page restored by Back, or another tab's choice, follows the saved theme.
+    const follow = () => {
+      const chosen = saved('theme');
+      const next = chosen === 'light' || chosen === 'dark' ? chosen : null;
+      if (next === pref) return;
+      pref = next;
+      apply();
+    };
+    window.addEventListener('pageshow', (event) => event.persisted && follow());
+    window.addEventListener('storage', (event) => event.key === 'theme' && follow());
   }
 
   /* ------------------------------------------------------------------ site search
@@ -808,7 +840,7 @@
   /* ------------------------------------------------------------------ bar charts grow when seen */
 
   function initBars() {
-    const charts = Array.from(document.querySelectorAll('.bars')).filter((chart) => !chart.closest('[data-quiz]'));
+    const charts = Array.from(document.querySelectorAll('.bars'));
     if (!charts.length) return;
     if (!motionOK()) {
       charts.forEach((chart) => chart.classList.add('in'));
@@ -845,6 +877,11 @@
 
     items.forEach((el) => {
       const p = parts(el);
+      const said = document.createElement('span');
+      said.className = 'visually-hidden';
+      said.textContent = format(p, p.target);
+      el.after(said);
+      el.setAttribute('aria-hidden', 'true');
       // Inline numbers reserve their final width and count right-aligned,
       // so a suffix beside them ("+", "/ 10") never shifts while counting.
       if (getComputedStyle(el).display === 'inline') {
@@ -905,7 +942,6 @@
         loop.classList.toggle('is-ended', video.ended);
       };
       ['play', 'pause', 'ended'].forEach((type) => video.addEventListener(type, setState));
-      video.addEventListener('playing', () => loop.classList.add('is-playing'), { once: true });
       setState();
       const play = () => {
         if (video.preload === 'none') video.preload = 'auto';
@@ -973,6 +1009,15 @@
 
   /* ------------------------------------------------------------------ rails (horizontal galleries) */
 
+  // Turns paddles on and off at the ends of a row. A paddle that turns off
+  // while focused hands focus to the other one, so the keyboard isn't dropped.
+  const setPaddles = (prev, next, atStart, atEnd) => {
+    [[prev, atStart, next], [next, atEnd, prev]].forEach(([button, off, other]) => {
+      if (off && document.activeElement === button && !other.disabled) other.focus();
+      button.disabled = off;
+    });
+  };
+
   function initRails() {
     document.querySelectorAll('.rail').forEach((rail) => {
       const track = rail.querySelector('.rail__track');
@@ -986,8 +1031,7 @@
       };
       const update = () => {
         const travelled = Math.abs(track.scrollLeft);
-        prev.disabled = travelled <= 4;
-        next.disabled = travelled + track.clientWidth >= track.scrollWidth - 4;
+        setPaddles(prev, next, travelled <= 4, travelled + track.clientWidth >= track.scrollWidth - 4);
       };
       const behavior = () => (reduceMotion.matches ? 'auto' : 'smooth');
       prev.addEventListener('click', () => track.scrollBy({ left: -stepSize(), behavior: behavior() }));
@@ -1016,8 +1060,7 @@
       const forward = () => (getComputedStyle(track).direction === 'rtl' ? -1 : 1);
       const update = () => {
         const travelled = Math.abs(track.scrollLeft);
-        prev.disabled = travelled <= 4;
-        next.disabled = travelled + track.clientWidth >= track.scrollWidth - 4;
+        setPaddles(prev, next, travelled <= 4, travelled + track.clientWidth >= track.scrollWidth - 4);
       };
       const page = (sign) =>
         track.scrollBy({ left: sign * forward() * track.clientWidth * 0.7, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
@@ -1054,11 +1097,12 @@
         let queued = false;
         let start = 0;
         let range = 1;
+        let height = 0;
         // Where the bar sticks (as a scroll offset) and how far it shrinks.
         // Measured from <main>, which never moves with the sticky bars.
         const measure = () => {
           if (!linked) return;
-          const height = bar.offsetHeight;
+          height = bar.offsetHeight;
           const strip = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--appbar-h')) || 70;
           const top = parseFloat(getComputedStyle(bar).top) || 0;
           start = Math.round(main.getBoundingClientRect().top + window.scrollY - lnav.offsetHeight - height - top);
@@ -1069,17 +1113,21 @@
           if (linked) {
             const travelled = Math.min(range, Math.max(0, window.scrollY - start));
             bar.style.setProperty('--shrink', (travelled / range).toFixed(4));
-            bar.style.setProperty('--strip', `${bar.offsetHeight - travelled}px`);
+            bar.style.setProperty('--strip', `${height - travelled}px`);
             bar.classList.toggle('is-stuck', travelled > 0);
             return;
           }
           const top = parseFloat(getComputedStyle(bar).top) || 0;
           bar.classList.toggle('is-stuck', window.scrollY > 0 && bar.getBoundingClientRect().top <= top + 1);
         };
-        window.addEventListener('resize', () => {
+        const remeasure = () => {
           measure();
           stuck();
-        });
+        };
+        window.addEventListener('resize', remeasure);
+        // The language bar opens and closes above the app bar, moving <main>.
+        document.addEventListener('site:lang', remeasure);
+        if ('MutationObserver' in window) new MutationObserver(remeasure).observe(document.body, { childList: true });
         measure();
         window.addEventListener(
           'scroll',
@@ -1110,21 +1158,28 @@
       let current = 0;
       let stopped = reduceMotion.matches;
       let visible = false;
+      // Keyboard focus inside holds the slides still, so nothing moves (or
+      // turns inert) under the focused control.
+      let focused = false;
+      // While go() glides the track, its scroll events are not a swipe.
+      let gliding = false;
+      let glideTimer = 0;
       const dots = slides.map((slide, i) => {
         const dot = document.createElement('button');
         dot.type = 'button';
         dot.className = 'hl__dot';
-        dot.setAttribute('aria-label', `${i + 1} / ${slides.length}`);
         dot.addEventListener('click', () => go(i));
         dot.addEventListener('animationend', () => {
-          if (!stopped && visible) go(current + 1);
+          if (!stopped && visible && !focused) go(current + 1);
         });
         dotsBox.append(dot);
         return dot;
       });
+      const name = () =>
+        dots.forEach((dot, i) => dot.setAttribute('aria-label', tr('hl.slide', 'Slide {n} of {total}', { n: i + 1, total: slides.length })));
       const state = () => {
         hl.classList.toggle('is-stopped', stopped);
-        hl.classList.toggle('is-paused', stopped || !visible);
+        hl.classList.toggle('is-paused', stopped || !visible || focused);
         hl.classList.toggle('is-static', reduceMotion.matches);
         if (toggle) toggle.setAttribute('aria-label', stopped ? toggle.dataset.playLabel || 'Play' : toggle.dataset.pauseLabel || 'Pause');
       };
@@ -1148,14 +1203,30 @@
         dots[i].classList.remove('is-current');
         void dots[i].offsetWidth;
         mark(i);
+        gliding = true;
+        clearTimeout(glideTimer);
+        glideTimer = setTimeout(() => (gliding = false), 900);
         track.scrollTo({ left: slide.offsetLeft - (track.clientWidth - slide.offsetWidth) / 2, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
       };
+      track.addEventListener('scrollend', () => {
+        clearTimeout(glideTimer);
+        gliding = false;
+      });
+      hl.addEventListener('focusin', (event) => {
+        focused = event.target.matches(':focus-visible');
+        state();
+      });
+      hl.addEventListener('focusout', (event) => {
+        if (hl.contains(event.relatedTarget)) return;
+        focused = false;
+        state();
+      });
       // Swiping or scrolling the track picks whichever slide is nearest the middle.
       let ticking = false;
       track.addEventListener(
         'scroll',
         () => {
-          if (ticking) return;
+          if (ticking || gliding) return;
           ticking = true;
           requestAnimationFrame(() => {
             ticking = false;
@@ -1185,9 +1256,11 @@
           { threshold: 0.5 }
         ).observe(track);
       document.addEventListener('site:lang', () => {
+        name();
         go(0);
         state();
       });
+      name();
       mark(0);
       state();
     });
@@ -1535,6 +1608,7 @@
       download.href = link.getAttribute('href');
       // A fresh frame per paper, so the last one never flashes before the next loads.
       const fresh = frame.cloneNode(false);
+      if (originals.has(frame)) originals.set(fresh, originals.get(frame));
       fresh.src = `${link.getAttribute('href')}#view=FitH`;
       frame.replaceWith(fresh);
       frame = fresh;
@@ -1602,7 +1676,8 @@
         button.classList.toggle('is-copied', ok);
         clearTimeout(timer);
         timer = setTimeout(() => {
-          label.textContent = original;
+          const english = originals.get(label);
+          label.textContent = label.dataset.i18n && english ? tr(label.dataset.i18n, english.html) : original;
           button.classList.remove('is-copied');
           timer = 0;
         }, 1800);
@@ -1795,65 +1870,6 @@
       const done = () => img.classList.remove('is-loading');
       img.addEventListener('load', done, { once: true });
       img.addEventListener('error', done, { once: true });
-    });
-  }
-
-  /* ------------------------------------------------------------------ guess, then reveal (home)
-     Picking an answer marks it, fills in the chart and shows the matching
-     explanation. Without the script, the chart is simply there. */
-
-  function initQuiz() {
-    document.querySelectorAll('[data-quiz]').forEach((quiz) => {
-      const options = Array.from(quiz.querySelectorAll('[data-answer]'));
-      const bars = quiz.querySelector('.bars');
-      const verdicts = Array.from(quiz.querySelectorAll('[data-verdict]'));
-      options.forEach((option) => {
-        option.addEventListener('click', () => {
-          const answer = option.dataset.answer;
-          options.forEach((other) => other.setAttribute('aria-pressed', String(other === option)));
-          verdicts.forEach((verdict) => (verdict.hidden = verdict.dataset.verdict !== answer));
-          if (bars) {
-            bars.querySelectorAll('[data-key]').forEach((bar) => bar.classList.toggle('is-picked', bar.dataset.key === answer));
-            bars.classList.add('in');
-          }
-          quiz.classList.add('is-answered');
-        });
-      });
-    });
-  }
-
-  /* ------------------------------------------------------------------ clip switcher (home)
-     Buttons (data-src, data-poster) that change which clip a .loop video
-     plays. The video's label comes from the container's data-alt, with
-     {name} filled from the pressed button. */
-
-  function initClips() {
-    document.querySelectorAll('[data-clips]').forEach((clips) => {
-      const video = clips.querySelector('video');
-      const buttons = Array.from(clips.querySelectorAll('[data-src]'));
-      if (!video || !buttons.length) return;
-      const current = () => buttons.find((button) => button.getAttribute('aria-pressed') === 'true') || buttons[0];
-      const label = () => {
-        const name = current().textContent.trim();
-        const template = clips.dataset.alt || '{name}';
-        video.setAttribute('aria-label', template.replace('{name}', lang === 'en' ? name.toLowerCase() : name));
-      };
-      buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-          if (button === current() && !video.paused) return;
-          buttons.forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
-          if (video.getAttribute('src') !== button.dataset.src) {
-            video.poster = button.dataset.poster || '';
-            video.src = button.dataset.src;
-          }
-          label();
-          // A click is a request to watch, so it plays even with reduced motion.
-          const attempt = video.play();
-          if (attempt) attempt.catch(() => {});
-        });
-      });
-      document.addEventListener('site:lang', label);
-      label();
     });
   }
 
@@ -2120,44 +2136,6 @@
     }
   }
 
-  /* ------------------------------------------------------------------ hover to play (home cards)
-     [data-hover-play] around a video: it plays while the pointer is over the
-     card (or the card has focus), and on touch screens while most of it is on
-     screen. With reduced motion the poster stays. */
-
-  function initHoverPlay() {
-    const fine = window.matchMedia('(hover: hover) and (pointer: fine)');
-    document.querySelectorAll('[data-hover-play]').forEach((box) => {
-      const video = box.querySelector('video');
-      if (!video) return;
-      const card = box.closest('.card') || box;
-      video.muted = true;
-      video.playsInline = true;
-      const play = () => {
-        if (reduceMotion.matches) return;
-        if (video.preload === 'none') video.preload = 'auto';
-        const attempt = video.play();
-        if (attempt) attempt.catch(() => {});
-      };
-      const stop = () => video.pause();
-      card.addEventListener('pointerenter', () => fine.matches && play());
-      card.addEventListener('pointerleave', () => fine.matches && stop());
-      card.addEventListener('focusin', play);
-      card.addEventListener('focusout', stop);
-      if (!hasIO) return;
-      new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (fine.matches) return;
-            if (entry.intersectionRatio >= 0.6) play();
-            else stop();
-          });
-        },
-        { threshold: [0, 0.6, 1] }
-      ).observe(box);
-    });
-  }
-
   /* ------------------------------------------------------------------ boot
      Language first, so every control below is labelled in it from the start.
      Each feature starts on its own: if one throws, the others still run, and
@@ -2190,10 +2168,7 @@
     initExternalLinks,
     initToggles,
     initSegmented,
-    initQuiz,
-    initClips,
     initReel,
-    initHoverPlay,
     initImageFade,
   ].forEach((init) => {
     try {
@@ -2205,7 +2180,6 @@
   });
 
   if (failed) root.classList.remove('js', 'i18n-wait');
-  else root.classList.add('motion-ready');
   // Tells the <head> fallback that the script ran.
   window.__site = true;
 })();
