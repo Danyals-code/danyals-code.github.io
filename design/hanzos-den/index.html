@@ -14,15 +14,15 @@
   <meta property="og:url" content="https://danyalportfolio.com/design/hanzos-den/">
   <meta property="og:title" content="Hanzo’s Den · Danyal Sarfraz">
   <meta property="og:description" content="Hanzo’s Den: A Japanese-inspired vintage retreat, made over a weekend with a friend, to set the mood of a cinematic scene.">
-  <meta property="og:image" content="https://danyalportfolio.com/assets/img/work/hanzos-den.webp">
+  <meta property="og:image" content="https://danyalportfolio.com/assets/img/hanzos-den/hero.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=49">
-  <script src="/assets/js/i18n.js?v=5" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=51">
+  <script src="/assets/js/i18n.js?v=6" defer></script>
   <script src="/assets/js/site.js?v=35" defer></script>
 </head>
 <body class="theme-dark has-lnav">
@@ -66,9 +66,10 @@
         <li><a href="#overview">Overview</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#stills">Still renders</a></li>
+        <li><a href="#passes">Render passes</a></li>
         <li><a href="#details">Details</a></li>
       </ul>
-      <a class="btn btn--sm" href="/design/swooshboard/">Next project</a>
+      <a class="btn btn--sm" href="/design/thor-mjolnir/">Next project</a>
     </div>
   </nav>
 
@@ -80,7 +81,7 @@
         <p class="t-lead t-muted">A Japanese-inspired vintage retreat, made over a weekend with a friend, to set the mood of a cinematic scene.</p>
       </div>
       <div class="container project-hero__media" data-reveal="scale">
-        <img src="/assets/img/work/hanzos-den.webp" width="808" height="632" alt="A crystal whisky decanter and glasses on a wooden table beside a leather lounge chair" fetchpriority="high">
+        <img src="/assets/img/hanzos-den/hero.webp" width="2000" height="1125" alt="A crystal whisky decanter and glasses on a wooden table beside a leather lounge chair" fetchpriority="high">
       </div>
     </section>
 
@@ -106,6 +107,17 @@
           <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#video"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Grade</h3><p class="flow__text">Compiled and graded in DaVinci Resolve Studio.</p></li>
         </ol>
       </div>
+      <div class="container-wide mt-5">
+        <div class="segmedia" data-seg-media data-reveal>
+          <div class="segmedia__stage">
+            <div class="segmedia__item" data-item="clay"><img src="/assets/img/hanzos-den/plan-clay.webp" width="2000" height="667" alt="The room from above in plain grey clay: two lounge chairs either side of a low table, plants at each end and curtains along the window" loading="lazy"></div>
+            <div class="segmedia__item" data-item="final"><img src="/assets/img/hanzos-den/plan-final.webp" width="2000" height="667" alt="The same view from above, finished: leather chairs, a wooden table set with glasses, a decanter, cinnamon rolls and blueberries, and sunlight falling through the curtains across the floor" loading="lazy"></div>
+          </div>
+          <div class="seg" role="group" aria-label="Plan view"><button type="button" data-show="final" aria-pressed="false">Final</button><button type="button" data-show="clay" aria-pressed="false">Clay</button></div>
+          <p class="segmedia__cap" data-cap="final"><strong>Final.</strong> The room from above, with afternoon sun through the curtains.</p>
+          <p class="segmedia__cap" data-cap="clay"><strong>Clay.</strong> The same view in plain grey, before materials.</p>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="stills" aria-labelledby="stills-title">
@@ -118,9 +130,46 @@
       </div>
       <div class="container-wide">
         <div class="gallery" data-reveal>
-          <figure class="g-6"><div class="ph" role="img" aria-label="Placeholder: Wide still of the room, full resolution" data-ph="hanzo-still-1" style="aspect-ratio: 16 / 9"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Wide still of the room, full resolution</span><span class="ph__size">Render · 2400 × 1350</span></div></figure>
-          <figure class="g-3"><div class="ph" role="img" aria-label="Placeholder: Still: detail of the table" data-ph="hanzo-still-2" style="aspect-ratio: 3 / 2"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Still: detail of the table</span><span class="ph__size">Render · 1800 × 1200</span></div></figure>
-          <figure class="g-3"><div class="ph" role="img" aria-label="Placeholder: Still: the lounge chair" data-ph="hanzo-still-3" style="aspect-ratio: 3 / 2"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Still: the lounge chair</span><span class="ph__size">Render · 1800 × 1200</span></div></figure>
+          <figure class="g-3"><img src="/assets/img/hanzos-den/room.webp" width="2000" height="2000" alt="The whole room: a bed, a Great Wave print, a vintage television, a hanging scroll, and two leather lounge chairs by sheer curtains under a wooden ceiling" loading="lazy"></figure>
+          <figure class="g-3"><img src="/assets/img/hanzos-den/room-fisheye.webp" width="2000" height="2000" alt="A low wide-angle view across the rug toward the television, the scroll and the lounge chairs, with bamboo outside the window" loading="lazy"></figure>
+          <figure class="g-6"><img src="/assets/img/hanzos-den/buddha-wide.webp" width="2000" height="1055" alt="A small bronze Buddha on top of the vintage television, catching a slant of sun" loading="lazy"></figure>
+          <figure class="g-3"><img src="/assets/img/hanzos-den/lounge.webp" width="2000" height="2000" alt="A lounge chair beside the low table, set with cinnamon rolls, blueberries, a decanter and cut-crystal glasses, the television and scroll behind" loading="lazy"></figure>
+          <figure class="g-3"><img src="/assets/img/hanzos-den/tv-corner.webp" width="2000" height="2000" alt="The television on a mid-century stand with the scroll, a potted plant and bamboo, seen from the bed" loading="lazy"></figure>
+          <figure class="g-6"><img src="/assets/img/hanzos-den/breakfast-wide.webp" width="2000" height="672" alt="Cinnamon rolls on a plate in a strip of sunlight, with the decanter and a bowl of blueberries behind" loading="lazy"></figure>
+          <figure class="g-3"><img src="/assets/img/hanzos-den/breakfast.webp" width="2000" height="2000" alt="Cinnamon rolls and a bowl of blueberries on the table, the decanter out of focus in front" loading="lazy"></figure>
+          <figure class="g-3"><img src="/assets/img/hanzos-den/vase.webp" width="2000" height="2000" alt="A round vase of dried dandelion heads and a candle on a dark tray by the bed" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="passes" aria-labelledby="passes-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+          <h2 class="t-h2 shead__title" id="passes-title">Render passes</h2>
+          <p class="shead__text t-lead">One frame, taken apart.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container-text">
+        <div class="segmedia" data-seg-media data-reveal>
+          <div class="segmedia__stage">
+            <div class="segmedia__item" data-item="color"><img src="/assets/img/hanzos-den/pass-color.webp" width="2000" height="2000" alt="Color pass: the Buddha on the television in flat surface colors with no lighting; the bronze figure is black" loading="lazy"></div>
+            <div class="segmedia__item" data-item="light"><img src="/assets/img/hanzos-den/pass-light.webp" width="2000" height="2000" alt="Lighting pass: the same frame with every surface white, showing only light and shadow" loading="lazy"></div>
+            <div class="segmedia__item" data-item="highlights"><img src="/assets/img/hanzos-den/pass-highlights.webp" width="2000" height="2000" alt="A nearly black pass in which only the edges of the wall planks and floorboards glow" loading="lazy"></div>
+            <div class="segmedia__item" data-item="normals"><img src="/assets/img/hanzos-den/pass-normals.webp" width="2000" height="2000" alt="Normal pass: surfaces colored by the way they face, the wall red, the television top blue and its front yellow" loading="lazy"></div>
+            <div class="segmedia__item" data-item="position"><img src="/assets/img/hanzos-den/pass-position.webp" width="2000" height="2000" alt="Position pass: soft magenta, white and yellow gradients across the room, with the figure as a flat silhouette" loading="lazy"></div>
+            <div class="segmedia__item" data-item="mono"><img src="/assets/img/hanzos-den/pass-mono.webp" width="2000" height="2000" alt="A black-and-white version of the frame, with warm light kept on the figure and the wall" loading="lazy"></div>
+            <div class="segmedia__item" data-item="final"><img src="/assets/img/hanzos-den/pass-final.webp" width="2000" height="2000" alt="Final render: a bronze Buddha on top of a vintage television, lit by a slant of afternoon sun" loading="lazy"></div>
+          </div>
+          <div class="seg" role="group" aria-label="Render pass"><button type="button" data-show="final" aria-pressed="false">Final</button><button type="button" data-show="color" aria-pressed="false">Color</button><button type="button" data-show="light" aria-pressed="false">Light</button><button type="button" data-show="highlights" aria-pressed="false">Highlights</button><button type="button" data-show="normals" aria-pressed="false">Normals</button><button type="button" data-show="position" aria-pressed="false">Position</button><button type="button" data-show="mono" aria-pressed="false">Mono</button></div>
+          <p class="segmedia__cap" data-cap="final"><strong>Final.</strong> Sun from the window lands on the figure and the wall behind it.</p>
+          <p class="segmedia__cap" data-cap="color"><strong>Color.</strong> Each surface’s own color, before any light. Metal has no diffuse color, so the bronze reads black.</p>
+          <p class="segmedia__cap" data-cap="light"><strong>Light.</strong> Light and shadow alone, with every surface white.</p>
+          <p class="segmedia__cap" data-cap="highlights"><strong>Highlights.</strong> Only the light caught by edges: the lips of the wall planks and the floorboards.</p>
+          <p class="segmedia__cap" data-cap="normals"><strong>Normals.</strong> The way each surface faces, written as color.</p>
+          <p class="segmedia__cap" data-cap="position"><strong>Position.</strong> Where each point sits in the room, written as color.</p>
+          <p class="segmedia__cap" data-cap="mono"><strong>Mono.</strong> A black-and-white take on the same frame, keeping warmth in the light.</p>
         </div>
       </div>
     </section>
@@ -156,9 +205,9 @@
 
     <section class="section section--alt" id="next" aria-label="Next project">
       <div class="container">
-        <a class="next-card" href="/design/swooshboard/" data-reveal>
-          <span class="next-card__thumb"><img src="/assets/img/work/nike-swooshboard.webp" width="808" height="632" alt="A wooden skateboard deck with a dragon emblem against an orange backdrop" loading="lazy"></span>
-          <span><span class="next-card__label">Next project</span><span class="next-card__name">SwooshBoard</span><span class="t-muted">Concept, not affiliated with Nike · 2022</span></span>
+        <a class="next-card" href="/design/thor-mjolnir/" data-reveal>
+          <span class="next-card__thumb"><img src="/assets/img/work/thor-mjolnir.webp" width="808" height="632" alt="Thor’s hammer Mjölnir, engraved with a Celtic knot, resting on sand" loading="lazy"></span>
+          <span><span class="next-card__label">Next project</span><span class="next-card__name">Thor’s Mjölnir</span><span class="t-muted">Hard-surface realism · 2022</span></span>
           <span class="next-card__go"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#arrow-right"/></svg></span>
         </a>
       </div>

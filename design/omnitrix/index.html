@@ -14,15 +14,15 @@
   <meta property="og:url" content="https://danyalportfolio.com/design/omnitrix/">
   <meta property="og:title" content="Omnitrix · Danyal Sarfraz">
   <meta property="og:description" content="Omnitrix: The watch from the animated series Ben 10, made to learn texturing in Substance Painter for higher photorealism.">
-  <meta property="og:image" content="https://danyalportfolio.com/assets/img/work/omnitrix.webp">
+  <meta property="og:image" content="https://danyalportfolio.com/assets/img/omnitrix/capsule-poster.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=49">
-  <script src="/assets/js/i18n.js?v=5" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=51">
+  <script src="/assets/js/i18n.js?v=6" defer></script>
   <script src="/assets/js/site.js?v=35" defer></script>
 </head>
 <body class="theme-dark has-lnav">
@@ -81,7 +81,14 @@
         <p class="t-lead t-muted">The watch from the animated series Ben 10, made to learn texturing in Substance Painter for higher photorealism.</p>
       </div>
       <div class="container project-hero__media" data-reveal="scale">
-        <img src="/assets/img/work/omnitrix.webp" width="808" height="632" alt="The Omnitrix wrist device with a glowing green dial" fetchpriority="high">
+        <div class="fig__media fig__media--xl loop" data-once>
+          <video src="/assets/video/omnitrix/capsule.mp4" poster="/assets/img/omnitrix/capsule-poster.jpg" width="1920" height="1080" muted playsinline preload="none" aria-label="A capsule opens in clouds of red, yellow and then green smoke, with the Omnitrix inside"></video>
+          <button class="loop__toggle" type="button" aria-label="Pause, play or replay the film" data-i18n-attr="aria-label:video.toggleOnce">
+            <svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="3" y="2" width="3" height="10" rx="1"/><rect x="8" y="2" width="3" height="10" rx="1"/></svg>
+            <svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6L11.5 7z"/></svg>
+            <svg class="i-replay" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2.4a4.6 4.6 0 1 1-4.4 3.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.2 1.8v3.6h3.6z"/></svg>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -105,6 +112,18 @@
           <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#sphere"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Texturing</h3><p class="flow__text">Substance Painter, in a day.</p></li>
           <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#camera"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Render</h3><p class="flow__text">Rendered in Substance Painter.</p></li>
         </ol>
+        <div class="mt-6" data-reveal>
+          <h3 class="t-h3">References</h3>
+          <p class="t-muted mt-1">Gathered before modeling: art and a frame from Ben 10, and a fan render. These are not my work; artists are credited where known.</p>
+        </div>
+      </div>
+      <div class="container-wide mt-4">
+        <div class="refs" data-reveal>
+          <figure><img src="/assets/img/omnitrix/refs/art-green.jpg" width="672" height="671" alt="An illustration of the Omnitrix with a glowing hourglass dial, on a green background" loading="lazy"></figure>
+          <figure><img src="/assets/img/omnitrix/refs/art-yellow.jpg" width="564" height="798" alt="The same style of Omnitrix illustration, on a yellow burst" loading="lazy"></figure>
+          <figure><img src="/assets/img/omnitrix/refs/fan-render.jpg" width="736" height="736" alt="A 3D render of a green Omnitrix with a glowing dial, on dark green" loading="lazy"></figure>
+          <figure><img src="/assets/img/omnitrix/refs/capsule-still.jpg" width="564" height="426" alt="A frame from the cartoon: hands holding an open capsule with the glowing Omnitrix inside" loading="lazy"><figcaption>Ben 10 · Cartoon Network</figcaption></figure>
+        </div>
       </div>
     </section>
 
@@ -113,12 +132,36 @@
         <div class="shead" data-reveal>
           <div>
           <h2 class="t-h2 shead__title" id="modeling-title">Initial modeling</h2>
+          <p class="shead__text t-lead">Built in Blender, in wireframe and clay.</p>
           </div>
         </div>
       </div>
       <div class="container-wide">
-        <div class="gallery" data-reveal>
-          <figure class="g-6"><div class="ph" role="img" aria-label="Placeholder: The untextured model in Blender" data-ph="omnitrix-model" style="aspect-ratio: 16 / 9"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">The untextured model in Blender</span><span class="ph__size">Render · 2400 × 1350</span></div></figure>
+        <div class="fig-row fig-row--3" data-reveal>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/omnitrix/wire-front.webp" width="860" height="860" alt="Blender viewport, front view: the watch in wireframe, its dial and buttons outlined in orange" loading="lazy"></div>
+            <figcaption class="fig__cap">Wireframe, front.</figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/omnitrix/wire-side.webp" width="860" height="860" alt="Blender viewport, side view: the ring of the strap in wireframe, the dial and buttons in orange" loading="lazy"></div>
+            <figcaption class="fig__cap">Wireframe, side.</figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/omnitrix/wire-top.webp" width="860" height="860" alt="Blender viewport, top view: the round dial and four side buttons in orange over the wireframe strap" loading="lazy"></div>
+            <figcaption class="fig__cap">Wireframe, top.</figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/omnitrix/clay-top.webp" width="832" height="832" alt="Clay view from above: the dial’s hourglass, the bezel and the side buttons in plain grey" loading="lazy"></div>
+            <figcaption class="fig__cap">Clay, three-quarter view.</figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/omnitrix/clay-side.webp" width="836" height="836" alt="Clay view of the strap side: the buttons, the bezel and the rounded strap in plain grey" loading="lazy"></div>
+            <figcaption class="fig__cap">Clay, side.</figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/omnitrix/wire-parts.webp" width="860" height="860" alt="Wireframe colored by part: the dial in green, the body in blue, the strap in yellow and its band in purple" loading="lazy"></div>
+            <figcaption class="fig__cap">Wireframe, colored by part.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -133,11 +176,31 @@
       </div>
       <div class="container-wide">
         <div class="gallery" data-reveal>
-          <figure class="g-3"><div class="ph" role="img" aria-label="Placeholder: Final render" data-ph="omnitrix-render-1" style="aspect-ratio: 4 / 3"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Final render</span><span class="ph__size">Render · 1800 × 1350</span></div></figure>
-          <figure class="g-3"><div class="ph" role="img" aria-label="Placeholder: Final render, second angle" data-ph="omnitrix-render-2" style="aspect-ratio: 4 / 3"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Final render, second angle</span><span class="ph__size">Render · 1800 × 1350</span></div></figure>
-          <figure class="g-2"><div class="ph" role="img" aria-label="Placeholder: Texture detail" data-ph="omnitrix-tex-1" style="aspect-ratio: 1 / 1"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Texture detail</span><span class="ph__size">Render · 1200 × 1200</span></div></figure>
-          <figure class="g-2"><div class="ph" role="img" aria-label="Placeholder: Texture detail" data-ph="omnitrix-tex-2" style="aspect-ratio: 1 / 1"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Texture detail</span><span class="ph__size">Render · 1200 × 1200</span></div></figure>
-          <figure class="g-2"><div class="ph" role="img" aria-label="Placeholder: Texture detail" data-ph="omnitrix-tex-3" style="aspect-ratio: 1 / 1"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Texture detail</span><span class="ph__size">Render · 1200 × 1200</span></div></figure>
+          <figure class="g-3"><img src="/assets/img/omnitrix/dial.webp" width="2000" height="2000" alt="Close side view of the dial: a green hourglass under a worn black bezel, above two buttons" loading="lazy"></figure>
+          <figure class="g-3"><img src="/assets/img/omnitrix/strap-side.webp" width="2000" height="2000" alt="The watch from the side of its white strap, with a green light, the name engraved and worn black paint" loading="lazy"></figure>
+          <figure class="g-3"><img src="/assets/img/omnitrix/ring-side.webp" width="2000" height="2000" alt="The watch from the side: the ring of the textured strap, its buttons and green side lights" loading="lazy"></figure>
+          <figure class="g-3"><img src="/assets/img/omnitrix/ring-end.webp" width="2000" height="2000" alt="The watch seen end-on, its worn ring open to the white background" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="film" aria-labelledby="film-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+          <h2 class="t-h2 shead__title" id="film-title">Animation</h2>
+          <p class="shead__text t-lead">A vertical cut for phones, from a viewport preview of the smoke to the final render.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="fig__media fig__media--xl fig__media--portrait loop" data-once data-reveal="scale">
+          <video src="/assets/video/omnitrix/reel.mp4" poster="/assets/img/omnitrix/reel-poster.jpg" width="810" height="1536" muted playsinline preload="none" aria-label="Smoke billows around the capsule in a viewport preview, then the finished capsule opens in green and red smoke"></video>
+          <button class="loop__toggle" type="button" aria-label="Pause, play or replay the film" data-i18n-attr="aria-label:video.toggleOnce">
+            <svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="3" y="2" width="3" height="10" rx="1"/><rect x="8" y="2" width="3" height="10" rx="1"/></svg>
+            <svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6L11.5 7z"/></svg>
+            <svg class="i-replay" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2.4a4.6 4.6 0 1 1-4.4 3.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.2 1.8v3.6h3.6z"/></svg>
+          </button>
         </div>
       </div>
     </section>

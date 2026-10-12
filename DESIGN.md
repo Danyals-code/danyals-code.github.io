@@ -23,7 +23,9 @@ The reference is apple.com: quiet chrome, large type, pictures that carry the st
 5. **Works for everyone, everywhere.** Light and dark; English, Arabic (right to left) and Chinese;
    320 px phones to wide desktops; keyboard, screen reader, reduced motion, and no JavaScript at all.
 6. **Nothing borrowed, nothing fake.** Missing media is a labelled placeholder, never someone else's
-   image. No AI credits anywhere.
+   image. The one exception is a project's reference board (`.refs`): the references it was built
+   from, shown whole, introduced as not my work and credited where the author is known. No AI
+   credits anywhere.
 
 ## 2. Colour
 
@@ -198,6 +200,7 @@ layer. Add nothing between these without a reason written beside it.
 | Next item | `.next-card` in a `.section--alt` at the end of the page: picture (or app icon), label, name, one line, arrow. Case studies, app pages, project pages and the experiments page all use it | A tile, a feature row or half a bento |
 | Device shots | `.device--phone`, `--duo`, `--window`, `.phones`, `.duo` | Screenshots without a frame |
 | Missing media | `.ph` with `data-ph`, listed in PLACEHOLDERS.md | Stock or borrowed images |
+| References a project was built from | `.refs` board under the Process steps, uncropped, credited in `figcaption` | Mixing references into a `.gallery` of your own work |
 
 Each page type has a fixed spine. Leave sections out when there is nothing to say; do not reorder them.
 

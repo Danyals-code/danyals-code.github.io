@@ -14,15 +14,15 @@
   <meta property="og:url" content="https://danyalportfolio.com/design/thor-mjolnir/">
   <meta property="og:title" content="Thor’s Mjölnir · Danyal Sarfraz">
   <meta property="og:description" content="Thor’s Mjölnir: Mjölnir from the Marvel films, modeled in Blender and textured in Substance Painter to read as a real object.">
-  <meta property="og:image" content="https://danyalportfolio.com/assets/img/work/thor-mjolnir.webp">
+  <meta property="og:image" content="https://danyalportfolio.com/assets/img/thor-mjolnir/moss.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap"></noscript>
-  <link rel="stylesheet" href="/assets/css/site.css?v=49">
-  <script src="/assets/js/i18n.js?v=5" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=51">
+  <script src="/assets/js/i18n.js?v=6" defer></script>
   <script src="/assets/js/site.js?v=35" defer></script>
 </head>
 <body class="theme-dark has-lnav">
@@ -65,8 +65,8 @@
       <ul class="lnav__links">
         <li><a href="#overview">Overview</a></li>
         <li><a href="#process">Process</a></li>
-        <li><a href="#backgrounds">Two backgrounds</a></li>
         <li><a href="#modeling">3D modeling</a></li>
+        <li><a href="#backgrounds">Two backgrounds</a></li>
         <li><a href="#details">Details</a></li>
       </ul>
       <a class="btn btn--sm" href="/design/omnitrix/">Next project</a>
@@ -80,8 +80,15 @@
         <h1 class="t-display">Thor’s Mjölnir</h1>
         <p class="t-lead t-muted">Mjölnir from the Marvel films, modeled in Blender and textured in Substance Painter to read as a real object.</p>
       </div>
-      <div class="container project-hero__media" data-reveal="scale">
-        <img src="/assets/img/work/thor-mjolnir.webp" width="808" height="632" alt="Thor’s hammer Mjölnir, engraved with a Celtic knot, resting on sand" fetchpriority="high">
+      <div class="container-wide project-hero__media" data-reveal="scale">
+        <div class="fig__media fig__media--film loop" data-once>
+          <video src="/assets/video/thor-mjolnir/film.mp4" poster="/assets/img/thor-mjolnir/film-poster.jpg" muted playsinline preload="none" aria-label="The camera circles Mjölnir, engraved with a Celtic knot, on desert rock as the sun throws its shadow across the stone"></video>
+          <button class="loop__toggle" type="button" aria-label="Pause, play or replay the film" data-i18n-attr="aria-label:video.toggleOnce">
+            <svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="3" y="2" width="3" height="10" rx="1"/><rect x="8" y="2" width="3" height="10" rx="1"/></svg>
+            <svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2.2v9.6L11.5 7z"/></svg>
+            <svg class="i-replay" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2.4a4.6 4.6 0 1 1-4.4 3.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2.2 1.8v3.6h3.6z"/></svg>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -92,7 +99,7 @@
       </div>
     </section>
 
-    <section class="section section--alt" id="process" aria-labelledby="process-title">
+    <section class="section" id="process" aria-labelledby="process-title">
       <div class="container">
         <div class="shead" data-reveal>
           <div>
@@ -106,6 +113,62 @@
           <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#sphere"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Texturing</h3><p class="flow__text">Worn metal and leather in Substance Painter.</p></li>
           <li class="flow__step"><span class="flow__icon"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#camera"/></svg></span><span class="flow__num"></span><h3 class="flow__title">Camera and render</h3><p class="flow__text">Long lens, shallow depth of field.</p></li>
         </ol>
+        <div class="mt-6" data-reveal>
+          <h3 class="t-h3">References</h3>
+          <p class="t-muted mt-1">Gathered before modeling: stills and posters from the films, replica props, an engineering drawing and fan art. These are not my work; artists are credited where known.</p>
+        </div>
+      </div>
+      <div class="container-wide mt-4">
+        <div class="refs" data-reveal>
+          <figure><img src="/assets/img/thor-mjolnir/refs/film-still.jpg" width="259" height="194" alt="Chris Hemsworth as Thor holding Mjölnir, in a still from the films" loading="lazy"><figcaption>Marvel Studios</figcaption></figure>
+          <figure><img src="/assets/img/thor-mjolnir/refs/poster.jpg" width="1200" height="628" alt="Poster art: an armored hand gripping Mjölnir as lightning strikes it" loading="lazy"></figure>
+          <figure><img src="/assets/img/thor-mjolnir/refs/prop.jpg" width="736" height="1472" alt="Mjölnir standing on its head in dirt, its leather strap looped at the top" loading="lazy"></figure>
+          <figure><img src="/assets/img/thor-mjolnir/refs/rain.jpg" width="564" height="1128" alt="Mjölnir lying in heavy rain, its handle wrapped in leather" loading="lazy"></figure>
+          <figure><img src="/assets/img/thor-mjolnir/refs/costume-replica.jpg" width="370" height="1000" alt="A costume replica of Mjölnir with a brown wrist strap, on white" loading="lazy"></figure>
+          <figure><img src="/assets/img/thor-mjolnir/refs/replica-stump.jpg" width="236" height="354" alt="A silver replica of Mjölnir resting on a tree stump" loading="lazy"></figure>
+          <figure><img src="/assets/img/thor-mjolnir/refs/drawing.jpg" width="800" height="566" alt="An engineering drawing of the hammer in three views, with dimensions" loading="lazy"><figcaption>Drawing via Dreamstime</figcaption></figure>
+          <figure><img src="/assets/img/thor-mjolnir/refs/benedicto.jpg" width="563" height="895" alt="A render of Mjölnir standing in cracked desert ground" loading="lazy"><figcaption>Render by Rafael S. Benedicto</figcaption></figure>
+          <figure><img src="/assets/img/thor-mjolnir/refs/deodato.jpg" width="564" height="865" alt="A black-and-white comic ink drawing of a hand gripping Mjölnir amid lightning" loading="lazy"><figcaption>Ink by Mike Deodato Jr.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="modeling" aria-labelledby="modeling-title">
+      <div class="container">
+        <div class="shead" data-reveal>
+          <div>
+          <h2 class="t-h2 shead__title" id="modeling-title">3D modeling</h2>
+          <p class="shead__text t-lead">The geometry, the black-and-white maps for the engravings, and the result in clay.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container-wide">
+        <div class="fig-row fig-row--3" data-reveal>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/thor-mjolnir/wire-front.webp" width="732" height="732" alt="Blender viewport, front view: the hammer in wireframe, its head outlined in orange" loading="lazy"></div>
+            <figcaption class="fig__cap">Wireframe, front.</figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/thor-mjolnir/map-knot.webp" width="2000" height="1982" alt="Black-and-white map of the knot with runes, used for the engraving on each face" loading="lazy" class="ratio-1"></div>
+            <figcaption class="fig__cap">Map for the knot and runes on each face.</figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/thor-mjolnir/clay-engraving.webp" width="749" height="749" alt="Clay view of the head: the knot, its runes and the braided side panel cut into plain grey" loading="lazy"></div>
+            <figcaption class="fig__cap">Clay: the knot cut into the face.</figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/thor-mjolnir/wire-perspective.webp" width="716" height="716" alt="Blender viewport, three-quarter view: the hammer in wireframe, its head outlined in orange" loading="lazy"></div>
+            <figcaption class="fig__cap">Wireframe, three-quarter view.</figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/thor-mjolnir/map-rune-ring.jpg" width="564" height="564" alt="Black-and-white map of a ring of runes, used for the engraving around the handle" loading="lazy"></div>
+            <figcaption class="fig__cap">Map for the ring of runes around the handle.</figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="fig__media"><img src="/assets/img/thor-mjolnir/clay-pommel.webp" width="725" height="725" alt="Clay view from above: the pommel’s cross and inscription inside a ring of runes" loading="lazy"></div>
+            <figcaption class="fig__cap">Clay: the pommel and the ring of runes.</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -120,30 +183,13 @@
       </div>
       <div class="container-wide">
         <div class="gallery" data-reveal>
-          <figure class="g-3"><div class="ph" role="img" aria-label="Placeholder: Still on the first background" data-ph="thor-bg-1" style="aspect-ratio: 4 / 3"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Still on the first background</span><span class="ph__size">Render · 1800 × 1350</span></div></figure>
-          <figure class="g-3"><div class="ph" role="img" aria-label="Placeholder: Still on the second background" data-ph="thor-bg-2" style="aspect-ratio: 4 / 3"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Still on the second background</span><span class="ph__size">Render · 1800 × 1350</span></div></figure>
+          <figure class="g-6"><img src="/assets/img/thor-mjolnir/desert.webp" width="2000" height="612" alt="Mjölnir on sunlit desert rock, the engraved knot facing the camera" loading="lazy"></figure>
+          <figure class="g-6"><img src="/assets/img/thor-mjolnir/forest-glow.webp" width="2000" height="612" alt="Mjölnir against a dark forest at dusk, its engraved knot glowing gold" loading="lazy"></figure>
         </div>
       </div>
     </section>
 
-    <section class="section section--alt" id="modeling" aria-labelledby="modeling-title">
-      <div class="container">
-        <div class="shead" data-reveal>
-          <div>
-          <h2 class="t-h2 shead__title" id="modeling-title">3D modeling</h2>
-          <p class="shead__text t-lead">Clay and wireframe passes.</p>
-          </div>
-        </div>
-      </div>
-      <div class="container-wide">
-        <div class="gallery" data-reveal>
-          <figure class="g-4"><div class="ph" role="img" aria-label="Placeholder: Wireframe or clay render of the hammer" data-ph="thor-wire" style="aspect-ratio: 3 / 2"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Wireframe or clay render of the hammer</span><span class="ph__size">Render · 2400 × 1600</span></div></figure>
-          <figure class="g-2"><div class="ph" role="img" aria-label="Placeholder: Close-up of the engraving" data-ph="thor-detail" style="aspect-ratio: 3 / 4"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Close-up of the engraving</span><span class="ph__size">Render · 1200 × 1600</span></div></figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="stills" aria-labelledby="stills-title">
+    <section class="section section--alt" id="stills" aria-labelledby="stills-title">
       <div class="container">
         <div class="shead" data-reveal>
           <div>
@@ -153,24 +199,13 @@
       </div>
       <div class="container-wide">
         <div class="gallery" data-reveal>
-          <figure class="g-6"><div class="ph" role="img" aria-label="Placeholder: Final still, full resolution" data-ph="thor-still-1" style="aspect-ratio: 16 / 9"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Final still, full resolution</span><span class="ph__size">Render · 2400 × 1350</span></div></figure>
-          <figure class="g-2"><div class="ph" role="img" aria-label="Placeholder: Still frame" data-ph="thor-still-2" style="aspect-ratio: 1 / 1"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Still frame</span><span class="ph__size">Render · 1200 × 1200</span></div></figure>
-          <figure class="g-2"><div class="ph" role="img" aria-label="Placeholder: Still frame" data-ph="thor-still-3" style="aspect-ratio: 1 / 1"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Still frame</span><span class="ph__size">Render · 1200 × 1200</span></div></figure>
-          <figure class="g-2"><div class="ph" role="img" aria-label="Placeholder: Still frame" data-ph="thor-still-4" style="aspect-ratio: 1 / 1"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#photo"/></svg><span class="ph__what">Still frame</span><span class="ph__size">Render · 1200 × 1200</span></div></figure>
+          <figure class="g-6"><img src="/assets/img/thor-mjolnir/moss.webp" width="2000" height="1000" alt="Mjölnir, engraved with a Celtic knot, resting on mossy rocks in low golden light" loading="lazy"></figure>
+          <figure class="g-4"><img src="/assets/img/thor-mjolnir/desert-rock.webp" width="1920" height="1920" alt="Mjölnir standing on sunlit desert rock, casting a hard shadow" loading="lazy"></figure>
+          <figure class="g-2"><img src="/assets/img/thor-mjolnir/studio.webp" width="1080" height="1920" alt="The whole hammer on black: a worn metal head and a leather-wrapped handle" loading="lazy"></figure>
+          <figure class="g-2"><img src="/assets/img/thor-mjolnir/pommel.webp" width="1920" height="1920" alt="Looking down the handle at the pommel, engraved with a cross and the words “Whosoever holds this hammer, if he be worthy, shall possess the power of Thor”" loading="lazy"></figure>
+          <figure class="g-2"><img src="/assets/img/thor-mjolnir/runes.webp" width="1920" height="1920" alt="The base of the handle: a knurled steel collar ringed by engraved runes" loading="lazy"></figure>
+          <figure class="g-2"><img src="/assets/img/thor-mjolnir/engraving.webp" width="1920" height="1920" alt="Close-up of the engraved knot and runes on the hammer’s face, with braided knotwork along its edge" loading="lazy"></figure>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="film" aria-labelledby="film-title">
-      <div class="container">
-        <div class="shead" data-reveal>
-          <div>
-          <h2 class="t-h2 shead__title" id="film-title">Animation</h2>
-          </div>
-        </div>
-      </div>
-      <div class="container-wide">
-        <div class="fig__media fig__media--xl" data-reveal="scale"><div class="ph" role="img" aria-label="Placeholder: Animation of the hammer" data-ph="thor-film" style="aspect-ratio: 16 / 9"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg?v=5#video"/></svg><span class="ph__what">Animation of the hammer</span><span class="ph__size">Film · 1920 × 1080</span></div></div>
       </div>
     </section>
 

@@ -1668,6 +1668,12 @@ a.tile:hover .link-more {
   padding: clamp(16px, 3vw, 40px);
 }
 
+/* A vertical film (a reel cut for phones), kept to a phone's width and centred. */
+.fig__media--portrait {
+  max-width: 400px;
+  margin-inline: auto;
+}
+
 .fig__media img,
 .fig__media video {
   width: 100%;
@@ -4606,6 +4612,36 @@ a.tile:hover .link-more {
 
 .gallery figcaption {
   margin-top: 12px;
+  color: var(--fg-2);
+  font-size: var(--fs-small);
+}
+
+/* Reference board: the references a project was built from, shown whole
+   (never cropped) in columns, each credited where its author is known. */
+.refs {
+  columns: 2;
+  column-gap: clamp(12px, 1.6vw, 20px);
+}
+
+@media (min-width: 734px) {
+  .refs {
+    columns: 4;
+  }
+}
+
+.refs figure {
+  margin: 0 0 clamp(12px, 1.6vw, 20px);
+  break-inside: avoid;
+}
+
+.refs img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-md);
+}
+
+.refs figcaption {
+  margin-top: 8px;
   color: var(--fg-2);
   font-size: var(--fs-small);
 }

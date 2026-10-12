@@ -93,7 +93,7 @@ App pages (`/tools/<app>/`) and project pages (`/design/<project>/`) share a set
 `site.css` (the "Product and project pages" block): device frames (`.device--phone`, `.device--window`,
 `.phones`, `.duo`), `.phero`, `.statband`, `.hl` highlights, `.closer`, `.segmedia`, `.fgrid`, `.flow`,
 `.specs`, `.bigspecs`, `.monocard`, `.frame`, `.arch`, `.tree`, `.lineup` and `.lcard`, `.next-card`,
-`.gallery`, `.project-hero` and `.tools-used`. The Design page shows its projects as tall
+`.gallery`, `.refs` (a project's credited reference board), `.project-hero` and `.tools-used`. The Design page shows its projects as tall
 `.wcard` cards in a `.rail.works`, after Apple's "Get to know" cards: `--wc-pos` picks the part of a wide
 picture a card shows, `.wcard--light` sets dark text on a light picture, and `.wcard--inset` (with `--wc-bg`,
 `--wc-w` and `--wc-b`) shows a product shot whole on a plain background. The home page's promos are `.promos`, `.promo`

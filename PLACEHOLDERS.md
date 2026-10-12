@@ -1,6 +1,6 @@
 # Placeholders
 
-93 placeholders across 14 pages.
+71 placeholders across 11 pages.
 
 Every image or film still to come, page by page. Each placeholder in the HTML carries
 `data-ph="<id>"`, so `grep -rn 'data-ph="<id>"'` finds it. To fill one, put the file in that
@@ -15,7 +15,7 @@ and screen recordings, with a poster frame. Screen recordings and films are mute
 
 | What | Where | Notes |
 | --- | --- | --- |
-| Project hero images | `assets/img/work/*.webp` | The Design project pages reuse the 808 px card images as heroes. Full-resolution renders (2400 × 1350) will look sharper. |
+| Project hero images | `assets/img/work/*.webp` | The Design project pages reuse the 808 px card images as heroes (Hanzo’s Den, Thor’s Mjölnir and Omnitrix now have their own, in `assets/img/hanzos-den/`, `assets/img/thor-mjolnir/` and `assets/img/omnitrix/`). Full-resolution renders (2400 × 1350) will look sharper. |
 | Tall project cards on `/design/` | `design/index.html`, the `.wcard` images | The CGI cards crop the 808 × 632 Behance covers to a tall frame, which looks soft on Retina screens. A portrait render per project (at least 744 × 1360, ideally 1116 × 2040) will make them sharp. Leave room at the top for the year and name. The demo reel card shows its whole cover on white; a portrait frame from the reel would let it fill the card too. |
 
 ## /tools/almanac/
@@ -95,39 +95,11 @@ and screen recordings, with a poster frame. Screen recordings and films are mute
 | `waveform-sketches` | Drawing | Concept sketches | 1800 × 1200 |
 | `waveform-ui` | Screenshot | Interface screens or prompt states | 2400 × 1600 |
 
-## /design/thor-mjolnir/
-
-| ID | Kind | What goes here | Size |
-| --- | --- | --- | --- |
-| `thor-bg-1` | Render | Still on the first background | 1800 × 1350 |
-| `thor-bg-2` | Render | Still on the second background | 1800 × 1350 |
-| `thor-detail` | Render | Close-up of the engraving | 1200 × 1600 |
-| `thor-film` | Film | Animation of the hammer | 1920 × 1080 |
-| `thor-still-1` | Render | Final still, full resolution | 2400 × 1350 |
-| `thor-still-2` | Render | Still frame | 1200 × 1200 |
-| `thor-still-3` | Render | Still frame | 1200 × 1200 |
-| `thor-still-4` | Render | Still frame | 1200 × 1200 |
-| `thor-wire` | Render | Wireframe or clay render of the hammer | 2400 × 1600 |
-
 ## /design/hanzos-den/
 
 | ID | Kind | What goes here | Size |
 | --- | --- | --- | --- |
 | `hanzo-film` | Film | 3D animation of the room | 1920 × 1080 |
-| `hanzo-still-1` | Render | Wide still of the room, full resolution | 2400 × 1350 |
-| `hanzo-still-2` | Render | Still: detail of the table | 1800 × 1200 |
-| `hanzo-still-3` | Render | Still: the lounge chair | 1800 × 1200 |
-
-## /design/omnitrix/
-
-| ID | Kind | What goes here | Size |
-| --- | --- | --- | --- |
-| `omnitrix-model` | Render | The untextured model in Blender | 2400 × 1350 |
-| `omnitrix-render-1` | Render | Final render | 1800 × 1350 |
-| `omnitrix-render-2` | Render | Final render, second angle | 1800 × 1350 |
-| `omnitrix-tex-1` | Render | Texture detail | 1200 × 1200 |
-| `omnitrix-tex-2` | Render | Texture detail | 1200 × 1200 |
-| `omnitrix-tex-3` | Render | Texture detail | 1200 × 1200 |
 
 ## /design/delorean/
 
@@ -162,15 +134,6 @@ and screen recordings, with a poster frame. Screen recordings and films are mute
 | `swoosh-still-1` | Render | Still frame from the animation | 1200 × 1200 |
 | `swoosh-still-2` | Render | Still frame from the animation | 1200 × 1200 |
 | `swoosh-still-3` | Render | Still frame from the animation | 1200 × 1200 |
-
-## /design/jf-17/
-
-| ID | Kind | What goes here | Size |
-| --- | --- | --- | --- |
-| `jf17-detail-1` | Render | Detail of the surface modeling | 1800 × 1200 |
-| `jf17-detail-2` | Render | Detail of the cockpit or intake | 1800 × 1200 |
-| `jf17-film` | Film | One of the animations of the model | 1920 × 1080 |
-| `jf17-wide` | Render | Wide render of the aircraft | 2400 × 1350 |
 
 ## /design/jurassic-park/
 
